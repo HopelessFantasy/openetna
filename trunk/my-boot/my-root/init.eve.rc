@@ -1,0 +1,99 @@
+
+on early-init
+
+on boot
+# setup the global environment
+    export PATH /sbin:/system/sbin:/system/bin:/system/xbin:/usr/bin
+
+# create mountpoints and mount tmpfs on sqlite_stmt_journals
+## hopemini@lge.com, 2008-07-16
+	symlink /sqlite_stmt_journals /tmp
+	mkdir /usr
+	mkdir /usr/bin	
+	symlink /sbin/lrz /usr/bin/rz
+	symlink /sbin/lsz /usr/bin/sz
+	mkdir /data/test_results 01777 shell shell
+
+# LGE_CHANGE_S, [yoohoo@lge.com] 2009-03-10, <make wifi directory>    
+    mkdir /data/misc/wifi 0771 system misc
+	mkdir /data/misc/wifi/sockets 0777 root root
+# create dhcp RUNDIR temporally: sys2you@lge.com	
+    mkdir /data/misc/dhcp 0777 system system
+
+    setprop wifi.supplicant_scan_interval 20
+    setprop wifi.interface wlan0
+# LGE_CHANGE_E, [yoohoo@lge.com] 2009-03-10, <make wifi directory>    
+## add by hopemini@lge.com, 2008-06-07
+	chown system system /sys/class/backlight/ct810-bl/brightness
+	chown system system /sys/class/backlight/adam-bl/brightness
+	chown system system /sys/class/backlight/adam-bl/alc_mode
+	chown system system /dev/smd0
+	chown system system /sys/devices/platform/folder/state
+	chown system system /dev/amp
+	chmod 0666 /dev/amp
+	chown system system /dev/cam
+	chmod 0666 /dev/cam
+	chmod 0666 /data/misc/ts_cal
+	chmod 0666 /dev/bma150
+# LGE_BT, hopemini@lge.com
+	chmod 0666 /sys/class/rfkill/rfkill0/type
+	chmod 0666 /sys/class/rfkill/rfkill0/state
+	chmod 0666 /dev/ttyHS0
+	chown bluetooth bluetooth /dev/ttyHS0
+
+	chmod 0666 /sys/devices/platform/android-vibrator/enable
+	chmod 0666 /sys/devices/platform/android-vibrator/amp
+# LGE_CAMERA, hopemini@lge.com
+	chmod 0666 /dev/msm_camera
+	chmod 0666 /dev/mv9319_sony_5m
+
+# LGE_CHANGE [bluerti@lge.com]
+	symlink /system/bin/AT /system/bin/at
+
+# LGE_CHANGE [zugwan@lge.com], check and upgrade Camera ISP Firmware
+        write /sys/devices/platform/i2c-gpio.3/i2c-adapter/i2c-3/3-0028/firmware 1
+        #exec /system/bin/cat /dev/msm_camera0 # NOT WORKS
+        write /dev/msm_camera0 0
+
+# LGE_CHANGE [hayoung@lge.com], for buttonLED
+        chmod 0666 /sys/devices/platform/android-keyled/setting
+        chmod 0666 /sys/devices/platform/android-keyled/shift
+        chmod 0666 /sys/devices/platform/android-keyled/enable
+        
+# LGE_CHANGE [ljmblueday@lge.com], for USB connection mode        
+        chmod 0666 /sys/devices/platform/msm_hsusb_periphera/composition
+
+# LGE_CHANGE, [munyoung@lge.com] Disable fbcon cursor blink for fix BT sound break on sleep
+	write /sys/devices/virtual/graphics/fbcon/cursor_blink 0
+        
+# LGE_CHANGE_S, [neohacz@lge.com], 2009-07-21, <remove bluez code>
+## LGE_BT, add by hopemini@lge.com, 2008-12-09
+#service hciattach /system/bin/bt_start.sh
+#	user bluetooth
+#	group bluetooth net_bt_admin
+#	disabled
+# LGE_CHANGE_E, [neohacz@lge.com], 2009-07-21, <remove bluez code>
+
+# LGE_CHANGE_S, [yoohoo@lge.com], 2009-03-05,<register WLAN services>
+service wpa_supplicant /system/bin/wpa_supplicant -Dwext -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf #-dd
+	disabled
+	oneshot
+#	console
+
+service dhcpcd /system/bin/dhcpcd -B wlan0
+	disabled
+	oneshot
+
+on property:init.svc.wpa_supplicant=stopped
+stop dhcpcd
+# LGE_CHANGE_E, [yoohoo@lge.com] 2009-03-05, <register WLAN services>
+
+# LGE_CHANGE_S, [ljmblueday@lge.com] 2009-04-02, <initilize port-bridge services for Dial up network>
+   service port-bridge /system/bin/port-bridge /dev/smd0 /dev/ttyHSUSB0 &
+# LGE_CHANGE_E, [ljmblueday@lge.com] 2009-04-02, <initilize port-bridge services for Dial up network>
+
+# LGE_CHANGE_S, change cpu governor to ondemand
+service qcom-sh /system/bin/sh /init.qcom.sh
+    user root
+    oneshot
+# LGE_CHANGE_E, change cpu governor to ondemand

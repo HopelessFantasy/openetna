@@ -1,0 +1,6 @@
+extract the KH5200 kernel to my-kernel (.config is already in there)
+go to my-kernel
+run ./doBuild
+
+go back in this directory
+run ./makeBootImg
