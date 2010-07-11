@@ -1,0 +1,8 @@
+#!/bin/bash
+( cd my-root/ && find . | cpio -o -H newc | gzip > ../debug-ramdisk.cpio.gz )
+
+#RAMDISK=zacpod-v10t-ramdisk.gz
+RAMDISK=debug-ramdisk.cpio.gz
+
+../ca-donut/out/host/linux-x86/bin/mkbootimg --cmdline 'root=/dev/mtdblock1 rootfstype=yaffs2 lpj=1912832 console=/dev/null' --kernel my-kernel/arch/arm/boot/zImage --ramdisk $RAMDISK -o boot.img
+echo adb push my-kernel/drivers/net/wireless/bcm4325/wireless.ko /system/lib/modules/
