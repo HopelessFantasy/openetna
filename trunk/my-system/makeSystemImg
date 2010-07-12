@@ -1,0 +1,111 @@
+#!/bin/bash
+
+set -e #exit on error
+
+if [[ "a$1" == "a" ]]; then
+    echo "no dir given on commandline"
+    exit 1
+else
+  NEWSYS="$1"
+  OUTIMG="system.img"
+fi
+echo "Building from $NEWSYS..."
+
+OLDSYS=orig-system
+SMALI=../smali-1.2.3.jar
+BAKSMALI=../baksmali-1.2.3.jar
+MKYAFFS2IMAGE=../$1/out/host/linux-x86/bin/mkyaffs2image
+SIGNAPK=../$1/out/host/linux-x86/framework/signapk.jar
+ZIPALIGN=../$1/out/host/linux-x86/bin/zipalign
+KEYDIR=../$1/build/target/product/security
+
+function resign() {
+  #To fix E/PackageManager(  681): Package foobar has no signatures that match those in shared user android.uid.system; ignoring!
+  java -jar ../$SIGNAPK ../$KEYDIR/platform.x509.pem ../$KEYDIR/platform.pk8 $1 $1-signed
+  rm "$1"
+  ../$ZIPALIGN 4 $1-signed $1
+  rm "$1-signed"
+}
+ 
+
+function install() {
+  cp -af ../$NEWSYS/$1 $1
+
+}
+
+function installold() {
+  if [[ -e "$1" ]]; then
+    echo "Overwriting $1 by original"
+  fi
+  if [[ -f "../$NEWSYS/$1" ]]; then
+    NM=`md5sum ../$NEWSYS/$1 | cut -d' ' -f1`
+    OM=`md5sum ../$OLDSYS/$1 | cut -d' ' -f1`
+    if [[ "$NM" == "$OM" ]]; then
+        echo "Info: installed original $1 but new is the same"
+    fi
+  fi
+  cp -fa ../$OLDSYS/$1 $1
+}
+
+function installcustom() {
+  if [[ "a$2" == "a" ]];then
+    cp -fa ../custom/$1 $1
+  else
+    cp -fa ../custom/$1 $2
+  fi
+}
+
+function deodex() {
+
+  if [[ ! -d ../deodex/$OLDSYS/$1 ]]; then
+    echo "Deodexing $1"
+    mkdir -p ../deodex/$OLDSYS/$1
+    java -jar ../$BAKSMALI -d ../$OLDSYS/framework -x ../$OLDSYS/$1.odex -o ../deodex/$OLDSYS/$1/
+  fi
+
+  echo "Compiling $1"
+  rm -Rf ../temp
+  mkdir ../temp
+  java -Xmx512M -jar ../$SMALI ../deodex/$OLDSYS/$1 -o ../temp/classes.dex
+
+  if [[ -f ../$OLDSYS/$1.jar ]]; then
+    ARCHIVE="$1.jar"
+  elif [[ -f ../$OLDSYS/$1.apk ]]; then
+    ARCHIVE="$1.apk"
+  else
+    echo "ERROR: no archive apk/jar for $1 found!"
+    exit 1
+  fi
+
+  cp -fa ../$OLDSYS/$ARCHIVE $ARCHIVE
+  #zip --junk-paths -u $ARCHIVE ../deodex/$OLDSYS/$1/classes.dex
+  7z a -tzip $ARCHIVE ../temp/classes.dex -mx5 > /dev/null
+}
+
+source $1-cmd
+
+if [[ ! -d $OLDSYS ]]; then
+  echo "ERROR: directory $OLDSYS does not exist!"
+  echo "Extract korean-v10t system.img to that directory or run"
+  echo "adb pull /system $OLDSYS with korean-v10t (by zacpod) installed"
+  exit 1
+fi
+
+if [[ ! -d $NEWSYS ]]; then
+  echo "Directory $NEWSYS does not exist"
+  echo "This should be a link to ../ca-donut/out/target/product/generic/system"
+  echo "Execute: ln -s ../ca-donut/out/target/product/generic/system ca-donut"
+  exit 1
+fi
+
+rm -fR temp && mkdir temp
+
+rm -fR system && \
+mkdir system && \
+cd system
+
+do_stuff
+
+cd .. 
+$MKYAFFS2IMAGE -f ./system $OUTIMG
+rm -Rf temp
