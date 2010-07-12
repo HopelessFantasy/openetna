@@ -1,0 +1,70 @@
+.class public final Landroid/provider/Calendar;
+.super Ljava/lang/Object;
+.source "Calendar.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroid/provider/Calendar$ExtendedProperties;,
+        Landroid/provider/Calendar$ExtendedPropertiesColumns;,
+        Landroid/provider/Calendar$CalendarAlerts;,
+        Landroid/provider/Calendar$CalendarAlertsColumns;,
+        Landroid/provider/Calendar$Reminders;,
+        Landroid/provider/Calendar$RemindersColumns;,
+        Landroid/provider/Calendar$BusyBits;,
+        Landroid/provider/Calendar$BusyBitsColumns;,
+        Landroid/provider/Calendar$CalendarMetaData;,
+        Landroid/provider/Calendar$CalendarMetaDataColumns;,
+        Landroid/provider/Calendar$Instances;,
+        Landroid/provider/Calendar$Events;,
+        Landroid/provider/Calendar$EventsColumns;,
+        Landroid/provider/Calendar$Attendees;,
+        Landroid/provider/Calendar$AttendeesColumns;,
+        Landroid/provider/Calendar$Calendars;,
+        Landroid/provider/Calendar$CalendarsColumns;
+    }
+.end annotation
+
+
+# static fields
+.field public static final AUTHORITY:Ljava/lang/String; = "calendar"
+
+.field public static final CONTENT_URI:Landroid/net/Uri; = null
+
+.field public static final EVENT_BEGIN_TIME:Ljava/lang/String; = "beginTime"
+
+.field public static final EVENT_END_TIME:Ljava/lang/String; = "endTime"
+
+.field public static final EVENT_REMINDER_ACTION:Ljava/lang/String; = "android.intent.action.EVENT_REMINDER"
+
+.field public static final TAG:Ljava/lang/String; = "Calendar"
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
+
+    .prologue
+    .line 74
+    const-string v0, "content://calendar"
+
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Landroid/provider/Calendar;->CONTENT_URI:Landroid/net/Uri;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .registers 1
+
+    .prologue
+    .line 52
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 1140
+    return-void
+.end method
