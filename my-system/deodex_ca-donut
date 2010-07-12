@@ -1,0 +1,26 @@
+#!/bin/bash
+
+function deodexFile() {
+  NEWSYS=ca-donut
+  if [[ $# -ne 1 ]]; then
+   echo $0 app/Mms
+   exit 1
+  fi
+
+
+  if [[ -e $NEWSYS/$1.jar ]];then
+  CF=$NEWSYS/$1.jar
+  elif [[ -e $NEWSYS/$1.apk ]];then
+  CF=$NEWSYS/$1.apk
+  else
+   echo "file not found"
+   exit 1
+  fi
+
+  rm -R deodex/$NEWSYS/$1
+  mkdir -p deodex/$NEWSYS/$1
+  java -jar ../baksmali-1.2.3.jar -d ca-donut/framework  $CF -o deodex/$NEWSYS/$1
+}
+
+for i in `ls ca-donut/framework/*.jar`; do echo framework/$(basename $i); deodexFile framework/$(basename $i .jar); done
+for i in `ls ca-donut/app/*.apk`; do echo app/$(basename $i); deodexFile app/$(basename $i .apk); done
