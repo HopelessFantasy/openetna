@@ -45,23 +45,26 @@ done
 installold app/WeatherApp.apk
 #installold app/cz.romario.opensudoku.apk
 installold app/EnhancedGoogleSearchProvider.apk #this needs to be resigned for shared uid
-installold app/lgecamera.apk
 #installold app/com.stain46.taghome16.apk
 #installold app/com.betterandroid.betterkeyboard.apk
 installold app/NetworkLocation.apk
 installold app/XIM.apk
+installold app/lgecamera.apk #in uid.media
+installold app/DivxRegistration.apk #in uid.media
+installold app/ArcMediaGallery.apk #in uid.media
+installold app/ArcMMP.apk #in uid.media
 #installold app/com.mathpad.mobile.android.wt.unit.apk
 #installold app/com.motalen.batterytimelite.apk
 #installold app/com.twidroid.apk
 #installold app/com.farproc.wifi.analyzer.apk
-installold app/ArcMediaGallery.apk
 #installold app/com.androidapps.widget.weather2.apk
 #installold app/com.pocketools.currency.apk
 #installold app/com.jiuzhangtech.rushhour.apk
 #installold app/kr.mobilesoft.yxflash.apk
 installold app/WifiService.apk
-installold app/GoogleCheckin.apk
-installold app/ArcWorkshop.apk
+installold app/GoogleCheckin.apk #in uid.system
+installold app/ArcWorkshop.apk #in uid.media
+installold app/ArcVideoEditor.apk #in uid.media
 #installold app/org.adw.launcher_donut.apk
 #installold app/Maps.apk #is in market
 #installold app/aDosBox.apk
@@ -102,16 +105,12 @@ echo Copying additional apps
 installold app/com.android.stopwatch.apk
 #installold app/toleSetup.apk
 #installold app/WeatherApp.apk
-installold app/ArcVideoEditor.apk
 installold app/bz.ktk.bubble.apk
 installold app/com.speedsoftware.rootexplorer.apk
-installold app/DivxRegistration.apk
-installold app/ArcMMP.apk
 installold app/com.appdroid.anycut.apk
 #installold app/cz.romario.opensudoku.apk
 installold app/Quickoffice.apk
 #installold app/EnhancedGoogleSearchProvider.apk
-installold app/lgecamera.apk
 installold app/koushikdutta.superuser.apk
 #installold app/com.stain46.taghome16.apk
 #installold app/com.betterandroid.betterkeyboard.apk
@@ -119,7 +118,6 @@ installold app/koushikdutta.superuser.apk
 #installold app/com.motalen.batterytimelite.apk
 #installold app/com.twidroid.apk
 #installold app/com.farproc.wifi.analyzer.apk
-installold app/ArcMediaGallery.apk
 installold app/com.arron.taskManagerFree.apk
 installold app/com.eclipsim.gpsstatus2.apk
 #installold app/com.androidapps.widget.weather2.apk
@@ -127,7 +125,6 @@ installold app/com.eclipsim.gpsstatus2.apk
 installold app/whiteCompass.apk
 #installold app/com.jiuzhangtech.rushhour.apk
 #installold app/kr.mobilesoft.yxflash.apk
-installold app/ArcWorkshop.apk
 #installold app/org.adw.launcher_donut.apk
 #installold app/Maps.apk #is in market
 installold app/My_e-mail_Android.apk
