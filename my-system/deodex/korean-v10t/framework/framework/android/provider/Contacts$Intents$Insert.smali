@@ -1,0 +1,106 @@
+.class public final Landroid/provider/Contacts$Intents$Insert;
+.super Ljava/lang/Object;
+.source "Contacts.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/provider/Contacts$Intents;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "Insert"
+.end annotation
+
+
+# static fields
+.field public static final ACTION:Ljava/lang/String; = "android.intent.action.INSERT"
+
+.field public static final BIRTHDAY:Ljava/lang/String; = "birthday"
+
+.field public static final COMPANY:Ljava/lang/String; = "company"
+
+.field public static final CONTACT_PHOTO:Ljava/lang/String; = "contact_photo"
+
+.field public static final DRMPHOTO_DATA:Ljava/lang/String; = "contact_drmphoto_data"
+
+.field public static final DRMPHOTO_FILE:Ljava/lang/String; = "contact_drmphoto_file"
+
+.field public static final EMAIL:Ljava/lang/String; = "email"
+
+.field public static final EMAIL_ISPRIMARY:Ljava/lang/String; = "email_isprimary"
+
+.field public static final EMAIL_TYPE:Ljava/lang/String; = "email_type"
+
+.field public static final FULL_MODE:Ljava/lang/String; = "full_mode"
+
+.field public static final GROUP_NAME:Ljava/lang/String; = "group_name"
+
+.field public static final IM_HANDLE:Ljava/lang/String; = "im_handle"
+
+.field public static final IM_ISPRIMARY:Ljava/lang/String; = "im_isprimary"
+
+.field public static final IM_PROTOCOL:Ljava/lang/String; = "im_protocol"
+
+.field public static final JOB_TITLE:Ljava/lang/String; = "job_title"
+
+.field public static final NAME:Ljava/lang/String; = "name"
+
+.field public static final NOTES:Ljava/lang/String; = "notes"
+
+.field public static final PHONE:Ljava/lang/String; = "phone"
+
+.field public static final PHONETIC_NAME:Ljava/lang/String; = "phonetic_name"
+
+.field public static final PHONE_ISPRIMARY:Ljava/lang/String; = "phone_isprimary"
+
+.field public static final PHONE_TYPE:Ljava/lang/String; = "phone_type"
+
+.field public static final POSTAL:Ljava/lang/String; = "postal"
+
+.field public static final POSTAL_ISPRIMARY:Ljava/lang/String; = "postal_isprimary"
+
+.field public static final POSTAL_TYPE:Ljava/lang/String; = "postal_type"
+
+.field public static final SECONDARY_EMAIL:Ljava/lang/String; = "secondary_email"
+
+.field public static final SECONDARY_EMAIL_TYPE:Ljava/lang/String; = "secondary_email_type"
+
+.field public static final SECONDARY_PHONE:Ljava/lang/String; = "secondary_phone"
+
+.field public static final SECONDARY_PHONE_TYPE:Ljava/lang/String; = "secondary_phone_type"
+
+.field public static final SNS_ID:Ljava/lang/String; = "sns_id"
+
+.field public static final SN_SITE_ID:Ljava/lang/String; = "sn_site_id"
+
+.field public static final SN_USER_ID:Ljava/lang/String; = "sn_user_id"
+
+.field public static final TERTIARY_EMAIL:Ljava/lang/String; = "tertiary_email"
+
+.field public static final TERTIARY_EMAIL_TYPE:Ljava/lang/String; = "tertiary_email_type"
+
+.field public static final TERTIARY_PHONE:Ljava/lang/String; = "tertiary_phone"
+
+.field public static final TERTIARY_PHONE_TYPE:Ljava/lang/String; = "tertiary_phone_type"
+
+.field public static final USER_ID:Ljava/lang/String; = "user_id"
+
+.field public static final WEBSITE:Ljava/lang/String; = "website"
+
+.field public static final WEBSITE_ISPRIMARY:Ljava/lang/String; = "website_isprimary"
+
+.field public static final WEBSITE_TYPE:Ljava/lang/String; = "website_type"
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 1
+
+    .prologue
+    .line 2587
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
