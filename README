@@ -1,0 +1,14 @@
+1. download smali-1.2.3.jar and baksmali-1.2.3.jar into this directory
+
+2. download repository:
+  repo init -u git://codeaurora.org/platform/manifest.git -b donut ca-donut
+  cd ca-donut
+  repo sync
+
+
+To build the source:
+
+cd ca-donut
+. build/envsetup.sh
+choosecombo 1 1 generic eng
+make -j3
