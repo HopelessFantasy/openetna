@@ -1,5 +1,8 @@
-extract the KH5200 kernel to my-kernel (.config is already in there)
-go to my-kernel
+(pathToAndroidSource/prebuilt/linux-x86/toolchain/arm-eabi-4.3.1/bin must be in your PATH!)
+
+download KH5200 1.6 source and extract it
+copy KH5200-Source/kernel/* into my-kernel
+cd my-kernel
 run ./doBuild
 
 go back in this directory
