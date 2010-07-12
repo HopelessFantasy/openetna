@@ -1,0 +1,156 @@
+#!/bin/bash
+
+OLDSYS=korean-v10t
+NEWSYS=ca-donut
+
+function do_stuff() {
+installold etc 
+installold usr
+installold 3rd_party 
+#installold app 
+installold bin 
+installold busybox 
+installold fonts 
+#installold framework 
+installold lib 
+installold media
+installold sounds 
+installold xbin 
+installold build.prop
+
+
+#Install framework
+mkdir framework
+for i in `find ../$OLDSYS/framework -name '*.odex'`
+do
+  I=$(basename $i .odex)
+  deodex framework/$I
+done
+installold framework/framework-res.apk
+resign framework/framework-res.apk
+installold framework/lge-res.apk
+resign framework/lge-res.apk
+
+
+#Install app
+mkdir app
+for i in `find ../$OLDSYS/app -name '*.odex'`
+do
+  I=$(basename $i .odex)
+  deodex app/$I
+done
+
+#those are not in odex form
+#installold app/toleSetup.apk
+installold app/WeatherApp.apk
+#installold app/cz.romario.opensudoku.apk
+installold app/EnhancedGoogleSearchProvider.apk #this needs to be resigned for shared uid
+installold app/lgecamera.apk
+#installold app/com.stain46.taghome16.apk
+#installold app/com.betterandroid.betterkeyboard.apk
+installold app/NetworkLocation.apk
+installold app/XIM.apk
+#installold app/com.mathpad.mobile.android.wt.unit.apk
+#installold app/com.motalen.batterytimelite.apk
+#installold app/com.twidroid.apk
+#installold app/com.farproc.wifi.analyzer.apk
+installold app/ArcMediaGallery.apk
+#installold app/com.androidapps.widget.weather2.apk
+#installold app/com.pocketools.currency.apk
+#installold app/com.jiuzhangtech.rushhour.apk
+#installold app/kr.mobilesoft.yxflash.apk
+installold app/WifiService.apk
+installold app/GoogleCheckin.apk
+installold app/ArcWorkshop.apk
+#installold app/org.adw.launcher_donut.apk
+#installold app/Maps.apk #is in market
+#installold app/aDosBox.apk
+#installold app/com.google.zxing.client.android.apk
+#installold app/alterforce.jewellust_lite.apk
+
+#Copy from ca-donut
+install app/Settings.apk
+install app/SettingsProvider.apk
+install app/Mms.apk
+
+
+echo Resigning all under app/
+for i in `find app -name '*.apk'`
+do
+  resign $i
+done
+
+
+#The apps in here are exactly those who have been signed by Google
+GAPPS="app/Vending.apk app/Gmail.apk app/GmailProvider.apk app/GoogleApps.apk app/GooglePartnerSetup.apk app/GoogleSettingsProvider.apk app/gtalkservice.apk app/ImProvider.apk app/MarketUpdater.apk app/MediaUploader.apk app/SetupWizard.apk app/Street.apk app/Talk.apk app/YouTube.apk app/Maps.apk"
+
+#Gapps must not be resigned!
+#or you will get com.google.android.googlelogin.GoogleLoginServiceNotFoundException: The Google login service cannot be verified
+echo Copying Google apps
+for i in $GAPPS
+do
+  if [[ -e ../$OLDSYS/app/$(basename $i .apk).odex ]]; then
+    echo "Error GoogleApp is only available in odex!"
+    exit 1
+  fi
+  installold $i
+  #phone_copyTo $i /system/$i
+done
+
+echo Copying additional apps
+#those are not in odex form
+installold app/com.android.stopwatch.apk
+#installold app/toleSetup.apk
+#installold app/WeatherApp.apk
+installold app/ArcVideoEditor.apk
+installold app/bz.ktk.bubble.apk
+installold app/com.speedsoftware.rootexplorer.apk
+installold app/DivxRegistration.apk
+installold app/ArcMMP.apk
+installold app/com.appdroid.anycut.apk
+#installold app/cz.romario.opensudoku.apk
+installold app/Quickoffice.apk
+#installold app/EnhancedGoogleSearchProvider.apk
+installold app/lgecamera.apk
+installold app/koushikdutta.superuser.apk
+#installold app/com.stain46.taghome16.apk
+#installold app/com.betterandroid.betterkeyboard.apk
+#installold app/com.mathpad.mobile.android.wt.unit.apk
+#installold app/com.motalen.batterytimelite.apk
+#installold app/com.twidroid.apk
+#installold app/com.farproc.wifi.analyzer.apk
+installold app/ArcMediaGallery.apk
+installold app/com.arron.taskManagerFree.apk
+installold app/com.eclipsim.gpsstatus2.apk
+#installold app/com.androidapps.widget.weather2.apk
+#installold app/com.pocketools.currency.apk
+installold app/whiteCompass.apk
+#installold app/com.jiuzhangtech.rushhour.apk
+#installold app/kr.mobilesoft.yxflash.apk
+installold app/ArcWorkshop.apk
+#installold app/org.adw.launcher_donut.apk
+#installold app/Maps.apk #is in market
+installold app/My_e-mail_Android.apk
+#installold app/aDosBox.apk
+#installold app/com.google.zxing.client.android.apk
+installcustom app/com.keramidas.TitaniumBackup.apk
+
+install etc/security/cacerts.bks 
+install etc/security/otacerts.zip
+
+#Copy standard su
+install xbin/su
+mv xbin/su xbin/su2
+chmod 4777 xbin/su2
+
+#Copy SuperUser whitelist's su
+cp bin/su xbin/su
+chmod 4777 bin/su
+chmod 4777 xbin/su
+
+cp ../../my-boot/my-kernel/drivers/net/wireless/bcm4325/wireless.ko lib/modules/
+#installcustom etc/apns-conf.xml
+#installcustom media/audio/notifications/Pleasant_Ding.ogg
+#installcustom build.prop
+}
+
