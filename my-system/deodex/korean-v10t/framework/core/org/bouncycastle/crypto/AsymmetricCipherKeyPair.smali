@@ -1,0 +1,52 @@
+.class public Lorg/bouncycastle/crypto/AsymmetricCipherKeyPair;
+.super Ljava/lang/Object;
+.source "AsymmetricCipherKeyPair.java"
+
+
+# instance fields
+.field private privateParam:Lorg/bouncycastle/crypto/CipherParameters;
+
+.field private publicParam:Lorg/bouncycastle/crypto/CipherParameters;
+
+
+# direct methods
+.method public constructor <init>(Lorg/bouncycastle/crypto/CipherParameters;Lorg/bouncycastle/crypto/CipherParameters;)V
+    .registers 3
+    .parameter "publicParam"
+    .parameter "privateParam"
+
+    .prologue
+    .line 20
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 21
+    iput-object p1, p0, Lorg/bouncycastle/crypto/AsymmetricCipherKeyPair;->publicParam:Lorg/bouncycastle/crypto/CipherParameters;
+
+    .line 22
+    iput-object p2, p0, Lorg/bouncycastle/crypto/AsymmetricCipherKeyPair;->privateParam:Lorg/bouncycastle/crypto/CipherParameters;
+
+    .line 23
+    return-void
+.end method
+
+
+# virtual methods
+.method public getPrivate()Lorg/bouncycastle/crypto/CipherParameters;
+    .registers 2
+
+    .prologue
+    .line 42
+    iget-object v0, p0, Lorg/bouncycastle/crypto/AsymmetricCipherKeyPair;->privateParam:Lorg/bouncycastle/crypto/CipherParameters;
+
+    return-object v0
+.end method
+
+.method public getPublic()Lorg/bouncycastle/crypto/CipherParameters;
+    .registers 2
+
+    .prologue
+    .line 32
+    iget-object v0, p0, Lorg/bouncycastle/crypto/AsymmetricCipherKeyPair;->publicParam:Lorg/bouncycastle/crypto/CipherParameters;
+
+    return-object v0
+.end method
