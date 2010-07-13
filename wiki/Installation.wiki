@@ -1,0 +1,26 @@
+#summary Installation of the current ROM
+#labels Phase-Implementation
+
+_This Document is not finished._
+
+= Introduction =
+
+This document covers the flashing process of the current ROM
+
+= General Steps = 
+
+The steps described in this document use fastboot to flash the new
+system.
+
+== Recover Fastboot ==
+
+If you have installed LG official v10I, v10N or some other version that
+does not have fastboot, you should downgrade using LG Utils and
+LG Mobile Update.
+
+== When Upgrading from 1.5 ==
+
+If you are upgrading from a v1.5 ROM you should:
+  * backup all the information you want to a different medium.
+
+== When Upgrading from 1.6 ==
