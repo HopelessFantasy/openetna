@@ -1,0 +1,2 @@
+repo init -u git://codeaurora.org/platform/manifest.git -b donut 
+repo sync
