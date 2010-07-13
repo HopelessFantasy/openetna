@@ -1,0 +1,11 @@
+#!/bin/bash
+if [[ $# -ne 2 ]]; then
+  echo Script to upload files when adb does not run as root
+  echo Call by $0 source destination
+  exit 1
+fi
+
+echo "$1 -> $2"
+adb push $1 /sdcard/temp123124
+adb shell su -c \'busybox cp /sdcard/temp123124 $2\'
+
