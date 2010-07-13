@@ -1,14 +1,23 @@
 1. download smali-1.2.3.jar and baksmali-1.2.3.jar into this directory
+  from http://code.google.com/p/smali/downloads/list
 
-2. download repository:
-  repo init -u git://codeaurora.org/platform/manifest.git -b donut ca-donut
+2. download codeauroa/donut source
   cd ca-donut
-  repo sync
+  ./downloadRepo
+  if downloadRepo gives an xml error
+   open .repo/manifests/default.xml in an editor 
+   and change 
+   <project path="build" name="platform/build" \>
+   into
+   <project path="build" name="platform/build" >
+   then run ./downloadRepo again
 
+3. build the source:
+  cd ca-donut
+  ./doBuild
 
-To build the source:
+4. build boot.img
+  goto my-boot and read README
 
-cd ca-donut
-. build/envsetup.sh
-choosecombo 1 1 generic eng
-make -j3
+4. build system.img
+  goto my-system and read README
