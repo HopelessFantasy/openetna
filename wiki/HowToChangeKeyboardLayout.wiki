@@ -1,4 +1,5 @@
 #summary Howto change your keyboard layout
+#labels Featured
 
 = Introduction =
 
