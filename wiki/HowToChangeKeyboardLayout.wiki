@@ -1,0 +1,14 @@
+#summary Howto change your keyboard layout
+
+= Introduction =
+
+This will change the keyboard layout of the slideout keyboard to QWERTY, QWERTZ, AWERTY, or anything else that is available.
+
+
+= What to do =
+  * Open the Root Explorer
+  * Goto /system/usr/keylayout
+  * Rename eve_qwerty.kl-yourlanguage to eve_qwerty.kl (Overwrite the existing file)
+
+= If your layout is not available =
+  Please copy the eve_qwerty.kl from an official rom in your language. Then please fill an issue and attach this file, so we can make it available to everyone
