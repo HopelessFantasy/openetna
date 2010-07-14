@@ -3,8 +3,8 @@
 set -e #exit on error
 set -u #error on unset variable
 
-if [[ "a$1" == "a" ]]; then
-    echo "no dir given on commandline"
+if [[ $# -ne 1 ]]; then
+    echo "Usage: $0 cmdfile"
     exit 1
 fi
 
@@ -49,7 +49,7 @@ function installold() {
 }
 
 function installcustom() {
-  if [[ "a$2" == "a" ]];then
+  if [[ $# -eq 1 ]];then
     cp -fa ../custom/$1 $1
   else
     cp -fa ../custom/$1 $2
