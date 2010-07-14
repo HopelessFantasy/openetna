@@ -29,6 +29,7 @@ install framework/framework-tests.jar #same as
 install framework/ime.jar #same as
 install framework/input.jar #same as
 install framework/pm.jar #same as korean-v10t
+install framework/monkey.jar #this is for automated application testing. lg added switch '--hprof-all', we ignore this for now
 
 #Compile files from deodex/korean-v10t/framework/...
 deodex framework/android.policy #what is changed in here?
@@ -36,7 +37,6 @@ deodex framework/core #there are just 10 files or so changed, so someone should 
 deodex framework/com.google.android.gtalkservice #this is proprietary
 deodex framework/com.google.android.maps #this is proprietary
 deodex framework/framework
-deodex framework/monkey #what is this for?
 deodex framework/services
 deodex framework/qcnvitems
 deodex framework/qcrilhook
@@ -50,62 +50,60 @@ resign framework/lge-res.apk
 
 #-- Install app
 mkdir app
-#for i in `find ../$OLDSYS/app -name '*.odex'`
-#do
-#  I=$(basename $i .odex)
-#  echo deodex app/$I
-#  deodex app/$I
-#done
+#Changed by LG:
 deodex app/SoundRecorder
-deodex app/PowerOff
-deodex app/GlobalSearch
-deodex app/Homecube
-deodex app/ELTTest
 deodex app/CalendarProvider
-deodex app/ApplicationsProvider
-deodex app/LGSetupWizard
-deodex app/HiddenMenu
-deodex app/Linkbook
 deodex app/AlarmClock
-deodex app/ChargingTest
-deodex app/DrmDataMngr
 deodex app/GoogleSubscribedFeedsProvider
 deodex app/Browser
 deodex app/Calendar
-deodex app/LgeFmRadio
 deodex app/DownloadProvider
 deodex app/Music
-deodex app/LGSystemProvider
 deodex app/Launcher
-deodex app/RingsExtended
-deodex app/GoogleSearch
-deodex app/Memo
 deodex app/Contacts
-deodex app/DrmService
-deodex app/SimChecker
-deodex app/FavoriteContacts
-deodex app/Stk
 deodex app/GoogleContactsProvider
-deodex app/orangephorowidget
-deodex app/HTMLViewer
 deodex app/Phone
 deodex app/MediaProvider
-deodex app/PackageInstaller
 deodex app/TelephonyProvider
-deodex app/UserDictionaryProvider
-deodex app/OTA
 deodex app/Camera
-deodex app/PicoTts
+#Added by LG:
 deodex app/Homeselector
-deodex app/Calculator
+deodex app/Homecube #LG's homescreen
+deodex app/Memo #?
+deodex app/ChargingTest #?
+deodex app/DrmDataMngr #?
+deodex app/DrmService #?
+deodex app/FavoriteContacts #Favourite Contacts app
+deodex app/HiddenMenu #The famous HiddenMenu
+deodex app/ELTTest #?
+deodex app/Linkbook #SNS application
+deodex app/LGSetupWizard #?
+deodex app/LgeFmRadio #FM Radio
+deodex app/LGSystemProvider #?
+deodex app/OTA #What does this do? over-the-air updates?
+deodex app/orangephorowidget #what does this do?
+deodex app/PowerOff #The dialog that appears when pressing the power off button
+deodex app/RingsExtended #?
+deodex app/SimChecker #?
+deodex app/Stk #Sim toolkit
 
-#Copy from ca-donut
+#Copy from (patched) ca-donut
 install app/Settings.apk
 install app/SettingsProvider.apk
 install app/Mms.apk
+install app/GoogleSearch.apk #Differences have been patched into source, just minor remaining
+
+#Copy unchanged apps
+install app/GlobalSearch.apk #has only very minor differences
+install app/PackageInstaller.apk #not changed
+install app/HTMLViewer.apk #not changed
+install app/ApplicationsProvider.apk #not changed
 install app/DrmProvider.apk #not changed in korean-v10t
 install app/VpnServices.apk #not changed
 install app/TtsService.apk #not changed
+install app/UserDictionaryProvider.apk #not changed
+install app/PicoTts.apk #not changed
+install app/Calculator.apk #very minor changes
 
 #those are not in odex form
 #installold app/toleSetup.apk
