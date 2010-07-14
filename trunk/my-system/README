@@ -1,0 +1,13 @@
+== Create the system.img ==
+./makeSystemImg ca-donut-cmd
+the system will then be in 'system' directory and in system.img
+
+== Infos ==
+the script makeSystemImg defines all function and then sources ca-donut-cmd
+inside ca-donut-cmd the image is assembled
+
+install: copies the file from ca-donut
+installold: copies the file from korean-v10t
+deodex: comiles the file from deodex/korean-v10t/
+resign: signs the apk with the key from ca-donut
+

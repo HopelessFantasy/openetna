@@ -1,23 +1,24 @@
 #!/bin/bash
 
 set -e #exit on error
+set -u #error on unset variable
 
 if [[ "a$1" == "a" ]]; then
     echo "no dir given on commandline"
     exit 1
-else
-  NEWSYS="$1"
-  OUTIMG="system.img"
 fi
+
+source $1
+
 echo "Building from $NEWSYS..."
 
-OLDSYS=orig-system
+OUTIMG=system.img
 SMALI=../smali-1.2.3.jar
 BAKSMALI=../baksmali-1.2.3.jar
-MKYAFFS2IMAGE=../$1/out/host/linux-x86/bin/mkyaffs2image
-SIGNAPK=../$1/out/host/linux-x86/framework/signapk.jar
-ZIPALIGN=../$1/out/host/linux-x86/bin/zipalign
-KEYDIR=../$1/build/target/product/security
+MKYAFFS2IMAGE=../$NEWSYS/out/host/linux-x86/bin/mkyaffs2image
+SIGNAPK=../$NEWSYS/out/host/linux-x86/framework/signapk.jar
+ZIPALIGN=../$NEWSYS/out/host/linux-x86/bin/zipalign
+KEYDIR=../$NEWSYS/build/target/product/security
 
 function resign() {
   #To fix E/PackageManager(  681): Package foobar has no signatures that match those in shared user android.uid.system; ignoring!
@@ -81,8 +82,6 @@ function deodex() {
   #zip --junk-paths -u $ARCHIVE ../deodex/$OLDSYS/$1/classes.dex
   7z a -tzip $ARCHIVE ../temp/classes.dex -mx5 > /dev/null
 }
-
-source $1-cmd
 
 if [[ ! -d $OLDSYS ]]; then
   echo "ERROR: directory $OLDSYS does not exist!"
