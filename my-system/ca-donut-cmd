@@ -7,11 +7,9 @@ function do_stuff() {
 installold etc 
 installold usr
 installold 3rd_party 
-#installold app 
 installold bin 
 installold busybox 
 installold fonts 
-#installold framework 
 installold lib 
 installold media
 installold sounds 
@@ -19,26 +17,95 @@ installold xbin
 installold build.prop
 
 
-#Install framework
+#-- Install framework
 mkdir framework
-for i in `find ../$OLDSYS/framework -name '*.odex'`
-do
-  I=$(basename $i .odex)
-  deodex framework/$I
-done
+#Copy from ca-donut
+install framework/am.jar #same as on korean-v10t
+install framework/svc.jar #same as on korean-v10t
+install framework/android.test.runner.jar #very minor changes, what does that do anyway?
+install framework/bmgr.jar #same as
+install framework/ext.jar #very minor differences
+install framework/framework-tests.jar #same as
+install framework/ime.jar #same as
+install framework/input.jar #same as
+install framework/pm.jar #same as korean-v10t
+
+#Compile files from deodex/korean-v10t/framework/...
+deodex framework/android.policy #what is changed in here?
+deodex framework/core #there are just 10 files or so changed, so someone should look into that
+deodex framework/com.google.android.gtalkservice #this is proprietary
+deodex framework/com.google.android.maps #this is proprietary
+deodex framework/framework
+deodex framework/monkey #what is this for?
+deodex framework/services
+deodex framework/qcnvitems
+deodex framework/qcrilhook
+
+#Copy directly from korean-v10t
 installold framework/framework-res.apk
 resign framework/framework-res.apk
 installold framework/lge-res.apk
 resign framework/lge-res.apk
 
 
-#Install app
+#-- Install app
 mkdir app
-for i in `find ../$OLDSYS/app -name '*.odex'`
-do
-  I=$(basename $i .odex)
-  deodex app/$I
-done
+#for i in `find ../$OLDSYS/app -name '*.odex'`
+#do
+#  I=$(basename $i .odex)
+#  echo deodex app/$I
+#  deodex app/$I
+#done
+deodex app/SoundRecorder
+deodex app/PowerOff
+deodex app/GlobalSearch
+deodex app/Homecube
+deodex app/ELTTest
+deodex app/CalendarProvider
+deodex app/ApplicationsProvider
+deodex app/LGSetupWizard
+deodex app/HiddenMenu
+deodex app/Linkbook
+deodex app/AlarmClock
+deodex app/ChargingTest
+deodex app/DrmDataMngr
+deodex app/GoogleSubscribedFeedsProvider
+deodex app/Browser
+deodex app/Calendar
+deodex app/LgeFmRadio
+deodex app/DownloadProvider
+deodex app/Music
+deodex app/LGSystemProvider
+deodex app/Launcher
+deodex app/RingsExtended
+deodex app/GoogleSearch
+deodex app/Memo
+deodex app/Contacts
+deodex app/DrmService
+deodex app/SimChecker
+deodex app/FavoriteContacts
+deodex app/Stk
+deodex app/GoogleContactsProvider
+deodex app/orangephorowidget
+deodex app/HTMLViewer
+deodex app/Phone
+deodex app/MediaProvider
+deodex app/PackageInstaller
+deodex app/TelephonyProvider
+deodex app/UserDictionaryProvider
+deodex app/OTA
+deodex app/Camera
+deodex app/PicoTts
+deodex app/Homeselector
+deodex app/Calculator
+
+#Copy from ca-donut
+install app/Settings.apk
+install app/SettingsProvider.apk
+install app/Mms.apk
+install app/DrmProvider.apk #not changed in korean-v10t
+install app/VpnServices.apk #not changed
+install app/TtsService.apk #not changed
 
 #those are not in odex form
 #installold app/toleSetup.apk
@@ -71,12 +138,6 @@ installold app/ArcVideoEditor.apk #in uid.media
 #installold app/com.google.zxing.client.android.apk
 #installold app/alterforce.jewellust_lite.apk
 
-#Copy from ca-donut
-install app/Settings.apk
-install app/SettingsProvider.apk
-install app/Mms.apk
-
-
 echo Resigning all under app/
 for i in `find app -name '*.apk'`
 do
@@ -97,8 +158,8 @@ do
     exit 1
   fi
   installold $i
-  #phone_copyTo $i /system/$i
 done
+
 
 echo Copying additional apps
 #those are not in odex form
@@ -138,16 +199,17 @@ install etc/security/otacerts.zip
 #Copy standard su
 install xbin/su
 mv xbin/su xbin/su2
-chmod 4777 xbin/su2
+chmod 4555 xbin/su2
 
 #Copy SuperUser whitelist's su
 cp bin/su xbin/su
-chmod 4777 bin/su
-chmod 4777 xbin/su
+chmod 4555 bin/su
+chmod 4555 xbin/su
 
 cp ../../my-boot/my-kernel/drivers/net/wireless/bcm4325/wireless.ko lib/modules/
-#installcustom etc/apns-conf.xml
-#installcustom media/audio/notifications/Pleasant_Ding.ogg
-#installcustom build.prop
+
+cp usr/keylayout/eve_qwerty.kl usr/keylayout/eve_qwerty.kl-english
+installcustom usr/keylayout/eve_qwerty.kl-german
 }
+
 
