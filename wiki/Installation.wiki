@@ -24,4 +24,12 @@ LG Mobile Update.
 If you are upgrading from a v1.5 ROM you should:
   * backup all the information you want to a different medium.
 
-== When Upgrading from 1.6 ==
+= Install =
+
+* execute the following commands
+** fastboot -w
+** fastboot flash boot boot.img
+** fastboot flash system systemV2.img
+* reboot the phone and it should boot to the new system
+* enter adb shell and change the permissions of /system/bin/su and /system/xbin/su
+* change the language and input language
