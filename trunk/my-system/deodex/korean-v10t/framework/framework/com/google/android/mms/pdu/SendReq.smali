@@ -218,6 +218,22 @@
     return-void
 .end method
 
+.method public getApplicId()[B
+    .registers 3
+
+    .prologue
+    .line 305
+    iget-object v0, p0, Lcom/google/android/mms/pdu/SendReq;->mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
+
+    const/16 v1, 0xb7
+
+    invoke-virtual {v0, v1}, Lcom/google/android/mms/pdu/PduHeaders;->getTextString(I)[B
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public getBcc()[Lcom/google/android/mms/pdu/EncodedStringValue;
     .registers 3
 
@@ -280,6 +296,22 @@
     move-result v0
 
     return v0
+.end method
+
+.method public getDeliveryTime()J
+    .registers 3
+
+    .prologue
+    .line 343
+    iget-object v0, p0, Lcom/google/android/mms/pdu/SendReq;->mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
+
+    const/16 v1, 0x87
+
+    invoke-virtual {v0, v1}, Lcom/google/android/mms/pdu/PduHeaders;->getLongInteger(I)J
+
+    move-result-wide v0
+
+    return-wide v0
 .end method
 
 .method public getExpiry()J
@@ -346,6 +378,22 @@
     return v0
 .end method
 
+.method public getReplyApplicId()[B
+    .registers 3
+
+    .prologue
+    .line 324
+    iget-object v0, p0, Lcom/google/android/mms/pdu/SendReq;->mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
+
+    const/16 v1, 0xb8
+
+    invoke-virtual {v0, v1}, Lcom/google/android/mms/pdu/PduHeaders;->getTextString(I)[B
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public getTransactionId()[B
     .registers 3
 
@@ -360,6 +408,22 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public setApplicId([B)V
+    .registers 4
+    .parameter "value"
+
+    .prologue
+    .line 315
+    iget-object v0, p0, Lcom/google/android/mms/pdu/SendReq;->mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
+
+    const/16 v1, 0xb7
+
+    invoke-virtual {v0, p1, v1}, Lcom/google/android/mms/pdu/PduHeaders;->setTextString([BI)V
+
+    .line 316
+    return-void
 .end method
 
 .method public setBcc([Lcom/google/android/mms/pdu/EncodedStringValue;)V
@@ -431,6 +495,22 @@
     return-void
 .end method
 
+.method public setDeliveryTime(J)V
+    .registers 5
+    .parameter "value"
+
+    .prologue
+    .line 352
+    iget-object v0, p0, Lcom/google/android/mms/pdu/SendReq;->mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
+
+    const/16 v1, 0x87
+
+    invoke-virtual {v0, p1, p2, v1}, Lcom/google/android/mms/pdu/PduHeaders;->setLongInteger(JI)V
+
+    .line 353
+    return-void
+.end method
+
 .method public setExpiry(J)V
     .registers 5
     .parameter "value"
@@ -497,6 +577,22 @@
     invoke-virtual {v0, p1, v1}, Lcom/google/android/mms/pdu/PduHeaders;->setOctet(II)V
 
     .line 267
+    return-void
+.end method
+
+.method public setReplyApplicId([B)V
+    .registers 4
+    .parameter "value"
+
+    .prologue
+    .line 334
+    iget-object v0, p0, Lcom/google/android/mms/pdu/SendReq;->mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
+
+    const/16 v1, 0xb8
+
+    invoke-virtual {v0, p1, v1}, Lcom/google/android/mms/pdu/PduHeaders;->setTextString([BI)V
+
+    .line 335
     return-void
 .end method
 
