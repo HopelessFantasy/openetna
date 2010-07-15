@@ -4878,10 +4878,10 @@
 
 
 # virtual methods
-.method public parse(Landroid/content/Context;)Lcom/google/android/mms/pdu/GenericPdu;
+.method public parse()Lcom/google/android/mms/pdu/GenericPdu;
     .registers 16
     #.parameter "context"
-
+    
     .prologue
     .line 133
     iget-object v12, p0, Lcom/google/android/mms/pdu/PduParser;->mPduDataStream:Ljava/io/ByteArrayInputStream;
