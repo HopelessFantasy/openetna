@@ -105,6 +105,9 @@ install app/UserDictionaryProvider.apk #not changed
 install app/PicoTts.apk #not changed
 install app/Calculator.apk #very minor changes
 
+#Copy apps that are only in ca-donut
+install app/SpareParts.apk #Some nice utilities
+
 #those are not in odex form
 #installold app/toleSetup.apk
 installold app/WeatherApp.apk
