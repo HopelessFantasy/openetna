@@ -15,6 +15,8 @@
 
 .field public static final DEFAULT_CHARSET_NAME:Ljava/lang/String; = "utf-8"
 
+.field public static final EUC_KR:I = 0x26
+
 .field public static final ISO_8859_1:I = 0x4
 
 .field public static final ISO_8859_2:I = 0x5
@@ -50,6 +52,8 @@
 .field public static final MIMENAME_ANY_CHARSET:Ljava/lang/String; = "*"
 
 .field public static final MIMENAME_BIG5:Ljava/lang/String; = "big5"
+
+.field public static final MIMENAME_EUC_KR:Ljava/lang/String; = "euc-kr"
 
 .field public static final MIMENAME_ISO_8859_1:Ljava/lang/String; = "iso-8859-1"
 
@@ -109,7 +113,7 @@
     .registers 6
 
     .prologue
-    const/16 v3, 0x10
+    const/16 v3, 0x11
 
     const/4 v4, 0x0
 
@@ -122,21 +126,21 @@
 
     move-result v2
 
-    if-nez v2, :cond_90
+    if-nez v2, :cond_96
 
     move v2, v5
 
     :goto_d
     sput-boolean v2, Lcom/google/android/mms/pdu/CharacterSets;->$assertionsDisabled:Z
 
-    .line 56
+    .line 61
     new-array v2, v3, [I
 
-    fill-array-data v2, :array_c2
+    fill-array-data v2, :array_c8
 
     sput-object v2, Lcom/google/android/mms/pdu/CharacterSets;->MIBENUM_NUMBERS:[I
 
-    .line 100
+    .line 115
     new-array v2, v3, [Ljava/lang/String;
 
     const-string v3, "*"
@@ -209,23 +213,29 @@
 
     const/16 v3, 0xc
 
-    const-string v4, "utf-8"
+    const-string v4, "euc-kr"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0xd
 
-    const-string v4, "big5"
+    const-string v4, "utf-8"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0xe
 
-    const-string v4, "iso-10646-ucs-2"
+    const-string v4, "big5"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0xf
+
+    const-string v4, "iso-10646-ucs-2"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0x10
 
     const-string v4, "utf-16"
 
@@ -233,24 +243,24 @@
 
     sput-object v2, Lcom/google/android/mms/pdu/CharacterSets;->MIME_NAMES:[Ljava/lang/String;
 
-    .line 124
+    .line 144
     new-instance v2, Ljava/util/HashMap;
 
     invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
     sput-object v2, Lcom/google/android/mms/pdu/CharacterSets;->MIBENUM_TO_NAME_MAP:Ljava/util/HashMap;
 
-    .line 125
+    .line 145
     new-instance v2, Ljava/util/HashMap;
 
     invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
     sput-object v2, Lcom/google/android/mms/pdu/CharacterSets;->NAME_TO_MIBENUM_MAP:Ljava/util/HashMap;
 
-    .line 126
+    .line 146
     sget-boolean v2, Lcom/google/android/mms/pdu/CharacterSets;->$assertionsDisabled:Z
 
-    if-nez v2, :cond_93
+    if-nez v2, :cond_99
 
     sget-object v2, Lcom/google/android/mms/pdu/CharacterSets;->MIBENUM_NUMBERS:[I
 
@@ -260,7 +270,7 @@
 
     array-length v3, v3
 
-    if-eq v2, v3, :cond_93
+    if-eq v2, v3, :cond_99
 
     new-instance v2, Ljava/lang/AssertionError;
 
@@ -268,29 +278,29 @@
 
     throw v2
 
-    :cond_90
+    :cond_96
     move v2, v4
 
     .line 23
     goto/16 :goto_d
 
-    .line 127
-    :cond_93
+    .line 147
+    :cond_99
     sget-object v2, Lcom/google/android/mms/pdu/CharacterSets;->MIBENUM_NUMBERS:[I
 
     array-length v2, v2
 
     sub-int v0, v2, v5
 
-    .line 128
+    .line 148
     .local v0, count:I
     const/4 v1, 0x0
 
     .local v1, i:I
-    :goto_99
-    if-gt v1, v0, :cond_c0
+    :goto_9f
+    if-gt v1, v0, :cond_c6
 
-    .line 129
+    .line 149
     sget-object v2, Lcom/google/android/mms/pdu/CharacterSets;->MIBENUM_TO_NAME_MAP:Ljava/util/HashMap;
 
     sget-object v3, Lcom/google/android/mms/pdu/CharacterSets;->MIBENUM_NUMBERS:[I
@@ -307,7 +317,7 @@
 
     invoke-virtual {v2, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 130
+    .line 150
     sget-object v2, Lcom/google/android/mms/pdu/CharacterSets;->NAME_TO_MIBENUM_MAP:Ljava/util/HashMap;
 
     sget-object v3, Lcom/google/android/mms/pdu/CharacterSets;->MIME_NAMES:[Ljava/lang/String;
@@ -324,19 +334,19 @@
 
     invoke-virtual {v2, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 128
+    .line 148
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_99
+    goto :goto_9f
 
-    .line 132
-    :cond_c0
+    .line 152
+    :cond_c6
     return-void
 
-    .line 56
+    .line 61
     nop
 
-    :array_c2
+    :array_c8
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
         0x3t 0x0t 0x0t 0x0t
@@ -350,6 +360,7 @@
         0xbt 0x0t 0x0t 0x0t
         0xct 0x0t 0x0t 0x0t
         0x11t 0x0t 0x0t 0x0t
+        0x26t 0x0t 0x0t 0x0t
         0x6at 0x0t 0x0t 0x0t
         0xeat 0x7t 0x0t 0x0t
         0xe8t 0x3t 0x0t 0x0t
@@ -361,7 +372,7 @@
     .registers 1
 
     .prologue
-    .line 134
+    .line 154
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -377,17 +388,17 @@
     .end annotation
 
     .prologue
-    .line 162
+    .line 182
     if-nez p0, :cond_4
 
-    .line 163
+    .line 183
     const/4 v1, -0x1
 
-    .line 170
+    .line 190
     :goto_3
     return v1
 
-    .line 166
+    .line 186
     :cond_4
     sget-object v1, Lcom/google/android/mms/pdu/CharacterSets;->NAME_TO_MIBENUM_MAP:Ljava/util/HashMap;
 
@@ -397,18 +408,18 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 167
+    .line 187
     .local v0, mibEnumValue:Ljava/lang/Integer;
     if-nez v0, :cond_14
 
-    .line 168
+    .line 188
     new-instance v1, Ljava/io/UnsupportedEncodingException;
 
     invoke-direct {v1}, Ljava/io/UnsupportedEncodingException;-><init>()V
 
     throw v1
 
-    .line 170
+    .line 190
     :cond_14
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -427,7 +438,7 @@
     .end annotation
 
     .prologue
-    .line 146
+    .line 166
     sget-object v1, Lcom/google/android/mms/pdu/CharacterSets;->MIBENUM_TO_NAME_MAP:Ljava/util/HashMap;
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -440,18 +451,18 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 147
+    .line 167
     .local v0, name:Ljava/lang/String;
     if-nez v0, :cond_14
 
-    .line 148
+    .line 168
     new-instance v1, Ljava/io/UnsupportedEncodingException;
 
     invoke-direct {v1}, Ljava/io/UnsupportedEncodingException;-><init>()V
 
     throw v1
 
-    .line 150
+    .line 170
     :cond_14
     return-object v0
 .end method

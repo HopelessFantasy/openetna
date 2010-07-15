@@ -7,13 +7,13 @@
 #the value of this static final field might be set in the static constructor
 .field static final synthetic $assertionsDisabled:Z = false
 
-.field private static final DEBUG:Z = false
+.field private static final DEBUG:Z = true
 
 .field private static final END_STRING_FLAG:I = 0x0
 
 .field private static final LENGTH_QUOTE:I = 0x1f
 
-.field private static final LOCAL_LOGV:Z = false
+.field private static final LOCAL_LOGV:Z = true
 
 .field private static final LOG_TAG:Ljava/lang/String; = "PduParser"
 
@@ -41,6 +41,8 @@
 
 .field private static final TYPE_TOKEN_STRING:I = 0x2
 
+#.field private static mContext:Landroid/content/Context;
+
 .field private static mStartParam:[B
 
 .field private static mTypeParam:[B
@@ -61,30 +63,33 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 32
+    .line 52
     const-class v0, Lcom/google/android/mms/pdu/PduParser;
 
     invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
 
     move-result v0
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_13
 
     const/4 v0, 0x1
 
     :goto_a
     sput-boolean v0, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
-    .line 75
+    .line 95
     sput-object v1, Lcom/google/android/mms/pdu/PduParser;->mTypeParam:[B
 
-    .line 80
+    .line 100
     sput-object v1, Lcom/google/android/mms/pdu/PduParser;->mStartParam:[B
+
+    #.line 104
+    #sput-object v1, Lcom/google/android/mms/pdu/PduParser;->mContext:Landroid/content/Context;
 
     return-void
 
-    .line 32
-    :cond_11
+    .line 52
+    :cond_13
     const/4 v0, 0x0
 
     goto :goto_a
@@ -97,26 +102,26 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 94
+    .line 121
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 60
+    .line 80
     iput-object v0, p0, Lcom/google/android/mms/pdu/PduParser;->mPduDataStream:Ljava/io/ByteArrayInputStream;
 
-    .line 65
+    .line 85
     iput-object v0, p0, Lcom/google/android/mms/pdu/PduParser;->mHeaders:Lcom/google/android/mms/pdu/PduHeaders;
 
-    .line 70
+    .line 90
     iput-object v0, p0, Lcom/google/android/mms/pdu/PduParser;->mBody:Lcom/google/android/mms/pdu/PduBody;
 
-    .line 95
+    .line 122
     new-instance v0, Ljava/io/ByteArrayInputStream;
 
     invoke-direct {v0, p1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
     iput-object v0, p0, Lcom/google/android/mms/pdu/PduParser;->mPduDataStream:Ljava/io/ByteArrayInputStream;
 
-    .line 96
+    .line 123
     return-void
 .end method
 
@@ -125,18 +130,18 @@
     .parameter "headers"
 
     .prologue
-    .line 1659
+    .line 1914
     if-nez p0, :cond_4
 
-    .line 1660
+    .line 1915
     const/4 p0, 0x0
 
-    .line 1866
+    .line 2121
     .end local p0
     :goto_3
     return p0
 
-    .line 1664
+    .line 1919
     .restart local p0
     :cond_4
     const/16 v0, 0x8c
@@ -145,7 +150,7 @@
 
     move-result v0
 
-    .line 1667
+    .line 1922
     .local v0, messageType:I
     const/16 v1, 0x8d
 
@@ -153,25 +158,25 @@
 
     move-result v1
 
-    .line 1668
+    .line 1923
     .local v1, mmsVersion:I
     if-nez v1, :cond_14
 
-    .line 1670
+    .line 1925
     const/4 p0, 0x0
 
     goto :goto_3
 
-    .line 1674
+    .line 1929
     :cond_14
     packed-switch v0, :pswitch_data_15c
 
-    .line 1863
+    .line 2118
     const/4 p0, 0x0
 
     goto :goto_3
 
-    .line 1677
+    .line 1932
     :pswitch_19
     const/16 v0, 0x84
 
@@ -180,16 +185,16 @@
     .end local v0           #messageType:I
     move-result-object v0
 
-    .line 1678
+    .line 1933
     .local v0, srContentType:[B
     if-nez v0, :cond_23
 
-    .line 1679
+    .line 1934
     const/4 p0, 0x0
 
     goto :goto_3
 
-    .line 1683
+    .line 1938
     :cond_23
     const/16 v0, 0x89
 
@@ -198,16 +203,16 @@
     .end local v0           #srContentType:[B
     move-result-object v0
 
-    .line 1684
+    .line 1939
     .local v0, srFrom:Lcom/google/android/mms/pdu/EncodedStringValue;
     if-nez v0, :cond_2d
 
-    .line 1685
+    .line 1940
     const/4 p0, 0x0
 
     goto :goto_3
 
-    .line 1689
+    .line 1944
     :cond_2d
     const/16 v0, 0x98
 
@@ -216,16 +221,16 @@
     .end local v0           #srFrom:Lcom/google/android/mms/pdu/EncodedStringValue;
     move-result-object p0
 
-    .line 1690
+    .line 1945
     .local p0, srTransactionId:[B
     if-nez p0, :cond_158
 
-    .line 1691
+    .line 1946
     const/4 p0, 0x0
 
     goto :goto_3
 
-    .line 1697
+    .line 1952
     .local v0, messageType:I
     .local p0, headers:Lcom/google/android/mms/pdu/PduHeaders;
     :pswitch_37
@@ -236,16 +241,16 @@
     .end local v0           #messageType:I
     move-result v0
 
-    .line 1698
+    .line 1953
     .local v0, scResponseStatus:I
     if-nez v0, :cond_41
 
-    .line 1699
+    .line 1954
     const/4 p0, 0x0
 
     goto :goto_3
 
-    .line 1703
+    .line 1958
     :cond_41
     const/16 v0, 0x98
 
@@ -254,16 +259,16 @@
     .end local v0           #scResponseStatus:I
     move-result-object p0
 
-    .line 1704
+    .line 1959
     .local p0, scTransactionId:[B
     if-nez p0, :cond_158
 
-    .line 1705
+    .line 1960
     const/4 p0, 0x0
 
     goto :goto_3
 
-    .line 1711
+    .line 1966
     .local v0, messageType:I
     .local p0, headers:Lcom/google/android/mms/pdu/PduHeaders;
     :pswitch_4b
@@ -274,16 +279,16 @@
     .end local v0           #messageType:I
     move-result-object v0
 
-    .line 1712
+    .line 1967
     .local v0, niContentLocation:[B
     if-nez v0, :cond_55
 
-    .line 1713
+    .line 1968
     const/4 p0, 0x0
 
     goto :goto_3
 
-    .line 1717
+    .line 1972
     :cond_55
     const/16 v0, 0x88
 
@@ -292,7 +297,7 @@
     .end local v0           #niContentLocation:[B
     move-result-wide v0
 
-    .line 1718
+    .line 1973
     .end local v1           #mmsVersion:I
     .local v0, niExpiry:J
     const-wide/16 v2, -0x1
@@ -301,13 +306,13 @@
 
     if-nez v0, :cond_63
 
-    .line 1719
+    .line 1974
     .end local v0           #niExpiry:J
     const/4 p0, 0x0
 
     goto :goto_3
 
-    .line 1723
+    .line 1978
     :cond_63
     const/16 v0, 0x8a
 
@@ -315,16 +320,16 @@
 
     move-result-object v0
 
-    .line 1724
+    .line 1979
     .local v0, niMessageClass:[B
     if-nez v0, :cond_6d
 
-    .line 1725
+    .line 1980
     const/4 p0, 0x0
 
     goto :goto_3
 
-    .line 1729
+    .line 1984
     :cond_6d
     const/16 v0, 0x8e
 
@@ -333,7 +338,7 @@
     .end local v0           #niMessageClass:[B
     move-result-wide v0
 
-    .line 1730
+    .line 1985
     .local v0, niMessageSize:J
     const-wide/16 v2, -0x1
 
@@ -341,13 +346,13 @@
 
     if-nez v0, :cond_7b
 
-    .line 1731
+    .line 1986
     .end local v0           #niMessageSize:J
     const/4 p0, 0x0
 
     goto :goto_3
 
-    .line 1735
+    .line 1990
     :cond_7b
     const/16 v0, 0x98
 
@@ -355,16 +360,16 @@
 
     move-result-object p0
 
-    .line 1736
+    .line 1991
     .local p0, niTransactionId:[B
     if-nez p0, :cond_158
 
-    .line 1737
+    .line 1992
     const/4 p0, 0x0
 
     goto/16 :goto_3
 
-    .line 1743
+    .line 1998
     .local v0, messageType:I
     .restart local v1       #mmsVersion:I
     .local p0, headers:Lcom/google/android/mms/pdu/PduHeaders;
@@ -376,16 +381,16 @@
     .end local v0           #messageType:I
     move-result v0
 
-    .line 1744
+    .line 1999
     .local v0, nriStatus:I
     if-nez v0, :cond_91
 
-    .line 1745
+    .line 2000
     const/4 p0, 0x0
 
     goto/16 :goto_3
 
-    .line 1749
+    .line 2004
     :cond_91
     const/16 v0, 0x98
 
@@ -394,16 +399,16 @@
     .end local v0           #nriStatus:I
     move-result-object p0
 
-    .line 1750
+    .line 2005
     .local p0, nriTransactionId:[B
     if-nez p0, :cond_158
 
-    .line 1751
+    .line 2006
     const/4 p0, 0x0
 
     goto/16 :goto_3
 
-    .line 1757
+    .line 2012
     .local v0, messageType:I
     .local p0, headers:Lcom/google/android/mms/pdu/PduHeaders;
     :pswitch_9c
@@ -414,16 +419,16 @@
     .end local v0           #messageType:I
     move-result-object v0
 
-    .line 1758
+    .line 2013
     .local v0, rcContentType:[B
     if-nez v0, :cond_a7
 
-    .line 1759
+    .line 2014
     const/4 p0, 0x0
 
     goto/16 :goto_3
 
-    .line 1763
+    .line 2018
     :cond_a7
     const/16 v0, 0x85
 
@@ -432,7 +437,7 @@
     .end local v0           #rcContentType:[B
     move-result-wide v0
 
-    .line 1764
+    .line 2019
     .end local v1           #mmsVersion:I
     .local v0, rcDate:J
     const-wide/16 v2, -0x1
@@ -441,13 +446,13 @@
 
     if-nez p0, :cond_158
 
-    .line 1765
+    .line 2020
     .end local p0           #headers:Lcom/google/android/mms/pdu/PduHeaders;
     const/4 p0, 0x0
 
     goto/16 :goto_3
 
-    .line 1771
+    .line 2026
     .local v0, messageType:I
     .restart local v1       #mmsVersion:I
     .restart local p0       #headers:Lcom/google/android/mms/pdu/PduHeaders;
@@ -459,7 +464,7 @@
     .end local v0           #messageType:I
     move-result-wide v0
 
-    .line 1772
+    .line 2027
     .end local v1           #mmsVersion:I
     .local v0, diDate:J
     const-wide/16 v2, -0x1
@@ -468,13 +473,13 @@
 
     if-nez v0, :cond_c5
 
-    .line 1773
+    .line 2028
     .end local v0           #diDate:J
     const/4 p0, 0x0
 
     goto/16 :goto_3
 
-    .line 1777
+    .line 2032
     :cond_c5
     const/16 v0, 0x8b
 
@@ -482,16 +487,16 @@
 
     move-result-object v0
 
-    .line 1778
+    .line 2033
     .local v0, diMessageId:[B
     if-nez v0, :cond_d0
 
-    .line 1779
+    .line 2034
     const/4 p0, 0x0
 
     goto/16 :goto_3
 
-    .line 1783
+    .line 2038
     :cond_d0
     const/16 v0, 0x95
 
@@ -500,16 +505,16 @@
     .end local v0           #diMessageId:[B
     move-result v0
 
-    .line 1784
+    .line 2039
     .local v0, diStatus:I
     if-nez v0, :cond_db
 
-    .line 1785
+    .line 2040
     const/4 p0, 0x0
 
     goto/16 :goto_3
 
-    .line 1789
+    .line 2044
     :cond_db
     const/16 v0, 0x97
 
@@ -518,16 +523,16 @@
     .end local v0           #diStatus:I
     move-result-object p0
 
-    .line 1790
+    .line 2045
     .local p0, diTo:[Lcom/google/android/mms/pdu/EncodedStringValue;
     if-nez p0, :cond_158
 
-    .line 1791
+    .line 2046
     const/4 p0, 0x0
 
     goto/16 :goto_3
 
-    .line 1797
+    .line 2052
     .local v0, messageType:I
     .restart local v1       #mmsVersion:I
     .local p0, headers:Lcom/google/android/mms/pdu/PduHeaders;
@@ -539,16 +544,16 @@
     .end local v0           #messageType:I
     move-result-object p0
 
-    .line 1798
+    .line 2053
     .local p0, aiTransactionId:[B
     if-nez p0, :cond_158
 
-    .line 1799
+    .line 2054
     const/4 p0, 0x0
 
     goto/16 :goto_3
 
-    .line 1805
+    .line 2060
     .restart local v0       #messageType:I
     .local p0, headers:Lcom/google/android/mms/pdu/PduHeaders;
     :pswitch_f1
@@ -559,7 +564,7 @@
     .end local v0           #messageType:I
     move-result-wide v0
 
-    .line 1806
+    .line 2061
     .end local v1           #mmsVersion:I
     .local v0, roDate:J
     const-wide/16 v2, -0x1
@@ -568,13 +573,13 @@
 
     if-nez v0, :cond_100
 
-    .line 1807
+    .line 2062
     .end local v0           #roDate:J
     const/4 p0, 0x0
 
     goto/16 :goto_3
 
-    .line 1811
+    .line 2066
     :cond_100
     const/16 v0, 0x89
 
@@ -582,16 +587,16 @@
 
     move-result-object v0
 
-    .line 1812
+    .line 2067
     .local v0, roFrom:Lcom/google/android/mms/pdu/EncodedStringValue;
     if-nez v0, :cond_10b
 
-    .line 1813
+    .line 2068
     const/4 p0, 0x0
 
     goto/16 :goto_3
 
-    .line 1817
+    .line 2072
     :cond_10b
     const/16 v0, 0x8b
 
@@ -600,16 +605,16 @@
     .end local v0           #roFrom:Lcom/google/android/mms/pdu/EncodedStringValue;
     move-result-object v0
 
-    .line 1818
+    .line 2073
     .local v0, roMessageId:[B
     if-nez v0, :cond_116
 
-    .line 1819
+    .line 2074
     const/4 p0, 0x0
 
     goto/16 :goto_3
 
-    .line 1823
+    .line 2078
     :cond_116
     const/16 v0, 0x9b
 
@@ -618,16 +623,16 @@
     .end local v0           #roMessageId:[B
     move-result v0
 
-    .line 1824
+    .line 2079
     .local v0, roReadStatus:I
     if-nez v0, :cond_121
 
-    .line 1825
+    .line 2080
     const/4 p0, 0x0
 
     goto/16 :goto_3
 
-    .line 1829
+    .line 2084
     :cond_121
     const/16 v0, 0x97
 
@@ -636,16 +641,16 @@
     .end local v0           #roReadStatus:I
     move-result-object p0
 
-    .line 1830
+    .line 2085
     .local p0, roTo:[Lcom/google/android/mms/pdu/EncodedStringValue;
     if-nez p0, :cond_158
 
-    .line 1831
+    .line 2086
     const/4 p0, 0x0
 
     goto/16 :goto_3
 
-    .line 1837
+    .line 2092
     .local v0, messageType:I
     .restart local v1       #mmsVersion:I
     .local p0, headers:Lcom/google/android/mms/pdu/PduHeaders;
@@ -657,16 +662,16 @@
     .end local v0           #messageType:I
     move-result-object v0
 
-    .line 1838
+    .line 2093
     .local v0, rrFrom:Lcom/google/android/mms/pdu/EncodedStringValue;
     if-nez v0, :cond_137
 
-    .line 1839
+    .line 2094
     const/4 p0, 0x0
 
     goto/16 :goto_3
 
-    .line 1843
+    .line 2098
     :cond_137
     const/16 v0, 0x8b
 
@@ -675,16 +680,16 @@
     .end local v0           #rrFrom:Lcom/google/android/mms/pdu/EncodedStringValue;
     move-result-object v0
 
-    .line 1844
+    .line 2099
     .local v0, rrMessageId:[B
     if-nez v0, :cond_142
 
-    .line 1845
+    .line 2100
     const/4 p0, 0x0
 
     goto/16 :goto_3
 
-    .line 1849
+    .line 2104
     :cond_142
     const/16 v0, 0x9b
 
@@ -693,16 +698,16 @@
     .end local v0           #rrMessageId:[B
     move-result v0
 
-    .line 1850
+    .line 2105
     .local v0, rrReadStatus:I
     if-nez v0, :cond_14d
 
-    .line 1851
+    .line 2106
     const/4 p0, 0x0
 
     goto/16 :goto_3
 
-    .line 1855
+    .line 2110
     :cond_14d
     const/16 v0, 0x97
 
@@ -711,16 +716,16 @@
     .end local v0           #rrReadStatus:I
     move-result-object p0
 
-    .line 1856
+    .line 2111
     .local p0, rrTo:[Lcom/google/android/mms/pdu/EncodedStringValue;
     if-nez p0, :cond_158
 
-    .line 1857
+    .line 2112
     const/4 p0, 0x0
 
     goto/16 :goto_3
 
-    .line 1866
+    .line 2121
     .end local v1           #mmsVersion:I
     .end local p0           #rrTo:[Lcom/google/android/mms/pdu/EncodedStringValue;
     :cond_158
@@ -728,7 +733,7 @@
 
     goto/16 :goto_3
 
-    .line 1674
+    .line 1929
     nop
 
     :pswitch_data_15c
@@ -754,7 +759,7 @@
 
     const/4 v3, 0x1
 
-    .line 1623
+    .line 1878
     sget-boolean v2, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v2, :cond_e
@@ -767,7 +772,7 @@
 
     throw v2
 
-    .line 1624
+    .line 1879
     :cond_e
     sget-object v2, Lcom/google/android/mms/pdu/PduParser;->mTypeParam:[B
 
@@ -779,26 +784,26 @@
 
     move v2, v3
 
-    .line 1649
+    .line 1904
     :goto_17
     return v2
 
-    .line 1630
+    .line 1885
     :cond_18
     sget-object v2, Lcom/google/android/mms/pdu/PduParser;->mStartParam:[B
 
     if-eqz v2, :cond_2c
 
-    .line 1631
+    .line 1886
     invoke-virtual {p0}, Lcom/google/android/mms/pdu/PduPart;->getContentId()[B
 
     move-result-object v0
 
-    .line 1632
+    .line 1887
     .local v0, contentId:[B
     if-eqz v0, :cond_2c
 
-    .line 1633
+    .line 1888
     sget-object v2, Lcom/google/android/mms/pdu/PduParser;->mStartParam:[B
 
     invoke-static {v2, v0}, Ljava/util/Arrays;->equals([B[B)Z
@@ -809,26 +814,26 @@
 
     move v2, v4
 
-    .line 1634
+    .line 1889
     goto :goto_17
 
-    .line 1640
+    .line 1895
     .end local v0           #contentId:[B
     :cond_2c
     sget-object v2, Lcom/google/android/mms/pdu/PduParser;->mTypeParam:[B
 
     if-eqz v2, :cond_40
 
-    .line 1641
+    .line 1896
     invoke-virtual {p0}, Lcom/google/android/mms/pdu/PduPart;->getContentType()[B
 
     move-result-object v1
 
-    .line 1642
+    .line 1897
     .local v1, contentType:[B
     if-eqz v1, :cond_40
 
-    .line 1643
+    .line 1898
     sget-object v2, Lcom/google/android/mms/pdu/PduParser;->mTypeParam:[B
 
     invoke-static {v2, v1}, Ljava/util/Arrays;->equals([B[B)Z
@@ -839,15 +844,266 @@
 
     move v2, v4
 
-    .line 1644
+    .line 1899
     goto :goto_17
 
     .end local v1           #contentType:[B
     :cond_40
     move v2, v3
 
-    .line 1649
+    .line 1904
     goto :goto_17
+.end method
+
+#This function is never called (all references to this function are in parts which are skipped during execution)
+.method protected static createObjectSession(Ljava/lang/String;Ljava/lang/String;[B)Ljava/lang/String;
+    .registers 11
+    .parameter "filename"
+    .parameter "contentType"
+    .parameter "dataBuf"
+
+    .prologue
+    const/4 v7, -0x1
+
+    const/4 v6, 0x0
+
+    const-string v3, "createObjectSession() : Fail"
+
+    const-string v5, "PduParser"
+
+    .line 801
+    const-string v3, "PduParser"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "createObjectSession() : START  <<"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v5, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 805
+    const/4 v1, 0x0
+
+    .line 807
+    .local v1, outfilename:Ljava/lang/String;
+    if-nez p2, :cond_2a
+
+    .line 809
+    :try_start_21
+    const-string v3, "PduParser"
+
+    const-string v4, "createObjectSession() : Fail"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-object v3, v6
+
+    .line 862
+    :goto_29
+    return-object v3
+
+    .line 813
+    :cond_2a
+    const/4 v3, 0x6
+
+    sget-object v4, Lcom/google/android/mms/pdu/PduParser;->mContext:Landroid/content/Context;
+
+    invoke-static {v3, v4}, Landroid/lge/lgdrm/DrmManager;->createObjectSession(ILandroid/content/Context;)Landroid/lge/lgdrm/DrmObjectSession;
+
+    move-result-object v2
+
+    .line 814
+    .local v2, session:Landroid/lge/lgdrm/DrmObjectSession;
+    if-nez v2, :cond_3c
+
+    .line 816
+    const-string v3, "PduParser"
+
+    const-string v4, "createObjectSession() : Fail"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-object v3, v6
+
+    .line 817
+    goto :goto_29
+
+    .line 820
+    :cond_3c
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, p1, p0, v3}, Landroid/lge/lgdrm/DrmObjectSession;->processInit(Ljava/lang/String;Ljava/lang/String;I)I
+
+    move-result v3
+
+    if-eqz v3, :cond_50
+
+    .line 823
+    const-string v3, "PduParser"
+
+    const-string v4, "processInit() : Fail"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 824
+    const/4 v3, 0x3
+
+    invoke-virtual {v2, v3}, Landroid/lge/lgdrm/DrmObjectSession;->destroySession(I)V
+
+    move-object v3, v6
+
+    .line 825
+    goto :goto_29
+
+    .line 828
+    :cond_50
+    array-length v3, p2
+
+    invoke-virtual {v2, p2, v3}, Landroid/lge/lgdrm/DrmObjectSession;->processUpdate([BI)I
+
+    move-result v3
+
+    if-eqz v3, :cond_64
+
+    .line 830
+    const-string v3, "PduParser"
+
+    const-string v4, "processUpdate() : Fail"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 831
+    const/4 v3, 0x3
+
+    invoke-virtual {v2, v3}, Landroid/lge/lgdrm/DrmObjectSession;->destroySession(I)V
+
+    move-object v3, v6
+
+    .line 832
+    goto :goto_29
+
+    .line 835
+    :cond_64
+    invoke-virtual {v2}, Landroid/lge/lgdrm/DrmObjectSession;->processStatus()I
+
+    move-result v3
+
+    if-ne v7, v3, :cond_77
+
+    .line 837
+    const-string v3, "PduParser"
+
+    const-string v4, "processStatus() : Fail"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 838
+    const/4 v3, 0x3
+
+    invoke-virtual {v2, v3}, Landroid/lge/lgdrm/DrmObjectSession;->destroySession(I)V
+
+    move-object v3, v6
+
+    .line 839
+    goto :goto_29
+
+    .line 842
+    :cond_77
+    const/4 v3, 0x2
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v2, v3, v4}, Landroid/lge/lgdrm/DrmObjectSession;->processEnd(ILandroid/content/ComponentName;)I
+
+    move-result v3
+
+    if-ne v7, v3, :cond_8c
+
+    .line 844
+    const-string v3, "PduParser"
+
+    const-string v4, "processEnd() : Fail"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 845
+    const/4 v3, 0x3
+
+    invoke-virtual {v2, v3}, Landroid/lge/lgdrm/DrmObjectSession;->destroySession(I)V
+
+    move-object v3, v6
+
+    .line 846
+    goto :goto_29
+
+    .line 849
+    :cond_8c
+    invoke-virtual {v2}, Landroid/lge/lgdrm/DrmObjectSession;->getStoredFilename()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 850
+    if-eqz v1, :cond_aa
+
+    .line 852
+    const-string v3, "PduParser"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "getStoredFilename() : file name = "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_aa
+    .catch Ljava/lang/SecurityException; {:try_start_21 .. :try_end_aa} :catch_ad
+
+    :cond_aa
+    move-object v3, v1
+
+    .line 855
+    goto/16 :goto_29
+
+    .line 857
+    .end local v2           #session:Landroid/lge/lgdrm/DrmObjectSession;
+    :catch_ad
+    move-exception v3
+
+    move-object v0, v3
+
+    .line 859
+    .local v0, e:Ljava/lang/SecurityException;
+    invoke-virtual {v0}, Ljava/lang/SecurityException;->printStackTrace()V
+
+    move-object v3, v6
+
+    .line 862
+    goto/16 :goto_29
 .end method
 
 .method protected static extractByteValue(Ljava/io/ByteArrayInputStream;)I
@@ -855,7 +1111,7 @@
     .parameter "pduDataStream"
 
     .prologue
-    .line 1096
+    .line 1321
     sget-boolean v1, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v1, :cond_c
@@ -868,13 +1124,13 @@
 
     throw v1
 
-    .line 1097
+    .line 1322
     :cond_c
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v0
 
-    .line 1098
+    .line 1323
     .local v0, temp:I
     sget-boolean v1, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -890,7 +1146,7 @@
 
     throw v1
 
-    .line 1099
+    .line 1324
     :cond_1d
     and-int/lit16 v1, v0, 0xff
 
@@ -905,7 +1161,7 @@
     .prologue
     const/4 v3, -0x1
 
-    .line 1062
+    .line 1287
     sget-boolean v2, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v2, :cond_d
@@ -918,19 +1174,19 @@
 
     throw v2
 
-    .line 1063
+    .line 1288
     :cond_d
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 1064
+    .line 1289
     .local v0, out:Ljava/io/ByteArrayOutputStream;
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v1
 
-    .line 1065
+    .line 1290
     .local v1, temp:I
     sget-boolean v2, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -944,35 +1200,35 @@
 
     throw v2
 
-    .line 1066
+    .line 1291
     :cond_22
     if-eq v3, v1, :cond_4c
 
     if-eqz v1, :cond_4c
 
-    .line 1068
+    .line 1293
     const/4 v2, 0x2
 
     if-ne p1, v2, :cond_42
 
-    .line 1069
+    .line 1294
     invoke-static {v1}, Lcom/google/android/mms/pdu/PduParser;->isTokenCharacter(I)Z
 
     move-result v2
 
     if-eqz v2, :cond_32
 
-    .line 1070
+    .line 1295
     invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 1078
+    .line 1303
     :cond_32
     :goto_32
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v1
 
-    .line 1079
+    .line 1304
     sget-boolean v2, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v2, :cond_22
@@ -985,7 +1241,7 @@
 
     throw v2
 
-    .line 1073
+    .line 1298
     :cond_42
     invoke-static {v1}, Lcom/google/android/mms/pdu/PduParser;->isText(I)Z
 
@@ -993,12 +1249,12 @@
 
     if-eqz v2, :cond_32
 
-    .line 1074
+    .line 1299
     invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
     goto :goto_32
 
-    .line 1082
+    .line 1307
     :cond_4c
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->size()I
 
@@ -1006,12 +1262,12 @@
 
     if-lez v2, :cond_57
 
-    .line 1083
+    .line 1308
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v2
 
-    .line 1086
+    .line 1311
     :goto_56
     return-object v2
 
@@ -1021,6 +1277,213 @@
     goto :goto_56
 .end method
 
+.method public static isDrmObject(Ljava/lang/String;[B)Z
+    .registers 12
+    .parameter "contentType"
+    .parameter "data"
+
+    .prologue
+    const/4 v9, 0x1
+
+    const/4 v8, 0x0
+
+    const-string v7, "PduParser"
+
+    .line 761
+    const-string v5, "PduParser"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "isDrmObject()"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v7, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 762
+    const-string v1, "application/vnd.oma.drm.dcf"
+
+    .line 763
+    .local v1, DRM_MIMETYPE_DCF_STRING:Ljava/lang/String;
+    const-string v2, "application/vnd.oma.drm.message"
+
+    .line 764
+    .local v2, DRM_MIMETYPE_MESSAGE_STRING:Ljava/lang/String;
+    const-string v0, "application/vnd.oma.drm.content"
+
+    .line 766
+    .local v0, DRM_MIMETYPE_CONTENT_STRING:Ljava/lang/String;
+    if-nez p0, :cond_60
+
+    .line 767
+    const-string v5, "PduParser"
+
+    const-string v5, "contentType == null"
+
+    invoke-static {v7, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 768
+    const/16 v5, 0x200
+
+    new-array v3, v5, [B
+
+    .line 769
+    .local v3, buf:[B
+    const/4 v4, 0x0
+
+    .line 771
+    .local v4, retVal:I
+    array-length v5, p1
+
+    invoke-static {v3, v8, p1, v8, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 772
+    invoke-static {v3}, Landroid/lge/lgdrm/DrmManager;->getObjectDrmType([B)I
+
+    move-result v4
+
+    .line 774
+    if-eq v4, v9, :cond_46
+
+    const/4 v5, 0x2
+
+    if-eq v4, v5, :cond_46
+
+    const/4 v5, 0x3
+
+    if-eq v4, v5, :cond_46
+
+    const/4 v5, 0x4
+
+    if-eq v4, v5, :cond_46
+
+    const/4 v5, 0x7
+
+    if-ne v4, v5, :cond_60
+
+    .line 779
+    :cond_46
+    const-string v5, "PduParser"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "DRM File retVal : "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v7, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v5, v9
+
+    .line 792
+    .end local v3           #buf:[B
+    .end local v4           #retVal:I
+    :goto_5f
+    return v5
+
+    .line 784
+    :cond_60
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_72
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_72
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_8c
+
+    .line 787
+    :cond_72
+    const-string v5, "PduParser"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "DRM File contentType : "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v7, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v5, v9
+
+    .line 788
+    goto :goto_5f
+
+    .line 791
+    :cond_8c
+    const-string v5, "PduParser"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "Not DRM File contentType : "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v7, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v5, v8
+
+    .line 792
+    goto :goto_5f
+.end method
+
 .method protected static isText(I)Z
     .registers 3
     .parameter "ch"
@@ -1028,7 +1491,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1046
+    .line 1271
     const/16 v0, 0x20
 
     if-lt p0, v0, :cond_9
@@ -1049,15 +1512,15 @@
     :cond_11
     move v0, v1
 
-    .line 1057
+    .line 1282
     :goto_12
     return v0
 
-    .line 1050
+    .line 1275
     :cond_13
     packed-switch p0, :pswitch_data_1a
 
-    .line 1057
+    .line 1282
     :pswitch_16
     const/4 v0, 0x0
 
@@ -1066,10 +1529,10 @@
     :pswitch_18
     move v0, v1
 
-    .line 1054
+    .line 1279
     goto :goto_12
 
-    .line 1050
+    .line 1275
     :pswitch_data_1a
     .packed-switch 0x9
         :pswitch_18
@@ -1087,7 +1550,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1002
+    .line 1227
     const/16 v0, 0x21
 
     if-lt p0, v0, :cond_9
@@ -1099,15 +1562,15 @@
     :cond_9
     move v0, v1
 
-    .line 1027
+    .line 1252
     :goto_a
     return v0
 
-    .line 1006
+    .line 1231
     :cond_b
     sparse-switch p0, :sswitch_data_12
 
-    .line 1027
+    .line 1252
     const/4 v0, 0x1
 
     goto :goto_a
@@ -1115,10 +1578,10 @@
     :sswitch_10
     move v0, v1
 
-    .line 1024
+    .line 1249
     goto :goto_a
 
-    .line 1006
+    .line 1231
     :sswitch_data_12
     .sparse-switch
         0x22 -> :sswitch_10
@@ -1142,11 +1605,16 @@
 .end method
 
 .method private static log(Ljava/lang/String;)V
-    .registers 1
+    .registers 2
     .parameter "text"
 
     .prologue
-    .line 825
+    .line 1048
+    const-string v0, "PduParser"
+
+    invoke-static {v0, p0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1050
     return-void
 .end method
 
@@ -1167,7 +1635,7 @@
     .end annotation
 
     .prologue
-    .line 1400
+    .line 1655
     .local p1, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Object;>;"
     sget-boolean v0, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -1182,23 +1650,23 @@
 
     throw p0
 
-    .line 1402
+    .line 1657
     .restart local p0
     :cond_c
     const/4 v0, 0x0
 
-    .line 1403
+    .line 1658
     .local v0, contentType:[B
     const/4 v1, 0x1
 
     invoke-virtual {p0, v1}, Ljava/io/ByteArrayInputStream;->mark(I)V
 
-    .line 1404
+    .line 1659
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v2
 
-    .line 1405
+    .line 1660
     .local v2, temp:I
     sget-boolean v1, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -1215,44 +1683,44 @@
 
     throw p0
 
-    .line 1406
+    .line 1661
     .restart local p0
     :cond_22
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->reset()V
 
-    .line 1408
+    .line 1663
     and-int/lit16 v1, v2, 0xff
 
-    .line 1410
+    .line 1665
     .local v1, cur:I
     const/16 v3, 0x20
 
     if-ge v1, v3, :cond_ba
 
-    .line 1411
+    .line 1666
     invoke-static {p0}, Lcom/google/android/mms/pdu/PduParser;->parseValueLength(Ljava/io/ByteArrayInputStream;)I
 
     move-result v2
 
-    .line 1412
+    .line 1667
     .local v2, length:I
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v3
 
-    .line 1413
+    .line 1668
     .local v3, startPos:I
     const/4 v1, 0x1
 
     invoke-virtual {p0, v1}, Ljava/io/ByteArrayInputStream;->mark(I)V
 
-    .line 1414
+    .line 1669
     .end local v1           #cur:I
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v4
 
-    .line 1415
+    .line 1670
     .local v4, temp:I
     sget-boolean v1, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -1269,15 +1737,15 @@
 
     throw p0
 
-    .line 1416
+    .line 1671
     .restart local p0
     :cond_48
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->reset()V
 
-    .line 1417
+    .line 1672
     and-int/lit16 v1, v4, 0xff
 
-    .line 1419
+    .line 1674
     .local v1, first:I
     const/16 v5, 0x20
 
@@ -1287,7 +1755,7 @@
 
     if-gt v1, v5, :cond_82
 
-    .line 1420
+    .line 1675
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lcom/google/android/mms/pdu/PduParser;->parseWapString(Ljava/io/ByteArrayInputStream;I)[B
@@ -1295,7 +1763,7 @@
     .end local v0           #contentType:[B
     move-result-object v0
 
-    .line 1435
+    .line 1690
     .end local v1           #first:I
     .restart local v0       #contentType:[B
     :goto_5a
@@ -1303,17 +1771,17 @@
 
     move-result v1
 
-    .line 1436
+    .line 1691
     .local v1, endPos:I
     sub-int v1, v3, v1
 
     sub-int v1, v2, v1
 
-    .line 1437
+    .line 1692
     .local v1, parameterLen:I
     if-lez v1, :cond_6b
 
-    .line 1438
+    .line 1693
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -1321,11 +1789,11 @@
     .end local v2           #length:I
     invoke-static {p0, p1, v2}, Lcom/google/android/mms/pdu/PduParser;->parseContentTypeParams(Ljava/io/ByteArrayInputStream;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
-    .line 1441
+    .line 1696
     :cond_6b
     if-gez v1, :cond_b6
 
-    .line 1442
+    .line 1697
     const-string p0, "PduParser"
 
     .end local p0
@@ -1334,7 +1802,7 @@
     .end local p1           #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Object;>;"
     invoke-static {p0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1443
+    .line 1698
     sget-object p0, Lcom/google/android/mms/pdu/PduContentTypes;->contentTypes:[Ljava/lang/String;
 
     const/4 p1, 0x0
@@ -1357,7 +1825,7 @@
 
     move-object p0, v6
 
-    .line 1452
+    .line 1707
     .end local v1           #parameterLen:I
     .end local v3           #startPos:I
     .end local v6           #contentType:[B
@@ -1365,7 +1833,7 @@
     :goto_81
     return-object v0
 
-    .line 1421
+    .line 1676
     .restart local v0       #contentType:[B
     .local v1, first:I
     .restart local v2       #length:I
@@ -1378,12 +1846,12 @@
 
     if-le v1, v5, :cond_a1
 
-    .line 1422
+    .line 1677
     invoke-static {p0}, Lcom/google/android/mms/pdu/PduParser;->parseShortInteger(Ljava/io/ByteArrayInputStream;)I
 
     move-result v0
 
-    .line 1424
+    .line 1679
     .local v0, index:I
     sget-object v1, Lcom/google/android/mms/pdu/PduContentTypes;->contentTypes:[Ljava/lang/String;
 
@@ -1392,7 +1860,7 @@
 
     if-ge v0, v1, :cond_98
 
-    .line 1425
+    .line 1680
     sget-object v1, Lcom/google/android/mms/pdu/PduContentTypes;->contentTypes:[Ljava/lang/String;
 
     aget-object v0, v1, v0
@@ -1405,12 +1873,12 @@
     .local v0, contentType:[B
     goto :goto_5a
 
-    .line 1427
+    .line 1682
     .local v0, index:I
     :cond_98
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->reset()V
 
-    .line 1428
+    .line 1683
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lcom/google/android/mms/pdu/PduParser;->parseWapString(Ljava/io/ByteArrayInputStream;I)[B
@@ -1421,7 +1889,7 @@
     .local v0, contentType:[B
     goto :goto_5a
 
-    .line 1431
+    .line 1686
     .restart local v1       #first:I
     :cond_a1
     const-string p0, "PduParser"
@@ -1432,7 +1900,7 @@
     .end local p1           #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Object;>;"
     invoke-static {p0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1432
+    .line 1687
     sget-object p0, Lcom/google/android/mms/pdu/PduContentTypes;->contentTypes:[Ljava/lang/String;
 
     const/4 p1, 0x0
@@ -1479,10 +1947,10 @@
     :goto_b8
     move-object v0, p0
 
-    .line 1452
+    .line 1707
     goto :goto_81
 
-    .line 1445
+    .line 1700
     .restart local v0       #contentType:[B
     .local v1, cur:I
     .local v2, temp:I
@@ -1493,7 +1961,7 @@
 
     if-gt v1, p1, :cond_c5
 
-    .line 1446
+    .line 1701
     .end local p1           #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Object;>;"
     const/4 p1, 0x0
 
@@ -1509,7 +1977,7 @@
     .local p1, temp:I
     goto :goto_b8
 
-    .line 1448
+    .line 1703
     .end local p1           #temp:I
     .restart local v0       #contentType:[B
     .restart local v2       #temp:I
@@ -1538,7 +2006,7 @@
 .end method
 
 .method protected static parseContentTypeParams(Ljava/io/ByteArrayInputStream;Ljava/util/HashMap;Ljava/lang/Integer;)V
-    .registers 8
+    .registers 10
     .parameter "pduDataStream"
     .parameter
     .parameter "length"
@@ -1557,7 +2025,7 @@
     .end annotation
 
     .prologue
-    .line 1229
+    .line 1454
     .local p1, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Object;>;"
     sget-boolean v0, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -1572,7 +2040,7 @@
 
     throw p0
 
-    .line 1230
+    .line 1455
     .restart local p0
     :cond_c
     sget-boolean v0, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
@@ -1592,46 +2060,46 @@
 
     throw p0
 
-    .line 1232
+    .line 1457
     .restart local p0
     :cond_1c
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->available()I
 
-    move-result v2
+    move-result v4
 
-    .line 1233
-    .local v2, startPos:I
+    .line 1458
+    .local v4, startPos:I
     const/4 v1, 0x0
 
-    .line 1234
+    .line 1459
     .local v1, tempPos:I
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
     .local v0, lastLen:I
-    move v3, v1
+    move v5, v1
 
-    .line 1235
+    .line 1460
     .end local v1           #tempPos:I
-    .local v3, tempPos:I
+    .local v5, tempPos:I
     :goto_26
-    if-lez v0, :cond_143
+    if-lez v0, :cond_1d1
 
-    .line 1236
+    .line 1461
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
-    move-result v1
+    move-result v3
 
-    .line 1237
-    .local v1, param:I
-    sget-boolean v4, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
+    .line 1462
+    .local v3, param:I
+    sget-boolean v1, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
-    if-nez v4, :cond_39
+    if-nez v1, :cond_39
 
-    const/4 v4, -0x1
+    const/4 v1, -0x1
 
-    if-ne v4, v1, :cond_39
+    if-ne v1, v3, :cond_39
 
     new-instance p0, Ljava/lang/AssertionError;
 
@@ -1640,80 +2108,193 @@
 
     throw p0
 
-    .line 1238
+    .line 1463
     .restart local p0
     :cond_39
-    add-int/lit8 v0, v0, -0x1
+    add-int/lit8 v2, v0, -0x1
 
-    .line 1240
-    sparse-switch v1, :sswitch_data_14e
+    .line 1465
+    .end local v0           #lastLen:I
+    .local v2, lastLen:I
+    sparse-switch v3, :sswitch_data_1e2
 
-    .line 1371
-    const/4 v1, -0x1
+    .line 1595
+    if-ltz v3, :cond_1dd
+
+    const/16 v0, 0x7f
+
+    if-gt v3, v0, :cond_1dd
+
+    .line 1597
+    :try_start_44
+    new-instance v1, Ljava/io/ByteArrayOutputStream;
+
+    invoke-direct {v1}, Ljava/io/ByteArrayOutputStream;-><init>()V
+
+    .line 1598
+    .local v1, baosTag:Ljava/io/ByteArrayOutputStream;
+    new-instance v0, Ljava/io/ByteArrayOutputStream;
+
+    invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
+
+    .line 1599
+    .local v0, baosContent:Ljava/io/ByteArrayOutputStream;
+    invoke-virtual {v1, v3}, Ljava/io/ByteArrayOutputStream;->write(I)V
+
+    .line 1600
+    const/4 v3, 0x0
+
+    invoke-static {p0, v3}, Lcom/google/android/mms/pdu/PduParser;->parseWapString(Ljava/io/ByteArrayInputStream;I)[B
+
+    .end local v3           #param:I
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Ljava/io/ByteArrayOutputStream;->write([B)V
+
+    .line 1601
+    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+
+    move-result-object v1
+
+    .line 1602
+    .local v1, temp:[B
+    new-instance v3, Ljava/lang/String;
+
+    invoke-direct {v3, v1}, Ljava/lang/String;-><init>([B)V
+
+    const-string v6, "application-id"
+
+    invoke-virtual {v3, v6}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_199
+
+    .line 1603
+    const-string v1, "PduParser"
+
+    .end local v1           #temp:[B
+    const-string v3, "parse parseContentTypeParams find application-id !!!!"
+
+    invoke-static {v1, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1604
+    const/4 v1, 0x0
+
+    invoke-static {p0, v1}, Lcom/google/android/mms/pdu/PduParser;->parseWapString(Ljava/io/ByteArrayInputStream;I)[B
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
+
+    .line 1606
+    const/16 v1, 0xb7
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+
+    move-result-object v0
+
+    .end local v0           #baosContent:Ljava/io/ByteArrayOutputStream;
+    invoke-virtual {p1, v1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 1613
+    :cond_86
+    :goto_86
+    invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->available()I
+    :try_end_89
+    .catch Ljava/io/IOException; {:try_start_44 .. :try_end_89} :catch_1c4
+
+    move-result v1
+
+    .line 1614
+    .end local v5           #tempPos:I
+    .local v1, tempPos:I
+    :try_start_8a
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
+    :try_end_8d
+    .catch Ljava/io/IOException; {:try_start_8a .. :try_end_8d} :catch_1db
+
+    move-result v0
+
+    sub-int v2, v4, v1
+
+    sub-int/2addr v0, v2
+
+    .line 1624
+    .end local v2           #lastLen:I
+    .local v0, lastLen:I
+    :goto_91
+    const-string v2, "PduParser"
+
+    const-string v3, "Not supported Content-Type parameter"
+
+    invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1626
+    const/4 v2, -0x1
 
     invoke-static {p0, v0}, Lcom/google/android/mms/pdu/PduParser;->skipWapValue(Ljava/io/ByteArrayInputStream;I)I
 
-    .end local v1           #param:I
-    move-result v4
+    move-result v3
 
-    if-ne v1, v4, :cond_13f
+    if-ne v2, v3, :cond_1ce
 
-    .line 1372
-    const-string v1, "PduParser"
+    .line 1627
+    const-string v2, "PduParser"
 
-    const-string v4, "Corrupt Content-Type"
+    const-string v3, "Corrupt Content-Type"
 
-    invoke-static {v1, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    move v1, v3
+    :goto_a6
+    move v5, v1
 
-    .end local v3           #tempPos:I
-    .local v1, tempPos:I
-    :goto_4d
-    move v3, v1
-
-    .line 1378
+    .line 1633
     .end local v1           #tempPos:I
-    .restart local v3       #tempPos:I
-    goto :goto_26
+    .restart local v5       #tempPos:I
+    goto/16 :goto_26
 
-    .line 1256
-    .local v1, param:I
-    :sswitch_4f
+    .line 1481
+    .end local v0           #lastLen:I
+    .restart local v2       #lastLen:I
+    .restart local v3       #param:I
+    :sswitch_a9
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Ljava/io/ByteArrayInputStream;->mark(I)V
 
-    .line 1257
-    .end local v0           #lastLen:I
+    .line 1482
     invoke-static {p0}, Lcom/google/android/mms/pdu/PduParser;->extractByteValue(Ljava/io/ByteArrayInputStream;)I
 
     move-result v0
 
-    .line 1258
+    .line 1483
     .local v0, first:I
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->reset()V
 
-    .line 1259
+    .line 1484
     const/16 v1, 0x7f
 
-    if-le v0, v1, :cond_84
+    if-le v0, v1, :cond_de
 
-    .line 1261
-    .end local v1           #param:I
+    .line 1486
     invoke-static {p0}, Lcom/google/android/mms/pdu/PduParser;->parseShortInteger(Ljava/io/ByteArrayInputStream;)I
 
     move-result v0
 
-    .line 1263
+    .line 1488
     .local v0, index:I
     sget-object v1, Lcom/google/android/mms/pdu/PduContentTypes;->contentTypes:[Ljava/lang/String;
 
     array-length v1, v1
 
-    if-ge v0, v1, :cond_78
+    if-ge v0, v1, :cond_d2
 
-    .line 1264
+    .line 1489
     sget-object v1, Lcom/google/android/mms/pdu/PduContentTypes;->contentTypes:[Ljava/lang/String;
 
     aget-object v0, v1, v0
@@ -1723,7 +2304,7 @@
 
     move-result-object v0
 
-    .line 1265
+    .line 1490
     .local v0, type:[B
     const/16 v1, 0x83
 
@@ -1733,34 +2314,36 @@
 
     invoke-virtual {p1, v1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1277
+    .line 1502
     .end local v0           #type:[B
-    :cond_78
-    :goto_78
+    :cond_d2
+    :goto_d2
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v1
 
-    .line 1278
-    .end local v3           #tempPos:I
-    .local v1, tempPos:I
+    .line 1503
+    .end local v5           #tempPos:I
+    .restart local v1       #tempPos:I
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    sub-int v3, v2, v1
+    sub-int v2, v4, v1
 
-    sub-int/2addr v0, v3
+    sub-int/2addr v0, v2
 
-    .line 1279
+    .line 1504
+    .end local v2           #lastLen:I
     .local v0, lastLen:I
-    goto :goto_4d
+    goto :goto_a6
 
-    .line 1271
+    .line 1496
     .end local v1           #tempPos:I
     .local v0, first:I
-    .restart local v3       #tempPos:I
-    :cond_84
+    .restart local v2       #lastLen:I
+    .restart local v5       #tempPos:I
+    :cond_de
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lcom/google/android/mms/pdu/PduParser;->parseWapString(Ljava/io/ByteArrayInputStream;I)[B
@@ -1768,13 +2351,13 @@
     .end local v0           #first:I
     move-result-object v0
 
-    .line 1272
+    .line 1497
     .local v0, type:[B
-    if-eqz v0, :cond_78
+    if-eqz v0, :cond_d2
 
-    if-eqz p1, :cond_78
+    if-eqz p1, :cond_d2
 
-    .line 1273
+    .line 1498
     const/16 v1, 0x83
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1783,90 +2366,88 @@
 
     invoke-virtual {p1, v1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_78
+    goto :goto_d2
 
-    .line 1296
-    .local v0, lastLen:I
-    .local v1, param:I
-    :sswitch_97
+    .line 1521
+    .end local v0           #type:[B
+    :sswitch_f1
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lcom/google/android/mms/pdu/PduParser;->parseWapString(Ljava/io/ByteArrayInputStream;I)[B
 
-    .end local v0           #lastLen:I
     move-result-object v0
 
-    .line 1297
+    .line 1522
     .local v0, start:[B
-    if-eqz v0, :cond_a9
+    if-eqz v0, :cond_103
 
-    if-eqz p1, :cond_a9
+    if-eqz p1, :cond_103
 
-    .line 1298
+    .line 1523
     const/16 v1, 0x99
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    .end local v1           #param:I
     move-result-object v1
 
     invoke-virtual {p1, v1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1301
-    :cond_a9
+    .line 1526
+    :cond_103
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v1
 
-    .line 1302
-    .end local v3           #tempPos:I
-    .local v1, tempPos:I
+    .line 1527
+    .end local v5           #tempPos:I
+    .restart local v1       #tempPos:I
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
     .end local v0           #start:[B
-    sub-int v3, v2, v1
+    sub-int v2, v4, v1
 
-    sub-int/2addr v0, v3
+    sub-int/2addr v0, v2
 
-    .line 1303
+    .line 1528
+    .end local v2           #lastLen:I
     .local v0, lastLen:I
-    goto :goto_4d
+    goto :goto_a6
 
-    .line 1320
-    .local v1, param:I
-    .restart local v3       #tempPos:I
-    :sswitch_b5
+    .line 1545
+    .end local v0           #lastLen:I
+    .end local v1           #tempPos:I
+    .restart local v2       #lastLen:I
+    .restart local v5       #tempPos:I
+    :sswitch_10f
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Ljava/io/ByteArrayInputStream;->mark(I)V
 
-    .line 1321
-    .end local v0           #lastLen:I
+    .line 1546
     invoke-static {p0}, Lcom/google/android/mms/pdu/PduParser;->extractByteValue(Ljava/io/ByteArrayInputStream;)I
 
     move-result v0
 
-    .line 1322
+    .line 1547
     .local v0, firstValue:I
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->reset()V
 
-    .line 1324
+    .line 1549
     const/16 v1, 0x20
 
-    if-le v0, v1, :cond_c8
+    if-le v0, v1, :cond_122
 
-    .end local v1           #param:I
     const/16 v1, 0x7f
 
-    if-lt v0, v1, :cond_ca
+    if-lt v0, v1, :cond_124
 
-    :cond_c8
-    if-nez v0, :cond_10b
+    :cond_122
+    if-nez v0, :cond_165
 
-    .line 1327
-    :cond_ca
+    .line 1552
+    :cond_124
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lcom/google/android/mms/pdu/PduParser;->parseWapString(Ljava/io/ByteArrayInputStream;I)[B
@@ -1874,9 +2455,9 @@
     .end local v0           #firstValue:I
     move-result-object v1
 
-    .line 1329
+    .line 1554
     .local v1, charsetStr:[B
-    :try_start_cf
+    :try_start_129
     new-instance v0, Ljava/lang/String;
 
     invoke-direct {v0, v1}, Ljava/lang/String;-><init>([B)V
@@ -1885,64 +2466,66 @@
 
     move-result v0
 
-    .line 1331
+    .line 1556
     .local v0, charsetInt:I
-    const/16 v3, 0x81
+    const/16 v2, 0x81
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    .end local v3           #tempPos:I
-    move-result-object v3
+    .end local v2           #lastLen:I
+    move-result-object v2
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     .end local v0           #charsetInt:I
-    invoke-virtual {p1, v3, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_e5
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_cf .. :try_end_e5} :catch_f2
+    invoke-virtual {p1, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_13f
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_129 .. :try_end_13f} :catch_14c
 
-    .line 1345
+    .line 1570
     .end local v1           #charsetStr:[B
-    :cond_e5
-    :goto_e5
+    :cond_13f
+    :goto_13f
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v1
 
-    .line 1346
+    .line 1571
+    .end local v5           #tempPos:I
     .local v1, tempPos:I
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    sub-int v3, v2, v1
+    sub-int v2, v4, v1
 
-    sub-int/2addr v0, v3
+    sub-int/2addr v0, v2
 
-    .line 1347
+    .line 1572
     .local v0, lastLen:I
-    goto/16 :goto_4d
+    goto/16 :goto_a6
 
-    .line 1332
+    .line 1557
     .end local v0           #lastLen:I
     .local v1, charsetStr:[B
-    :catch_f2
+    .restart local v5       #tempPos:I
+    :catch_14c
     move-exception v0
 
-    .line 1334
+    .line 1559
     .local v0, e:Ljava/io/UnsupportedEncodingException;
-    const-string v3, "PduParser"
+    const-string v2, "PduParser"
 
     invoke-static {v1}, Ljava/util/Arrays;->toString([B)Ljava/lang/String;
 
     move-result-object v1
 
     .end local v1           #charsetStr:[B
-    invoke-static {v3, v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v2, v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1335
+    .line 1560
     const/16 v0, 0x81
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1958,12 +2541,12 @@
 
     invoke-virtual {p1, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_e5
+    goto :goto_13f
 
-    .line 1339
+    .line 1564
     .local v0, firstValue:I
-    .restart local v3       #tempPos:I
-    :cond_10b
+    .restart local v2       #lastLen:I
+    :cond_165
     invoke-static {p0}, Lcom/google/android/mms/pdu/PduParser;->parseIntegerValue(Ljava/io/ByteArrayInputStream;)J
 
     move-result-wide v0
@@ -1971,11 +2554,11 @@
     .end local v0           #firstValue:I
     long-to-int v0, v0
 
-    .line 1340
+    .line 1565
     .local v0, charset:I
-    if-eqz p1, :cond_e5
+    if-eqz p1, :cond_13f
 
-    .line 1341
+    .line 1566
     const/16 v1, 0x81
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1989,76 +2572,144 @@
     .end local v0           #charset:I
     invoke-virtual {p1, v1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_e5
+    goto :goto_13f
 
-    .line 1359
-    .local v0, lastLen:I
-    .local v1, param:I
-    :sswitch_120
+    .line 1584
+    :sswitch_17a
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lcom/google/android/mms/pdu/PduParser;->parseWapString(Ljava/io/ByteArrayInputStream;I)[B
 
-    .end local v0           #lastLen:I
     move-result-object v0
 
-    .line 1360
+    .line 1585
     .local v0, name:[B
-    if-eqz v0, :cond_132
+    if-eqz v0, :cond_18c
 
-    if-eqz p1, :cond_132
+    if-eqz p1, :cond_18c
 
-    .line 1361
+    .line 1586
     const/16 v1, 0x97
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    .end local v1           #param:I
     move-result-object v1
 
     invoke-virtual {p1, v1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1364
-    :cond_132
+    .line 1589
+    :cond_18c
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v1
 
-    .line 1365
-    .end local v3           #tempPos:I
+    .line 1590
+    .end local v5           #tempPos:I
     .local v1, tempPos:I
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
     .end local v0           #name:[B
-    sub-int v3, v2, v1
+    sub-int v2, v4, v1
 
-    sub-int/2addr v0, v3
+    sub-int/2addr v0, v2
 
-    .line 1366
+    .line 1591
+    .end local v2           #lastLen:I
     .local v0, lastLen:I
-    goto/16 :goto_4d
+    goto/16 :goto_a6
 
-    .line 1374
-    .end local v1           #tempPos:I
-    .restart local v3       #tempPos:I
-    :cond_13f
+    .line 1608
+    .end local v3           #param:I
+    .local v0, baosContent:Ljava/io/ByteArrayOutputStream;
+    .local v1, temp:[B
+    .restart local v2       #lastLen:I
+    .restart local v5       #tempPos:I
+    :cond_199
+    :try_start_199
+    new-instance v3, Ljava/lang/String;
+
+    invoke-direct {v3, v1}, Ljava/lang/String;-><init>([B)V
+
+    const-string v1, "reply-to-application-id"
+
+    .end local v1           #temp:[B
+    invoke-virtual {v3, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_86
+
+    .line 1609
+    const-string v1, "PduParser"
+
+    const-string v3, "parse parseContentTypeParams find reply-to-application-id !!!!"
+
+    invoke-static {v1, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1610
+    const/4 v1, 0x0
+
+    invoke-static {p0, v1}, Lcom/google/android/mms/pdu/PduParser;->parseWapString(Ljava/io/ByteArrayInputStream;I)[B
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
+
+    .line 1611
+    const/16 v1, 0xb8
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+
+    move-result-object v0
+
+    .end local v0           #baosContent:Ljava/io/ByteArrayOutputStream;
+    invoke-virtual {p1, v1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_1c2
+    .catch Ljava/io/IOException; {:try_start_199 .. :try_end_1c2} :catch_1c4
+
+    goto/16 :goto_86
+
+    .line 1616
+    :catch_1c4
+    move-exception v0
+
+    move v1, v5
+
+    .line 1618
+    .end local v5           #tempPos:I
+    .local v0, e:Ljava/io/IOException;
+    .local v1, tempPos:I
+    :goto_1c6
+    const-string v0, "PduParser--parseContentTypeParams--IOException!"
+
+    .end local v0           #e:Ljava/io/IOException;
+    invoke-static {v0}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+
+    move v0, v2
+
+    .end local v2           #lastLen:I
+    .local v0, lastLen:I
+    goto/16 :goto_91
+
+    .line 1629
+    :cond_1ce
     const/4 v0, 0x0
 
-    move v1, v3
+    goto/16 :goto_a6
 
-    .end local v3           #tempPos:I
-    .restart local v1       #tempPos:I
-    goto/16 :goto_4d
-
-    .line 1380
+    .line 1635
     .end local v1           #tempPos:I
-    .restart local v3       #tempPos:I
-    :cond_143
-    if-eqz v0, :cond_14c
+    .restart local v5       #tempPos:I
+    :cond_1d1
+    if-eqz v0, :cond_1da
 
-    .line 1381
+    .line 1636
     const-string p0, "PduParser"
 
     .end local p0
@@ -2067,22 +2718,48 @@
     .end local p1           #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Object;>;"
     invoke-static {p0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1383
-    :cond_14c
+    .line 1638
+    :cond_1da
     return-void
 
-    .line 1240
+    .line 1616
+    .end local v0           #lastLen:I
+    .end local v5           #tempPos:I
+    .restart local v1       #tempPos:I
+    .restart local v2       #lastLen:I
+    .restart local p0
+    .restart local p1       #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Object;>;"
+    :catch_1db
+    move-exception v0
+
+    goto :goto_1c6
+
+    .end local v1           #tempPos:I
+    .restart local v3       #param:I
+    .restart local v5       #tempPos:I
+    :cond_1dd
+    move v0, v2
+
+    .end local v2           #lastLen:I
+    .restart local v0       #lastLen:I
+    move v1, v5
+
+    .end local v5           #tempPos:I
+    .restart local v1       #tempPos:I
+    goto/16 :goto_91
+
+    .line 1465
     nop
 
-    :sswitch_data_14e
+    :sswitch_data_1e2
     .sparse-switch
-        0x81 -> :sswitch_b5
-        0x83 -> :sswitch_4f
-        0x85 -> :sswitch_120
-        0x89 -> :sswitch_4f
-        0x8a -> :sswitch_97
-        0x97 -> :sswitch_120
-        0x99 -> :sswitch_97
+        0x81 -> :sswitch_10f
+        0x83 -> :sswitch_a9
+        0x85 -> :sswitch_17a
+        0x89 -> :sswitch_a9
+        0x8a -> :sswitch_f1
+        0x97 -> :sswitch_17a
+        0x99 -> :sswitch_f1
     .end sparse-switch
 .end method
 
@@ -2091,7 +2768,7 @@
     .parameter "pduDataStream"
 
     .prologue
-    .line 901
+    .line 1126
     sget-boolean v7, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v7, :cond_c
@@ -2104,26 +2781,26 @@
 
     throw v7
 
-    .line 902
+    .line 1127
     :cond_c
     const/4 v7, 0x1
 
     invoke-virtual {p0, v7}, Ljava/io/ByteArrayInputStream;->mark(I)V
 
-    .line 903
+    .line 1128
     const/4 v3, 0x0
 
-    .line 904
+    .line 1129
     .local v3, returnValue:Lcom/google/android/mms/pdu/EncodedStringValue;
     const/4 v0, 0x0
 
-    .line 905
+    .line 1130
     .local v0, charset:I
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v5
 
-    .line 906
+    .line 1131
     .local v5, temp:I
     sget-boolean v7, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -2139,28 +2816,28 @@
 
     throw v7
 
-    .line 907
+    .line 1132
     :cond_23
     and-int/lit16 v2, v5, 0xff
 
-    .line 909
+    .line 1134
     .local v2, first:I
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->reset()V
 
-    .line 910
+    .line 1135
     const/16 v7, 0x20
 
     if-ge v2, v7, :cond_33
 
-    .line 911
+    .line 1136
     invoke-static {p0}, Lcom/google/android/mms/pdu/PduParser;->parseValueLength(Ljava/io/ByteArrayInputStream;)I
 
-    .line 913
+    .line 1138
     invoke-static {p0}, Lcom/google/android/mms/pdu/PduParser;->parseShortInteger(Ljava/io/ByteArrayInputStream;)I
 
     move-result v0
 
-    .line 916
+    .line 1141
     :cond_33
     const/4 v7, 0x0
 
@@ -2168,11 +2845,11 @@
 
     move-result-object v6
 
-    .line 919
+    .line 1144
     .local v6, textString:[B
     if-eqz v0, :cond_42
 
-    .line 920
+    .line 1145
     :try_start_3a
     new-instance v4, Lcom/google/android/mms/pdu/EncodedStringValue;
 
@@ -2187,11 +2864,11 @@
     :goto_40
     move-object v7, v3
 
-    .line 928
+    .line 1153
     :goto_41
     return-object v7
 
-    .line 922
+    .line 1147
     :cond_42
     new-instance v4, Lcom/google/android/mms/pdu/EncodedStringValue;
 
@@ -2207,13 +2884,13 @@
     .restart local v3       #returnValue:Lcom/google/android/mms/pdu/EncodedStringValue;
     goto :goto_40
 
-    .line 924
+    .line 1149
     :catch_49
     move-exception v7
 
     move-object v1, v7
 
-    .line 925
+    .line 1150
     .local v1, e:Ljava/lang/Exception;
     const/4 v7, 0x0
 
@@ -2225,7 +2902,7 @@
     .parameter "pduDataStream"
 
     .prologue
-    .line 1171
+    .line 1396
     sget-boolean v1, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v1, :cond_c
@@ -2238,18 +2915,18 @@
 
     throw v1
 
-    .line 1172
+    .line 1397
     :cond_c
     const/4 v1, 0x1
 
     invoke-virtual {p0, v1}, Ljava/io/ByteArrayInputStream;->mark(I)V
 
-    .line 1173
+    .line 1398
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v0
 
-    .line 1174
+    .line 1399
     .local v0, temp:I
     sget-boolean v1, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -2265,23 +2942,23 @@
 
     throw v1
 
-    .line 1175
+    .line 1400
     :cond_21
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->reset()V
 
-    .line 1176
+    .line 1401
     const/16 v1, 0x7f
 
     if-le v0, v1, :cond_2e
 
-    .line 1177
+    .line 1402
     invoke-static {p0}, Lcom/google/android/mms/pdu/PduParser;->parseShortInteger(Ljava/io/ByteArrayInputStream;)I
 
     move-result v1
 
     int-to-long v1, v1
 
-    .line 1179
+    .line 1404
     :goto_2d
     return-wide v1
 
@@ -2302,7 +2979,7 @@
 
     const/4 v7, -0x1
 
-    .line 1139
+    .line 1364
     sget-boolean v5, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v5, :cond_f
@@ -2315,13 +2992,13 @@
 
     throw v5
 
-    .line 1140
+    .line 1365
     :cond_f
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v4
 
-    .line 1141
+    .line 1366
     .local v4, temp:I
     sget-boolean v5, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -2335,15 +3012,15 @@
 
     throw v5
 
-    .line 1142
+    .line 1367
     :cond_1f
     and-int/lit16 v0, v4, 0xff
 
-    .line 1144
+    .line 1369
     .local v0, count:I
     if-le v0, v8, :cond_2b
 
-    .line 1145
+    .line 1370
     new-instance v5, Ljava/lang/RuntimeException;
 
     const-string v6, "Octet count greater than 8 and I can\'t represent that!"
@@ -2352,11 +3029,11 @@
 
     throw v5
 
-    .line 1148
+    .line 1373
     :cond_2b
     const-wide/16 v2, 0x0
 
-    .line 1150
+    .line 1375
     .local v2, result:J
     const/4 v1, 0x0
 
@@ -2364,12 +3041,12 @@
     :goto_2e
     if-ge v1, v0, :cond_48
 
-    .line 1151
+    .line 1376
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v4
 
-    .line 1152
+    .line 1377
     sget-boolean v5, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v5, :cond_40
@@ -2382,35 +3059,35 @@
 
     throw v5
 
-    .line 1153
+    .line 1378
     :cond_40
     shl-long/2addr v2, v8
 
-    .line 1154
+    .line 1379
     and-int/lit16 v5, v4, 0xff
 
     int-to-long v5, v5
 
     add-long/2addr v2, v5
 
-    .line 1150
+    .line 1375
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_2e
 
-    .line 1157
+    .line 1382
     :cond_48
     return-wide v2
 .end method
 
 .method protected static parsePartHeaders(Ljava/io/ByteArrayInputStream;Lcom/google/android/mms/pdu/PduPart;I)Z
-    .registers 9
+    .registers 10
     .parameter "pduDataStream"
     .parameter "part"
     .parameter "length"
 
     .prologue
-    .line 1465
+    .line 1720
     sget-boolean v0, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v0, :cond_c
@@ -2424,7 +3101,7 @@
 
     throw p0
 
-    .line 1466
+    .line 1721
     .restart local p0
     :cond_c
     sget-boolean v0, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
@@ -2440,7 +3117,7 @@
 
     throw p0
 
-    .line 1467
+    .line 1722
     .restart local p0
     :cond_18
     sget-boolean v0, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
@@ -2456,18 +3133,18 @@
 
     throw p0
 
-    .line 1485
+    .line 1740
     .restart local p0
     :cond_24
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v2
 
-    .line 1486
+    .line 1741
     .local v2, startPos:I
     const/4 v1, 0x0
 
-    .line 1487
+    .line 1742
     .local v1, tempPos:I
     move v0, p2
 
@@ -2478,18 +3155,18 @@
     .local v3, tempPos:I
     move v1, v0
 
-    .line 1488
+    .line 1743
     .end local v0           #lastLen:I
     .local v1, lastLen:I
     :goto_2c
-    if-lez v1, :cond_138
+    if-lez v1, :cond_168
 
-    .line 1489
+    .line 1744
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v0
 
-    .line 1490
+    .line 1745
     .local v0, header:I
     sget-boolean v4, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -2506,30 +3183,53 @@
 
     throw p0
 
-    .line 1491
+    .line 1746
     .restart local p0
     :cond_3f
     add-int/lit8 v1, v1, -0x1
 
-    .line 1493
+    .line 1748
     const/16 v4, 0x7f
 
-    if-le v0, v4, :cond_f4
+    if-le v0, v4, :cond_10c
 
-    .line 1495
-    sparse-switch v0, :sswitch_data_150
+    .line 1750
+    sparse-switch v0, :sswitch_data_180
 
-    .line 1574
+    .line 1827
+    const-string v4, "PduParser"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "Not supported Part headers: "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .end local v0           #header:I
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v4, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1829
     const/4 v0, -0x1
 
     invoke-static {p0, v1}, Lcom/google/android/mms/pdu/PduParser;->skipWapValue(Ljava/io/ByteArrayInputStream;I)I
 
-    .end local v0           #header:I
     move-result v4
 
-    if-ne v0, v4, :cond_f0
+    if-ne v0, v4, :cond_108
 
-    .line 1575
+    .line 1830
     const-string p0, "PduParser"
 
     .end local p0
@@ -2538,25 +3238,25 @@
     .end local p1
     invoke-static {p0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1576
+    .line 1831
     const/4 p0, 0x0
 
     move p1, p0
 
     move p0, v1
 
-    .line 1612
+    .line 1867
     .end local v1           #lastLen:I
     .local p0, lastLen:I
-    :goto_59
+    :goto_71
     return p1
 
-    .line 1501
+    .line 1756
     .restart local v0       #header:I
     .restart local v1       #lastLen:I
     .local p0, pduDataStream:Ljava/io/ByteArrayInputStream;
     .restart local p1
-    :sswitch_5a
+    :sswitch_72
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lcom/google/android/mms/pdu/PduParser;->parseWapString(Ljava/io/ByteArrayInputStream;I)[B
@@ -2564,20 +3264,20 @@
     .end local v0           #header:I
     move-result-object v0
 
-    .line 1502
+    .line 1757
     .local v0, contentLocation:[B
-    if-eqz v0, :cond_64
+    if-eqz v0, :cond_7c
 
-    .line 1503
+    .line 1758
     invoke-virtual {p1, v0}, Lcom/google/android/mms/pdu/PduPart;->setContentLocation([B)V
 
-    .line 1506
-    :cond_64
+    .line 1761
+    :cond_7c
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v1
 
-    .line 1507
+    .line 1762
     .end local v3           #tempPos:I
     .local v1, tempPos:I
     sub-int v0, v2, v1
@@ -2585,21 +3285,21 @@
     sub-int v0, p2, v0
 
     .local v0, lastLen:I
-    :goto_6c
+    :goto_84
     move v3, v1
 
     .end local v1           #tempPos:I
     .restart local v3       #tempPos:I
     move v1, v0
 
-    .line 1605
+    .line 1860
     .end local v0           #lastLen:I
     .local v1, lastLen:I
     goto :goto_2c
 
-    .line 1514
+    .line 1769
     .local v0, header:I
-    :sswitch_6f
+    :sswitch_87
     const/4 v0, 0x1
 
     invoke-static {p0, v0}, Lcom/google/android/mms/pdu/PduParser;->parseWapString(Ljava/io/ByteArrayInputStream;I)[B
@@ -2607,98 +3307,98 @@
     .end local v0           #header:I
     move-result-object v0
 
-    .line 1515
+    .line 1770
     .local v0, contentId:[B
-    if-eqz v0, :cond_79
+    if-eqz v0, :cond_91
 
-    .line 1516
+    .line 1771
     invoke-virtual {p1, v0}, Lcom/google/android/mms/pdu/PduPart;->setContentId([B)V
 
-    .line 1519
-    :cond_79
+    .line 1774
+    :cond_91
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v1
 
-    .line 1520
+    .line 1775
     .end local v3           #tempPos:I
     .local v1, tempPos:I
     sub-int v0, v2, v1
 
     sub-int v0, p2, v0
 
-    .line 1521
+    .line 1776
     .local v0, lastLen:I
-    goto :goto_6c
+    goto :goto_84
 
-    .line 1532
+    .line 1787
     .local v0, header:I
     .local v1, lastLen:I
     .restart local v3       #tempPos:I
-    :sswitch_82
+    :sswitch_9a
     invoke-static {p0}, Lcom/google/android/mms/pdu/PduParser;->parseValueLength(Ljava/io/ByteArrayInputStream;)I
 
     move-result v0
 
-    .line 1533
+    .line 1788
     .local v0, len:I
     const/4 v1, 0x1
 
     invoke-virtual {p0, v1}, Ljava/io/ByteArrayInputStream;->mark(I)V
 
-    .line 1534
+    .line 1789
     .end local v1           #lastLen:I
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v4
 
-    .line 1535
+    .line 1790
     .local v4, thisStartPos:I
     const/4 v1, 0x0
 
-    .line 1536
+    .line 1791
     .local v1, thisEndPos:I
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v3
 
-    .line 1538
+    .line 1793
     .local v3, value:I
     const/16 v1, 0x80
 
-    if-ne v3, v1, :cond_d0
+    if-ne v3, v1, :cond_e8
 
-    .line 1539
+    .line 1794
     .end local v1           #thisEndPos:I
     sget-object v1, Lcom/google/android/mms/pdu/PduPart;->DISPOSITION_FROM_DATA:[B
 
     invoke-virtual {p1, v1}, Lcom/google/android/mms/pdu/PduPart;->setContentDisposition([B)V
 
-    .line 1551
-    :goto_9c
+    .line 1806
+    :goto_b4
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v1
 
-    .line 1552
+    .line 1807
     .restart local v1       #thisEndPos:I
     sub-int v5, v4, v1
 
-    if-ge v5, v0, :cond_14b
+    if-ge v5, v0, :cond_17b
 
-    .line 1553
+    .line 1808
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v5
 
-    .line 1554
+    .line 1809
     .end local v3           #value:I
     .local v5, value:I
     const/16 v1, 0x98
 
-    if-ne v5, v1, :cond_b4
+    if-ne v5, v1, :cond_cc
 
-    .line 1555
+    .line 1810
     .end local v1           #thisEndPos:I
     const/4 v1, 0x0
 
@@ -2708,28 +3408,28 @@
 
     invoke-virtual {p1, v1}, Lcom/google/android/mms/pdu/PduPart;->setFilename([B)V
 
-    .line 1559
-    :cond_b4
+    .line 1814
+    :cond_cc
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v3
 
-    .line 1560
+    .line 1815
     .local v3, thisEndPos:I
     sub-int v1, v4, v3
 
-    if-ge v1, v0, :cond_c5
+    if-ge v1, v0, :cond_dd
 
-    .line 1561
+    .line 1816
     sub-int v1, v4, v3
 
     sub-int/2addr v0, v1
 
-    .line 1562
+    .line 1817
     .local v0, last:I
     new-array v1, v0, [B
 
-    .line 1563
+    .line 1818
     .local v1, temp:[B
     const/4 v4, 0x0
 
@@ -2738,66 +3438,66 @@
     .end local v0           #last:I
     .end local v1           #temp:[B
     .end local v4           #thisStartPos:I
-    :cond_c5
+    :cond_dd
     move v1, v5
 
     .end local v5           #value:I
     .local v1, value:I
     move v0, v3
 
-    .line 1567
+    .line 1822
     .end local v3           #thisEndPos:I
     .local v0, thisEndPos:I
-    :goto_c7
+    :goto_df
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v1
 
-    .line 1568
+    .line 1823
     .local v1, tempPos:I
     sub-int v0, v2, v1
 
     sub-int v0, p2, v0
 
-    .line 1569
+    .line 1824
     .local v0, lastLen:I
-    goto :goto_6c
+    goto :goto_84
 
-    .line 1540
+    .line 1795
     .end local v1           #tempPos:I
     .local v0, len:I
     .local v3, value:I
     .restart local v4       #thisStartPos:I
-    :cond_d0
+    :cond_e8
     const/16 v1, 0x81
 
-    if-ne v3, v1, :cond_da
+    if-ne v3, v1, :cond_f2
 
-    .line 1541
+    .line 1796
     sget-object v1, Lcom/google/android/mms/pdu/PduPart;->DISPOSITION_ATTACHMENT:[B
 
     invoke-virtual {p1, v1}, Lcom/google/android/mms/pdu/PduPart;->setContentDisposition([B)V
 
-    goto :goto_9c
+    goto :goto_b4
 
-    .line 1542
-    :cond_da
+    .line 1797
+    :cond_f2
     const/16 v1, 0x82
 
-    if-ne v3, v1, :cond_e4
+    if-ne v3, v1, :cond_fc
 
-    .line 1543
+    .line 1798
     sget-object v1, Lcom/google/android/mms/pdu/PduPart;->DISPOSITION_INLINE:[B
 
     invoke-virtual {p1, v1}, Lcom/google/android/mms/pdu/PduPart;->setContentDisposition([B)V
 
-    goto :goto_9c
+    goto :goto_b4
 
-    .line 1545
-    :cond_e4
+    .line 1800
+    :cond_fc
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->reset()V
 
-    .line 1547
+    .line 1802
     const/4 v1, 0x0
 
     invoke-static {p0, v1}, Lcom/google/android/mms/pdu/PduParser;->parseWapString(Ljava/io/ByteArrayInputStream;I)[B
@@ -2806,14 +3506,14 @@
 
     invoke-virtual {p1, v1}, Lcom/google/android/mms/pdu/PduPart;->setContentDisposition([B)V
 
-    goto :goto_9c
+    goto :goto_b4
 
-    .line 1578
+    .line 1833
     .end local v0           #len:I
     .end local v4           #thisStartPos:I
     .local v1, lastLen:I
     .local v3, tempPos:I
-    :cond_f0
+    :cond_108
     const/4 v0, 0x0
 
     .end local v1           #lastLen:I
@@ -2822,22 +3522,22 @@
 
     .end local v3           #tempPos:I
     .local v1, tempPos:I
-    goto/16 :goto_6c
+    goto/16 :goto_84
 
-    .line 1581
+    .line 1836
     .local v0, header:I
     .local v1, lastLen:I
     .restart local v3       #tempPos:I
-    :cond_f4
+    :cond_10c
     const/16 v4, 0x20
 
-    if-lt v0, v4, :cond_121
+    if-lt v0, v4, :cond_139
 
     const/16 v4, 0x7f
 
-    if-gt v0, v4, :cond_121
+    if-gt v0, v4, :cond_139
 
-    .line 1583
+    .line 1838
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lcom/google/android/mms/pdu/PduParser;->parseWapString(Ljava/io/ByteArrayInputStream;I)[B
@@ -2845,7 +3545,7 @@
     .end local v0           #header:I
     move-result-object v0
 
-    .line 1584
+    .line 1839
     .local v0, tempHeader:[B
     const/4 v1, 0x0
 
@@ -2854,7 +3554,7 @@
     .end local v1           #lastLen:I
     move-result-object v1
 
-    .line 1587
+    .line 1842
     .local v1, tempValue:[B
     const/4 v3, 0x1
 
@@ -2870,42 +3570,65 @@
     move-result v0
 
     .end local v0           #tempHeader:[B
-    if-ne v3, v0, :cond_117
+    if-ne v3, v0, :cond_12f
 
-    .line 1589
+    .line 1844
     invoke-virtual {p1, v1}, Lcom/google/android/mms/pdu/PduPart;->setContentTransferEncoding([B)V
 
-    .line 1592
-    :cond_117
+    .line 1847
+    :cond_12f
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v1
 
-    .line 1593
+    .line 1848
     .local v1, tempPos:I
     sub-int v0, v2, v1
 
     sub-int v0, p2, v0
 
-    .line 1594
+    .line 1849
     .local v0, lastLen:I
-    goto/16 :goto_6c
+    goto/16 :goto_84
 
-    .line 1599
+    .line 1851
     .local v0, header:I
     .local v1, lastLen:I
     .restart local v3       #tempPos:I
-    :cond_121
+    :cond_139
+    const-string v4, "PduParser"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "Not supported Part headers: "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .end local v0           #header:I
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v4, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1854
     const/4 v0, -0x1
 
     invoke-static {p0, v1}, Lcom/google/android/mms/pdu/PduParser;->skipWapValue(Ljava/io/ByteArrayInputStream;I)I
 
-    .end local v0           #header:I
     move-result v4
 
-    if-ne v0, v4, :cond_134
+    if-ne v0, v4, :cond_164
 
-    .line 1600
+    .line 1855
     const-string p0, "PduParser"
 
     .end local p0           #pduDataStream:Ljava/io/ByteArrayInputStream;
@@ -2914,7 +3637,7 @@
     .end local p1
     invoke-static {p0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1601
+    .line 1856
     const/4 p0, 0x0
 
     move p1, p0
@@ -2923,13 +3646,13 @@
 
     .end local v1           #lastLen:I
     .local p0, lastLen:I
-    goto/16 :goto_59
+    goto/16 :goto_71
 
-    .line 1603
+    .line 1858
     .restart local v1       #lastLen:I
     .local p0, pduDataStream:Ljava/io/ByteArrayInputStream;
     .restart local p1
-    :cond_134
+    :cond_164
     const/4 v0, 0x0
 
     .end local v1           #lastLen:I
@@ -2938,16 +3661,16 @@
 
     .end local v3           #tempPos:I
     .local v1, tempPos:I
-    goto/16 :goto_6c
+    goto/16 :goto_84
 
-    .line 1607
+    .line 1862
     .end local v0           #lastLen:I
     .local v1, lastLen:I
     .restart local v3       #tempPos:I
-    :cond_138
-    if-eqz v1, :cond_146
+    :cond_168
+    if-eqz v1, :cond_176
 
-    .line 1608
+    .line 1863
     const-string p0, "PduParser"
 
     .end local p0           #pduDataStream:Ljava/io/ByteArrayInputStream;
@@ -2956,7 +3679,7 @@
     .end local p1
     invoke-static {p0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1609
+    .line 1864
     const/4 p0, 0x0
 
     move p1, p0
@@ -2965,13 +3688,13 @@
 
     .end local v1           #lastLen:I
     .local p0, lastLen:I
-    goto/16 :goto_59
+    goto/16 :goto_71
 
-    .line 1612
+    .line 1867
     .restart local v1       #lastLen:I
     .local p0, pduDataStream:Ljava/io/ByteArrayInputStream;
     .restart local p1
-    :cond_146
+    :cond_176
     const/4 p0, 0x1
 
     move p1, p0
@@ -2980,14 +3703,14 @@
 
     .end local v1           #lastLen:I
     .local p0, lastLen:I
-    goto/16 :goto_59
+    goto/16 :goto_71
 
     .local v0, len:I
     .local v1, thisEndPos:I
     .local v3, value:I
     .restart local v4       #thisStartPos:I
     .local p0, pduDataStream:Ljava/io/ByteArrayInputStream;
-    :cond_14b
+    :cond_17b
     move v0, v1
 
     .end local v1           #thisEndPos:I
@@ -2996,254 +3719,253 @@
 
     .end local v3           #value:I
     .local v1, value:I
-    goto/16 :goto_c7
+    goto/16 :goto_df
 
-    .line 1495
+    .line 1750
     nop
 
-    :sswitch_data_150
+    :sswitch_data_180
     .sparse-switch
-        0x8e -> :sswitch_5a
-        0xae -> :sswitch_82
-        0xc0 -> :sswitch_6f
-        0xc5 -> :sswitch_82
+        0x8e -> :sswitch_72
+        0xae -> :sswitch_9a
+        0xc0 -> :sswitch_87
+        0xc5 -> :sswitch_9a
     .end sparse-switch
 .end method
 
 .method protected static parseParts(Ljava/io/ByteArrayInputStream;)Lcom/google/android/mms/pdu/PduBody;
-    .registers 11
+    .registers 15
     .parameter "pduDataStream"
 
     .prologue
-    .line 716
+    .line 873
     if-nez p0, :cond_4
 
-    .line 717
+    .line 874
     const/4 p0, 0x0
 
-    .line 813
+    .line 1038
     .end local p0
     :goto_3
     return-object p0
 
-    .line 720
+    .line 877
     .restart local p0
     :cond_4
     invoke-static {p0}, Lcom/google/android/mms/pdu/PduParser;->parseUnsignedInt(Ljava/io/ByteArrayInputStream;)I
 
-    move-result v2
+    move-result v3
 
-    .line 721
-    .local v2, count:I
+    .line 878
+    .local v3, count:I
     new-instance v0, Lcom/google/android/mms/pdu/PduBody;
 
     invoke-direct {v0}, Lcom/google/android/mms/pdu/PduBody;-><init>()V
 
-    .line 723
+    .line 880
     .local v0, body:Lcom/google/android/mms/pdu/PduBody;
     const/4 v1, 0x0
 
     .local v1, i:I
-    move v5, v1
+    move v6, v1
 
     .end local v1           #i:I
-    .local v5, i:I
+    .local v6, i:I
     :goto_f
-    if-ge v5, v2, :cond_f2
+    if-ge v6, v3, :cond_183
 
-    .line 724
+    .line 881
+    invoke-static {p0}, Lcom/google/android/mms/pdu/PduParser;->parseUnsignedInt(Ljava/io/ByteArrayInputStream;)I
+
+    move-result v5
+
+    .line 882
+    .local v5, headerLength:I
     invoke-static {p0}, Lcom/google/android/mms/pdu/PduParser;->parseUnsignedInt(Ljava/io/ByteArrayInputStream;)I
 
     move-result v4
 
-    .line 725
-    .local v4, headerLength:I
-    invoke-static {p0}, Lcom/google/android/mms/pdu/PduParser;->parseUnsignedInt(Ljava/io/ByteArrayInputStream;)I
+    .line 883
+    .local v4, dataLength:I
+    new-instance v8, Lcom/google/android/mms/pdu/PduPart;
 
-    move-result v3
+    invoke-direct {v8}, Lcom/google/android/mms/pdu/PduPart;-><init>()V
 
-    .line 726
-    .local v3, dataLength:I
-    new-instance v7, Lcom/google/android/mms/pdu/PduPart;
-
-    invoke-direct {v7}, Lcom/google/android/mms/pdu/PduPart;-><init>()V
-
-    .line 727
-    .local v7, part:Lcom/google/android/mms/pdu/PduPart;
+    .line 884
+    .local v8, part:Lcom/google/android/mms/pdu/PduPart;
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->available()I
 
-    move-result v8
+    move-result v9
 
-    .line 728
-    .local v8, startPos:I
-    if-gtz v8, :cond_26
+    .line 885
+    .local v9, startPos:I
+    if-gtz v9, :cond_26
 
-    .line 730
+    .line 887
     const/4 p0, 0x0
 
     goto :goto_3
 
-    .line 734
+    .line 891
     :cond_26
-    new-instance v6, Ljava/util/HashMap;
+    new-instance v1, Ljava/util/HashMap;
 
-    invoke-direct {v6}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    .line 735
-    .local v6, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Object;>;"
-    invoke-static {p0, v6}, Lcom/google/android/mms/pdu/PduParser;->parseContentType(Ljava/io/ByteArrayInputStream;Ljava/util/HashMap;)[B
+    .line 892
+    .local v1, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Object;>;"
+    invoke-static {p0, v1}, Lcom/google/android/mms/pdu/PduParser;->parseContentType(Ljava/io/ByteArrayInputStream;Ljava/util/HashMap;)[B
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 736
-    .local v1, contentType:[B
-    if-eqz v1, :cond_6e
+    .line 893
+    .local v2, contentType:[B
+    if-eqz v2, :cond_6e
 
-    .line 737
-    invoke-virtual {v7, v1}, Lcom/google/android/mms/pdu/PduPart;->setContentType([B)V
+    .line 894
+    invoke-virtual {v8, v2}, Lcom/google/android/mms/pdu/PduPart;->setContentType([B)V
 
-    .line 743
-    .end local v1           #contentType:[B
+    .line 900
     :goto_34
-    const/16 v1, 0x97
+    const/16 v7, 0x97
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v7
 
-    invoke-virtual {v6, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v7}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v7
 
-    check-cast v1, [B
+    check-cast v7, [B
 
-    check-cast v1, [B
+    check-cast v7, [B
 
-    .line 744
-    .local v1, name:[B
-    if-eqz v1, :cond_47
+    .line 901
+    .local v7, name:[B
+    if-eqz v7, :cond_47
 
-    .line 745
-    invoke-virtual {v7, v1}, Lcom/google/android/mms/pdu/PduPart;->setName([B)V
+    .line 902
+    invoke-virtual {v8, v7}, Lcom/google/android/mms/pdu/PduPart;->setName([B)V
 
-    .line 749
+    .line 906
     :cond_47
-    const/16 v1, 0x81
+    const/16 v7, 0x81
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    .end local v1           #name:[B
+    .end local v7           #name:[B
+    move-result-object v7
+
+    invoke-virtual {v1, v7}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
     move-result-object v1
 
-    invoke-virtual {v6, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
+    .end local v1           #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Object;>;"
     check-cast v1, Ljava/lang/Integer;
 
-    .line 750
+    .line 907
     .local v1, charset:Ljava/lang/Integer;
     if-eqz v1, :cond_5c
 
-    .line 751
+    .line 908
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
     .end local v1           #charset:Ljava/lang/Integer;
-    invoke-virtual {v7, v1}, Lcom/google/android/mms/pdu/PduPart;->setCharset(I)V
+    invoke-virtual {v8, v1}, Lcom/google/android/mms/pdu/PduPart;->setCharset(I)V
 
-    .line 755
+    .line 912
     :cond_5c
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v1
 
-    .line 756
+    .line 913
     .local v1, endPos:I
-    sub-int v1, v8, v1
+    sub-int v1, v9, v1
 
-    sub-int v1, v4, v1
+    sub-int v1, v5, v1
 
-    .line 757
+    .line 914
     .local v1, partHeaderLen:I
     if-lez v1, :cond_7b
 
-    .line 758
-    invoke-static {p0, v7, v1}, Lcom/google/android/mms/pdu/PduParser;->parsePartHeaders(Ljava/io/ByteArrayInputStream;Lcom/google/android/mms/pdu/PduPart;I)Z
+    .line 915
+    invoke-static {p0, v8, v1}, Lcom/google/android/mms/pdu/PduParser;->parsePartHeaders(Ljava/io/ByteArrayInputStream;Lcom/google/android/mms/pdu/PduPart;I)Z
 
     move-result v1
 
     .end local v1           #partHeaderLen:I
     if-nez v1, :cond_7f
 
-    .line 760
+    .line 917
     const/4 p0, 0x0
 
     goto :goto_3
 
-    .line 739
-    .local v1, contentType:[B
+    .line 896
+    .local v1, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Object;>;"
     :cond_6e
-    sget-object v1, Lcom/google/android/mms/pdu/PduContentTypes;->contentTypes:[Ljava/lang/String;
+    sget-object v7, Lcom/google/android/mms/pdu/PduContentTypes;->contentTypes:[Ljava/lang/String;
 
-    .end local v1           #contentType:[B
-    const/4 v9, 0x0
+    const/4 v10, 0x0
 
-    aget-object v1, v1, v9
+    aget-object v7, v7, v10
 
-    invoke-virtual {v1}, Ljava/lang/String;->getBytes()[B
+    invoke-virtual {v7}, Ljava/lang/String;->getBytes()[B
 
-    move-result-object v1
+    move-result-object v7
 
-    invoke-virtual {v7, v1}, Lcom/google/android/mms/pdu/PduPart;->setContentType([B)V
+    invoke-virtual {v8, v7}, Lcom/google/android/mms/pdu/PduPart;->setContentType([B)V
 
     goto :goto_34
 
-    .line 762
+    .line 919
     .local v1, partHeaderLen:I
     :cond_7b
     if-gez v1, :cond_7f
 
-    .line 764
+    .line 921
     const/4 p0, 0x0
 
     goto :goto_3
 
-    .line 770
+    .line 927
     .end local v1           #partHeaderLen:I
     :cond_7f
-    invoke-virtual {v7}, Lcom/google/android/mms/pdu/PduPart;->getContentLocation()[B
+    invoke-virtual {v8}, Lcom/google/android/mms/pdu/PduPart;->getContentLocation()[B
 
     move-result-object v1
 
     if-nez v1, :cond_a6
 
-    invoke-virtual {v7}, Lcom/google/android/mms/pdu/PduPart;->getName()[B
+    invoke-virtual {v8}, Lcom/google/android/mms/pdu/PduPart;->getName()[B
 
     move-result-object v1
 
     if-nez v1, :cond_a6
 
-    invoke-virtual {v7}, Lcom/google/android/mms/pdu/PduPart;->getFilename()[B
+    invoke-virtual {v8}, Lcom/google/android/mms/pdu/PduPart;->getFilename()[B
 
     move-result-object v1
 
     if-nez v1, :cond_a6
 
-    invoke-virtual {v7}, Lcom/google/android/mms/pdu/PduPart;->getContentId()[B
+    invoke-virtual {v8}, Lcom/google/android/mms/pdu/PduPart;->getContentId()[B
 
     move-result-object v1
 
     if-nez v1, :cond_a6
 
-    .line 774
+    .line 931
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v8
+    move-result-wide v9
 
-    .end local v8           #startPos:I
-    invoke-static {v8, v9}, Ljava/lang/Long;->toOctalString(J)Ljava/lang/String;
+    .end local v9           #startPos:I
+    invoke-static {v9, v10}, Ljava/lang/Long;->toOctalString(J)Ljava/lang/String;
 
     move-result-object v1
 
@@ -3251,144 +3973,565 @@
 
     move-result-object v1
 
-    invoke-virtual {v7, v1}, Lcom/google/android/mms/pdu/PduPart;->setContentLocation([B)V
+    invoke-virtual {v8, v1}, Lcom/google/android/mms/pdu/PduPart;->setContentLocation([B)V
 
-    .line 779
+    .line 936
     :cond_a6
-    if-lez v3, :cond_df
+    if-lez v4, :cond_156
 
-    .line 780
-    new-array v4, v3, [B
+    .line 937
+    new-array v5, v4, [B
 
-    .line 781
-    .local v4, partData:[B
+    .line 938
+    .local v5, partData:[B
     const/4 v1, 0x0
 
-    invoke-virtual {p0, v4, v1, v3}, Ljava/io/ByteArrayInputStream;->read([BII)I
+    invoke-virtual {p0, v5, v1, v4}, Ljava/io/ByteArrayInputStream;->read([BII)I
 
-    .line 783
-    invoke-virtual {v7}, Lcom/google/android/mms/pdu/PduPart;->getContentTransferEncoding()[B
+    .line 940
+    invoke-virtual {v8}, Lcom/google/android/mms/pdu/PduPart;->getContentTransferEncoding()[B
 
-    move-result-object v3
+    move-result-object v4
 
-    .line 784
-    .local v3, partDataEncoding:[B
-    if-eqz v3, :cond_f5
+    .line 941
+    .local v4, partDataEncoding:[B
+    if-eqz v4, :cond_1a9
 
-    .line 785
+    .line 942
     new-instance v1, Ljava/lang/String;
 
-    invoke-direct {v1, v3}, Ljava/lang/String;-><init>([B)V
+    invoke-direct {v1, v4}, Ljava/lang/String;-><init>([B)V
 
-    .line 786
+    .line 943
     .local v1, encoding:Ljava/lang/String;
-    const-string v3, "base64"
+    const-string v4, "base64"
 
-    .end local v3           #partDataEncoding:[B
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    .end local v4           #partDataEncoding:[B
+    invoke-virtual {v1, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_cf
+    if-eqz v4, :cond_cf
 
-    .line 788
-    invoke-static {v4}, Lcom/google/android/mms/pdu/Base64;->decodeBase64([B)[B
+    .line 945
+    invoke-static {v5}, Lcom/google/android/mms/pdu/Base64;->decodeBase64([B)[B
 
     move-result-object v1
 
-    .line 796
-    .end local v4           #partData:[B
+    .line 953
+    .end local v5           #partData:[B
     .local v1, partData:[B
     :goto_c5
     if-nez v1, :cond_dc
 
-    .line 797
+    .line 954
     const-string p0, "Decode part data error!"
 
     .end local p0
     invoke-static {p0}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
-    .line 798
+    .line 955
     const/4 p0, 0x0
 
     goto/16 :goto_3
 
-    .line 789
+    .line 946
     .local v1, encoding:Ljava/lang/String;
-    .restart local v4       #partData:[B
+    .restart local v5       #partData:[B
     .restart local p0
     :cond_cf
-    const-string v3, "quoted-printable"
+    const-string v4, "quoted-printable"
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v1, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v1
 
     .end local v1           #encoding:Ljava/lang/String;
-    if-eqz v1, :cond_f5
+    if-eqz v1, :cond_1a9
 
-    .line 791
-    invoke-static {v4}, Lcom/google/android/mms/pdu/QuotedPrintable;->decodeQuotedPrintable([B)[B
+    .line 948
+    invoke-static {v5}, Lcom/google/android/mms/pdu/QuotedPrintable;->decodeQuotedPrintable([B)[B
 
     move-result-object v1
 
-    .end local v4           #partData:[B
+    .end local v5           #partData:[B
     .local v1, partData:[B
     goto :goto_c5
 
-    .line 800
+    .line 962
     :cond_dc
-    invoke-virtual {v7, v1}, Lcom/google/android/mms/pdu/PduPart;->setData([B)V
 
-    .line 804
-    .end local v1           #partData:[B
-    :cond_df
-    invoke-static {v7}, Lcom/google/android/mms/pdu/PduParser;->checkPartPosition(Lcom/google/android/mms/pdu/PduPart;)I
+    goto :cond_17b #jump over this whole drm stuff
+
+    new-instance v4, Ljava/lang/String;
+
+    invoke-direct {v4, v2}, Ljava/lang/String;-><init>([B)V
+
+    invoke-static {v4, v1}, Lcom/google/android/mms/pdu/PduParser;->isDrmObject(Ljava/lang/String;[B)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_17b
+
+    .line 964
+    const/4 v4, 0x0
+
+    .line 965
+    .local v4, partDatafromFile:[B
+    const/4 v5, 0x0
+
+    .line 966
+    .local v5, requestFile:Ljava/io/File;
+    const/4 v5, 0x0
+
+    .line 967
+    .local v5, requestFileName:Ljava/lang/String;
+    const/4 v7, 0x0
+
+    .line 968
+    .local v7, processedFile:Ljava/io/File;
+    const/4 v5, 0x0
+
+    .line 970
+    .local v5, prcessedFileName:Ljava/lang/String;
+    const-string v5, "PduParser"
+
+    .end local v5           #prcessedFileName:Ljava/lang/String;
+    const-string v9, "isDrmObject!! <<<<<<"
+
+    invoke-static {v5, v9}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 972
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v9, Lcom/google/android/mms/pdu/PduParser;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v9}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
+
+    move-result-object v9
+
+    invoke-virtual {v5, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v9, "/drm_temp.tmp"
+
+    invoke-virtual {v5, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 973
+    .local v5, requestFileName:Ljava/lang/String;
+    new-instance v10, Ljava/io/File;
+
+    invoke-direct {v10, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 976
+    .local v10, requestFile:Ljava/io/File;
+    invoke-virtual {v10}, Ljava/io/File;->getPath()Ljava/lang/String;
+
+    move-result-object v5
+
+    .end local v5           #requestFileName:Ljava/lang/String;
+    new-instance v9, Ljava/lang/String;
+
+    invoke-direct {v9, v2}, Ljava/lang/String;-><init>([B)V
+
+    invoke-static {v5, v9, v1}, Lcom/google/android/mms/pdu/PduParser;->createObjectSession(Ljava/lang/String;Ljava/lang/String;[B)Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 979
+    .local v5, prcessedFileName:Ljava/lang/String;
+    if-eqz v5, :cond_1a6
+
+    .line 983
+    const/4 v2, 0x0
+
+    .line 984
+    .local v2, fin:Ljava/io/FileInputStream;
+    const/4 v1, 0x0
+
+    .line 986
+    .local v1, bufLength:I
+    :try_start_122
+    new-instance v9, Ljava/io/File;
+
+    invoke-direct {v9, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    :try_end_127
+    .catch Ljava/io/FileNotFoundException; {:try_start_122 .. :try_end_127} :catch_165
+    .catch Ljava/io/IOException; {:try_start_122 .. :try_end_127} :catch_170
+
+    .line 987
+    .end local v7           #processedFile:Ljava/io/File;
+    .local v9, processedFile:Ljava/io/File;
+    :try_start_127
+    invoke-virtual {v9}, Ljava/io/File;->length()J
+
+    move-result-wide v11
+
+    long-to-int v1, v11
+
+    .line 989
+    new-array v5, v1, [B
+    :try_end_12e
+    .catch Ljava/io/FileNotFoundException; {:try_start_127 .. :try_end_12e} :catch_196
+    .catch Ljava/io/IOException; {:try_start_127 .. :try_end_12e} :catch_186
+
+    .line 991
+    .end local v4           #partDatafromFile:[B
+    .local v5, partDatafromFile:[B
+    :try_start_12e
+    new-instance v4, Ljava/io/FileInputStream;
+
+    invoke-direct {v4, v9}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    :try_end_133
+    .catch Ljava/io/FileNotFoundException; {:try_start_12e .. :try_end_133} :catch_19d
+    .catch Ljava/io/IOException; {:try_start_12e .. :try_end_133} :catch_18d
+
+    .line 992
+    .end local v2           #fin:Ljava/io/FileInputStream;
+    .local v4, fin:Ljava/io/FileInputStream;
+    :try_start_133
+    invoke-virtual {v4, v5}, Ljava/io/FileInputStream;->read([B)I
+
+    .line 993
+    invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
+    :try_end_139
+    .catch Ljava/io/FileNotFoundException; {:try_start_133 .. :try_end_139} :catch_1a3
+    .catch Ljava/io/IOException; {:try_start_133 .. :try_end_139} :catch_193
+
+    move-object v2, v9
+
+    .end local v9           #processedFile:Ljava/io/File;
+    .local v2, processedFile:Ljava/io/File;
+    move-object v1, v5
+
+    .line 1006
+    .end local v4           #fin:Ljava/io/FileInputStream;
+    .end local v5           #partDatafromFile:[B
+    .local v1, partDatafromFile:[B
+    :goto_13b
+    if-eqz v1, :cond_140
+
+    .line 1007
+    invoke-virtual {v8, v1}, Lcom/google/android/mms/pdu/PduPart;->setData([B)V
+
+    .line 1010
+    :cond_140
+    if-eqz v10, :cond_14b
+
+    .line 1011
+    invoke-virtual {v10}, Ljava/io/File;->exists()Z
 
     move-result v1
 
-    if-nez v1, :cond_ee
+    .end local v1           #partDatafromFile:[B
+    if-eqz v1, :cond_14b
 
-    .line 806
+    .line 1012
+    invoke-virtual {v10}, Ljava/io/File;->delete()Z
+
+    .line 1016
+    :cond_14b
+    if-eqz v2, :cond_156
+
+    .line 1017
+    invoke-virtual {v2}, Ljava/io/File;->exists()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_156
+
+    .line 1018
+    invoke-virtual {v2}, Ljava/io/File;->delete()Z
+
+    .line 1029
+    .end local v2           #processedFile:Ljava/io/File;
+    .end local v10           #requestFile:Ljava/io/File;
+    :cond_156
+    :goto_156
+    invoke-static {v8}, Lcom/google/android/mms/pdu/PduParser;->checkPartPosition(Lcom/google/android/mms/pdu/PduPart;)I
+
+    move-result v1
+
+    if-nez v1, :cond_17f
+
+    .line 1031
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1, v7}, Lcom/google/android/mms/pdu/PduBody;->addPart(ILcom/google/android/mms/pdu/PduPart;)V
+    invoke-virtual {v0, v1, v8}, Lcom/google/android/mms/pdu/PduBody;->addPart(ILcom/google/android/mms/pdu/PduPart;)V
 
-    .line 723
-    :goto_e9
-    add-int/lit8 v1, v5, 0x1
+    .line 880
+    :goto_160
+    add-int/lit8 v1, v6, 0x1
 
-    .end local v5           #i:I
+    .end local v6           #i:I
     .local v1, i:I
-    move v5, v1
+    move v6, v1
 
     .end local v1           #i:I
-    .restart local v5       #i:I
+    .restart local v6       #i:I
     goto/16 :goto_f
 
-    .line 809
-    :cond_ee
-    invoke-virtual {v0, v7}, Lcom/google/android/mms/pdu/PduBody;->addPart(Lcom/google/android/mms/pdu/PduPart;)Z
+    .line 995
+    .local v1, bufLength:I
+    .local v2, fin:Ljava/io/FileInputStream;
+    .local v4, partDatafromFile:[B
+    .local v5, prcessedFileName:Ljava/lang/String;
+    .restart local v7       #processedFile:Ljava/io/File;
+    .restart local v10       #requestFile:Ljava/io/File;
+    :catch_165
+    move-exception v5
 
-    goto :goto_e9
+    move-object v13, v5
 
-    .end local v6           #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Object;>;"
-    .end local v7           #part:Lcom/google/android/mms/pdu/PduPart;
-    :cond_f2
+    move-object v5, v4
+
+    .end local v4           #partDatafromFile:[B
+    .local v5, partDatafromFile:[B
+    move-object v4, v2
+
+    .end local v2           #fin:Ljava/io/FileInputStream;
+    .local v4, fin:Ljava/io/FileInputStream;
+    move-object v2, v13
+
+    .line 997
+    .local v2, e:Ljava/io/FileNotFoundException;
+    :goto_16a
+    invoke-virtual {v2}, Ljava/io/FileNotFoundException;->printStackTrace()V
+
+    move-object v2, v7
+
+    .end local v7           #processedFile:Ljava/io/File;
+    .local v2, processedFile:Ljava/io/File;
+    move-object v1, v5
+
+    .line 1002
+    .end local v5           #partDatafromFile:[B
+    .local v1, partDatafromFile:[B
+    goto :goto_13b
+
+    .line 999
+    .local v1, bufLength:I
+    .local v2, fin:Ljava/io/FileInputStream;
+    .local v4, partDatafromFile:[B
+    .local v5, prcessedFileName:Ljava/lang/String;
+    .restart local v7       #processedFile:Ljava/io/File;
+    :catch_170
+    move-exception v5
+
+    move-object v13, v5
+
+    move-object v5, v4
+
+    .end local v4           #partDatafromFile:[B
+    .local v5, partDatafromFile:[B
+    move-object v4, v2
+
+    .end local v2           #fin:Ljava/io/FileInputStream;
+    .local v4, fin:Ljava/io/FileInputStream;
+    move-object v2, v13
+
+    .line 1001
+    .local v2, e:Ljava/io/IOException;
+    :goto_175
+    invoke-virtual {v2}, Ljava/io/IOException;->printStackTrace()V
+
+    move-object v2, v7
+
+    .end local v7           #processedFile:Ljava/io/File;
+    .local v2, processedFile:Ljava/io/File;
+    move-object v1, v5
+
+    .end local v5           #partDatafromFile:[B
+    .local v1, partDatafromFile:[B
+    goto :goto_13b
+
+    .line 1024
+    .end local v4           #fin:Ljava/io/FileInputStream;
+    .end local v10           #requestFile:Ljava/io/File;
+    .local v1, partData:[B
+    .local v2, contentType:[B
+    :cond_17b
+    invoke-virtual {v8, v1}, Lcom/google/android/mms/pdu/PduPart;->setData([B)V
+
+    goto :goto_156
+
+    .line 1034
+    .end local v1           #partData:[B
+    .end local v2           #contentType:[B
+    :cond_17f
+    invoke-virtual {v0, v8}, Lcom/google/android/mms/pdu/PduBody;->addPart(Lcom/google/android/mms/pdu/PduPart;)Z
+
+    goto :goto_160
+
+    .end local v8           #part:Lcom/google/android/mms/pdu/PduPart;
+    :cond_183
     move-object p0, v0
 
-    .line 813
+    .line 1038
     goto/16 :goto_3
 
-    .restart local v4       #partData:[B
-    .restart local v6       #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Object;>;"
-    .restart local v7       #part:Lcom/google/android/mms/pdu/PduPart;
-    :cond_f5
+    .line 999
+    .local v1, bufLength:I
+    .local v2, fin:Ljava/io/FileInputStream;
+    .local v4, partDatafromFile:[B
+    .local v5, prcessedFileName:Ljava/lang/String;
+    .restart local v8       #part:Lcom/google/android/mms/pdu/PduPart;
+    .restart local v9       #processedFile:Ljava/io/File;
+    .restart local v10       #requestFile:Ljava/io/File;
+    :catch_186
+    move-exception v5
+
+    move-object v7, v9
+
+    .end local v9           #processedFile:Ljava/io/File;
+    .restart local v7       #processedFile:Ljava/io/File;
+    move-object v13, v2
+
+    .end local v2           #fin:Ljava/io/FileInputStream;
+    .local v13, fin:Ljava/io/FileInputStream;
+    move-object v2, v5
+
+    move-object v5, v4
+
+    .end local v4           #partDatafromFile:[B
+    .local v5, partDatafromFile:[B
+    move-object v4, v13
+
+    .end local v13           #fin:Ljava/io/FileInputStream;
+    .local v4, fin:Ljava/io/FileInputStream;
+    goto :goto_175
+
+    .end local v4           #fin:Ljava/io/FileInputStream;
+    .end local v7           #processedFile:Ljava/io/File;
+    .restart local v2       #fin:Ljava/io/FileInputStream;
+    .restart local v9       #processedFile:Ljava/io/File;
+    :catch_18d
+    move-exception v4
+
+    move-object v7, v9
+
+    .end local v9           #processedFile:Ljava/io/File;
+    .restart local v7       #processedFile:Ljava/io/File;
+    move-object v13, v2
+
+    .end local v2           #fin:Ljava/io/FileInputStream;
+    .restart local v13       #fin:Ljava/io/FileInputStream;
+    move-object v2, v4
+
+    move-object v4, v13
+
+    .end local v13           #fin:Ljava/io/FileInputStream;
+    .restart local v4       #fin:Ljava/io/FileInputStream;
+    goto :goto_175
+
+    .end local v7           #processedFile:Ljava/io/File;
+    .restart local v9       #processedFile:Ljava/io/File;
+    :catch_193
+    move-exception v2
+
+    move-object v7, v9
+
+    .end local v9           #processedFile:Ljava/io/File;
+    .restart local v7       #processedFile:Ljava/io/File;
+    goto :goto_175
+
+    .line 995
+    .end local v7           #processedFile:Ljava/io/File;
+    .restart local v2       #fin:Ljava/io/FileInputStream;
+    .local v4, partDatafromFile:[B
+    .local v5, prcessedFileName:Ljava/lang/String;
+    .restart local v9       #processedFile:Ljava/io/File;
+    :catch_196
+    move-exception v5
+
+    move-object v7, v9
+
+    .end local v9           #processedFile:Ljava/io/File;
+    .restart local v7       #processedFile:Ljava/io/File;
+    move-object v13, v2
+
+    .end local v2           #fin:Ljava/io/FileInputStream;
+    .restart local v13       #fin:Ljava/io/FileInputStream;
+    move-object v2, v5
+
+    move-object v5, v4
+
+    .end local v4           #partDatafromFile:[B
+    .local v5, partDatafromFile:[B
+    move-object v4, v13
+
+    .end local v13           #fin:Ljava/io/FileInputStream;
+    .local v4, fin:Ljava/io/FileInputStream;
+    goto :goto_16a
+
+    .end local v4           #fin:Ljava/io/FileInputStream;
+    .end local v7           #processedFile:Ljava/io/File;
+    .restart local v2       #fin:Ljava/io/FileInputStream;
+    .restart local v9       #processedFile:Ljava/io/File;
+    :catch_19d
+    move-exception v4
+
+    move-object v7, v9
+
+    .end local v9           #processedFile:Ljava/io/File;
+    .restart local v7       #processedFile:Ljava/io/File;
+    move-object v13, v2
+
+    .end local v2           #fin:Ljava/io/FileInputStream;
+    .restart local v13       #fin:Ljava/io/FileInputStream;
+    move-object v2, v4
+
+    move-object v4, v13
+
+    .end local v13           #fin:Ljava/io/FileInputStream;
+    .restart local v4       #fin:Ljava/io/FileInputStream;
+    goto :goto_16a
+
+    .end local v7           #processedFile:Ljava/io/File;
+    .restart local v9       #processedFile:Ljava/io/File;
+    :catch_1a3
+    move-exception v2
+
+    move-object v7, v9
+
+    .end local v9           #processedFile:Ljava/io/File;
+    .restart local v7       #processedFile:Ljava/io/File;
+    goto :goto_16a
+
+    .local v1, partData:[B
+    .local v2, contentType:[B
+    .local v4, partDatafromFile:[B
+    .local v5, prcessedFileName:Ljava/lang/String;
+    :cond_1a6
+    move-object v2, v7
+
+    .end local v7           #processedFile:Ljava/io/File;
+    .local v2, processedFile:Ljava/io/File;
     move-object v1, v4
 
-    .end local v4           #partData:[B
+    .end local v4           #partDatafromFile:[B
+    .local v1, partDatafromFile:[B
+    goto :goto_13b
+
+    .end local v1           #partDatafromFile:[B
+    .end local v10           #requestFile:Ljava/io/File;
+    .local v2, contentType:[B
+    .local v5, partData:[B
+    :cond_1a9
+    move-object v1, v5
+
+    .end local v5           #partData:[B
     .local v1, partData:[B
-    goto :goto_c5
+    goto/16 :goto_c5
 .end method
 
 .method protected static parseShortInteger(Ljava/io/ByteArrayInputStream;)I
@@ -3396,7 +4539,7 @@
     .parameter "pduDataStream"
 
     .prologue
-    .line 1116
+    .line 1341
     sget-boolean v1, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v1, :cond_c
@@ -3409,13 +4552,13 @@
 
     throw v1
 
-    .line 1117
+    .line 1342
     :cond_c
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v0
 
-    .line 1118
+    .line 1343
     .local v0, temp:I
     sget-boolean v1, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -3431,7 +4574,7 @@
 
     throw v1
 
-    .line 1119
+    .line 1344
     :cond_1d
     and-int/lit8 v1, v0, 0x7f
 
@@ -3445,7 +4588,7 @@
     .prologue
     const/4 v3, -0x1
 
-    .line 839
+    .line 1064
     sget-boolean v2, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v2, :cond_d
@@ -3458,65 +4601,65 @@
 
     throw v2
 
-    .line 840
+    .line 1065
     :cond_d
     const/4 v0, 0x0
 
-    .line 841
+    .line 1066
     .local v0, result:I
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v1
 
-    .line 842
+    .line 1067
     .local v1, temp:I
     if-ne v1, v3, :cond_16
 
     move v2, v1
 
-    .line 858
+    .line 1083
     :goto_15
     return v2
 
-    .line 846
+    .line 1071
     :cond_16
     and-int/lit16 v2, v1, 0x80
 
     if-eqz v2, :cond_27
 
-    .line 847
+    .line 1072
     shl-int/lit8 v0, v0, 0x7
 
-    .line 848
+    .line 1073
     and-int/lit8 v2, v1, 0x7f
 
     or-int/2addr v0, v2
 
-    .line 849
+    .line 1074
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v1
 
-    .line 850
+    .line 1075
     if-ne v1, v3, :cond_16
 
     move v2, v1
 
-    .line 851
+    .line 1076
     goto :goto_15
 
-    .line 855
+    .line 1080
     :cond_27
     shl-int/lit8 v0, v0, 0x7
 
-    .line 856
+    .line 1081
     and-int/lit8 v2, v1, 0x7f
 
     or-int/2addr v0, v2
 
     move v2, v0
 
-    .line 858
+    .line 1083
     goto :goto_15
 .end method
 
@@ -3525,7 +4668,7 @@
     .parameter "pduDataStream"
 
     .prologue
-    .line 876
+    .line 1101
     sget-boolean v2, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v2, :cond_c
@@ -3538,13 +4681,13 @@
 
     throw v2
 
-    .line 877
+    .line 1102
     :cond_c
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v1
 
-    .line 878
+    .line 1103
     .local v1, temp:I
     sget-boolean v2, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -3560,11 +4703,11 @@
 
     throw v2
 
-    .line 879
+    .line 1104
     :cond_1d
     and-int/lit16 v0, v1, 0xff
 
-    .line 881
+    .line 1106
     .local v0, first:I
     const/16 v2, 0x1e
 
@@ -3572,24 +4715,24 @@
 
     move v2, v0
 
-    .line 884
+    .line 1109
     :goto_24
     return v2
 
-    .line 883
+    .line 1108
     :cond_25
     const/16 v2, 0x1f
 
     if-ne v0, v2, :cond_2e
 
-    .line 884
+    .line 1109
     invoke-static {p0}, Lcom/google/android/mms/pdu/PduParser;->parseUnsignedInt(Ljava/io/ByteArrayInputStream;)I
 
     move-result v2
 
     goto :goto_24
 
-    .line 887
+    .line 1112
     :cond_2e
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -3608,7 +4751,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 940
+    .line 1165
     sget-boolean v1, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v1, :cond_d
@@ -3621,16 +4764,16 @@
 
     throw v1
 
-    .line 958
+    .line 1183
     :cond_d
     invoke-virtual {p0, v2}, Ljava/io/ByteArrayInputStream;->mark(I)V
 
-    .line 961
+    .line 1186
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v0
 
-    .line 962
+    .line 1187
     .local v0, temp:I
     sget-boolean v1, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -3646,7 +4789,7 @@
 
     throw v1
 
-    .line 963
+    .line 1188
     :cond_21
     if-ne v2, p1, :cond_2f
 
@@ -3654,10 +4797,10 @@
 
     if-ne v1, v0, :cond_2f
 
-    .line 966
+    .line 1191
     invoke-virtual {p0, v2}, Ljava/io/ByteArrayInputStream;->mark(I)V
 
-    .line 981
+    .line 1206
     :goto_2a
     invoke-static {p0, p1}, Lcom/google/android/mms/pdu/PduParser;->getWapString(Ljava/io/ByteArrayInputStream;I)[B
 
@@ -3665,7 +4808,7 @@
 
     return-object v1
 
-    .line 967
+    .line 1192
     :cond_2f
     if-nez p1, :cond_39
 
@@ -3673,12 +4816,12 @@
 
     if-ne v1, v0, :cond_39
 
-    .line 970
+    .line 1195
     invoke-virtual {p0, v2}, Ljava/io/ByteArrayInputStream;->mark(I)V
 
     goto :goto_2a
 
-    .line 973
+    .line 1198
     :cond_39
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->reset()V
 
@@ -3691,7 +4834,7 @@
     .parameter "length"
 
     .prologue
-    .line 1191
+    .line 1416
     sget-boolean v2, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v2, :cond_c
@@ -3704,11 +4847,11 @@
 
     throw v2
 
-    .line 1192
+    .line 1417
     :cond_c
     new-array v0, p1, [B
 
-    .line 1193
+    .line 1418
     .local v0, area:[B
     const/4 v2, 0x0
 
@@ -3716,14 +4859,14 @@
 
     move-result v1
 
-    .line 1194
+    .line 1419
     .local v1, readLen:I
     if-ge v1, p1, :cond_17
 
-    .line 1195
+    .line 1420
     const/4 v2, -0x1
 
-    .line 1197
+    .line 1422
     :goto_16
     return v2
 
@@ -3735,25 +4878,28 @@
 
 
 # virtual methods
-.method public parse()Lcom/google/android/mms/pdu/GenericPdu;
+.method public parse(Landroid/content/Context;)Lcom/google/android/mms/pdu/GenericPdu;
     .registers 16
+    #.parameter "context"
 
     .prologue
-    const/4 v14, 0x0
-
-    .line 105
+    .line 133
     iget-object v12, p0, Lcom/google/android/mms/pdu/PduParser;->mPduDataStream:Ljava/io/ByteArrayInputStream;
 
-    if-nez v12, :cond_7
+    if-nez v12, :cond_6
 
-    move-object v12, v14
+    .line 134
+    const/4 v12, 0x0
 
-    .line 184
-    :goto_6
+    .line 216
+    :goto_5
     return-object v12
 
-    .line 110
-    :cond_7
+    .line 138
+    :cond_6
+    #sput-object p1, Lcom/google/android/mms/pdu/PduParser;->mContext:Landroid/content/Context;
+
+    .line 142
     iget-object v12, p0, Lcom/google/android/mms/pdu/PduParser;->mPduDataStream:Ljava/io/ByteArrayInputStream;
 
     invoke-virtual {p0, v12}, Lcom/google/android/mms/pdu/PduParser;->parseHeaders(Ljava/io/ByteArrayInputStream;)Lcom/google/android/mms/pdu/PduHeaders;
@@ -3762,18 +4908,18 @@
 
     iput-object v12, p0, Lcom/google/android/mms/pdu/PduParser;->mHeaders:Lcom/google/android/mms/pdu/PduHeaders;
 
-    .line 111
+    .line 143
     iget-object v12, p0, Lcom/google/android/mms/pdu/PduParser;->mHeaders:Lcom/google/android/mms/pdu/PduHeaders;
 
-    if-nez v12, :cond_15
+    if-nez v12, :cond_16
 
-    move-object v12, v14
+    .line 145
+    const/4 v12, 0x0
 
-    .line 113
-    goto :goto_6
+    goto :goto_5
 
-    .line 117
-    :cond_15
+    .line 149
+    :cond_16
     iget-object v12, p0, Lcom/google/android/mms/pdu/PduParser;->mHeaders:Lcom/google/android/mms/pdu/PduHeaders;
 
     const/16 v13, 0x8c
@@ -3782,7 +4928,7 @@
 
     move-result v4
 
-    .line 120
+    .line 152
     .local v4, messageType:I
     iget-object v12, p0, Lcom/google/android/mms/pdu/PduParser;->mHeaders:Lcom/google/android/mms/pdu/PduHeaders;
 
@@ -3790,30 +4936,30 @@
 
     move-result v12
 
-    if-nez v12, :cond_2c
+    if-nez v12, :cond_2d
 
-    .line 121
+    .line 153
     const-string v12, "check mandatory headers failed!"
 
     invoke-static {v12}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
-    move-object v12, v14
+    .line 154
+    const/4 v12, 0x0
 
-    .line 122
-    goto :goto_6
+    goto :goto_5
 
-    .line 125
-    :cond_2c
+    .line 157
+    :cond_2d
     const/16 v12, 0x80
 
-    if-eq v12, v4, :cond_34
+    if-eq v12, v4, :cond_35
 
     const/16 v12, 0x84
 
-    if-ne v12, v4, :cond_42
+    if-ne v12, v4, :cond_43
 
-    .line 128
-    :cond_34
+    .line 160
+    :cond_35
     iget-object v12, p0, Lcom/google/android/mms/pdu/PduParser;->mPduDataStream:Ljava/io/ByteArrayInputStream;
 
     invoke-static {v12}, Lcom/google/android/mms/pdu/PduParser;->parseParts(Ljava/io/ByteArrayInputStream;)Lcom/google/android/mms/pdu/PduBody;
@@ -3822,32 +4968,32 @@
 
     iput-object v12, p0, Lcom/google/android/mms/pdu/PduParser;->mBody:Lcom/google/android/mms/pdu/PduBody;
 
-    .line 129
+    .line 161
     iget-object v12, p0, Lcom/google/android/mms/pdu/PduParser;->mBody:Lcom/google/android/mms/pdu/PduBody;
 
-    if-nez v12, :cond_42
+    if-nez v12, :cond_43
 
-    move-object v12, v14
+    .line 163
+    const/4 v12, 0x0
 
-    .line 131
-    goto :goto_6
+    goto :goto_5
 
-    .line 135
-    :cond_42
-    packed-switch v4, :pswitch_data_c6
+    .line 167
+    :cond_43
+    packed-switch v4, :pswitch_data_c8
 
-    .line 183
+    .line 215
     const-string v12, "Parser doesn\'t support this message type in this version!"
 
     invoke-static {v12}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
-    move-object v12, v14
+    .line 216
+    const/4 v12, 0x0
 
-    .line 184
-    goto :goto_6
+    goto :goto_5
 
-    .line 137
-    :pswitch_4c
+    .line 169
+    :pswitch_4d
     new-instance v11, Lcom/google/android/mms/pdu/SendReq;
 
     iget-object v12, p0, Lcom/google/android/mms/pdu/PduParser;->mHeaders:Lcom/google/android/mms/pdu/PduHeaders;
@@ -3859,12 +5005,12 @@
     .local v11, sendReq:Lcom/google/android/mms/pdu/SendReq;
     move-object v12, v11
 
-    .line 138
-    goto :goto_6
+    .line 170
+    goto :goto_5
 
-    .line 140
+    .line 172
     .end local v11           #sendReq:Lcom/google/android/mms/pdu/SendReq;
-    :pswitch_57
+    :pswitch_58
     new-instance v10, Lcom/google/android/mms/pdu/SendConf;
 
     iget-object v12, p0, Lcom/google/android/mms/pdu/PduParser;->mHeaders:Lcom/google/android/mms/pdu/PduHeaders;
@@ -3874,12 +5020,12 @@
     .local v10, sendConf:Lcom/google/android/mms/pdu/SendConf;
     move-object v12, v10
 
-    .line 141
-    goto :goto_6
+    .line 173
+    goto :goto_5
 
-    .line 143
+    .line 175
     .end local v10           #sendConf:Lcom/google/android/mms/pdu/SendConf;
-    :pswitch_60
+    :pswitch_61
     new-instance v5, Lcom/google/android/mms/pdu/NotificationInd;
 
     iget-object v12, p0, Lcom/google/android/mms/pdu/PduParser;->mHeaders:Lcom/google/android/mms/pdu/PduHeaders;
@@ -3889,12 +5035,12 @@
     .local v5, notificationInd:Lcom/google/android/mms/pdu/NotificationInd;
     move-object v12, v5
 
-    .line 145
-    goto :goto_6
+    .line 177
+    goto :goto_5
 
-    .line 147
+    .line 179
     .end local v5           #notificationInd:Lcom/google/android/mms/pdu/NotificationInd;
-    :pswitch_69
+    :pswitch_6a
     new-instance v6, Lcom/google/android/mms/pdu/NotifyRespInd;
 
     iget-object v12, p0, Lcom/google/android/mms/pdu/PduParser;->mHeaders:Lcom/google/android/mms/pdu/PduHeaders;
@@ -3904,12 +5050,12 @@
     .local v6, notifyRespInd:Lcom/google/android/mms/pdu/NotifyRespInd;
     move-object v12, v6
 
-    .line 149
-    goto :goto_6
+    .line 181
+    goto :goto_5
 
-    .line 151
+    .line 183
     .end local v6           #notifyRespInd:Lcom/google/android/mms/pdu/NotifyRespInd;
-    :pswitch_72
+    :pswitch_73
     new-instance v9, Lcom/google/android/mms/pdu/RetrieveConf;
 
     iget-object v12, p0, Lcom/google/android/mms/pdu/PduParser;->mHeaders:Lcom/google/android/mms/pdu/PduHeaders;
@@ -3918,28 +5064,28 @@
 
     invoke-direct {v9, v12, v13}, Lcom/google/android/mms/pdu/RetrieveConf;-><init>(Lcom/google/android/mms/pdu/PduHeaders;Lcom/google/android/mms/pdu/PduBody;)V
 
-    .line 154
+    .line 186
     .local v9, retrieveConf:Lcom/google/android/mms/pdu/RetrieveConf;
     invoke-virtual {v9}, Lcom/google/android/mms/pdu/RetrieveConf;->getContentType()[B
 
     move-result-object v1
 
-    .line 155
+    .line 187
     .local v1, contentType:[B
-    if-nez v1, :cond_83
+    if-nez v1, :cond_84
 
-    move-object v12, v14
+    .line 188
+    const/4 v12, 0x0
 
-    .line 156
-    goto :goto_6
+    goto :goto_5
 
-    .line 158
-    :cond_83
+    .line 190
+    :cond_84
     new-instance v2, Ljava/lang/String;
 
     invoke-direct {v2, v1}, Ljava/lang/String;-><init>([B)V
 
-    .line 159
+    .line 191
     .local v2, ctTypeStr:Ljava/lang/String;
     const-string v12, "application/vnd.wap.multipart.mixed"
 
@@ -3947,7 +5093,7 @@
 
     move-result v12
 
-    if-nez v12, :cond_98
+    if-nez v12, :cond_99
 
     const-string v12, "application/vnd.wap.multipart.related"
 
@@ -3955,25 +5101,25 @@
 
     move-result v12
 
-    if-eqz v12, :cond_9b
+    if-eqz v12, :cond_9c
 
-    :cond_98
+    :cond_99
     move-object v12, v9
 
-    .line 163
-    goto/16 :goto_6
+    .line 195
+    goto/16 :goto_5
 
-    :cond_9b
-    move-object v12, v14
+    .line 197
+    :cond_9c
+    const/4 v12, 0x0
 
-    .line 165
-    goto/16 :goto_6
+    goto/16 :goto_5
 
-    .line 167
+    .line 199
     .end local v1           #contentType:[B
     .end local v2           #ctTypeStr:Ljava/lang/String;
     .end local v9           #retrieveConf:Lcom/google/android/mms/pdu/RetrieveConf;
-    :pswitch_9e
+    :pswitch_9f
     new-instance v3, Lcom/google/android/mms/pdu/DeliveryInd;
 
     iget-object v12, p0, Lcom/google/android/mms/pdu/PduParser;->mHeaders:Lcom/google/android/mms/pdu/PduHeaders;
@@ -3983,12 +5129,12 @@
     .local v3, deliveryInd:Lcom/google/android/mms/pdu/DeliveryInd;
     move-object v12, v3
 
-    .line 169
-    goto/16 :goto_6
+    .line 201
+    goto/16 :goto_5
 
-    .line 171
+    .line 203
     .end local v3           #deliveryInd:Lcom/google/android/mms/pdu/DeliveryInd;
-    :pswitch_a8
+    :pswitch_a9
     new-instance v0, Lcom/google/android/mms/pdu/AcknowledgeInd;
 
     iget-object v12, p0, Lcom/google/android/mms/pdu/PduParser;->mHeaders:Lcom/google/android/mms/pdu/PduHeaders;
@@ -3998,12 +5144,12 @@
     .local v0, acknowledgeInd:Lcom/google/android/mms/pdu/AcknowledgeInd;
     move-object v12, v0
 
-    .line 173
-    goto/16 :goto_6
+    .line 205
+    goto/16 :goto_5
 
-    .line 175
+    .line 207
     .end local v0           #acknowledgeInd:Lcom/google/android/mms/pdu/AcknowledgeInd;
-    :pswitch_b2
+    :pswitch_b3
     new-instance v7, Lcom/google/android/mms/pdu/ReadOrigInd;
 
     iget-object v12, p0, Lcom/google/android/mms/pdu/PduParser;->mHeaders:Lcom/google/android/mms/pdu/PduHeaders;
@@ -4013,12 +5159,12 @@
     .local v7, readOrigInd:Lcom/google/android/mms/pdu/ReadOrigInd;
     move-object v12, v7
 
-    .line 177
-    goto/16 :goto_6
+    .line 209
+    goto/16 :goto_5
 
-    .line 179
+    .line 211
     .end local v7           #readOrigInd:Lcom/google/android/mms/pdu/ReadOrigInd;
-    :pswitch_bc
+    :pswitch_bd
     new-instance v8, Lcom/google/android/mms/pdu/ReadRecInd;
 
     iget-object v12, p0, Lcom/google/android/mms/pdu/PduParser;->mHeaders:Lcom/google/android/mms/pdu/PduHeaders;
@@ -4028,98 +5174,100 @@
     .local v8, readRecInd:Lcom/google/android/mms/pdu/ReadRecInd;
     move-object v12, v8
 
-    .line 181
-    goto/16 :goto_6
+    .line 213
+    goto/16 :goto_5
 
-    .line 135
-    :pswitch_data_c6
+    .line 167
+    nop
+
+    :pswitch_data_c8
     .packed-switch 0x80
-        :pswitch_4c
-        :pswitch_57
-        :pswitch_60
-        :pswitch_69
-        :pswitch_72
-        :pswitch_a8
-        :pswitch_9e
-        :pswitch_bc
-        :pswitch_b2
+        :pswitch_4d
+        :pswitch_58
+        :pswitch_61
+        :pswitch_6a
+        :pswitch_73
+        :pswitch_a9
+        :pswitch_9f
+        :pswitch_bd
+        :pswitch_b3
     .end packed-switch
 .end method
 
 .method protected parseHeaders(Ljava/io/ByteArrayInputStream;)Lcom/google/android/mms/pdu/PduHeaders;
-    .registers 33
+    .registers 35
     .parameter "pduDataStream"
 
     .prologue
-    .line 195
+    .line 227
     if-nez p1, :cond_5
 
-    .line 196
-    const/16 v27, 0x0
+    .line 228
+    const/16 v29, 0x0
 
-    .line 706
+    .line 752
     .end local p0
     :goto_4
-    return-object v27
+    return-object v29
 
-    .line 199
+    .line 231
     .restart local p0
     :cond_5
-    const/4 v12, 0x1
+    const/4 v13, 0x1
 
-    .line 200
-    .local v12, keepParsing:Z
-    new-instance v11, Lcom/google/android/mms/pdu/PduHeaders;
+    .line 232
+    .local v13, keepParsing:Z
+    new-instance v12, Lcom/google/android/mms/pdu/PduHeaders;
 
-    invoke-direct {v11}, Lcom/google/android/mms/pdu/PduHeaders;-><init>()V
+    invoke-direct {v12}, Lcom/google/android/mms/pdu/PduHeaders;-><init>()V
 
-    .line 202
+    .line 234
     .end local p0
-    .local v11, headers:Lcom/google/android/mms/pdu/PduHeaders;
+    .local v12, headers:Lcom/google/android/mms/pdu/PduHeaders;
     :cond_b
     :goto_b
-    if-eqz v12, :cond_5ad
+    if-eqz v13, :cond_637
 
     invoke-virtual/range {p1 .. p1}, Ljava/io/ByteArrayInputStream;->available()I
 
-    move-result v27
+    move-result v29
 
-    if-lez v27, :cond_5ad
+    if-lez v29, :cond_637
 
-    .line 203
+    .line 235
     invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->extractByteValue(Ljava/io/ByteArrayInputStream;)I
 
-    move-result v10
+    move-result v11
 
-    .line 204
-    .local v10, headerField:I
-    packed-switch v10, :pswitch_data_5b2
+    .line 236
+    .local v11, headerField:I
+    packed-switch v11, :pswitch_data_63c
 
-    .line 701
+    .line 747
     :pswitch_1a
-    const-string v27, "Unknown header"
+    const-string v29, "Unknown header"
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
     goto :goto_b
 
-    .line 207
+    .line 239
     :pswitch_20
     invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->extractByteValue(Ljava/io/ByteArrayInputStream;)I
 
-    move-result v16
+    move-result v17
 
-    .line 208
-    .local v16, messageType:I
-    packed-switch v16, :pswitch_data_634
+    .line 240
+    .local v17, messageType:I
+    packed-switch v17, :pswitch_data_6be
 
-    .line 228
+    .line 260
     :try_start_27
-    move-object v0, v11
+    move-object v0, v12
 
-    move/from16 v1, v16
+    move/from16 v1, v17
 
-    move v2, v10
+    move v2, v11
 
     invoke-virtual {v0, v1, v2}, Lcom/google/android/mms/pdu/PduHeaders;->setOctet(II)V
     :try_end_2e
@@ -4128,113 +5276,113 @@
 
     goto :goto_b
 
-    .line 229
+    .line 261
     :catch_2f
-    move-exception v6
+    move-exception v7
 
-    .line 230
-    .local v6, e:Lcom/google/android/mms/InvalidHeaderValueException;
-    new-instance v27, Ljava/lang/StringBuilder;
+    .line 262
+    .local v7, e:Lcom/google/android/mms/InvalidHeaderValueException;
+    new-instance v29, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v29 .. v29}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v28, "Set invalid Octet value: "
+    const-string v30, "Set invalid Octet value: "
 
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v29
 
-    move/from16 v1, v16
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v27
-
-    const-string v28, " into the header filed: "
-
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v27
-
-    move-object/from16 v0, v27
-
-    move v1, v10
+    move/from16 v1, v17
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v30, " into the header filed: "
 
-    move-result-object v27
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    move-result-object v29
 
-    .line 232
-    const/16 v27, 0x0
+    move-object/from16 v0, v29
+
+    move v1, v11
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v29
+
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v29
+
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+
+    .line 264
+    const/16 v29, 0x0
 
     goto :goto_4
 
-    .line 225
-    .end local v6           #e:Lcom/google/android/mms/InvalidHeaderValueException;
+    .line 257
+    .end local v7           #e:Lcom/google/android/mms/InvalidHeaderValueException;
     :pswitch_5a
-    const/16 v27, 0x0
+    const/16 v29, 0x0
 
     goto :goto_4
 
-    .line 233
+    .line 265
     :catch_5d
-    move-exception v6
+    move-exception v7
 
-    .line 234
-    .local v6, e:Ljava/lang/RuntimeException;
-    new-instance v27, Ljava/lang/StringBuilder;
+    .line 266
+    .local v7, e:Ljava/lang/RuntimeException;
+    new-instance v29, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v29 .. v29}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v29
 
-    move v1, v10
+    move v1, v11
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    const-string v28, "is not Octet header field!"
+    const-string v30, "is not Octet header field!"
 
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
-    .line 235
-    const/16 v27, 0x0
+    .line 267
+    const/16 v29, 0x0
 
     goto :goto_4
 
-    .line 268
-    .end local v6           #e:Ljava/lang/RuntimeException;
-    .end local v16           #messageType:I
+    .line 300
+    .end local v7           #e:Ljava/lang/RuntimeException;
+    .end local v17           #messageType:I
     :pswitch_7a
     invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->extractByteValue(Ljava/io/ByteArrayInputStream;)I
 
-    move-result v24
+    move-result v26
 
-    .line 271
-    .local v24, value:I
+    .line 303
+    .local v26, value:I
     :try_start_7e
-    move-object v0, v11
+    move-object v0, v12
 
-    move/from16 v1, v24
+    move/from16 v1, v26
 
-    move v2, v10
+    move v2, v11
 
     invoke-virtual {v0, v1, v2}, Lcom/google/android/mms/pdu/PduHeaders;->setOctet(II)V
     :try_end_85
@@ -4243,107 +5391,107 @@
 
     goto :goto_b
 
-    .line 272
+    .line 304
     :catch_86
-    move-exception v6
+    move-exception v7
 
-    .line 273
-    .local v6, e:Lcom/google/android/mms/InvalidHeaderValueException;
-    new-instance v27, Ljava/lang/StringBuilder;
+    .line 305
+    .local v7, e:Lcom/google/android/mms/InvalidHeaderValueException;
+    new-instance v29, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v29 .. v29}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v28, "Set invalid Octet value: "
+    const-string v30, "Set invalid Octet value: "
 
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v29
 
-    move/from16 v1, v24
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v27
-
-    const-string v28, " into the header filed: "
-
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v27
-
-    move-object/from16 v0, v27
-
-    move v1, v10
+    move/from16 v1, v26
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v30, " into the header filed: "
 
-    move-result-object v27
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    move-result-object v29
 
-    .line 275
-    const/16 v27, 0x0
+    move-object/from16 v0, v29
+
+    move v1, v11
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v29
+
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v29
+
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+
+    .line 307
+    const/16 v29, 0x0
 
     goto/16 :goto_4
 
-    .line 276
-    .end local v6           #e:Lcom/google/android/mms/InvalidHeaderValueException;
+    .line 308
+    .end local v7           #e:Lcom/google/android/mms/InvalidHeaderValueException;
     :catch_b2
-    move-exception v6
+    move-exception v7
 
-    .line 277
-    .local v6, e:Ljava/lang/RuntimeException;
-    new-instance v27, Ljava/lang/StringBuilder;
+    .line 309
+    .local v7, e:Ljava/lang/RuntimeException;
+    new-instance v29, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v29 .. v29}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v29
 
-    move v1, v10
+    move v1, v11
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    const-string v28, "is not Octet header field!"
+    const-string v30, "is not Octet header field!"
 
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
-    .line 278
-    const/16 v27, 0x0
+    .line 310
+    const/16 v29, 0x0
 
     goto/16 :goto_4
 
-    .line 289
-    .end local v6           #e:Ljava/lang/RuntimeException;
-    .end local v24           #value:I
+    .line 321
+    .end local v7           #e:Ljava/lang/RuntimeException;
+    .end local v26           #value:I
     :pswitch_d0
     :try_start_d0
     invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseLongInteger(Ljava/io/ByteArrayInputStream;)J
 
-    move-result-wide v24
+    move-result-wide v26
 
-    .line 290
-    .local v24, value:J
-    move-object v0, v11
+    .line 322
+    .local v26, value:J
+    move-object v0, v12
 
-    move-wide/from16 v1, v24
+    move-wide/from16 v1, v26
 
-    move v3, v10
+    move v3, v11
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/mms/pdu/PduHeaders;->setLongInteger(JI)V
     :try_end_db
@@ -4351,59 +5499,59 @@
 
     goto/16 :goto_b
 
-    .line 291
-    .end local v24           #value:J
+    .line 323
+    .end local v26           #value:J
     :catch_dd
-    move-exception v27
+    move-exception v29
 
-    move-object/from16 v6, v27
+    move-object/from16 v7, v29
 
-    .line 292
-    .restart local v6       #e:Ljava/lang/RuntimeException;
-    new-instance v27, Ljava/lang/StringBuilder;
+    .line 324
+    .restart local v7       #e:Ljava/lang/RuntimeException;
+    new-instance v29, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v29 .. v29}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v29
 
-    move v1, v10
+    move v1, v11
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    const-string v28, "is not Long-Integer header field!"
+    const-string v30, "is not Long-Integer header field!"
 
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
-    .line 293
-    const/16 v27, 0x0
+    .line 325
+    const/16 v29, 0x0
 
     goto/16 :goto_4
 
-    .line 304
-    .end local v6           #e:Ljava/lang/RuntimeException;
+    .line 336
+    .end local v7           #e:Ljava/lang/RuntimeException;
     :pswitch_fd
     :try_start_fd
     invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseIntegerValue(Ljava/io/ByteArrayInputStream;)J
 
-    move-result-wide v24
+    move-result-wide v26
 
-    .line 305
-    .restart local v24       #value:J
-    move-object v0, v11
+    .line 337
+    .restart local v26       #value:J
+    move-object v0, v12
 
-    move-wide/from16 v1, v24
+    move-wide/from16 v1, v26
 
-    move v3, v10
+    move v3, v11
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/mms/pdu/PduHeaders;->setLongInteger(JI)V
     :try_end_108
@@ -4411,68 +5559,68 @@
 
     goto/16 :goto_b
 
-    .line 306
-    .end local v24           #value:J
+    .line 338
+    .end local v26           #value:J
     :catch_10a
-    move-exception v27
+    move-exception v29
 
-    move-object/from16 v6, v27
+    move-object/from16 v7, v29
 
-    .line 307
-    .restart local v6       #e:Ljava/lang/RuntimeException;
-    new-instance v27, Ljava/lang/StringBuilder;
+    .line 339
+    .restart local v7       #e:Ljava/lang/RuntimeException;
+    new-instance v29, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v29 .. v29}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v29
 
-    move v1, v10
+    move v1, v11
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    const-string v28, "is not Long-Integer header field!"
+    const-string v30, "is not Long-Integer header field!"
 
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
-    .line 308
-    const/16 v27, 0x0
+    .line 340
+    const/16 v29, 0x0
 
     goto/16 :goto_4
 
-    .line 334
-    .end local v6           #e:Ljava/lang/RuntimeException;
+    .line 366
+    .end local v7           #e:Ljava/lang/RuntimeException;
     :pswitch_12a
-    const/16 v27, 0x0
+    const/16 v29, 0x0
 
     move-object/from16 v0, p1
 
-    move/from16 v1, v27
+    move/from16 v1, v29
 
     invoke-static {v0, v1}, Lcom/google/android/mms/pdu/PduParser;->parseWapString(Ljava/io/ByteArrayInputStream;I)[B
 
-    move-result-object v24
+    move-result-object v26
 
-    .line 335
-    .local v24, value:[B
-    if-eqz v24, :cond_b
+    .line 367
+    .local v26, value:[B
+    if-eqz v26, :cond_b
 
-    .line 337
+    .line 369
     :try_start_136
-    move-object v0, v11
+    move-object v0, v12
 
-    move-object/from16 v1, v24
+    move-object/from16 v1, v26
 
-    move v2, v10
+    move v2, v11
 
     invoke-virtual {v0, v1, v2}, Lcom/google/android/mms/pdu/PduHeaders;->setTextString([BI)V
     :try_end_13d
@@ -4481,73 +5629,73 @@
 
     goto/16 :goto_b
 
-    .line 338
+    .line 370
     :catch_13f
-    move-exception v6
+    move-exception v7
 
-    .line 339
-    .local v6, e:Ljava/lang/NullPointerException;
-    const-string v27, "null pointer error!"
+    .line 371
+    .local v7, e:Ljava/lang/NullPointerException;
+    const-string v29, "null pointer error!"
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
     goto/16 :goto_b
 
-    .line 340
-    .end local v6           #e:Ljava/lang/NullPointerException;
+    .line 372
+    .end local v7           #e:Ljava/lang/NullPointerException;
     :catch_147
-    move-exception v6
+    move-exception v7
 
-    .line 341
-    .local v6, e:Ljava/lang/RuntimeException;
-    new-instance v27, Ljava/lang/StringBuilder;
+    .line 373
+    .local v7, e:Ljava/lang/RuntimeException;
+    new-instance v29, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v29 .. v29}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v29
 
-    move v1, v10
+    move v1, v11
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    const-string v28, "is not Text-String header field!"
+    const-string v30, "is not Text-String header field!"
 
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
-    .line 342
-    const/16 v27, 0x0
+    .line 374
+    const/16 v29, 0x0
 
     goto/16 :goto_4
 
-    .line 358
-    .end local v6           #e:Ljava/lang/RuntimeException;
-    .end local v24           #value:[B
+    .line 390
+    .end local v7           #e:Ljava/lang/RuntimeException;
+    .end local v26           #value:[B
     :pswitch_165
     invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseEncodedStringValue(Ljava/io/ByteArrayInputStream;)Lcom/google/android/mms/pdu/EncodedStringValue;
 
-    move-result-object v24
+    move-result-object v26
 
-    .line 360
-    .local v24, value:Lcom/google/android/mms/pdu/EncodedStringValue;
-    if-eqz v24, :cond_b
+    .line 392
+    .local v26, value:Lcom/google/android/mms/pdu/EncodedStringValue;
+    if-eqz v26, :cond_b
 
-    .line 362
+    .line 394
     :try_start_16b
-    move-object v0, v11
+    move-object v0, v12
 
-    move-object/from16 v1, v24
+    move-object/from16 v1, v26
 
-    move v2, v10
+    move v2, v11
 
     invoke-virtual {v0, v1, v2}, Lcom/google/android/mms/pdu/PduHeaders;->setEncodedStringValue(Lcom/google/android/mms/pdu/EncodedStringValue;I)V
     :try_end_172
@@ -4556,138 +5704,138 @@
 
     goto/16 :goto_b
 
-    .line 363
+    .line 395
     :catch_174
-    move-exception v6
+    move-exception v7
 
-    .line 364
-    .local v6, e:Ljava/lang/NullPointerException;
-    const-string v27, "null pointer error!"
+    .line 396
+    .local v7, e:Ljava/lang/NullPointerException;
+    const-string v29, "null pointer error!"
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
     goto/16 :goto_b
 
-    .line 365
-    .end local v6           #e:Ljava/lang/NullPointerException;
+    .line 397
+    .end local v7           #e:Ljava/lang/NullPointerException;
     :catch_17c
-    move-exception v6
+    move-exception v7
 
-    .line 366
-    .local v6, e:Ljava/lang/RuntimeException;
-    new-instance v27, Ljava/lang/StringBuilder;
+    .line 398
+    .local v7, e:Ljava/lang/RuntimeException;
+    new-instance v29, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v29 .. v29}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v29
 
-    move v1, v10
+    move v1, v11
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    const-string v28, "is not Encoded-String-Value header field!"
+    const-string v30, "is not Encoded-String-Value header field!"
 
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
-    .line 367
-    const/16 v27, 0x0
+    .line 399
+    const/16 v29, 0x0
 
     goto/16 :goto_4
 
-    .line 378
-    .end local v6           #e:Ljava/lang/RuntimeException;
-    .end local v24           #value:Lcom/google/android/mms/pdu/EncodedStringValue;
+    .line 410
+    .end local v7           #e:Ljava/lang/RuntimeException;
+    .end local v26           #value:Lcom/google/android/mms/pdu/EncodedStringValue;
     :pswitch_19a
     invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseEncodedStringValue(Ljava/io/ByteArrayInputStream;)Lcom/google/android/mms/pdu/EncodedStringValue;
 
-    move-result-object v24
+    move-result-object v26
 
-    .line 380
-    .restart local v24       #value:Lcom/google/android/mms/pdu/EncodedStringValue;
-    if-eqz v24, :cond_b
+    .line 412
+    .restart local v26       #value:Lcom/google/android/mms/pdu/EncodedStringValue;
+    if-eqz v26, :cond_b
 
-    .line 381
-    invoke-virtual/range {v24 .. v24}, Lcom/google/android/mms/pdu/EncodedStringValue;->getTextString()[B
+    .line 413
+    invoke-virtual/range {v26 .. v26}, Lcom/google/android/mms/pdu/EncodedStringValue;->getTextString()[B
 
     move-result-object v4
 
-    .line 382
+    .line 414
     .local v4, address:[B
     if-eqz v4, :cond_1d0
 
-    .line 383
-    new-instance v20, Ljava/lang/String;
+    .line 415
+    new-instance v22, Ljava/lang/String;
 
-    move-object/from16 v0, v20
+    move-object/from16 v0, v22
 
     move-object v1, v4
 
     invoke-direct {v0, v1}, Ljava/lang/String;-><init>([B)V
 
-    .line 384
-    .local v20, str:Ljava/lang/String;
-    const-string v27, "/"
+    .line 416
+    .local v22, str:Ljava/lang/String;
+    const-string v29, "/"
 
-    move-object/from16 v0, v20
+    move-object/from16 v0, v22
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v29
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
-    move-result v7
+    move-result v8
 
-    .line 385
-    .local v7, endIndex:I
-    if-lez v7, :cond_1c5
+    .line 417
+    .local v8, endIndex:I
+    if-lez v8, :cond_1c5
 
-    .line 386
-    const/16 v27, 0x0
+    .line 418
+    const/16 v29, 0x0
 
-    move-object/from16 v0, v20
+    move-object/from16 v0, v22
 
-    move/from16 v1, v27
+    move/from16 v1, v29
 
-    move v2, v7
+    move v2, v8
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v20
+    move-result-object v22
 
-    .line 389
+    .line 421
     :cond_1c5
     :try_start_1c5
-    invoke-virtual/range {v20 .. v20}, Ljava/lang/String;->getBytes()[B
+    invoke-virtual/range {v22 .. v22}, Ljava/lang/String;->getBytes()[B
 
-    move-result-object v27
+    move-result-object v29
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v26
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v29
 
     invoke-virtual {v0, v1}, Lcom/google/android/mms/pdu/EncodedStringValue;->setTextString([B)V
     :try_end_1d0
     .catch Ljava/lang/NullPointerException; {:try_start_1c5 .. :try_end_1d0} :catch_1e1
 
-    .line 397
-    .end local v7           #endIndex:I
-    .end local v20           #str:Ljava/lang/String;
+    .line 429
+    .end local v8           #endIndex:I
+    .end local v22           #str:Ljava/lang/String;
     :cond_1d0
     :try_start_1d0
-    move-object v0, v11
+    move-object v0, v12
 
-    move-object/from16 v1, v24
+    move-object/from16 v1, v26
 
-    move v2, v10
+    move v2, v11
 
     invoke-virtual {v0, v1, v2}, Lcom/google/android/mms/pdu/PduHeaders;->appendEncodedStringValue(Lcom/google/android/mms/pdu/EncodedStringValue;I)V
     :try_end_1d7
@@ -4696,126 +5844,126 @@
 
     goto/16 :goto_b
 
-    .line 398
+    .line 430
     :catch_1d9
-    move-exception v6
+    move-exception v7
 
-    .line 399
-    .local v6, e:Ljava/lang/NullPointerException;
-    const-string v27, "null pointer error!"
+    .line 431
+    .local v7, e:Ljava/lang/NullPointerException;
+    const-string v29, "null pointer error!"
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
     goto/16 :goto_b
 
-    .line 390
-    .end local v6           #e:Ljava/lang/NullPointerException;
-    .restart local v7       #endIndex:I
-    .restart local v20       #str:Ljava/lang/String;
+    .line 422
+    .end local v7           #e:Ljava/lang/NullPointerException;
+    .restart local v8       #endIndex:I
+    .restart local v22       #str:Ljava/lang/String;
     :catch_1e1
-    move-exception v27
+    move-exception v29
 
-    move-object/from16 v6, v27
+    move-object/from16 v7, v29
 
-    .line 391
-    .restart local v6       #e:Ljava/lang/NullPointerException;
-    const-string v27, "null pointer error!"
+    .line 423
+    .restart local v7       #e:Ljava/lang/NullPointerException;
+    const-string v29, "null pointer error!"
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
-    .line 392
-    const/16 v27, 0x0
+    .line 424
+    const/16 v29, 0x0
 
     goto/16 :goto_4
 
-    .line 400
-    .end local v6           #e:Ljava/lang/NullPointerException;
-    .end local v7           #endIndex:I
-    .end local v20           #str:Ljava/lang/String;
+    .line 432
+    .end local v7           #e:Ljava/lang/NullPointerException;
+    .end local v8           #endIndex:I
+    .end local v22           #str:Ljava/lang/String;
     :catch_1ed
-    move-exception v6
+    move-exception v7
 
-    .line 401
-    .local v6, e:Ljava/lang/RuntimeException;
-    new-instance v27, Ljava/lang/StringBuilder;
+    .line 433
+    .local v7, e:Ljava/lang/RuntimeException;
+    new-instance v29, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v29 .. v29}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v29
 
-    move v1, v10
+    move v1, v11
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    const-string v28, "is not Encoded-String-Value header field!"
+    const-string v30, "is not Encoded-String-Value header field!"
 
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
-    .line 402
-    const/16 v27, 0x0
+    .line 434
+    const/16 v29, 0x0
 
     goto/16 :goto_4
 
-    .line 415
+    .line 447
     .end local v4           #address:[B
-    .end local v6           #e:Ljava/lang/RuntimeException;
-    .end local v24           #value:Lcom/google/android/mms/pdu/EncodedStringValue;
+    .end local v7           #e:Ljava/lang/RuntimeException;
+    .end local v26           #value:Lcom/google/android/mms/pdu/EncodedStringValue;
     :pswitch_20b
     invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseValueLength(Ljava/io/ByteArrayInputStream;)I
 
-    .line 418
+    .line 450
     invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->extractByteValue(Ljava/io/ByteArrayInputStream;)I
 
-    move-result v23
+    move-result v25
 
-    .line 423
-    .local v23, token:I
+    .line 455
+    .local v25, token:I
     :try_start_212
     invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseLongInteger(Ljava/io/ByteArrayInputStream;)J
     :try_end_215
     .catch Ljava/lang/RuntimeException; {:try_start_212 .. :try_end_215} :catch_24f
 
-    move-result-wide v21
+    move-result-wide v23
 
-    .line 428
-    .local v21, timeValue:J
-    const/16 v27, 0x81
+    .line 460
+    .local v23, timeValue:J
+    const/16 v29, 0x81
 
-    move/from16 v0, v27
+    move/from16 v0, v29
 
-    move/from16 v1, v23
+    move/from16 v1, v25
 
     if-ne v0, v1, :cond_228
 
-    .line 431
+    .line 463
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v27
+    move-result-wide v29
 
-    const-wide/16 v29, 0x3e8
+    const-wide/16 v31, 0x3e8
 
-    div-long v27, v27, v29
+    div-long v29, v29, v31
 
-    add-long v21, v21, v27
+    add-long v23, v23, v29
 
-    .line 435
+    .line 467
     :cond_228
     :try_start_228
-    move-object v0, v11
+    move-object v0, v12
 
-    move-wide/from16 v1, v21
+    move-wide/from16 v1, v23
 
-    move v3, v10
+    move v3, v11
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/mms/pdu/PduHeaders;->setLongInteger(JI)V
     :try_end_22f
@@ -4823,187 +5971,187 @@
 
     goto/16 :goto_b
 
-    .line 436
+    .line 468
     :catch_231
-    move-exception v6
+    move-exception v7
 
-    .line 437
-    .restart local v6       #e:Ljava/lang/RuntimeException;
-    new-instance v27, Ljava/lang/StringBuilder;
+    .line 469
+    .restart local v7       #e:Ljava/lang/RuntimeException;
+    new-instance v29, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v29 .. v29}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v29
 
-    move v1, v10
+    move v1, v11
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    const-string v28, "is not Long-Integer header field!"
+    const-string v30, "is not Long-Integer header field!"
 
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
-    .line 438
-    const/16 v27, 0x0
+    .line 470
+    const/16 v29, 0x0
 
     goto/16 :goto_4
 
-    .line 424
-    .end local v6           #e:Ljava/lang/RuntimeException;
-    .end local v21           #timeValue:J
+    .line 456
+    .end local v7           #e:Ljava/lang/RuntimeException;
+    .end local v23           #timeValue:J
     :catch_24f
-    move-exception v6
+    move-exception v7
 
-    .line 425
-    .restart local v6       #e:Ljava/lang/RuntimeException;
-    new-instance v27, Ljava/lang/StringBuilder;
+    .line 457
+    .restart local v7       #e:Ljava/lang/RuntimeException;
+    new-instance v29, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v29 .. v29}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v29
 
-    move v1, v10
+    move v1, v11
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    const-string v28, "is not Long-Integer header field!"
+    const-string v30, "is not Long-Integer header field!"
 
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
-    .line 426
-    const/16 v27, 0x0
+    .line 458
+    const/16 v29, 0x0
 
     goto/16 :goto_4
 
-    .line 448
-    .end local v6           #e:Ljava/lang/RuntimeException;
-    .end local v23           #token:I
+    .line 480
+    .end local v7           #e:Ljava/lang/RuntimeException;
+    .end local v25           #token:I
     :pswitch_26d
-    const/4 v8, 0x0
+    const/4 v9, 0x0
 
-    .line 449
-    .local v8, from:Lcom/google/android/mms/pdu/EncodedStringValue;
+    .line 481
+    .local v9, from:Lcom/google/android/mms/pdu/EncodedStringValue;
     invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseValueLength(Ljava/io/ByteArrayInputStream;)I
 
-    .line 452
+    .line 484
     invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->extractByteValue(Ljava/io/ByteArrayInputStream;)I
 
-    move-result v9
+    move-result v10
 
-    .line 455
-    .local v9, fromToken:I
-    const/16 v27, 0x80
+    .line 487
+    .local v10, fromToken:I
+    const/16 v29, 0x80
 
-    move/from16 v0, v27
+    move/from16 v0, v29
 
-    move v1, v9
+    move v1, v10
 
     if-ne v0, v1, :cond_2d0
 
-    .line 457
+    .line 489
     invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseEncodedStringValue(Ljava/io/ByteArrayInputStream;)Lcom/google/android/mms/pdu/EncodedStringValue;
 
-    move-result-object v8
+    move-result-object v9
 
-    .line 458
-    if-eqz v8, :cond_2b1
+    .line 490
+    if-eqz v9, :cond_2b1
 
-    .line 459
-    invoke-virtual {v8}, Lcom/google/android/mms/pdu/EncodedStringValue;->getTextString()[B
+    .line 491
+    invoke-virtual {v9}, Lcom/google/android/mms/pdu/EncodedStringValue;->getTextString()[B
 
     move-result-object v4
 
-    .line 460
+    .line 492
     .restart local v4       #address:[B
     if-eqz v4, :cond_2b1
 
-    .line 461
-    new-instance v20, Ljava/lang/String;
+    .line 493
+    new-instance v22, Ljava/lang/String;
 
-    move-object/from16 v0, v20
+    move-object/from16 v0, v22
 
     move-object v1, v4
 
     invoke-direct {v0, v1}, Ljava/lang/String;-><init>([B)V
 
-    .line 462
-    .restart local v20       #str:Ljava/lang/String;
-    const-string v27, "/"
+    .line 494
+    .restart local v22       #str:Ljava/lang/String;
+    const-string v29, "/"
 
-    move-object/from16 v0, v20
+    move-object/from16 v0, v22
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v29
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
-    move-result v7
+    move-result v8
 
-    .line 463
-    .restart local v7       #endIndex:I
-    if-lez v7, :cond_2a7
+    .line 495
+    .restart local v8       #endIndex:I
+    if-lez v8, :cond_2a7
 
-    .line 464
-    const/16 v27, 0x0
+    .line 496
+    const/16 v29, 0x0
 
-    move-object/from16 v0, v20
+    move-object/from16 v0, v22
 
-    move/from16 v1, v27
+    move/from16 v1, v29
 
-    move v2, v7
+    move v2, v8
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v20
+    move-result-object v22
 
-    .line 467
+    .line 499
     :cond_2a7
     :try_start_2a7
-    invoke-virtual/range {v20 .. v20}, Ljava/lang/String;->getBytes()[B
+    invoke-virtual/range {v22 .. v22}, Ljava/lang/String;->getBytes()[B
 
-    move-result-object v27
+    move-result-object v29
 
-    move-object v0, v8
+    move-object v0, v9
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v29
 
     invoke-virtual {v0, v1}, Lcom/google/android/mms/pdu/EncodedStringValue;->setTextString([B)V
     :try_end_2b1
     .catch Ljava/lang/NullPointerException; {:try_start_2a7 .. :try_end_2b1} :catch_2c4
 
-    .line 485
+    .line 517
     .end local v4           #address:[B
-    .end local v7           #endIndex:I
-    .end local v20           #str:Ljava/lang/String;
+    .end local v8           #endIndex:I
+    .end local v22           #str:Ljava/lang/String;
     :cond_2b1
     :goto_2b1
-    const/16 v27, 0x89
+    const/16 v29, 0x89
 
     :try_start_2b3
-    move-object v0, v11
+    move-object v0, v12
 
-    move-object v1, v8
+    move-object v1, v9
 
-    move/from16 v2, v27
+    move/from16 v2, v29
 
     invoke-virtual {v0, v1, v2}, Lcom/google/android/mms/pdu/PduHeaders;->setEncodedStringValue(Lcom/google/android/mms/pdu/EncodedStringValue;I)V
     :try_end_2ba
@@ -5012,193 +6160,193 @@
 
     goto/16 :goto_b
 
-    .line 486
+    .line 518
     :catch_2bc
-    move-exception v6
+    move-exception v7
 
-    .line 487
-    .local v6, e:Ljava/lang/NullPointerException;
-    const-string v27, "null pointer error!"
+    .line 519
+    .local v7, e:Ljava/lang/NullPointerException;
+    const-string v29, "null pointer error!"
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
     goto/16 :goto_b
 
-    .line 468
-    .end local v6           #e:Ljava/lang/NullPointerException;
+    .line 500
+    .end local v7           #e:Ljava/lang/NullPointerException;
     .restart local v4       #address:[B
-    .restart local v7       #endIndex:I
-    .restart local v20       #str:Ljava/lang/String;
+    .restart local v8       #endIndex:I
+    .restart local v22       #str:Ljava/lang/String;
     :catch_2c4
-    move-exception v27
+    move-exception v29
 
-    move-object/from16 v6, v27
+    move-object/from16 v7, v29
 
-    .line 469
-    .restart local v6       #e:Ljava/lang/NullPointerException;
-    const-string v27, "null pointer error!"
+    .line 501
+    .restart local v7       #e:Ljava/lang/NullPointerException;
+    const-string v29, "null pointer error!"
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
-    .line 470
-    const/16 v27, 0x0
+    .line 502
+    const/16 v29, 0x0
 
     goto/16 :goto_4
 
-    .line 476
+    .line 508
     .end local v4           #address:[B
-    .end local v6           #e:Ljava/lang/NullPointerException;
-    .end local v7           #endIndex:I
-    .end local v20           #str:Ljava/lang/String;
+    .end local v7           #e:Ljava/lang/NullPointerException;
+    .end local v8           #endIndex:I
+    .end local v22           #str:Ljava/lang/String;
     :cond_2d0
     :try_start_2d0
-    new-instance v8, Lcom/google/android/mms/pdu/EncodedStringValue;
+    new-instance v9, Lcom/google/android/mms/pdu/EncodedStringValue;
 
-    .end local v8           #from:Lcom/google/android/mms/pdu/EncodedStringValue;
-    const-string v27, "insert-address-token"
+    .end local v9           #from:Lcom/google/android/mms/pdu/EncodedStringValue;
+    const-string v29, "insert-address-token"
 
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/String;->getBytes()[B
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/String;->getBytes()[B
 
-    move-result-object v27
+    move-result-object v29
 
-    move-object v0, v8
+    move-object v0, v9
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v29
 
     invoke-direct {v0, v1}, Lcom/google/android/mms/pdu/EncodedStringValue;-><init>([B)V
     :try_end_2de
     .catch Ljava/lang/NullPointerException; {:try_start_2d0 .. :try_end_2de} :catch_2df
 
-    .restart local v8       #from:Lcom/google/android/mms/pdu/EncodedStringValue;
+    .restart local v9       #from:Lcom/google/android/mms/pdu/EncodedStringValue;
     goto :goto_2b1
 
-    .line 478
-    .end local v8           #from:Lcom/google/android/mms/pdu/EncodedStringValue;
+    .line 510
+    .end local v9           #from:Lcom/google/android/mms/pdu/EncodedStringValue;
     :catch_2df
-    move-exception v27
+    move-exception v29
 
-    move-object/from16 v6, v27
+    move-object/from16 v7, v29
 
-    .line 479
-    .restart local v6       #e:Ljava/lang/NullPointerException;
-    new-instance v27, Ljava/lang/StringBuilder;
+    .line 511
+    .restart local v7       #e:Ljava/lang/NullPointerException;
+    new-instance v29, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v29 .. v29}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v29
 
-    move v1, v10
+    move v1, v11
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    const-string v28, "is not Encoded-String-Value header field!"
+    const-string v30, "is not Encoded-String-Value header field!"
 
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
-    .line 480
-    const/16 v27, 0x0
+    .line 512
+    const/16 v29, 0x0
 
     goto/16 :goto_4
 
-    .line 488
-    .end local v6           #e:Ljava/lang/NullPointerException;
-    .restart local v8       #from:Lcom/google/android/mms/pdu/EncodedStringValue;
+    .line 520
+    .end local v7           #e:Ljava/lang/NullPointerException;
+    .restart local v9       #from:Lcom/google/android/mms/pdu/EncodedStringValue;
     :catch_2ff
-    move-exception v6
+    move-exception v7
 
-    .line 489
-    .local v6, e:Ljava/lang/RuntimeException;
-    new-instance v27, Ljava/lang/StringBuilder;
+    .line 521
+    .local v7, e:Ljava/lang/RuntimeException;
+    new-instance v29, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v29 .. v29}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v29
 
-    move v1, v10
+    move v1, v11
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    const-string v28, "is not Encoded-String-Value header field!"
+    const-string v30, "is not Encoded-String-Value header field!"
 
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
-    .line 490
-    const/16 v27, 0x0
+    .line 522
+    const/16 v29, 0x0
 
     goto/16 :goto_4
 
-    .line 497
-    .end local v6           #e:Ljava/lang/RuntimeException;
-    .end local v8           #from:Lcom/google/android/mms/pdu/EncodedStringValue;
-    .end local v9           #fromToken:I
+    .line 529
+    .end local v7           #e:Ljava/lang/RuntimeException;
+    .end local v9           #from:Lcom/google/android/mms/pdu/EncodedStringValue;
+    .end local v10           #fromToken:I
     :pswitch_31d
-    const/16 v27, 0x1
+    const/16 v29, 0x1
 
     move-object/from16 v0, p1
 
-    move/from16 v1, v27
+    move/from16 v1, v29
 
     invoke-virtual {v0, v1}, Ljava/io/ByteArrayInputStream;->mark(I)V
 
-    .line 498
+    .line 530
     invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->extractByteValue(Ljava/io/ByteArrayInputStream;)I
 
-    move-result v14
+    move-result v15
 
-    .line 500
-    .local v14, messageClass:I
-    const/16 v27, 0x80
+    .line 532
+    .local v15, messageClass:I
+    const/16 v29, 0x80
 
-    move v0, v14
+    move v0, v15
 
-    move/from16 v1, v27
+    move/from16 v1, v29
 
     if-lt v0, v1, :cond_3bf
 
-    .line 503
-    const/16 v27, 0x80
+    .line 535
+    const/16 v29, 0x80
 
-    move/from16 v0, v27
+    move/from16 v0, v29
 
-    move v1, v14
+    move v1, v15
 
     if-ne v0, v1, :cond_354
 
-    .line 504
+    .line 536
     :try_start_338
-    const-string v27, "personal"
+    const-string v29, "personal"
 
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/String;->getBytes()[B
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/String;->getBytes()[B
 
-    move-result-object v27
+    move-result-object v29
 
-    const/16 v28, 0x8a
+    const/16 v30, 0x8a
 
-    move-object v0, v11
+    move-object v0, v12
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v29
 
-    move/from16 v2, v28
+    move/from16 v2, v30
 
     invoke-virtual {v0, v1, v2}, Lcom/google/android/mms/pdu/PduHeaders;->setTextString([BI)V
     :try_end_348
@@ -5207,46 +6355,46 @@
 
     goto/16 :goto_b
 
-    .line 520
+    .line 552
     :catch_34a
-    move-exception v27
+    move-exception v29
 
-    move-object/from16 v6, v27
+    move-object/from16 v7, v29
 
-    .line 521
-    .local v6, e:Ljava/lang/NullPointerException;
-    const-string v27, "null pointer error!"
+    .line 553
+    .local v7, e:Ljava/lang/NullPointerException;
+    const-string v29, "null pointer error!"
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
     goto/16 :goto_b
 
-    .line 507
-    .end local v6           #e:Ljava/lang/NullPointerException;
+    .line 539
+    .end local v7           #e:Ljava/lang/NullPointerException;
     :cond_354
-    const/16 v27, 0x81
+    const/16 v29, 0x81
 
-    move/from16 v0, v27
+    move/from16 v0, v29
 
-    move v1, v14
+    move v1, v15
 
     if-ne v0, v1, :cond_38d
 
-    .line 508
+    .line 540
     :try_start_35b
-    const-string v27, "advertisement"
+    const-string v29, "advertisement"
 
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/String;->getBytes()[B
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/String;->getBytes()[B
 
-    move-result-object v27
+    move-result-object v29
 
-    const/16 v28, 0x8a
+    const/16 v30, 0x8a
 
-    move-object v0, v11
+    move-object v0, v12
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v29
 
-    move/from16 v2, v28
+    move/from16 v2, v30
 
     invoke-virtual {v0, v1, v2}, Lcom/google/android/mms/pdu/PduHeaders;->setTextString([BI)V
     :try_end_36b
@@ -5255,98 +6403,98 @@
 
     goto/16 :goto_b
 
-    .line 522
+    .line 554
     :catch_36d
-    move-exception v27
+    move-exception v29
 
-    move-object/from16 v6, v27
+    move-object/from16 v7, v29
 
-    .line 523
-    .local v6, e:Ljava/lang/RuntimeException;
-    new-instance v27, Ljava/lang/StringBuilder;
+    .line 555
+    .local v7, e:Ljava/lang/RuntimeException;
+    new-instance v29, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v29 .. v29}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v29
 
-    move v1, v10
+    move v1, v11
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    const-string v28, "is not Text-String header field!"
+    const-string v30, "is not Text-String header field!"
 
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
-    .line 524
-    const/16 v27, 0x0
+    .line 556
+    const/16 v29, 0x0
 
     goto/16 :goto_4
 
-    .line 511
-    .end local v6           #e:Ljava/lang/RuntimeException;
+    .line 543
+    .end local v7           #e:Ljava/lang/RuntimeException;
     :cond_38d
-    const/16 v27, 0x82
+    const/16 v29, 0x82
 
-    move/from16 v0, v27
+    move/from16 v0, v29
 
-    move v1, v14
+    move v1, v15
 
     if-ne v0, v1, :cond_3a6
 
-    .line 512
+    .line 544
     :try_start_394
-    const-string v27, "informational"
+    const-string v29, "informational"
 
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/String;->getBytes()[B
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/String;->getBytes()[B
 
-    move-result-object v27
+    move-result-object v29
 
-    const/16 v28, 0x8a
+    const/16 v30, 0x8a
 
-    move-object v0, v11
+    move-object v0, v12
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v29
 
-    move/from16 v2, v28
+    move/from16 v2, v30
 
     invoke-virtual {v0, v1, v2}, Lcom/google/android/mms/pdu/PduHeaders;->setTextString([BI)V
 
     goto/16 :goto_b
 
-    .line 515
+    .line 547
     :cond_3a6
-    const/16 v27, 0x83
+    const/16 v29, 0x83
 
-    move/from16 v0, v27
+    move/from16 v0, v29
 
-    move v1, v14
+    move v1, v15
 
     if-ne v0, v1, :cond_b
 
-    .line 516
-    const-string v27, "auto"
+    .line 548
+    const-string v29, "auto"
 
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/String;->getBytes()[B
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/String;->getBytes()[B
 
-    move-result-object v27
+    move-result-object v29
 
-    const/16 v28, 0x8a
+    const/16 v30, 0x8a
 
-    move-object v0, v11
+    move-object v0, v12
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v29
 
-    move/from16 v2, v28
+    move/from16 v2, v30
 
     invoke-virtual {v0, v1, v2}, Lcom/google/android/mms/pdu/PduHeaders;->setTextString([BI)V
     :try_end_3bd
@@ -5355,557 +6503,564 @@
 
     goto/16 :goto_b
 
-    .line 528
+    .line 560
     :cond_3bf
     invoke-virtual/range {p1 .. p1}, Ljava/io/ByteArrayInputStream;->reset()V
 
-    .line 529
-    const/16 v27, 0x0
+    .line 561
+    const/16 v29, 0x0
 
     move-object/from16 v0, p1
 
-    move/from16 v1, v27
+    move/from16 v1, v29
 
     invoke-static {v0, v1}, Lcom/google/android/mms/pdu/PduParser;->parseWapString(Ljava/io/ByteArrayInputStream;I)[B
 
-    move-result-object v15
-
-    .line 530
-    .local v15, messageClassString:[B
-    if-eqz v15, :cond_b
-
-    .line 532
-    const/16 v27, 0x8a
-
-    :try_start_3d0
-    move-object v0, v11
-
-    move-object v1, v15
-
-    move/from16 v2, v27
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/mms/pdu/PduHeaders;->setTextString([BI)V
-    :try_end_3d7
-    .catch Ljava/lang/NullPointerException; {:try_start_3d0 .. :try_end_3d7} :catch_3d9
-    .catch Ljava/lang/RuntimeException; {:try_start_3d0 .. :try_end_3d7} :catch_3e1
-
-    goto/16 :goto_b
-
-    .line 533
-    :catch_3d9
-    move-exception v6
-
-    .line 534
-    .local v6, e:Ljava/lang/NullPointerException;
-    const-string v27, "null pointer error!"
-
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
-
-    goto/16 :goto_b
-
-    .line 535
-    .end local v6           #e:Ljava/lang/NullPointerException;
-    :catch_3e1
-    move-exception v6
-
-    .line 536
-    .local v6, e:Ljava/lang/RuntimeException;
-    new-instance v27, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
-
-    move-object/from16 v0, v27
-
-    move v1, v10
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v27
-
-    const-string v28, "is not Text-String header field!"
-
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v27
-
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v27
-
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
-
-    .line 537
-    const/16 v27, 0x0
-
-    goto/16 :goto_4
-
-    .line 545
-    .end local v6           #e:Ljava/lang/RuntimeException;
-    .end local v14           #messageClass:I
-    .end local v15           #messageClassString:[B
-    :pswitch_3ff
-    invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseShortInteger(Ljava/io/ByteArrayInputStream;)I
-
-    move-result v26
-
-    .line 548
-    .local v26, version:I
-    const/16 v27, 0x8d
-
-    :try_start_405
-    move-object v0, v11
-
-    move/from16 v1, v26
-
-    move/from16 v2, v27
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/mms/pdu/PduHeaders;->setOctet(II)V
-    :try_end_40d
-    .catch Lcom/google/android/mms/InvalidHeaderValueException; {:try_start_405 .. :try_end_40d} :catch_40f
-    .catch Ljava/lang/RuntimeException; {:try_start_405 .. :try_end_40d} :catch_43b
-
-    goto/16 :goto_b
-
-    .line 549
-    :catch_40f
-    move-exception v6
-
-    .line 550
-    .local v6, e:Lcom/google/android/mms/InvalidHeaderValueException;
-    new-instance v27, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v28, "Set invalid Octet value: "
-
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v27
-
-    move-object/from16 v0, v27
-
-    move/from16 v1, v26
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v27
-
-    const-string v28, " into the header filed: "
-
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v27
-
-    move-object/from16 v0, v27
-
-    move v1, v10
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v27
-
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v27
-
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
-
-    .line 552
-    const/16 v27, 0x0
-
-    goto/16 :goto_4
-
-    .line 553
-    .end local v6           #e:Lcom/google/android/mms/InvalidHeaderValueException;
-    :catch_43b
-    move-exception v6
-
-    .line 554
-    .local v6, e:Ljava/lang/RuntimeException;
-    new-instance v27, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
-
-    move-object/from16 v0, v27
-
-    move v1, v10
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v27
-
-    const-string v28, "is not Octet header field!"
-
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v27
-
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v27
-
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
-
-    .line 555
-    const/16 v27, 0x0
-
-    goto/16 :goto_4
+    move-result-object v16
+
+    .line 562
+    .local v16, messageClassString:[B
+    if-eqz v16, :cond_b
 
     .line 564
-    .end local v6           #e:Ljava/lang/RuntimeException;
-    .end local v26           #version:I
-    :pswitch_459
-    invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseValueLength(Ljava/io/ByteArrayInputStream;)I
+    const/16 v29, 0x8a
+
+    :try_start_3d0
+    move-object v0, v12
+
+    move-object/from16 v1, v16
+
+    move/from16 v2, v29
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/mms/pdu/PduHeaders;->setTextString([BI)V
+    :try_end_3d8
+    .catch Ljava/lang/NullPointerException; {:try_start_3d0 .. :try_end_3d8} :catch_3da
+    .catch Ljava/lang/RuntimeException; {:try_start_3d0 .. :try_end_3d8} :catch_3e2
+
+    goto/16 :goto_b
+
+    .line 565
+    :catch_3da
+    move-exception v7
+
+    .line 566
+    .local v7, e:Ljava/lang/NullPointerException;
+    const-string v29, "null pointer error!"
+
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+
+    goto/16 :goto_b
+
+    .line 567
+    .end local v7           #e:Ljava/lang/NullPointerException;
+    :catch_3e2
+    move-exception v7
 
     .line 568
-    :try_start_45c
-    invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseIntegerValue(Ljava/io/ByteArrayInputStream;)J
-    :try_end_45f
-    .catch Ljava/lang/RuntimeException; {:try_start_45c .. :try_end_45f} :catch_479
+    .local v7, e:Ljava/lang/RuntimeException;
+    new-instance v29, Ljava/lang/StringBuilder;
 
-    .line 575
-    invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseEncodedStringValue(Ljava/io/ByteArrayInputStream;)Lcom/google/android/mms/pdu/EncodedStringValue;
+    invoke-direct/range {v29 .. v29}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v19
+    move-object/from16 v0, v29
+
+    move v1, v11
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v29
+
+    const-string v30, "is not Text-String header field!"
+
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v29
+
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v29
+
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+
+    .line 569
+    const/16 v29, 0x0
+
+    goto/16 :goto_4
 
     .line 577
-    .local v19, previouslySentBy:Lcom/google/android/mms/pdu/EncodedStringValue;
-    if-eqz v19, :cond_b
+    .end local v7           #e:Ljava/lang/RuntimeException;
+    .end local v15           #messageClass:I
+    .end local v16           #messageClassString:[B
+    :pswitch_400
+    invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseShortInteger(Ljava/io/ByteArrayInputStream;)I
 
-    .line 579
-    const/16 v27, 0xa0
+    move-result v28
 
-    :try_start_467
-    move-object v0, v11
+    .line 580
+    .local v28, version:I
+    const/16 v29, 0x8d
 
-    move-object/from16 v1, v19
+    :try_start_406
+    move-object v0, v12
 
-    move/from16 v2, v27
+    move/from16 v1, v28
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/mms/pdu/PduHeaders;->setEncodedStringValue(Lcom/google/android/mms/pdu/EncodedStringValue;I)V
-    :try_end_46f
-    .catch Ljava/lang/NullPointerException; {:try_start_467 .. :try_end_46f} :catch_471
-    .catch Ljava/lang/RuntimeException; {:try_start_467 .. :try_end_46f} :catch_497
+    move/from16 v2, v29
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/mms/pdu/PduHeaders;->setOctet(II)V
+    :try_end_40e
+    .catch Lcom/google/android/mms/InvalidHeaderValueException; {:try_start_406 .. :try_end_40e} :catch_410
+    .catch Ljava/lang/RuntimeException; {:try_start_406 .. :try_end_40e} :catch_43c
 
     goto/16 :goto_b
 
     .line 581
-    :catch_471
-    move-exception v6
+    :catch_410
+    move-exception v7
 
     .line 582
-    .local v6, e:Ljava/lang/NullPointerException;
-    const-string v27, "null pointer error!"
+    .local v7, e:Lcom/google/android/mms/InvalidHeaderValueException;
+    new-instance v29, Ljava/lang/StringBuilder;
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-direct/range {v29 .. v29}, Ljava/lang/StringBuilder;-><init>()V
 
-    goto/16 :goto_b
+    const-string v30, "Set invalid Octet value: "
 
-    .line 569
-    .end local v6           #e:Ljava/lang/NullPointerException;
-    .end local v19           #previouslySentBy:Lcom/google/android/mms/pdu/EncodedStringValue;
-    :catch_479
-    move-exception v6
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 570
-    .local v6, e:Ljava/lang/RuntimeException;
-    new-instance v27, Ljava/lang/StringBuilder;
+    move-result-object v29
 
-    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
+    move-object/from16 v0, v29
 
-    move-object/from16 v0, v27
-
-    move v1, v10
+    move/from16 v1, v28
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    const-string v28, " is not Integer-Value"
+    const-string v30, " into the header filed: "
 
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-object/from16 v0, v29
 
-    move-result-object v27
+    move v1, v11
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 571
-    const/16 v27, 0x0
+    move-result-object v29
 
-    goto/16 :goto_4
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 583
-    .end local v6           #e:Ljava/lang/RuntimeException;
-    .restart local v19       #previouslySentBy:Lcom/google/android/mms/pdu/EncodedStringValue;
-    :catch_497
-    move-exception v6
+    move-result-object v29
+
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
     .line 584
-    .restart local v6       #e:Ljava/lang/RuntimeException;
-    new-instance v27, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
-
-    move-object/from16 v0, v27
-
-    move v1, v10
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v27
-
-    const-string v28, "is not Encoded-String-Value header field!"
-
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v27
-
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v27
-
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
-
-    .line 585
-    const/16 v27, 0x0
+    const/16 v29, 0x0
 
     goto/16 :goto_4
 
-    .line 595
-    .end local v6           #e:Ljava/lang/RuntimeException;
-    .end local v19           #previouslySentBy:Lcom/google/android/mms/pdu/EncodedStringValue;
-    :pswitch_4b5
+    .line 585
+    .end local v7           #e:Lcom/google/android/mms/InvalidHeaderValueException;
+    :catch_43c
+    move-exception v7
+
+    .line 586
+    .local v7, e:Ljava/lang/RuntimeException;
+    new-instance v29, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v29 .. v29}, Ljava/lang/StringBuilder;-><init>()V
+
+    move-object/from16 v0, v29
+
+    move v1, v11
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v29
+
+    const-string v30, "is not Octet header field!"
+
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v29
+
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v29
+
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+
+    .line 587
+    const/16 v29, 0x0
+
+    goto/16 :goto_4
+
+    .line 596
+    .end local v7           #e:Ljava/lang/RuntimeException;
+    .end local v28           #version:I
+    :pswitch_45a
     invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseValueLength(Ljava/io/ByteArrayInputStream;)I
 
-    .line 599
-    :try_start_4b8
+    .line 600
+    :try_start_45d
     invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseIntegerValue(Ljava/io/ByteArrayInputStream;)J
-    :try_end_4bb
-    .catch Ljava/lang/RuntimeException; {:try_start_4b8 .. :try_end_4bb} :catch_4eb
+    :try_end_460
+    .catch Ljava/lang/RuntimeException; {:try_start_45d .. :try_end_460} :catch_47a
 
     .line 607
-    :try_start_4bb
-    invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseLongInteger(Ljava/io/ByteArrayInputStream;)J
+    invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseEncodedStringValue(Ljava/io/ByteArrayInputStream;)Lcom/google/android/mms/pdu/EncodedStringValue;
 
-    move-result-wide v17
+    move-result-object v20
 
-    .line 608
-    .local v17, perviouslySentDate:J
-    const/16 v27, 0xa1
+    .line 609
+    .local v20, previouslySentBy:Lcom/google/android/mms/pdu/EncodedStringValue;
+    if-eqz v20, :cond_b
 
-    move-object v0, v11
+    .line 611
+    const/16 v29, 0xa0
 
-    move-wide/from16 v1, v17
+    :try_start_468
+    move-object v0, v12
 
-    move/from16 v3, v27
+    move-object/from16 v1, v20
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/mms/pdu/PduHeaders;->setLongInteger(JI)V
-    :try_end_4c9
-    .catch Ljava/lang/RuntimeException; {:try_start_4bb .. :try_end_4c9} :catch_4cb
+    move/from16 v2, v29
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/mms/pdu/PduHeaders;->setEncodedStringValue(Lcom/google/android/mms/pdu/EncodedStringValue;I)V
+    :try_end_470
+    .catch Ljava/lang/NullPointerException; {:try_start_468 .. :try_end_470} :catch_472
+    .catch Ljava/lang/RuntimeException; {:try_start_468 .. :try_end_470} :catch_498
 
     goto/16 :goto_b
 
-    .line 610
-    .end local v17           #perviouslySentDate:J
-    :catch_4cb
-    move-exception v27
+    .line 613
+    :catch_472
+    move-exception v7
 
-    move-object/from16 v6, v27
+    .line 614
+    .local v7, e:Ljava/lang/NullPointerException;
+    const-string v29, "null pointer error!"
 
-    .line 611
-    .restart local v6       #e:Ljava/lang/RuntimeException;
-    new-instance v27, Ljava/lang/StringBuilder;
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
-    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
-
-    move-object/from16 v0, v27
-
-    move v1, v10
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v27
-
-    const-string v28, "is not Long-Integer header field!"
-
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v27
-
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v27
-
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
-
-    .line 612
-    const/16 v27, 0x0
-
-    goto/16 :goto_4
-
-    .line 600
-    .end local v6           #e:Ljava/lang/RuntimeException;
-    :catch_4eb
-    move-exception v6
+    goto/16 :goto_b
 
     .line 601
-    .restart local v6       #e:Ljava/lang/RuntimeException;
-    new-instance v27, Ljava/lang/StringBuilder;
+    .end local v7           #e:Ljava/lang/NullPointerException;
+    .end local v20           #previouslySentBy:Lcom/google/android/mms/pdu/EncodedStringValue;
+    :catch_47a
+    move-exception v7
 
-    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
+    .line 602
+    .local v7, e:Ljava/lang/RuntimeException;
+    new-instance v29, Ljava/lang/StringBuilder;
 
-    move-object/from16 v0, v27
+    invoke-direct/range {v29 .. v29}, Ljava/lang/StringBuilder;-><init>()V
 
-    move v1, v10
+    move-object/from16 v0, v29
+
+    move v1, v11
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    const-string v28, " is not Integer-Value"
+    const-string v30, " is not Integer-Value"
 
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
-    .line 602
-    const/16 v27, 0x0
+    .line 603
+    const/16 v29, 0x0
 
     goto/16 :goto_4
 
-    .line 625
-    .end local v6           #e:Ljava/lang/RuntimeException;
-    :pswitch_509
+    .line 615
+    .end local v7           #e:Ljava/lang/RuntimeException;
+    .restart local v20       #previouslySentBy:Lcom/google/android/mms/pdu/EncodedStringValue;
+    :catch_498
+    move-exception v7
+
+    .line 616
+    .restart local v7       #e:Ljava/lang/RuntimeException;
+    new-instance v29, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v29 .. v29}, Ljava/lang/StringBuilder;-><init>()V
+
+    move-object/from16 v0, v29
+
+    move v1, v11
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v29
+
+    const-string v30, "is not Encoded-String-Value header field!"
+
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v29
+
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v29
+
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+
+    .line 617
+    const/16 v29, 0x0
+
+    goto/16 :goto_4
+
+    .line 627
+    .end local v7           #e:Ljava/lang/RuntimeException;
+    .end local v20           #previouslySentBy:Lcom/google/android/mms/pdu/EncodedStringValue;
+    :pswitch_4b6
     invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseValueLength(Ljava/io/ByteArrayInputStream;)I
 
-    .line 628
+    .line 631
+    :try_start_4b9
+    invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseIntegerValue(Ljava/io/ByteArrayInputStream;)J
+    :try_end_4bc
+    .catch Ljava/lang/RuntimeException; {:try_start_4b9 .. :try_end_4bc} :catch_4ec
+
+    .line 639
+    :try_start_4bc
+    invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseLongInteger(Ljava/io/ByteArrayInputStream;)J
+
+    move-result-wide v18
+
+    .line 640
+    .local v18, perviouslySentDate:J
+    const/16 v29, 0xa1
+
+    move-object v0, v12
+
+    move-wide/from16 v1, v18
+
+    move/from16 v3, v29
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/mms/pdu/PduHeaders;->setLongInteger(JI)V
+    :try_end_4ca
+    .catch Ljava/lang/RuntimeException; {:try_start_4bc .. :try_end_4ca} :catch_4cc
+
+    goto/16 :goto_b
+
+    .line 642
+    .end local v18           #perviouslySentDate:J
+    :catch_4cc
+    move-exception v29
+
+    move-object/from16 v7, v29
+
+    .line 643
+    .restart local v7       #e:Ljava/lang/RuntimeException;
+    new-instance v29, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v29 .. v29}, Ljava/lang/StringBuilder;-><init>()V
+
+    move-object/from16 v0, v29
+
+    move v1, v11
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v29
+
+    const-string v30, "is not Long-Integer header field!"
+
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v29
+
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v29
+
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+
+    .line 644
+    const/16 v29, 0x0
+
+    goto/16 :goto_4
+
+    .line 632
+    .end local v7           #e:Ljava/lang/RuntimeException;
+    :catch_4ec
+    move-exception v7
+
+    .line 633
+    .restart local v7       #e:Ljava/lang/RuntimeException;
+    new-instance v29, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v29 .. v29}, Ljava/lang/StringBuilder;-><init>()V
+
+    move-object/from16 v0, v29
+
+    move v1, v11
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v29
+
+    const-string v30, " is not Integer-Value"
+
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v29
+
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v29
+
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+
+    .line 634
+    const/16 v29, 0x0
+
+    goto/16 :goto_4
+
+    .line 657
+    .end local v7           #e:Ljava/lang/RuntimeException;
+    :pswitch_50a
+    invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseValueLength(Ljava/io/ByteArrayInputStream;)I
+
+    .line 660
     invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->extractByteValue(Ljava/io/ByteArrayInputStream;)I
 
-    .line 631
+    .line 663
     invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseEncodedStringValue(Ljava/io/ByteArrayInputStream;)Lcom/google/android/mms/pdu/EncodedStringValue;
 
     goto/16 :goto_b
 
-    .line 644
-    :pswitch_514
+    .line 676
+    :pswitch_515
     invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseValueLength(Ljava/io/ByteArrayInputStream;)I
 
-    .line 647
+    .line 679
     invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->extractByteValue(Ljava/io/ByteArrayInputStream;)I
 
-    .line 651
-    :try_start_51a
+    .line 683
+    :try_start_51b
     invoke-static/range {p1 .. p1}, Lcom/google/android/mms/pdu/PduParser;->parseIntegerValue(Ljava/io/ByteArrayInputStream;)J
-    :try_end_51d
-    .catch Ljava/lang/RuntimeException; {:try_start_51a .. :try_end_51d} :catch_51f
+    :try_end_51e
+    .catch Ljava/lang/RuntimeException; {:try_start_51b .. :try_end_51e} :catch_520
 
     goto/16 :goto_b
 
-    .line 652
-    :catch_51f
-    move-exception v6
+    .line 684
+    :catch_520
+    move-exception v7
 
-    .line 653
-    .restart local v6       #e:Ljava/lang/RuntimeException;
-    new-instance v27, Ljava/lang/StringBuilder;
+    .line 685
+    .restart local v7       #e:Ljava/lang/RuntimeException;
+    new-instance v29, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v29 .. v29}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v29
 
-    move v1, v10
+    move v1, v11
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    const-string v28, " is not Integer-Value"
+    const-string v30, " is not Integer-Value"
 
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
-    .line 654
-    const/16 v27, 0x0
+    .line 686
+    const/16 v29, 0x0
 
     goto/16 :goto_4
 
-    .line 663
-    .end local v6           #e:Ljava/lang/RuntimeException;
-    :pswitch_53d
-    const/16 v27, 0x0
+    .line 695
+    .end local v7           #e:Ljava/lang/RuntimeException;
+    :pswitch_53e
+    const/16 v29, 0x0
 
     move-object/from16 v0, p1
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v29
 
     invoke-static {v0, v1}, Lcom/google/android/mms/pdu/PduParser;->parseContentType(Ljava/io/ByteArrayInputStream;Ljava/util/HashMap;)[B
 
     goto/16 :goto_b
 
-    .line 671
-    :pswitch_548
-    new-instance v13, Ljava/util/HashMap;
+    .line 703
+    :pswitch_549
+    const-string v29, "PduParser"
 
-    invoke-direct {v13}, Ljava/util/HashMap;-><init>()V
+    const-string v30, "-----------PduParser CONTENT_TYPE-----------"
 
-    .line 673
-    .local v13, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Object;>;"
+    invoke-static/range {v29 .. v30}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 704
+    new-instance v14, Ljava/util/HashMap;
+
+    invoke-direct {v14}, Ljava/util/HashMap;-><init>()V
+
+    .line 706
+    .local v14, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Object;>;"
     move-object/from16 v0, p1
 
-    move-object v1, v13
+    move-object v1, v14
 
     invoke-static {v0, v1}, Lcom/google/android/mms/pdu/PduParser;->parseContentType(Ljava/io/ByteArrayInputStream;Ljava/util/HashMap;)[B
 
-    move-result-object v5
+    move-result-object v6
 
-    .line 676
-    .local v5, contentType:[B
-    if-eqz v5, :cond_55f
+    .line 709
+    .local v6, contentType:[B
+    if-eqz v6, :cond_567
 
-    .line 678
-    const/16 v27, 0x84
+    .line 711
+    const/16 v29, 0x84
 
-    :try_start_558
-    move-object v0, v11
+    :try_start_560
+    move-object v0, v12
 
-    move-object v1, v5
+    move-object v1, v6
 
-    move/from16 v2, v27
+    move/from16 v2, v29
 
     invoke-virtual {v0, v1, v2}, Lcom/google/android/mms/pdu/PduHeaders;->setTextString([BI)V
-    :try_end_55f
-    .catch Ljava/lang/NullPointerException; {:try_start_558 .. :try_end_55f} :catch_588
-    .catch Ljava/lang/RuntimeException; {:try_start_558 .. :try_end_55f} :catch_58f
+    :try_end_567
+    .catch Ljava/lang/NullPointerException; {:try_start_560 .. :try_end_567} :catch_611
+    .catch Ljava/lang/RuntimeException; {:try_start_560 .. :try_end_567} :catch_619
 
-    .line 688
-    :cond_55f
-    :goto_55f
-    const/16 v27, 0x99
+    .line 721
+    :cond_567
+    :goto_567
+    const/16 v29, 0x99
 
-    invoke-static/range {v27 .. v27}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static/range {v29 .. v29}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v27
+    move-result-object v29
 
-    move-object v0, v13
+    move-object v0, v14
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v29
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -5917,16 +7072,16 @@
 
     sput-object p0, Lcom/google/android/mms/pdu/PduParser;->mStartParam:[B
 
-    .line 691
-    const/16 v27, 0x83
+    .line 724
+    const/16 v29, 0x83
 
-    invoke-static/range {v27 .. v27}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static/range {v29 .. v29}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v27
+    move-result-object v29
 
-    move-object v0, v13
+    move-object v0, v14
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v29
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -5938,79 +7093,221 @@
 
     sput-object p0, Lcom/google/android/mms/pdu/PduParser;->mTypeParam:[B
 
-    .line 693
-    const/4 v12, 0x0
+    .line 728
+    const/16 v29, 0xb7
 
-    .line 694
+    invoke-static/range {v29 .. v29}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v29
+
+    move-object v0, v14
+
+    move-object/from16 v1, v29
+
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, [B
+
+    move-object/from16 v0, p0
+
+    check-cast v0, [B
+
+    move-object v5, v0
+
+    .line 729
+    .local v5, appId:[B
+    if-eqz v5, :cond_5cc
+
+    .line 730
+    const-string v29, "PduParser"
+
+    new-instance v30, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v30 .. v30}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v31, "appId = "
+
+    invoke-virtual/range {v30 .. v31}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v30
+
+    new-instance v31, Ljava/lang/String;
+
+    move-object/from16 v0, v31
+
+    move-object v1, v5
+
+    invoke-direct {v0, v1}, Ljava/lang/String;-><init>([B)V
+
+    invoke-virtual/range {v30 .. v31}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v30
+
+    invoke-virtual/range {v30 .. v30}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v30
+
+    invoke-static/range {v29 .. v30}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 731
+    const/16 v29, 0xb7
+
+    move-object v0, v12
+
+    move-object v1, v5
+
+    move/from16 v2, v29
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/mms/pdu/PduHeaders;->setTextString([BI)V
+
+    .line 733
+    :cond_5cc
+    const/16 v29, 0xb8
+
+    invoke-static/range {v29 .. v29}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v29
+
+    move-object v0, v14
+
+    move-object/from16 v1, v29
+
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, [B
+
+    move-object/from16 v0, p0
+
+    check-cast v0, [B
+
+    move-object/from16 v21, v0
+
+    .line 734
+    .local v21, rAppId:[B
+    if-eqz v21, :cond_60e
+
+    .line 735
+    const-string v29, "PduParser"
+
+    new-instance v30, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v30 .. v30}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v31, "rAppId = "
+
+    invoke-virtual/range {v30 .. v31}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v30
+
+    new-instance v31, Ljava/lang/String;
+
+    move-object/from16 v0, v31
+
+    move-object/from16 v1, v21
+
+    invoke-direct {v0, v1}, Ljava/lang/String;-><init>([B)V
+
+    invoke-virtual/range {v30 .. v31}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v30
+
+    invoke-virtual/range {v30 .. v30}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v30
+
+    invoke-static/range {v29 .. v30}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 736
+    const/16 v29, 0xb8
+
+    move-object v0, v12
+
+    move-object/from16 v1, v21
+
+    move/from16 v2, v29
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/mms/pdu/PduHeaders;->setTextString([BI)V
+
+    .line 739
+    :cond_60e
+    const/4 v13, 0x0
+
+    .line 740
     goto/16 :goto_b
 
-    .line 679
-    :catch_588
-    move-exception v6
+    .line 712
+    .end local v5           #appId:[B
+    .end local v21           #rAppId:[B
+    :catch_611
+    move-exception v7
 
-    .line 680
-    .local v6, e:Ljava/lang/NullPointerException;
-    const-string v27, "null pointer error!"
+    .line 713
+    .local v7, e:Ljava/lang/NullPointerException;
+    const-string v29, "null pointer error!"
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
-    goto :goto_55f
+    goto/16 :goto_567
 
-    .line 681
-    .end local v6           #e:Ljava/lang/NullPointerException;
-    :catch_58f
-    move-exception v6
+    .line 714
+    .end local v7           #e:Ljava/lang/NullPointerException;
+    :catch_619
+    move-exception v7
 
-    .line 682
-    .local v6, e:Ljava/lang/RuntimeException;
-    new-instance v27, Ljava/lang/StringBuilder;
+    .line 715
+    .local v7, e:Ljava/lang/RuntimeException;
+    new-instance v29, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v27 .. v27}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v29 .. v29}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v29
 
-    move v1, v10
+    move v1, v11
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    const-string v28, "is not Text-String header field!"
+    const-string v30, "is not Text-String header field!"
 
-    invoke-virtual/range {v27 .. v28}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-virtual/range {v27 .. v27}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v29 .. v29}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v27
+    move-result-object v29
 
-    invoke-static/range {v27 .. v27}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
+    invoke-static/range {v29 .. v29}, Lcom/google/android/mms/pdu/PduParser;->log(Ljava/lang/String;)V
 
-    .line 683
-    const/16 v27, 0x0
+    .line 716
+    const/16 v29, 0x0
 
     goto/16 :goto_4
 
-    .end local v5           #contentType:[B
-    .end local v6           #e:Ljava/lang/RuntimeException;
-    .end local v10           #headerField:I
-    .end local v13           #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Object;>;"
-    :cond_5ad
-    move-object/from16 v27, v11
+    .end local v6           #contentType:[B
+    .end local v7           #e:Ljava/lang/RuntimeException;
+    .end local v11           #headerField:I
+    .end local v14           #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Object;>;"
+    :cond_637
+    move-object/from16 v29, v12
 
-    .line 706
+    .line 752
     goto/16 :goto_4
 
-    .line 204
+    .line 236
     nop
 
-    :pswitch_data_5b2
+    :pswitch_data_63c
     .packed-switch 0x81
         :pswitch_19a
         :pswitch_19a
         :pswitch_12a
-        :pswitch_548
+        :pswitch_549
         :pswitch_d0
         :pswitch_7a
         :pswitch_20b
@@ -6019,7 +7316,7 @@
         :pswitch_31d
         :pswitch_12a
         :pswitch_20
-        :pswitch_3ff
+        :pswitch_400
         :pswitch_d0
         :pswitch_7a
         :pswitch_7a
@@ -6038,25 +7335,25 @@
         :pswitch_20b
         :pswitch_12a
         :pswitch_d0
-        :pswitch_459
-        :pswitch_4b5
+        :pswitch_45a
+        :pswitch_4b6
         :pswitch_7a
         :pswitch_7a
-        :pswitch_509
+        :pswitch_50a
         :pswitch_7a
         :pswitch_165
         :pswitch_7a
         :pswitch_1a
         :pswitch_7a
-        :pswitch_514
+        :pswitch_515
         :pswitch_7a
-        :pswitch_514
+        :pswitch_515
         :pswitch_fd
         :pswitch_1a
         :pswitch_fd
         :pswitch_1a
         :pswitch_7a
-        :pswitch_53d
+        :pswitch_53e
         :pswitch_fd
         :pswitch_7a
         :pswitch_165
@@ -6072,8 +7369,8 @@
         :pswitch_7a
     .end packed-switch
 
-    .line 208
-    :pswitch_data_634
+    .line 240
+    :pswitch_data_6be
     .packed-switch 0x89
         :pswitch_5a
         :pswitch_5a
