@@ -52,6 +52,7 @@ on boot
 
 service adbd /sbin/adbd
 	enabled
+    root
 
 on property:persist.service.adb.enable=1
     start adbd

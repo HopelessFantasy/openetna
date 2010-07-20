@@ -360,6 +360,7 @@ service console /system/bin/sh
 # adbd is controlled by the persist.service.adb.enable system property
 service adbd /sbin/adbd
     disabled
+    user root
 
 # adbd on at boot in emulator
 on property:ro.kernel.qemu=1
