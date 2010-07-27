@@ -1,19 +1,14 @@
 1. download smali-1.2.3.jar and baksmali-1.2.3.jar into this directory
   from http://code.google.com/p/smali/downloads/list
 
-2. download codeauroa/donut source
-  cd ca-donut
-  ./downloadRepo
-  if downloadRepo gives an xml error
-   open .repo/manifests/default.xml in an editor 
-   and change 
-   <project path="build" name="platform/build" \>
-   into
-   <project path="build" name="platform/build" >
-   then run ./downloadRepo again
+2. download android-2.1 source
+  mkdir android-2.1
+  cd android-2.1
+  repo init -u git://github.com/Polytheus/android_manifest.git -b eclair
+  repo sync
 
 3. build the source:
-  cd ca-donut
+  cd android-2.1
   ./doBuild
 
 4. build boot.img

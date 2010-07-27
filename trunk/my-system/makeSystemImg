@@ -30,22 +30,15 @@ function resign() {
  
 
 function install() {
-  cp -af ../$NEWSYS/$1 $1
-
+  if [[ -d ../$NEWSYS/$1 && -d $1 ]];then
+    cp -af ../$NEWSYS/$1/* $1/
+  else
+    cp -af ../$NEWSYS/$1 $1
+  fi
 }
 
 function installold() {
-  if [[ -e "$1" ]]; then
-    echo "Overwriting $1 by original"
-  fi
-  if [[ -f "../$NEWSYS/$1" ]]; then
-    NM=`md5sum ../$NEWSYS/$1 | cut -d' ' -f1`
-    OM=`md5sum ../$OLDSYS/$1 | cut -d' ' -f1`
-    if [[ "$NM" == "$OM" ]]; then
-        echo "Info: installed original $1 but new is the same"
-    fi
-  fi
-  cp -fa ../$OLDSYS/$1 $1
+  NEWSYS="$OLDSYS" install $1
 }
 
 function installcustom() {
@@ -64,10 +57,12 @@ function deodex() {
     java -jar ../$BAKSMALI -d ../$OLDSYS/framework -x ../$OLDSYS/$1.odex -o ../deodex/$OLDSYS/$1/
   fi
 
-  echo "Compiling $1"
-  rm -Rf ../temp
-  mkdir ../temp
-  java -Xmx512M -jar ../$SMALI ../deodex/$OLDSYS/$1 -o ../temp/classes.dex
+  if [[ ! -f ../deodex/$OLDSYS/$1/classes.dex ]]; then
+    echo "Compiling $1"
+    rm -Rf ../temp
+    mkdir ../temp
+    java -Xmx512M -jar ../$SMALI ../deodex/$OLDSYS/$1 -o ../deodex/$OLDSYS/$1/classes.dex
+  fi
 
   if [[ -f ../$OLDSYS/$1.jar ]]; then
     ARCHIVE="$1.jar"
@@ -78,9 +73,13 @@ function deodex() {
     exit 1
   fi
 
-  cp -fa ../$OLDSYS/$ARCHIVE $ARCHIVE
-  #zip --junk-paths -u $ARCHIVE ../deodex/$OLDSYS/$1/classes.dex
-  7z a -tzip $ARCHIVE ../temp/classes.dex -mx5 > /dev/null
+  if [[ ! -f ../deodex/$OLDSYS/$ARCHIVE ]];then
+    echo "Packing $1 into $ARCHIVE"
+    cp -fa ../$OLDSYS/$ARCHIVE ../deodex/$OLDSYS/$ARCHIVE
+    #zip --junk-paths -u $ARCHIVE ../deodex/$OLDSYS/$1/classes.dex
+    7z a -tzip ../deodex/$OLDSYS/$ARCHIVE ../deodex/$OLDSYS/$1/classes.dex -mx5 > /dev/null
+  fi
+  cp ../deodex/$OLDSYS/$ARCHIVE $ARCHIVE
 }
 
 if [[ ! -d $OLDSYS ]]; then
@@ -92,8 +91,8 @@ fi
 
 if [[ ! -d $NEWSYS ]]; then
   echo "Directory $NEWSYS does not exist"
-  echo "This should be a link to ../ca-donut/out/target/product/generic/system"
-  echo "Execute: ln -s ../ca-donut/out/target/product/generic/system ca-donut"
+  echo "This should be a link to ../$NEWSYS/out/target/product/generic/system"
+  echo "Execute: ln -s ../$NEWSYS/out/target/product/generic/system $NEWSYS"
   exit 1
 fi
 
@@ -107,4 +106,5 @@ do_stuff
 
 cd .. 
 $MKYAFFS2IMAGE -f ./system $OUTIMG
+7z a -tzip system.zip system.img
 rm -Rf temp

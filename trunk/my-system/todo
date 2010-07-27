@@ -1,0 +1,37 @@
+reimplement bluetooth. They changed the JNI api in commit d5ac1ae36b4e096eb97984334f86d0c68abea2f7 (framework/base).
+The libs use the old api, the framework uses the new one. Maybe we just update the bluetooth lib?
+
+interface to libgps is in hardware/libhardware_legacy/include/hardware_legacy/gps.h
+
+keyboard layout can be changed on the fly (maybe) by
+"For each keyboard device xxx, set the android.keychar.xxx system property to the full path of the desired keychar file. If you don't specify a keychar file, Android will default to /system/usr/keychar/qwerty.kl." (http://pdk.android.com/online-pdk/guide/keymaps_keyboard_input.html)
+
+enable proximity sensor, see WARNING: Unable to find decl for native Landroid/os/Power;.enable_proximity_only (Z)I
+
+check api difference:
+readelf -s -W korean-v10t/lib/libandroid_runtime.so | c++filt | sed '/UND/d' | sed -e 's/.*DEFAULT  ... \(.*\)/\1/' > koreanv10t_sym
+
+fix prelink errors:
+can NOT map (prelinked) library 'libwebcore.so' at 0xaa000000 as requested, will try general pool: 12 (Out of memory)
+
+while calling:
+E/dalvikvm(28858): ERROR: Calling native function Landroid/media/ToneGenerator;.startTone (II)Z without implementation - skipping. (undefined behaviour)
+E/dalvikvm(28616): ERROR: Calling native function Landroid/media/AudioSystem;.setPhoneState (I)I without implementation - skipping. (undefined behaviour)
+E/AudioFlinger( 1172): invalid stream type
+E/AudioTrack(28815): AudioFlinger could not create track, status: -22
+E/ToneGenerator(28815): AudioTrack->initCheck failed
+E/ToneGenerator(28815): ToneGenerator init failed 
+
+while enabling wifi:
+Set wlan_country, see framework/services/com/android/server/WifiService.smali
+ERROR: Calling native function Landroid/net/NetworkUtils;.enableInterface (Ljava/lang/String;)I without implementation - skipping. (undefined behaviour)
+
+V/MediaProvider( 1555): we got work to do for checkThumbnail: /sdcard/images/IMG023.jpg, there are still 0 tasks left in queue
+E/dalvikvm( 1555): ERROR: Calling native function Landroid/os/MemoryFile;.native_get_mapped_size (Ljava/io/FileDescriptor;)I without implementation - skipping. (undefined behaviour)
+
+statusBar:
+E/copybit ( 1290): copyBits failed (Operation not permitted)
+dmesg: <3>[ 1623.329057] mdp_ppp: invalid image!
+
+E/dalvikvm( 1351): ERROR: Calling native function Landroid/media/ToneGenerator;.startTone (II)Z without implementation - skipping. (undefined behaviour)
+ERROR: Calling native function Landroid/os/Process;.getFreeMemory ()J without implementation - skipping. (undefined behaviour)

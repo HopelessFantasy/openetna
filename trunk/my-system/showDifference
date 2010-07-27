@@ -1,0 +1,17 @@
+#!/bin/bash
+#Call with argument -c to copy different files to phone
+
+adb shell 'busybox find system -type f | busybox xargs busybox md5sum' | dos2unix | md5sum -c --quiet  - | tee /tmp/android-diff
+#adb shell busybox md5sum 'system' | dos2unix | md5sum -c --quiet  - | tee /tmp/android-diff-framework
+#echo Checking /system/app
+#adb shell busybox md5sum 'system/app/*' | dos2unix | md5sum -c --quiet - | tee /tmp/android-diff-app
+
+echo "If you do not want to sync, press Ctrl-C now"
+if read; then
+  cat /tmp/android-diff | while read i
+  do
+    FILE=`echo $i | cut -d':' -f1`
+    echo "$FILE -> $FILE"
+    adb push $FILE $FILE
+  done
+fi
