@@ -1,0 +1,180 @@
+#!/bin/bash
+
+OLDSYS=korean-v10t
+NEWSYS=android-2.1
+
+function do_stuff() {
+installold etc 
+installold usr
+install usr/share/zoneinfo
+installold 3rd_party 
+installold bin 
+installold busybox 
+
+installold fonts 
+install fonts
+
+install lib
+installold lib 
+
+installold media
+installold sounds 
+installold xbin 
+
+
+#EMULATOR ONLY
+#install bin/linker
+#install lib/libdl.so
+#install lib/libc.so
+
+
+#install lib/libandroid_runtime.so
+#install lib/libbinder.so #needed by libmedia_jni, libandroid_runtime (introduced in about 2.0)
+install lib/libskia.so #needed by libwebcore, libandroid_runtime, libmedia_jni (the skia+fretype+png+jpeg+zlib+gif library)
+#install lib/libui.so #provides _ZN7android14SurfaceControl24setTransparentRegionHintERKNS_6RegionE for android_runtime
+#install lib/libEGL.so #needed by libui
+install lib/libcutils.so #provides set_sched_policy, which is needed by libbinder.so for example, provides mspace_merge_objects for libdvm.so
+
+
+#install lib/libmedia_jni.so
+#install lib/libmedia.so #this has various changes by lg  needed by libmedia_jni.so, but libandroid_runtime/donut needs the old one
+
+#NEWSYS=ca-donut install lib/libdvm.so
+install lib/libwebcore.so #New JNI interface, needs Surface::isValid() (which we made inline)
+install lib/libnativehelper.so #dalvikvm helper, changed some JNI
+install lib/libdvm.so #more lax checks on JNI
+install bin/dalvikvm
+install bin/dexopt
+
+
+install etc/permissions/platform.xml
+
+#-- Install framework
+install framework
+deodex framework/qcnvitems #this is proprietary
+deodex framework/qcrilhook #this is proprietary
+
+#We only need this one because it would fill up the log with "file not found errors"
+installold framework/lge-res.apk #proprietary
+resign framework/lge-res.apk #propriertary
+
+
+#-- Install app
+install app
+
+#installold app/XIM.apk #LGE eXtended Input Method
+
+#installold app/lgecamera.apk #in uid.media
+#installold app/DivxRegistration.apk #in uid.media
+
+installold app/ArcMediaGallery.apk #in uid.media
+installold app/ArcMMP.apk #in uid.media
+
+#installold app/WifiService.apk ???
+#installold app/GoogleCheckin.apk #proprietary google, in uid.system
+
+installold app/ArcWorkshop.apk #in uid.media
+installold app/ArcVideoEditor.apk #in uid.media
+
+
+if false; then
+echo Resigning all under app/
+for i in `find app -name '*.apk'`
+do
+  resign $i
+done
+fi
+
+if false; then
+#The apps in here are exactly those who have been signed by Google
+GAPPS="app/Vending.apk app/Gmail.apk app/GmailProvider.apk app/GoogleApps.apk app/GooglePartnerSetup.apk app/GoogleSettingsProvider.apk app/gtalkservice.apk app/ImProvider.apk app/MarketUpdater.apk app/MediaUploader.apk app/SetupWizard.apk app/Street.apk app/Talk.apk app/YouTube.apk app/Maps.apk"
+
+#Gapps must not be resigned!
+#or you will get com.google.android.googlelogin.GoogleLoginServiceNotFoundException: The Google login service cannot be verified
+
+echo Copying Google apps
+for i in $GAPPS
+do
+  if [[ -e ../$OLDSYS/app/$(basename $i .apk).odex ]]; then
+    echo "Error GoogleApp is only available in odex!"
+    exit 1
+  fi
+  installold $i
+done
+fi
+
+if true; then
+if [[ ! -d ../gapps2 ]]; then
+  echo "Directory gapps2 missing!"
+  echo "google for optedgapps-ds-ere36b.zip,"
+  echo "download, extract it"
+  echo "There is a system directory in there,"
+  echo "Rename this to gapps2"
+  exit 1
+fi
+
+rm app/ContactsProvider.apk
+NEWSYS=gapps2 install app
+NEWSYS=gapps2 install etc
+NEWSYS=gapps2 install framework
+NEWSYS=gapps2 install lib
+fi
+
+echo Copying additional apps
+#those are not in odex form
+#installold app/com.android.stopwatch.apk
+#installold app/toleSetup.apk
+#installold app/WeatherApp.apk
+#installold app/bz.ktk.bubble.apk
+#installold app/com.speedsoftware.rootexplorer.apk
+#installold app/com.appdroid.anycut.apk
+#installold app/cz.romario.opensudoku.apk
+#installold app/Quickoffice.apk
+#installold app/EnhancedGoogleSearchProvider.apk
+installold app/koushikdutta.superuser.apk
+#installold app/com.stain46.taghome16.apk
+#installold app/com.betterandroid.betterkeyboard.apk
+#installold app/com.mathpad.mobile.android.wt.unit.apk
+#installold app/com.motalen.batterytimelite.apk
+#installold app/com.twidroid.apk
+#installold app/com.farproc.wifi.analyzer.apk
+installold app/com.arron.taskManagerFree.apk
+installold app/com.eclipsim.gpsstatus2.apk
+#installold app/com.androidapps.widget.weather2.apk
+#installold app/com.pocketools.currency.apk
+#installold app/whiteCompass.apk
+#installold app/com.jiuzhangtech.rushhour.apk
+#installold app/kr.mobilesoft.yxflash.apk
+#installold app/org.adw.launcher_donut.apk
+#installold app/My_e-mail_Android.apk
+#installold app/aDosBox.apk
+#installold app/com.google.zxing.client.android.apk
+#installcustom app/com.keramidas.TitaniumBackup.apk
+
+install etc/security/cacerts.bks 
+install etc/security/otacerts.zip
+
+
+#Copy standard su
+#install xbin/su
+#mv xbin/su xbin/su2
+#chmod 4555 xbin/su2
+
+#Copy SuperUser whitelist's su
+#cp bin/su xbin/su
+#chmod 4555 bin/su
+#chmod 4555 xbin/su
+rm bin/su #Only xbin/su stays (which is automatically (how does that work?) suid root)
+
+cp ../../my-boot/my-kernel/drivers/net/wireless/bcm4325/wireless.ko lib/modules/
+
+cp usr/keylayout/eve_qwerty.kl usr/keylayout/eve_qwerty.kl-english
+installcustom usr/keylayout/eve_qwerty.kl-german
+
+installcustom build.prop
+
+#rm app/Maps.apk
+installcustom etc/apns-conf.xml
+}
+
+

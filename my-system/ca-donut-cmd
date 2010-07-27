@@ -14,7 +14,6 @@ installold lib
 installold media
 installold sounds 
 installold xbin 
-installold build.prop
 
 
 #-- Install framework
@@ -30,45 +29,50 @@ install framework/ime.jar #same as
 install framework/input.jar #same as
 install framework/pm.jar #same as korean-v10t
 install framework/monkey.jar #this is for automated application testing. lg added switch '--hprof-all', we ignore this for now
+install framework/android.policy.jar #This makes the keyguard unreadably
+install framework/core.jar #dropped LG's changes. They were something regarding PBEParametersGenerator replaced by PKCS12ParametersGenerator and more
+install framework/framework-res.apk #files added by lg: res/drawable/stat_sys_gps_acquiring_1.png res/layout/lge_time_picker.xml res/layout/lge_time_picker_dialog.xml res/layout/search_dropdown_item_2line.xml   
+resign framework/framework-res.apk
 
 #Compile files from deodex/korean-v10t/framework/...
-deodex framework/android.policy #what is changed in here?
-deodex framework/core #there are just 10 files or so changed, so someone should look into that
+#deodex framework/android.policy #what is changed in here?
+#deodex framework/core #there are just 10 files or so changed, so someone should look into that
 deodex framework/com.google.android.gtalkservice #this is proprietary
 deodex framework/com.google.android.maps #this is proprietary
 deodex framework/framework
 deodex framework/services
-deodex framework/qcnvitems
-deodex framework/qcrilhook
+deodex framework/qcnvitems #this is proprietary
+deodex framework/qcrilhook #this is proprietary
 
 #Copy directly from korean-v10t
-installold framework/framework-res.apk
-resign framework/framework-res.apk
-installold framework/lge-res.apk
-resign framework/lge-res.apk
+#installold framework/framework-res.apk
+#resign framework/framework-res.apk
+installold framework/lge-res.apk #proprietary
+resign framework/lge-res.apk #propriertary
 
 
 #-- Install app
 mkdir app
-#Changed by LG:
-deodex app/SoundRecorder
-deodex app/CalendarProvider
-deodex app/AlarmClock
-deodex app/GoogleSubscribedFeedsProvider
-deodex app/Browser
-deodex app/Calendar
-deodex app/DownloadProvider
-deodex app/Music
-deodex app/Launcher
-deodex app/Contacts
-deodex app/GoogleContactsProvider
-deodex app/Phone
-deodex app/MediaProvider
-deodex app/TelephonyProvider
-deodex app/Camera
-#Added by LG:
-deodex app/Homeselector
-deodex app/Homecube #LG's homescreen
+#-Changed by LG:
+#deodex app/SoundRecorder
+#deodex app/CalendarProvider
+#deodex app/AlarmClock
+#deodex app/GoogleSubscribedFeedsProvider
+#deodex app/Browser
+#deodex app/Calendar
+#deodex app/DownloadProvider
+#deodex app/Music
+#deodex app/Launcher
+#deodex app/Contacts
+#deodex app/GoogleContactsProvider
+#deodex app/Phone
+#deodex app/MediaProvider
+#deodex app/TelephonyProvider
+#deodex app/Camera
+
+#-Added by LG:
+#deodex app/Homeselector #Select which homescreen you want
+#deodex app/Homecube #LG's homescreen
 deodex app/Memo #?
 deodex app/ChargingTest #?
 deodex app/DrmDataMngr #?
@@ -92,8 +96,24 @@ install app/Settings.apk
 install app/SettingsProvider.apk
 install app/Mms.apk
 install app/GoogleSearch.apk #Differences have been patched into source, just minor remaining
+install app/Launcher.apk
 
 #Copy unchanged apps
+install app/Browser.apk #A lot of changes. Test for regressions
+install app/Phone.apk #There are a lot, a lot, a lot changes. Test regressions!  (bluetooth etc)
+install app/AlarmClock.apk #some changes, test for regressions
+install app/GoogleSubscribedFeedsProvider.apk #I dont even know what this does
+install app/CalendarProvider.apk #Some changes, test for regressions!
+install app/Calendar.apk #Some changes, test for regressions!
+install app/Camera.apk #dropped. There are a lot of changes so test for regressions!
+install app/TelephonyProvider.apk #dropped. changes were: some additional field in sms/mms storage, and something about APN settings
+install app/Music.apk #dropping lg's changes
+install app/DownloadProvider.apk #dropping lg's changes (DRM)
+install app/MediaProvider.apk #dropping lg's changes (DRM)
+install app/Launcher.apk #dropping lg's changes (minor)
+install app/Contacts.apk #dropping lg's changes
+install app/GoogleContactsProvider.apk #dropping lg's changes
+install app/SoundRecorder.apk
 install app/GlobalSearch.apk #has only very minor differences
 install app/PackageInstaller.apk #not changed
 install app/HTMLViewer.apk #not changed
@@ -211,6 +231,8 @@ cp ../../my-boot/my-kernel/drivers/net/wireless/bcm4325/wireless.ko lib/modules/
 
 cp usr/keylayout/eve_qwerty.kl usr/keylayout/eve_qwerty.kl-english
 installcustom usr/keylayout/eve_qwerty.kl-german
+
+installcustom build.prop
 }
 
 

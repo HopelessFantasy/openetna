@@ -1,11 +1,25 @@
 #!/bin/bash
-if [[ $# -ne 2 ]]; then
-  echo Script to upload files when adb does not run as root
-  echo Call by $0 source destination
+
+
+if [[ ( $# -eq 0 ) || ( $# -gt 2 ) ]]; then
+  echo "Script to upload files when adb does not run as root"
+  echo "Call by $0 source destination"
+  echo "or      $0 source (is copied to /source on the phone)"
   exit 1
+elif [[ $# -eq 1 ]]; then
+  IN="$1"
+  OUT="/$1"
+else
+  IN="$1"
+  OUT="$2"
 fi
 
-echo "$1 -> $2"
-adb push $1 /sdcard/temp123124
-adb shell su -c \'busybox cp /sdcard/temp123124 $2\'
 
+if adb shell id | grep root; then
+  echo "rcp $IN -> $OUT"
+  adb push $IN $OUT
+else
+  echo "ucp $IN -> $OUT"
+  adb push $IN /sdcard/temp123124
+  adb shell su -c \'busybox cp /sdcard/temp123124 $OUT\'
+fi
