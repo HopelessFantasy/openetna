@@ -35,3 +35,42 @@ dmesg: <3>[ 1623.329057] mdp_ppp: invalid image!
 
 E/dalvikvm( 1351): ERROR: Calling native function Landroid/media/ToneGenerator;.startTone (II)Z without implementation - skipping. (undefined behaviour)
 ERROR: Calling native function Landroid/os/Process;.getFreeMemory ()J without implementation - skipping. (undefined behaviour)
+
+E/webcoreglue( 1690): The real object has been deleted
+E/webcoreglue( 1690): The real object has been deleted
+E/webcoreglue( 1690): The real object has been deleted
+
+D/SyncManager( 1274): setIsSyncable: Account {name=polytheus@googlemail.com, type=com.google}, provider subscribedfeeds -> 1
+D/dalvikvm( 1425): GC freed 5728 objects / 405360 bytes in 1399ms
+D/dalvikvm( 1375): GC freed 7771 objects / 575104 bytes in 1549ms
+E/ActivityThread( 1425): Failed to find provider info for com.android.contacts
+D/mterp   ( 1425): Exception Ljava/lang/IllegalArgumentException; from ContentResolver.java:706 not caught locally
+W/dalvikvm( 1425): threadid=41: thread exiting with uncaught exception (group=0x2aaca160)
+E/AndroidRuntime( 1425): Uncaught handler: thread GTalkConnWorker exiting due to uncaught exception
+D/SyncManager( 1274): setIsSyncable: Account {name=polytheus@googlemail.com, type=com.google}, provider calendar -> 1
+E/AndroidRuntime( 1425): java.lang.IllegalArgumentException: Unknown URL content://com.android.contacts/status_updates
+E/AndroidRuntime( 1425):    at android.content.ContentResolver.delete(ContentResolver.java:706)
+E/AndroidRuntime( 1425):    at com.google.android.gtalkservice.ContactPresence.removeContactPresenceFor(ContactPresence.java:105)
+E/AndroidRuntime( 1425):    at com.google.android.gtalkservice.ImSession.updateAccountStatus(ImSession.java:386)
+E/AndroidRuntime( 1425):    at com.google.android.gtalkservice.GTalkConnection$WorkerHandler.handleMessage(GTalkConnection.java:297)
+E/AndroidRuntime( 1425):    at android.os.Handler.dispatchMessage(Handler.java:99)
+E/AndroidRuntime( 1425):    at android.os.Looper.loop(Looper.java:123)
+E/AndroidRuntime( 1425):    at com.google.android.gtalkservice.service.GTalkService$WorkerThread.run(GTalkService.java:290)
+I/dalvikvm( 1425): threadid=7: reacting to signal 3
+I/dalvikvm( 1425): Wrote stack trace to '/data/anr/traces.txt'
+I/DumpStateReceiver( 1274): Added state dump to 1 crashes
+E/ActivityThread( 1425): Failed to find provider info for com.android.contacts
+D/SyncManager( 1274): not retrying sync operation because the error is a hard error: authority: com.android.contacts account: Account {name=polytheus@googlemail.com, type=com.google} extras: [initialize=true ] syncSource: 2 when: 2794014 delay: -1 key: {authority: com.android.contacts account: Account {name=polytheus@googlemail.com, type=com.google} extras: [initialize=true ]} pendingOperation: android.content.SyncStorageEngine$PendingOperation@2e9f52e8
+D/SyncManager( 1274): failed sync operation authority: com.android.contacts account: Account {name=polytheus@googlemail.com, type=com.google} extras: [initialize=true ] syncSource: 2 when: 2794014 delay: -1 key: {authority: com.android.contacts account: Account {name=polytheus@googlemail.com, type=com.google} extras: [initialize=true ]} pendingOperation: android.content.SyncStorageEngine$PendingOperation@2e9f52e8
+D/SyncManager( 1274): handleSyncHandlerMessage: sync context doesn't match, dropping: mActiveSyncContext startTime 2810361, mTimeoutStartTime 2810361, mHistoryRowId 12, syncOperation authority: gmail-ls account: Account {name=polytheus@googlemail.com, type=com.google} extras: [] syncSource: 0 when: 2803257 delay: 0 key: {authority: gmail-ls account: Account {name=polytheus@googlemail.com, type=com.google} extras: []} pendingOperation: android.content.SyncStorageEngine$PendingOperation@2e96f0b8 != startTime 2810260, mTimeoutStartTime 2810260, mHistoryRowId 11, syncOperation authority: gmail-ls account: Account {name=polytheus@googlemail.com, type=com.google} extras: [initialize=true ] syncSource: 2 when: 2794015 delay: -1 key: {authority: gmail-ls account: Account {name=polytheus@googlemail.com, type=com.google} extras: [initialize=true ]} pendingOperation: android.content.SyncStorageEngine$PendingOperation@2e9f3750
+
+E/dalvikvm( 1343): ERROR: Calling native function Landroid/database/CursorWindow;.isInteger_native (II)Z without implementation - skipping. (undefined behaviour)
+E/dalvikvm( 1343): ERROR: Calling native function Landroid/database/CursorWindow;.isFloat_native (II)Z without implementation - skipping. (undefined behaviour)
+E/dalvikvm( 1343): ERROR: Calling native function Landroid/database/CursorWindow;.isString_native (II)Z without implementation - skipping. (undefined behaviour)
+
+D/mterp   ( 1900): Exception Ljava/lang/ClassNotFoundException; from PathClassLoader.java:243 not caught locally
+D/dalvikvm( 1900): NOTE: loadClass 'org.apache.harmony.security.internal.nls.messages_de_DE' 0x2aaca4d8 threw exception Ljava/lang/ClassNotFoundException;
+D/mterp   ( 1900): Exception Ljava/lang/ClassNotFoundException; from PathClassLoader.java:243 not caught locally
+D/dalvikvm( 1900): NOTE: loadClass 'org.apache.harmony.security.internal.nls.messages_de' 0x2aaca4d8 threw exception Ljava/lang/ClassNotFoundException;
+D/mterp   ( 1900): Exception Ljava/lang/ClassNotFoundException; from PathClassLoader.java:243 not caught locally
+D/dalvikvm( 1900): NOTE: loadClass 'org.apache.harmony.security.internal.nls.messages' 0x2aaca4d8 threw exception Ljava/lang/ClassNotFoundException;

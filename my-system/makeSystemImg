@@ -91,8 +91,8 @@ fi
 
 if [[ ! -d $NEWSYS ]]; then
   echo "Directory $NEWSYS does not exist"
-  echo "This should be a link to ../$NEWSYS/out/target/product/generic/system"
-  echo "Execute: ln -s ../$NEWSYS/out/target/product/generic/system $NEWSYS"
+  echo "This should be a link to ../$NEWSYS/out/target/product/openetna/system"
+  echo "Execute: ln -s ../$NEWSYS/out/target/product/openetna/system $NEWSYS"
   exit 1
 fi
 
