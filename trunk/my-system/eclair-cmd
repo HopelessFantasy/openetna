@@ -113,7 +113,7 @@ if [[ ! -d ../gapps2 ]]; then
   exit 1
 fi
 
-rm app/ContactsProvider.apk
+#rm app/ContactsProvider.apk
 NEWSYS=gapps2 install app
 NEWSYS=gapps2 install etc
 NEWSYS=gapps2 install framework
