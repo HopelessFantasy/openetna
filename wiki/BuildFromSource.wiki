@@ -1,0 +1,15 @@
+#summary One-sentence summary of this page.
+#labels Featured
+
+= Downloading the source =
+{{{
+mkdir android-2.1
+repo init -u git://github.com/Polytheus/android_manifest.git -b eclair
+repo sync
+}}}
+= Building =
+{{{
+source build/envsetup.sh
+choosecombo 1 1 generic eng
+make -j3
+}}}
