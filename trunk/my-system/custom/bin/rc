@@ -1,0 +1,8 @@
+if [ -f /data/local/.bashrc ]; then
+  echo /data/local/.bashrc exists
+else
+  cp /system/etc/bashrc /data/local/.bashrc
+fi
+
+chmod 4555 /system/bin/su
+chmod 4555 /system/xbin/su
