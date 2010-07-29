@@ -60,7 +60,7 @@ key 17    W					WAKE_DROPPED
 key 18    E					WAKE_DROPPED
 key 19    R					WAKE_DROPPED
 key 20    T					WAKE_DROPPED
-key 21    Z					WAKE_DROPPED
+key 21    Y					WAKE_DROPPED
 key 22    U					WAKE_DROPPED
 key 23    I					WAKE_DROPPED
 key 24    O					WAKE_DROPPED
@@ -77,7 +77,7 @@ key 37    K					WAKE_DROPPED
 key 38    L					WAKE_DROPPED
 key 14    DEL               WAKE_DROPPED
         
-key 44    Y					WAKE_DROPPED
+key 44    Z					WAKE_DROPPED
 key 45    X					WAKE_DROPPED
 key 46    C					WAKE_DROPPED
 key 47    V					WAKE_DROPPED
