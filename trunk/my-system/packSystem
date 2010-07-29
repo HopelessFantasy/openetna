@@ -1,0 +1,20 @@
+#!/bin/bash
+if [[ $# -ne 1 ]]; then
+  echo "Call $0 versionNumber"
+  exit 1
+fi
+if [[ ! -f system.img || ! -d system ]]; then
+  echo "ERROR: system.img or system/ does not exist!"
+  exit 1
+fi
+
+if [[ -f system/useEmulator ]]; then
+  echo "ERROR: system/useEmulator exists, so this image was build for emulator!"
+  exit 1
+fi
+
+cp -a system.img systemv$1.img
+rm -Rf systemv$1
+cp -a system systemv$1
+rm -f systemv$1.7z
+7z a -tbzip2 -mx9 systemv$1.7z systemv$1.img
