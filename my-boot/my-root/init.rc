@@ -52,7 +52,7 @@ loglevel 6
     symlink /system/etc /etc
     symlink /data/local /home
     symlink /cache /tmp
-
+    
 # create mountpoints and mount tmpfs on sqlite_stmt_journals
 
 #tolemaC insert
@@ -82,7 +82,7 @@ mkdir /sdcard2 0775 system system
 # Create cgroup mount points for process groups
     mkdir /dev/cpuctl
     mount cgroup none /dev/cpuctl cpu
-    chown sytem system /dev/cpuctl
+    chown system system /dev/cpuctl
     chown system system /dev/cpuctl/tasks
     chmod 0777 /dev/cpuctl/tasks
     write /dev/cpuctl/cpu.shares 1024
@@ -486,7 +486,7 @@ service flash_recovery /system/etc/install-recovery.sh
 # BEGIN: 0001889 cosmichigh26@lge.com 2009-11-11
 # ADD 0001889: [WLAN] Modify files about WLAN basic functions in upper-kernel level
 # LGE_CHANGE_S, [yoohoo@lge.com], 2009-03-05,<register WLAN services>
-service wpa_supplicant /system/bin/wpa_supplicant -Dwext -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf #-dd
+service wpa_supplicant /system/bin/wpa_supplicant -Dwext -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf -dd
 	disabled
 	oneshot
 #	console
@@ -554,8 +554,11 @@ service gen_service /system/bin/sh /system/bin/gen_service
 #zacpod insert
 # Run dropbear to allow ssh connectivity
 service sshd /system/bin/sh /system/bin/rundropbear
-oneshot
+    oneshot
 
 #run /system/bin/rc so we can add any additional startup stuff without having to edit the initrd.
-service rc /system/bin/rc
+service rc /system/bin/sh /system/bin/rc
+    user root
+    group root
+    oneshot
 #zacpod end insert
