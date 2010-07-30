@@ -13,8 +13,8 @@ if [[ -f system/useEmulator ]]; then
   exit 1
 fi
 
-cp -a system.img systemv$1.img
-rm -Rf systemv$1
-cp -a system systemv$1
-rm -f systemv$1.7z
-7z a -tbzip2 -mx9 systemv$1.7z systemv$1.img
+cp -a system.img systemV$1.img
+rm -Rf systemV$1
+cp -a system systemV$1
+rm -f systemV$1.7z
+7z a -tbzip2 -mx9 systemV$1.7z systemV$1.img
