@@ -11,3 +11,11 @@ installold: copies the file from korean-v10t
 deodex: comiles the file from deodex/korean-v10t/
 resign: signs the apk with the key from eclair
 
+== Emulator =
+You may want to test functionality in the android emulator
+to build an system.img which works in the emulator, use
+./makeSystemImg -e eclair-cmd
+
+You can emulate this image with
+./emulate system.img -wipe-data
+You may omit -wipe-data on later runs

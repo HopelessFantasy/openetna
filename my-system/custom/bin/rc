@@ -1,6 +1,6 @@
-if [ -f /data/local/.bashrc ]; then
-  echo /data/local/.bashrc exists
-else
+#!/system/bin/sh
+#Why do we do this?
+if [ ! -f /data/local/.bashrc ]; then
   cp /system/etc/bashrc /data/local/.bashrc
 fi
 
