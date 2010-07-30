@@ -3,8 +3,24 @@
 set -e #exit on error
 set -u #error on unset variable
 
+USE_EMULATOR=0
+
+while getopts "e" Option
+# Initial declaration.
+# The : after a flag shows it will have an option passed with it.
+do
+case $Option in
+# w ) CMD=$OPTARG; FILENAME="PIMSLogList.txt"; TARGET="logfiles"; ;;
+e ) USE_EMULATOR=1; echo "Building for emulator" ;;
+* ) echo "Not recognized argument"; exit -1 ;;
+esac
+done
+shift $(($OPTIND - 1)) 
+
 if [[ $# -ne 1 ]]; then
-    echo "Usage: $0 cmdfile"
+    echo "$#"
+    echo "Usage: $0 [-e] cmdfile"
+    echo "-e: Build image for use in emulator"
     exit 1
 fi
 
@@ -21,8 +37,14 @@ ZIPALIGN=../$NEWSYS/out/host/linux-x86/bin/zipalign
 KEYDIR=../$NEWSYS/build/target/product/security
 
 function resign() {
+  if [[ $# -ne 2 ]]; then
+    echo "Usage: resign apk key"
+    echo "Where key is on of media, shared, platform, testkey"
+    exit 1
+  fi
+
   #To fix E/PackageManager(  681): Package foobar has no signatures that match those in shared user android.uid.system; ignoring!
-  java -jar ../$SIGNAPK ../$KEYDIR/platform.x509.pem ../$KEYDIR/platform.pk8 $1 $1-signed
+  java -jar ../$SIGNAPK ../$KEYDIR/$2.x509.pem ../$KEYDIR/$2.pk8 $1 $1-signed
   rm "$1"
   ../$ZIPALIGN 4 $1-signed $1
   rm "$1-signed"
@@ -30,10 +52,21 @@ function resign() {
  
 
 function install() {
-  if [[ -d ../$NEWSYS/$1 && -d $1 ]];then
-    cp -af ../$NEWSYS/$1/* $1/
+
+  IN=$1
+  if [[ $# -eq 2 ]]; then
+    OUT=$2
+  elif [[ $# -eq 1 ]]; then
+    OUT=$1
   else
-    cp -af ../$NEWSYS/$1 $1
+    echo "Usage: install src dst"
+    exit 1
+  fi
+
+  if [[ -d ../$NEWSYS/$IN && -d $OUT ]];then
+    cp -af ../$NEWSYS/$IN/* $OUT/
+  else
+    cp -af ../$NEWSYS/$IN $OUT
   fi
 }
 
@@ -84,7 +117,8 @@ function deodex() {
 
 if [[ ! -d $OLDSYS ]]; then
   echo "ERROR: directory $OLDSYS does not exist!"
-  echo "Extract korean-v10t system.img to that directory or run"
+  echo "Extract korean-v10t (get from http://www.zacpod.com/) system.img to that directory or run"
+  echo "To extract the system.img, you can use unyaffs, which can be found in the directory above"
   echo "adb pull /system $OLDSYS with korean-v10t (by zacpod) installed"
   exit 1
 fi
@@ -106,5 +140,4 @@ do_stuff
 
 cd .. 
 $MKYAFFS2IMAGE -f ./system $OUTIMG
-7z a -tzip system.zip system.img
 rm -Rf temp

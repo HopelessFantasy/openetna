@@ -25,12 +25,15 @@ installold xbin
 #EMULATOR ONLY
 #install bin/linker
 #install lib/libdl.so
-#install lib/libc.so
 
+if [[ "$USE_EMULATOR" == "1" ]]; then
+  install lib/libc.so
+  touch useEmulator
+fi
 
 #install lib/libandroid_runtime.so
 #install lib/libbinder.so #needed by libmedia_jni, libandroid_runtime (introduced in about 2.0)
-install lib/libskia.so #needed by libwebcore, libandroid_runtime, libmedia_jni (the skia+fretype+png+jpeg+zlib+gif library)
+#install lib/libskia.so #needed by libwebcore, libandroid_runtime, libmedia_jni (the skia+fretype+png+jpeg+zlib+gif library)
 #install lib/libui.so #provides _ZN7android14SurfaceControl24setTransparentRegionHintERKNS_6RegionE for android_runtime
 #install lib/libEGL.so #needed by libui
 install lib/libcutils.so #provides set_sched_policy, which is needed by libbinder.so for example, provides mspace_merge_objects for libdvm.so
@@ -46,8 +49,20 @@ install lib/libdvm.so #more lax checks on JNI
 install bin/dalvikvm
 install bin/dexopt
 
+#This lib overwrites some functions from libandroid_runtime
+install lib/libsqlite.so #this is used by libandroid_runtime_eclair.so
+install lib/libnetutils.so
+installold lib/libhardware_legacy.so #old one is needed for radio, wlan, gps ...
+
+installold bin/wpa_supplicant #there is much legacy in there
+installold bin/wpa_cli #fits wpa_supplicant
 
 install etc/permissions/platform.xml
+
+
+#rm lib/hw/copybit.eve.so #This is old
+#install lib/hw/copybit.msm7k.so #This works
+
 
 #-- Install framework
 install framework
@@ -56,7 +71,7 @@ deodex framework/qcrilhook #this is proprietary
 
 #We only need this one because it would fill up the log with "file not found errors"
 installold framework/lge-res.apk #proprietary
-resign framework/lge-res.apk #propriertary
+resign framework/lge-res.apk platform #propriertary
 
 
 #-- Install app
@@ -67,43 +82,19 @@ install app
 #installold app/lgecamera.apk #in uid.media
 #installold app/DivxRegistration.apk #in uid.media
 
-installold app/ArcMediaGallery.apk #in uid.media
-installold app/ArcMMP.apk #in uid.media
+#This needs some DRM stuff (and there is a Gallery.apk in stock android anyhow)
+#installold app/ArcMediaGallery.apk #in uid.media
+#resign app/ArcMediaGallery.apk media
 
-#installold app/WifiService.apk ???
-#installold app/GoogleCheckin.apk #proprietary google, in uid.system
+installold app/ArcMMP.apk #in uid.media
+resign app/ArcMMP.apk media
 
 installold app/ArcWorkshop.apk #in uid.media
+resign app/ArcWorkshop.apk media
 installold app/ArcVideoEditor.apk #in uid.media
+resign app/ArcVideoEditor.apk media
 
-
-if false; then
-echo Resigning all under app/
-for i in `find app -name '*.apk'`
-do
-  resign $i
-done
-fi
-
-if false; then
-#The apps in here are exactly those who have been signed by Google
-GAPPS="app/Vending.apk app/Gmail.apk app/GmailProvider.apk app/GoogleApps.apk app/GooglePartnerSetup.apk app/GoogleSettingsProvider.apk app/gtalkservice.apk app/ImProvider.apk app/MarketUpdater.apk app/MediaUploader.apk app/SetupWizard.apk app/Street.apk app/Talk.apk app/YouTube.apk app/Maps.apk"
-
-#Gapps must not be resigned!
-#or you will get com.google.android.googlelogin.GoogleLoginServiceNotFoundException: The Google login service cannot be verified
-
-echo Copying Google apps
-for i in $GAPPS
-do
-  if [[ -e ../$OLDSYS/app/$(basename $i .apk).odex ]]; then
-    echo "Error GoogleApp is only available in odex!"
-    exit 1
-  fi
-  installold $i
-done
-fi
-
-if true; then
+echo Copying google apps
 if [[ ! -d ../gapps2 ]]; then
   echo "Directory gapps2 missing!"
   echo "google for optedgapps-ds-ere36b.zip,"
@@ -113,12 +104,10 @@ if [[ ! -d ../gapps2 ]]; then
   exit 1
 fi
 
-#rm app/ContactsProvider.apk
 NEWSYS=gapps2 install app
 NEWSYS=gapps2 install etc
 NEWSYS=gapps2 install framework
 NEWSYS=gapps2 install lib
-fi
 
 echo Copying additional apps
 #those are not in odex form
@@ -126,12 +115,11 @@ echo Copying additional apps
 #installold app/toleSetup.apk
 #installold app/WeatherApp.apk
 #installold app/bz.ktk.bubble.apk
-#installold app/com.speedsoftware.rootexplorer.apk
-#installold app/com.appdroid.anycut.apk
+installold app/com.speedsoftware.rootexplorer.apk
+installold app/com.appdroid.anycut.apk
 #installold app/cz.romario.opensudoku.apk
 #installold app/Quickoffice.apk
 #installold app/EnhancedGoogleSearchProvider.apk
-installold app/koushikdutta.superuser.apk
 #installold app/com.stain46.taghome16.apk
 #installold app/com.betterandroid.betterkeyboard.apk
 #installold app/com.mathpad.mobile.android.wt.unit.apk
@@ -140,6 +128,17 @@ installold app/koushikdutta.superuser.apk
 #installold app/com.farproc.wifi.analyzer.apk
 installold app/com.arron.taskManagerFree.apk
 installold app/com.eclipsim.gpsstatus2.apk
+
+rm app/Superuser.apk #this does not work
+#Copy SuperUser whitelist's su
+#suid is set in custom/bin/rc
+#install bin/su
+#install xbin/su
+installold bin/su
+installold xbin/su
+installold app/koushikdutta.superuser.apk
+
+
 #installold app/com.androidapps.widget.weather2.apk
 #installold app/com.pocketools.currency.apk
 #installold app/whiteCompass.apk
@@ -155,21 +154,16 @@ install etc/security/cacerts.bks
 install etc/security/otacerts.zip
 
 
-#Copy standard su
-#install xbin/su
-#mv xbin/su xbin/su2
-#chmod 4555 xbin/su2
+#Startup file
+installcustom bin/rc
+installcustom bin/rundropbear
 
-#Copy SuperUser whitelist's su
-#cp bin/su xbin/su
-#chmod 4555 bin/su
-#chmod 4555 xbin/su
-rm bin/su #Only xbin/su stays (which is automatically (how does that work?) suid root)
 
 cp ../../my-boot/my-kernel/drivers/net/wireless/bcm4325/wireless.ko lib/modules/
 
-cp usr/keylayout/eve_qwerty.kl usr/keylayout/eve_qwerty.kl-english
+installcustom usr/keylayout/eve_qwerty.kl-english
 installcustom usr/keylayout/eve_qwerty.kl-german
+cp usr/keylayout/eve_qwerty.kl-english usr/keylayout/eve_qwerty.kl
 
 installcustom build.prop
 
