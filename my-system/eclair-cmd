@@ -163,6 +163,7 @@ cp ../../my-boot/my-kernel/drivers/net/wireless/bcm4325/wireless.ko lib/modules/
 
 installcustom usr/keylayout/eve_qwerty.kl-english
 installcustom usr/keylayout/eve_qwerty.kl-german
+installcustom usr/keylayout/eve_qwerty.kl-french
 cp usr/keylayout/eve_qwerty.kl-english usr/keylayout/eve_qwerty.kl
 
 installcustom build.prop
