@@ -1,6 +1,0 @@
-repo init -u git://codeaurora.org/platform/manifest.git -b donut 
-
-repo sync
-
-echo applying patches from ../patches directory
-../patches/applyPatches
