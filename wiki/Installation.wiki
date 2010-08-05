@@ -1,52 +1,66 @@
 #summary Installation of the current ROM
 #labels Phase-Implementation
 
-===_This Document is not finished._===
+===_This Document is work in progress._===
 
 
 = Introduction =
 
-This document covers the flashing process of the current ROM
-
-= General Steps = 
-
+This document covers the flashing process of the current ROM.
 The steps described in this document use fastboot to flash the new
-system.
+system. fastboot is a debugging tool included in older LG firmwares.
 
 == Requirements ==
 You will need:
-{{{
-* LG GW620
-* Older firmware (not V10I, V10N, or anything recent that lacks fastboot)
-* ADB (included in Android SDK: http://developer.android.com/sdk/index.html)
-* fastboot (e.g. found here: http://android-dls.com/files/linux/fastboot)
-}}}
-== Recover Fastboot ==
+ * LG GW620
+ * Older firmware (not V10I, V10N, or anything recent that lacks fastboot)
+  * http://csmg.lgmobile.com:9002/swdata/WEBSW/GW620/ANEUBB/V10g_00/V10G_00.kdz
+ * ADB (included in Android SDK: http://developer.android.com/sdk/index.html)
+ * fastboot 
+  * Linux: http://android-dls.com/files/linux/fastboot
+  * Windows: http://forum.xda-developers.com/showthread.php?t=463627 (unverified)
+ * Android 2.1 ROM: 
+  * System.img: http://www.zacpod.com/files/systemV4.1.zip
+  * boot.img: http://code.google.com/p/openetna/downloads/detail?name=bootv1.2.img
+
+== Recover fastboot ==
 
 If you have installed LG official v10I, v10N or some other version that
 does not have fastboot, you should downgrade using LG Utils and
-LG Mobile Update.
+LG Mobile Update. (google for it)
 
 == When Upgrading from 1.5 ==
 
 If you are upgrading from a v1.5 ROM you should:
-  * backup all the information you want to a different medium.
+ * backup all the information you want to a different medium.
 
 = Install =
-<pre>
-execute the following commands
-*fastboot -w
-fastboot flash boot boot.img
-fastboot flash system systemV2.img *
-reboot the phone and it should boot to the new system
-enter adb shell:
-*sudo /opt/android-sdk-<xx>/tools/adb start-server
-sudo /opt/android-sdk-<xx>/tools/adb shell *
-and change the permissions of /system/bin/su and /system/xbin/su
-*chmod 4777 /system/bin/su
+
+ # Get your phone in fastboot mode:
+  # Remove battery
+  # Slide out the keyboard
+  # Plug in USB connector (still with the battery removed)
+  # Press SPACE (or SPACE+MENU for newer firmwares) till the fastboot text appears on the screen
+
+ # Execute the following commands on your linux terminal or windows command line interface ( WIN + R => cmd => ok )
+{{{
+fastboot -w
+fastboot flash boot bootv1.2.img
+fastboot flash system systemV4.1.img
+}}}
+
+ # Reboot the phone and it should boot to the new system
+ # Enter adb shell (as root / admin):
+{{{
+/opt/android-sdk-<xx>/tools/adb start-server
+/opt/android-sdk-<xx>/tools/adb shell
+}}}
+ # Change the permissions of /system/bin/su and /system/xbin/su
+{{{
+chmod 4777 /system/bin/su
 chmod 4777 /system/xbin/su *
-change the language and input language
-</pre>
+ # Change the language and input language
+
 
 = Update the keyboard layout =
 See HowToChangeKeyboardLayout
