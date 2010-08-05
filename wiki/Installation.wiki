@@ -58,7 +58,8 @@ fastboot flash system systemV4.1.img
  # Change the permissions of /system/bin/su and /system/xbin/su
 {{{
 chmod 4777 /system/bin/su
-chmod 4777 /system/xbin/su *
+chmod 4777 /system/xbin/su
+}}}
  # Change the language and input language
 
 
