@@ -6,4 +6,17 @@ This procedure has been tested on Ubuntu 10.04 x64. The following steps are not 
 
 = Install the sdk =
 
-*this page is a work in progress*
+Download the sdk from this page:
+http://developer.android.com/sdk/index.html
+unpack it somewhere safe and then add the location to your PATH.
+
+= Get the source =
+
+Follow the indications in the Source tab above. If you're not a member of the project just enter this line in a terminal:
+
+svn checkout http://openetna.googlecode.com/svn/trunk/ openetna-read-only
+
+(if you don't have it installed, you have to install the svn package).
+You'll get a folder called openetna-read-only, it contains useful scripts and some READMEs. If you're autonomous enough, just follow them; if not, go on with this guide.
+
+*This document is a work in progress*
