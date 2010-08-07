@@ -1,0 +1,9 @@
+#summary How to build your image from source, and start to contribute to the project.
+
+= Introduction =
+
+This procedure has been tested on Ubuntu 10.04 x64. The following steps are not too specific however, and you should be able to adapt them for your environment.
+
+= Install the sdk =
+
+*this page is a work in progress*
