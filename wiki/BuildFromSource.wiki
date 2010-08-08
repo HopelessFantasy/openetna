@@ -12,11 +12,53 @@ unpack it somewhere safe and then add the location to your PATH.
 
 = Get the source =
 
-Follow the indications in the Source tab above. If you're not a member of the project just enter this line in a terminal:
+ * Follow the indications in the Source tab above. If you're not a member of the project just enter this line in a terminal:
 
+{{{
 svn checkout http://openetna.googlecode.com/svn/trunk/ openetna-read-only
+}}}
 
 (if you don't have it installed, you have to install the svn package).
 You'll get a folder called openetna-read-only, it contains useful scripts and some READMEs. If you're autonomous enough, just follow them; if not, go on with this guide.
+
+= Preparing for building =
+
+{{{
+cd openetna-read-only
+}}}
+ * Then, according the README: get smali and baksmali:
+{{{
+wget http://smali.googlecode.com/files/smali-1.2.4.jar
+wget http://smali.googlecode.com/files/baksmali-1.2.4.jar
+}}}
+ * Now get the repo tool, if you haven't got it already. Also make sure you have the 'git' package installed.
+{{{
+wget http://android.git.kernel.org/repo
+chmod +x repo
+}}}
+ * Download the Polytheus android-2.1 source:
+{{{
+mkdir android-2.1
+cd android-2.1
+repo init -u git://github.com/Polytheus/android_manifest.git -b eclair
+repo sync
+}}}
+
+= Building the source = 
+ * Now you can build the source:
+{{{
+./doBuild
+}}}
+ * Then make a boot.img:
+{{{
+cd my-boot
+less README
+}}}
+ * Then build a system.img:
+{{{
+cd ../my-system
+less README
+}}}
+
 
 *This document is a work in progress*
