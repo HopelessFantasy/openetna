@@ -10,6 +10,14 @@ Download the sdk from this page:
 http://developer.android.com/sdk/index.html
 unpack it somewhere safe and then add the location to your PATH.
 
+= Get the required packages =
+_NOTE: this is probably the most distribution-specific passage of the guide._
+
+Get the packages needed to build Android.
+{{{
+sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl sun-java6-jdk zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev ia32-libs x11proto-core-dev libx11-dev lib32readline5-dev lib32z-dev
+}}}
+
 = Get the source =
 
  * Follow the indications in the Source tab above. If you're not a member of the project just enter this line in a terminal:
