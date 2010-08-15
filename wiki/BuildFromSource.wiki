@@ -58,7 +58,9 @@ wget http://smali.googlecode.com/files/baksmali-1.2.4.jar
 {{{
 wget http://android.git.kernel.org/repo
 chmod +x repo
+mv repo /opt/android-sdk/tools/
 }}}
+(note: /opt/android-sdk/tools should be in your path, otherwise add /opt/android-sdk/tools/ in front of the 'repo' commands)
  * Download the Polytheus android-2.1 source:
 {{{
 mkdir android-2.1
