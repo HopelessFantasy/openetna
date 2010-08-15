@@ -227,6 +227,7 @@
   <apn carrier="China mobile" APN="cmnet" Server="" user="" password="" MCC="460" MNC="00" type="default,supl"/>
   <apn carrier="CHina Mobile MMS" apn="cmwap" proxy="10.0.0.172" port="80" mmsc="http://mmsc.monternet.com" mmsproxy="10.0.0.172" mmsport="80" mcc="460" mnc="00" type="mms" />
   <apn carrier="China Unicom 3G" apn="3gnet" port="80" mcc="460" mnc="01" type="default,supl"/>
+  <apn carrier="China Unicom 3GWAP" apn="3gwap" mmsc="http://mmsc.myuni.com.cn" mmsproxy="10.0.0.172" mmsport="80" mcc="460" mnc="01" type="mms"/>
   <apn carrier="China Unicom MMS" apn="uniwap" mmsc="http://mmsc.myuni.com.cn" mmsproxy="10.0.0.172" mmsport="80" mcc="460" mnc="01" type="mms"/>
   <apn carrier="CHT" mcc="466" mnc="92" apn="internet" user="" server="" password="" mmsc="" type="default"/>
   <apn carrier="CHT MMS" mcc="466" mnc="92" apn="emome" user="" server="" password="" mmsc="http://mms.emome.net:8002" mmsproxy="10.1.1.1" mmsport="8080" type="mms"/>
