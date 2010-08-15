@@ -71,15 +71,11 @@ function install() {
 }
 
 function installold() {
-  NEWSYS="$OLDSYS" install $1
+  NEWSYS="$OLDSYS" install $*
 }
 
 function installcustom() {
-  if [[ $# -eq 1 ]];then
-    cp -fa ../custom/$1 $1
-  else
-    cp -fa ../custom/$1 $2
-  fi
+  NEWSYS=custom install $*
 }
 
 function deodex() {
@@ -139,5 +135,7 @@ cd system
 do_stuff
 
 cd .. 
+#Permissions of the files are adjusted by -f switch
+#see system/core/include/private/android_filesystem_config.h for their definition
 $MKYAFFS2IMAGE -f ./system $OUTIMG
 rm -Rf temp
