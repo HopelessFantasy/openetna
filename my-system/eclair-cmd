@@ -44,11 +44,13 @@ installold etc/vold.conf
 
 #Sensors
 installold lib/hw/sensors.eve.so lib/hw/sensors.msm7k.so
+installold lib/hw/lights.eve.so lib/hw/lights.msm7k.so
 
 #Camera
 installold lib/libcamera.so
 installold lib/libmm-qcamera-tgt.so #needed by libcamera.so
 installold lib/libmmcamera.so
+installold lib/libmmjpeg.so
 
 #Radio
 installold lib/libril-qc-1.so
@@ -165,7 +167,7 @@ echo Copying additional apps
 #installold app/WeatherApp.apk
 #installold app/bz.ktk.bubble.apk
 installold app/com.speedsoftware.rootexplorer.apk
-installold app/com.appdroid.anycut.apk
+#installold app/com.appdroid.anycut.apk
 #installold app/cz.romario.opensudoku.apk
 #installold app/Quickoffice.apk
 #installold app/EnhancedGoogleSearchProvider.apk
