@@ -3,8 +3,9 @@ Added more apns - submitted by poisins92
 Added one apn for China Unicom 3GWAP - thanks to walteronly1 and poisins92
 Added eve_qwerty.kl-french (thanks cioeri)
 fixed gps(?)
-Fixed images disorted
+Fixed images distorted
 Sensors not working
+Added JIT to dalvik (saxando4u)
 
 v4.1:
 ATTENTION: Wipe needed!
