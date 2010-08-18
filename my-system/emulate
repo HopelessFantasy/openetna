@@ -1,5 +1,10 @@
 #!/bin/bash
 echo "In your SDK manager, you must have created an emulator device with name avd21-1 and target android 2.1-update1"
 echo "Then create a symlink in this directory to the sdk's emulator binary"
-echo Call by '$0 system.img [-wipe-data]'
-./emulator -avd avd21-1 -system $1 -show-kernel -logcat '*' -verbose $2 | tee boot-emulator.log
+echo Call by "$0 system.img [options ...]"
+echo "Options are for example: -wipe-data"
+SYSTEM=$1
+shift
+
+#RAMDISK='-ramdisk ../my-boot/debug-ramdisk.cpio.gz'
+./emulator -avd avd21-1 $RAMDISK -system $SYSTEM -show-kernel -logcat '*' -verbose $* | tee boot-emulator.log

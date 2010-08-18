@@ -1,0 +1,10 @@
+#!/bin/bash
+nm  -D korean-v10t/lib/libandroid_runtime.so | grep register | grep " T " \
+| sed '/AndroidRuntime/d' | cut -d' ' -f3 \
+| grep '_JNIEnv$' \
+| while read FUNC
+do
+  DEM=`c++filt $FUNC`
+  MYNAME=`echo $DEM | sed 's/android::\(.*\)/\1/' | sed 's/\(.*\)(_JNIEnv\*)/\1/'`
+  echo "    REG_EJNI($MYNAME, $FUNC),"
+done
