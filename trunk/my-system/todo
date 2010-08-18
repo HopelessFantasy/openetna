@@ -1,3 +1,35 @@
+Fix the permissions of the ril devices and reactive switchUser() in rild
+
+For a backport of copybit to 2.6.27 see:
+http://github.com/rmcc/android_hardware_msm7k/commit/be77d83c70a26126d2ce0c89a3f323c4fd17abf1
+
+
+look at http://github.com/mikeandroid. Has some interesting things like libloc for gps and so on
+
+GPS icon does not work becaues we never get GPS_STATUS_SESSION_BEGIN from libloc_api. We only get ENGINE_ON and then
+RPC_LOC_EVENT_SATELLITE_REPORT.
+
+Hi all.
+I am digging into the structure of sensor, especially compass sensor.
+when I was following the flow from compass.java to kernel driver of
+compass, I was stuck at the communication between sensors HAL and
+akmd.
+Following is the flow of compass sensor from application.
+onSensorChanged Listener in compass.java -> thread sensors_data_poll
+run in SensorManager.java -> sensors_data_poll() in
+android_hardware_SensorManager.cpp JNI -> sensors_data_poll() in
+sensors_ak8973.c
+Then I was stuck at the loop of sensors_data_poll(). It seems that the
+socket is the key to communicate between the poll loop and the akmd2
+daemon.
+but I can't find the code how to make the socket, open, write( from
+the akmd2 daemon to the sensors_data_poll()), read.
+any helps would be appreciated.
+thanks in advance.
+
+
+FM radio is in libbluedroid (partly at least)
+
 reimplement bluetooth. They changed the JNI api in commit d5ac1ae36b4e096eb97984334f86d0c68abea2f7 (framework/base).
 The libs use the old api, the framework uses the new one. Maybe we just update the bluetooth lib?
 
@@ -6,7 +38,7 @@ interface to libgps is in hardware/libhardware_legacy/include/hardware_legacy/gp
 keyboard layout can be changed on the fly (maybe) by
 "For each keyboard device xxx, set the android.keychar.xxx system property to the full path of the desired keychar file. If you don't specify a keychar file, Android will default to /system/usr/keychar/qwerty.kl." (http://pdk.android.com/online-pdk/guide/keymaps_keyboard_input.html)
 
-enable proximity sensor, see WARNING: Unable to find decl for native Landroid/os/Power;.enable_proximity_only (Z)I
+grep lge-res system/ -R 2>/dev/null: Binary file system/lib/libutils.so matches
 
 check api difference:
     readelf -s -W korean-v10t/lib/libandroid_runtime.so | c++filt | sed '/UND/d' | sed -e 's/.*DEFAULT  ... \(.*\)/\1/' > koreanv10t_sym
@@ -16,27 +48,8 @@ list all exported symbols:
 fix prelink errors:
 can NOT map (prelinked) library 'libwebcore.so' at 0xaa000000 as requested, will try general pool: 12 (Out of memory)
 
-
-download in browser:
-E/ActivityThread( 1896): Failed to find provider info for downloads
-D/mterp   ( 1896): Exception Ljava/lang/IllegalArgumentException; from ContentResolver.java:626 not caught locally
-D/mterp   ( 1896): Exception Ljava/lang/IllegalArgumentException; from ZygoteInit.java:870 not caught locally
-W/dalvikvm( 1896): threadid=3: thread exiting with uncaught exception (group=0x2aaca160)
-E/AndroidRuntime( 1896): Uncaught handler: thread main exiting due to uncaught exception
-E/AndroidRuntime( 1896): java.lang.IllegalArgumentException: Unknown URL content://downloads/download
-E/AndroidRuntime( 1896):    at android.content.ContentResolver.insert(ContentResolver.java:626)
-E/AndroidRuntime( 1896):    at com.android.browser.BrowserActivity.onDownloadStartNoStream(BrowserActivity.java:3666)
-E/AndroidRuntime( 1896):    at com.android.browser.BrowserActivity.onDownloadStart(BrowserActivity.java:3568)
-E/AndroidRuntime( 1896):    at android.webkit.CallbackProxy.handleMessage(CallbackProxy.java:368)
-E/AndroidRuntime( 1896):    at android.os.Handler.dispatchMessage(Handler.java:99)
-E/AndroidRuntime( 1896):    at android.os.Looper.loop(Looper.java:123)
-E/AndroidRuntime( 1896):    at android.app.ActivityThread.main(ActivityThread.java:4363)
-E/AndroidRuntime( 1896):    at java.lang.reflect.Method.invokeNative(Native Method)
-E/AndroidRuntime( 1896):    at java.lang.reflect.Method.invoke(Method.java:521)
-E/AndroidRuntime( 1896):    at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:864)
-E/AndroidRuntime( 1896):    at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:622)
-E/AndroidRuntime( 1896):    at dalvik.system.NativeStart.main(Native Method)
-
+find a symbol in libandroid_runtime.so: search in
+../android-2.1/prebuilt/linux-x86/toolchain/arm-eabi-4.4.0/bin/arm-eabi-objdump -d korean-v10t/lib/libandroid_runtime.so| less
 
 while enabling wifi:
 Set wlan_country, see framework/services/com/android/server/WifiService.smali
@@ -74,4 +87,6 @@ W/NotificationService( 1280):   at android.media.MediaPlayer.prepare(Native Meth
 W/NotificationService( 1280):   at android.media.AsyncPlayer.startSound(AsyncPlayer.java:64)
 W/NotificationService( 1280):   at android.media.AsyncPlayer.access$200(AsyncPlayer.java:33)
 W/NotificationService( 1280):   at android.media.AsyncPlayer$Thread.run(AsyncPlayer.java:99)
+
+E/SurfaceFlinger( 1266): ioctl(24, VT_RELDISP, 1) failed 22 (Invalid argument)
 
