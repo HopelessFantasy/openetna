@@ -1,12 +1,17 @@
 #!/bin/bash
 #Call with argument -c to copy different files to phone
 
-adb shell 'busybox find system -type f | busybox xargs busybox md5sum' | dos2unix | sort > /tmp/android-phone 
+#get md5sums of files on the phone
+#remove lines starting with '*' to remove the adb messages
+#"* daemon not running. starting it now *"
+#and "* daemon started successfully *"
+
+adb shell 'busybox find system -type f | busybox xargs busybox md5sum' | dos2unix | sed '/^\*/d' | sort > /tmp/android-phone 
 find system -type f | xargs md5sum | sort > /tmp/android-here
 
 
 comm -1  -3 /tmp/android-phone /tmp/android-here | cut -d' ' -f3 | sort > /tmp/android-only-here
-comm -2  -3 /tmp/android-phone /tmp/android-here | cut -d' ' -f3 | sort > /tmp/android-only-phone
+comm -2  -3 /tmp/android-phone /tmp/android-here | cut -d' ' -f3 | sed '/system\/bin\/busybox/d' |sort > /tmp/android-only-phone
 comm -1 -2 /tmp/android-only-here /tmp/android-only-phone > /tmp/android-modified
 
 #adb shell busybox md5sum 'system' | dos2unix | md5sum -c --quiet  - | tee /tmp/android-diff-framework
@@ -24,10 +29,10 @@ if [[ -f system/useEmulator ]]; then
   exit 
 fi
 
-echo "If you do not want to sync, press Ctrl-C now"
+echo "If you do not want to sync, press Ctrl-C now, else enter to continue"
 if read; then
   echo "Deleting"
-  cat /tmp/android-only-phone | xargs -n1 adb shell busybox rm
+  cat /tmp/android-only-phone | xargs --no-run-if-empty -n1 adb shell busybox rm
   cat /tmp/android-only-here | while read FILE
   do
     echo "$FILE -> $FILE"
@@ -35,7 +40,7 @@ if read; then
   done
 fi
 
-echo "If you do not want to 'adb shell reboot', press Ctrl-C now"
+echo "If you do not want to 'adb shell reboot', press Ctrl-C now, else enter to continue"
 if read; then
   adb shell reboot
 fi
