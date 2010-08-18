@@ -11,7 +11,7 @@ while getopts "e" Option
 do
 case $Option in
 # w ) CMD=$OPTARG; FILENAME="PIMSLogList.txt"; TARGET="logfiles"; ;;
-e ) USE_EMULATOR=1; echo "Building for emulator" ;;
+e ) echo "Flag '-e' is ignored, because it is not needed anymore" ;;
 * ) echo "Not recognized argument"; exit -1 ;;
 esac
 done
