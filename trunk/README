@@ -12,7 +12,7 @@
   ./doBuild
 
 4. build boot.img
-  goto my-boot and read README
+  goto my-boot and do ./makeBootImg
 
 4. build system.img
   goto my-system and read README
