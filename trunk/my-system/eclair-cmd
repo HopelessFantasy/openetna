@@ -80,13 +80,6 @@ installold lib/liboncrpc.so #needed by libril-qc-1.so
     installold lib/libqueue.so #needed by libdsm
     installold lib/libdiag.so #needed by libdsm
 
-
-#installold lib/libaudio.so #the interface to the kernel, hardware/msm7k/libaudio
-#installold lib/libaudioeq.so #dlopen'ed by libaudio
-
-
-#installold lib/liblog.so #Use old or we get segmentation faults right on boot
-
 #Compass
 installold bin/akmd2
 
@@ -114,10 +107,6 @@ installold bin/wpa_supplicant #there is much legacy in there
 installold bin/wpa_cli #fits wpa_supplicant
 
 
-#rm lib/hw/copybit.eve.so #This is old
-#install lib/hw/copybit.msm7k.so #This works
-
-
 #-- Install framework
 install framework
 #deodex framework/qcnvitems #this is proprietary
@@ -125,25 +114,6 @@ install framework
 
 #-- Install app
 install app
-
-#installold app/XIM.apk #LGE eXtended Input Method
-
-#installold app/lgecamera.apk #in uid.media
-#installold app/DivxRegistration.apk #in uid.media
-
-#This needs some DRM stuff (and there is a Gallery.apk in stock android anyhow)
-#installold app/ArcMediaGallery.apk #in uid.media
-#resign app/ArcMediaGallery.apk media
-
-#This crashes and there is a mediaplayer ins aosp
-#installold app/ArcMMP.apk #in uid.media
-#resign app/ArcMMP.apk media
-
-#What's that app? - if you want them, copy old '3rdparty' directory
-#installold app/ArcWorkshop.apk #in uid.media
-#resign app/ArcWorkshop.apk media
-#installold app/ArcVideoEditor.apk #in uid.media
-#resign app/ArcVideoEditor.apk media
 
 echo Copying google apps
 if [[ ! -d ../gapps2 ]]; then
@@ -204,10 +174,6 @@ fi
 #installold app/com.google.zxing.client.android.apk
 #installcustom app/com.keramidas.TitaniumBackup.apk
 
-install etc/security/cacerts.bks 
-install etc/security/otacerts.zip
-
-
 #Startup file
 installcustom bin/rc
 installcustom bin/rundropbear
@@ -216,16 +182,17 @@ installcustom bin/rundropbear
 mkdir -p lib/modules
 cp ../../my-boot/my-kernel/drivers/net/wireless/bcm4325/wireless.ko lib/modules/
 
+#Keyboard layout for the QWERTY-keyboard
 installold usr/keychars/eve_qwerty.kcm.bin
 installcustom usr/keylayout/eve_qwerty.kl-english
 installcustom usr/keylayout/eve_qwerty.kl-german
 installcustom usr/keylayout/eve_qwerty.kl-french
-
+#default layout
 cp usr/keylayout/eve_qwerty.kl-english usr/keylayout/eve_qwerty.kl
 
 installcustom build.prop-new build.prop
 
-#rm app/Maps.apk
+#APN's
 installcustom etc/apns-conf.xml
 }
 
