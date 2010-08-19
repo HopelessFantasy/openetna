@@ -1,8 +1,15 @@
+No video: try BOARD_OPENCORE_LIBRARIES := libOmxCore BOARD_OPENCORE_FLAGS := -DHARDWARE_OMX=1 in BoardConfig.mk
+
+
+Get openGL acceleration to work (see this http://www.mail-archive.com/android-porting@googlegroups.com/msg00385.html) 
+you will have to use the libhgl.so from korean-v10t. Look what interface it exposes
+
 Fix the permissions of the ril devices and reactive switchUser() in rild
 
 For a backport of copybit to 2.6.27 see:
 http://github.com/rmcc/android_hardware_msm7k/commit/be77d83c70a26126d2ce0c89a3f323c4fd17abf1
 
+the old libaudio used libaudioeq. What does this do and should we use that?
 
 look at http://github.com/mikeandroid. Has some interesting things like libloc for gps and so on
 

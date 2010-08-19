@@ -1,3 +1,0 @@
-echo "Remember I did some RGBX modifications!"
-sleep 3
-make -j3 ARCH=arm CROSS_COMPILE=arm-eabi-
