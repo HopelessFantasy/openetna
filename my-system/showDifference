@@ -1,5 +1,6 @@
 #!/bin/bash
-#Call with argument -c to copy different files to phone
+set -e #exit on error
+set -u #error on unset variable
 
 #get md5sums of files on the phone
 #remove lines starting with '*' to remove the adb messages
