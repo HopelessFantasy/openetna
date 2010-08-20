@@ -77,7 +77,7 @@ repo sync
  * Then make a boot.img:
 {{{
 cd my-boot
-less README
+./makeBootImg
 }}}
  * Then build a system.img:
 {{{
