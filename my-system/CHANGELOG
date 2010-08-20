@@ -1,16 +1,22 @@
 v4.2:
+Probably no wipe needed.
+Use boot.img V1.3 or higher
 Added more apns - submitted by poisins92
 Added one apn for China Unicom 3GWAP - thanks to walteronly1 and poisins92
 Added eve_qwerty.kl-french (thanks cioeri)
-Partly fixed GPS (getting satellites, but no fix)
-Fixed images distorted
+Fixed GPS
+Fixed distorted images
 Added JIT to dalvik (saxando4u)
 Videos (all formats?) do not play
 Fixed "Audio not routed to headset"
+Moved most of the JNI calls from donut to eclair source
+Use sensor HAL compiled from source
+Use audio HAL compiled from source
+
 
 v4.1:
 ATTENTION: Wipe needed!
-Use boot.img V1.2 or higher!
+Use boot.img V1.2
 
 Replaced GoogleContactsProvider by ContactsProvider (sync is handled by GoogleContactsSyncAdapter)
 Added Anycut and Rootexplorer
