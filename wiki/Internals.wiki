@@ -1,0 +1,5 @@
+#summary Provide some details of some internals discovered while programming
+
+= Luminance/Brightness/Light sensor =
+The value of this sensor can't read directly. It can only be activated/deactived to control the brightness of the backlight.
+The kernel references this device under drivers/video/backlight/bl_bd6083.c
