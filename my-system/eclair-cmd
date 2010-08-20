@@ -42,8 +42,7 @@ installcustom lib/libempty.so lib/libcorecg.so # -"-
 #/sdcard
 installold etc/vold.conf
 
-#Sensors
-installold lib/hw/sensors.eve.so lib/hw/sensors.msm7k.so
+#Backlight of keyboard and main buttons
 installold lib/hw/lights.eve.so lib/hw/lights.msm7k.so
 
 #Camera
