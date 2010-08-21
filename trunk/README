@@ -10,9 +10,7 @@
 3. build the source:
   cd android-2.1
   ./doBuild
-
-4. build boot.img
-  goto my-boot and do ./makeBootImg
+  your boot.img can then be found under out/target/product/openetna/boot.img
 
 4. build system.img
   goto my-system and read README

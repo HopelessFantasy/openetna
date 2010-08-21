@@ -6,5 +6,5 @@ echo "Options are for example: -wipe-data"
 SYSTEM=$1
 shift
 
-#RAMDISK='-ramdisk ../my-boot/debug-ramdisk.cpio.gz'
+RAMDISK='-ramdisk ../my-boot/debug-ramdisk.cpio.gz'
 ./emulator -avd avd21-1 $RAMDISK -system $SYSTEM -show-kernel -logcat '*' -verbose $* | tee boot-emulator.log

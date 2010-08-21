@@ -31,8 +31,6 @@ install lib/libm.so
 install lib/libstdc++.so
 install lib/libc_debug.so
 
-installold bin/busybox #Todo compile our own one from external/busybox
-
 installold bin/toleinit #this is needed, because the boot process halts without it
 
 installold lib/libandroid_runtime.so lib/libandroid_runtime_donut.so
@@ -41,9 +39,6 @@ installcustom lib/libempty.so lib/libcorecg.so # -"-
 
 #/sdcard
 installold etc/vold.conf
-
-#Backlight of keyboard and main buttons
-installold lib/hw/lights.eve.so lib/hw/lights.msm7k.so
 
 #Camera
 installold lib/libcamera.so
@@ -114,20 +109,24 @@ install framework
 #-- Install app
 install app
 
-echo Copying google apps
-if [[ ! -d ../gapps2 ]]; then
-  echo "Directory gapps2 missing!"
-  echo "google for optedgapps-ds-ere36b.zip,"
-  echo "download, extract it"
-  echo "There is a system directory in there,"
-  echo "Rename this to gapps2"
-  exit 1
+if true; then
+  #This script will install the google apps from sdcard
+  installcustom bin/checkgapps
+else
+  echo Copying google apps
+  if [[ ! -d ../gapps2 ]]; then
+    echo "Directory gapps2 missing!"
+    echo "google for optedgapps-ds-ere36b.zip,"
+    echo "download, extract it"
+    echo "There is a system directory in there,"
+    echo "Rename this to gapps2"
+    exit 1
+  fi
+  NEWSYS=gapps2 install app
+  NEWSYS=gapps2 install etc
+  NEWSYS=gapps2 install framework
+  NEWSYS=gapps2 install lib
 fi
-
-NEWSYS=gapps2 install app
-NEWSYS=gapps2 install etc
-NEWSYS=gapps2 install framework
-NEWSYS=gapps2 install lib
 
 echo Copying additional apps
 #those are not in odex form

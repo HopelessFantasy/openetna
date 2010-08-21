@@ -10,9 +10,20 @@ Added JIT to dalvik (saxando4u)
 Videos (all formats?) do not play
 Fixed "Audio not routed to headset"
 Moved most of the JNI calls from donut to eclair source
-Use sensor HAL compiled from source
-Use audio HAL compiled from source
+Written sensor HAL source
+Written audio HAL source
+  Volume changes work
+  Muting and route to loudspeaker works
+Written lights HAL source
+  Keyboard backlight works
+  Automatic brighness is back in
+Compile busybox from source (from CyanogenMod)
+Automatic/Manual network selection works
+Switched to the Music app from CyanogenMod, this should fix the crash
 
+Google apps have been removed due to legal restrictions
+  you can reinstall them if you find optedgapps-ds-ere36b.zip, copy it to
+  /sdcard/optedgapps-ds-ere36b.zip, and reboot twice
 
 v4.1:
 ATTENTION: Wipe needed!
