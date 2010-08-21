@@ -109,10 +109,9 @@ install framework
 #-- Install app
 install app
 
-if true; then
-  #This script will install the google apps from sdcard
-  installcustom bin/checkgapps
-else
+#This script will install the google apps from sdcard
+installcustom bin/checkgapps
+if false; then
   echo Copying google apps
   if [[ ! -d ../gapps2 ]]; then
     echo "Directory gapps2 missing!"
