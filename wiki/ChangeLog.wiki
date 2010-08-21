@@ -1,0 +1,29 @@
+#summary ChangeLog
+
+= v4.2 =
+Probably no wipe needed.
+Needs boot.img V1.4
+
+Added more apns - submitted by poisins92
+Added one apn for China Unicom 3GWAP - thanks to walteronly1 and poisins92
+Added eve_qwerty.kl-french (thanks cioeri)
+Fixed GPS
+Fixed distorted images
+Added JIT to dalvik (saxando4u)
+Videos (all formats?) do not play
+Fixed "Audio not routed to headset"
+Moved most of the JNI calls from donut to eclair source
+Written sensor HAL source
+Written audio HAL source
+  Volume changes work
+  Muting and route to loudspeaker works
+Written lights HAL source
+  Keyboard backlight works
+  Automatic brighness is back in
+Compile busybox from source (from CyanogenMod)
+Automatic/Manual network selection works
+Switched to the Music app from CyanogenMod, this should fix the crash
+
+Google apps have been removed due to legal restrictions
+  you can reinstall them if you find optedgapps-ds-ere36b.zip, copy it to
+  /sdcard/optedgapps-ds-ere36b.zip, and reboot.
