@@ -20,8 +20,8 @@ You will need:
   * Linux: http://android-dls.com/files/linux/fastboot
   * Windows: http://forum.xda-developers.com/showthread.php?t=463627 (unverified)
  * Android 2.1 ROM: 
-  * System.img: http://www.zacpod.com/files/systemV4.1.zip
-  * boot.img: http://code.google.com/p/openetna/downloads/detail?name=bootv1.2.img
+  * System.img: http://code.google.com/p/openetna/downloads/detail?name=systemV4.2.7z
+  * boot.img: http://code.google.com/p/openetna/downloads/detail?name=bootv1.4.img
 
 == Recover fastboot ==
 
@@ -45,8 +45,8 @@ If you are upgrading from a v1.5 ROM you should:
  # Execute the following commands on your linux terminal or windows command line interface ( WIN + R => cmd => ok )
 {{{
 fastboot -w
-fastboot flash boot bootv1.2.img
-fastboot flash system systemV4.1.img
+fastboot flash boot bootv1.4.img
+fastboot flash system systemV4.2.img
 }}}
 
  # Reboot the phone and it should boot to the new system
@@ -65,3 +65,6 @@ chmod 4777 /system/xbin/su
 
 = Update the keyboard layout =
 See HowToChangeKeyboardLayout
+
+= Install google apps =
+Download optedgapps-ds-ere36b.zip (google for it), copy it to /sdcard/optedgapps-ds-ere36b.zip, and reboot.
