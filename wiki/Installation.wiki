@@ -42,7 +42,7 @@ If you are upgrading from a v1.5 ROM you should:
   # Plug in USB connector (still with the battery removed)
   # Press SPACE (or SPACE+MENU for newer firmwares) till the fastboot text appears on the screen
 
- # Execute the following commands on your linux terminal or windows command line interface ( WIN + R => cmd => ok )
+ # As Root or Admin, execute the following commands on your linux terminal or windows command line interface ( WIN + R => cmd => ok )
 {{{
 fastboot -w
 fastboot flash boot bootv1.4.img
