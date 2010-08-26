@@ -101,7 +101,8 @@ installold bin/wpa_supplicant #there is much legacy in there
 installold bin/wpa_cli #fits wpa_supplicant
 
 #Dhcp
-installcustom etc/dhcpcd.conf
+mkdir -p etc/dhcpcd
+installcustom etc/dhcpcd/dhcpcd.conf
 
 #-- Install framework
 install framework
