@@ -100,6 +100,8 @@ installold etc/wl/nvram.txt #the nvram for wifi, given at insmod by libhardware_
 installold bin/wpa_supplicant #there is much legacy in there
 installold bin/wpa_cli #fits wpa_supplicant
 
+#Dhcp
+installcustom etc/dhcpcd.conf
 
 #-- Install framework
 install framework
