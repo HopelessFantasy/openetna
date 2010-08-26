@@ -1,3 +1,6 @@
+v4.3:
+Added /etc/dhcpcd.conf to fix wifi (issues 76) (thanks to Irsscl)
+
 v4.2:
 Probably no wipe needed.
 Use boot.img V1.4 or higher
