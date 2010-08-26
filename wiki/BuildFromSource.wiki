@@ -65,7 +65,7 @@ mv repo /opt/android-sdk/tools/
 {{{
 mkdir android-2.1
 cd android-2.1
-repo init -u git://github.com/Openetna/android_manifest.git -b eclair
+repo init -u git://github.com/OpenEtna/android_manifest.git -b eclair
 repo sync
 }}}
 
