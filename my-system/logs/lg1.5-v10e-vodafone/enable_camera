@@ -1,0 +1,898 @@
+* daemon not running. starting it now *
+* daemon started successfully *
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+V/DeviceStorageMonitorService( 1279): DEFAULT_THRESHOLD_PERCENTAGE
+V/DeviceStorageMonitorService( 1279): freeMemory=177733632
+V/DeviceStorageMonitorService( 1279): memThreshold=19739440
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=AlarmManager
+D/KeyguardUpdateMonitor( 1279): received broadcast android.intent.action.TIME_TICK
+D/KeyguardUpdateMonitor( 1279): handleTimeUpdate
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=AlarmManager
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+V/DeviceStorageMonitorService( 1279): DEFAULT_THRESHOLD_PERCENTAGE
+V/DeviceStorageMonitorService( 1279): freeMemory=177733632
+V/DeviceStorageMonitorService( 1279): memThreshold=19739440
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=AlarmManager
+D/KeyguardUpdateMonitor( 1279): received broadcast android.intent.action.TIME_TICK
+D/KeyguardUpdateMonitor( 1279): handleTimeUpdate
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=AlarmManager
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+V/DeviceStorageMonitorService( 1279): DEFAULT_THRESHOLD_PERCENTAGE
+V/DeviceStorageMonitorService( 1279): freeMemory=177733632
+V/DeviceStorageMonitorService( 1279): memThreshold=19739440
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=AlarmManager
+D/KeyguardUpdateMonitor( 1279): received broadcast android.intent.action.TIME_TICK
+D/KeyguardUpdateMonitor( 1279): handleTimeUpdate
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=AlarmManager
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+V/DeviceStorageMonitorService( 1279): DEFAULT_THRESHOLD_PERCENTAGE
+V/DeviceStorageMonitorService( 1279): freeMemory=177733632
+V/DeviceStorageMonitorService( 1279): memThreshold=19739440
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=AlarmManager
+D/KeyguardUpdateMonitor( 1279): received broadcast android.intent.action.TIME_TICK
+D/KeyguardUpdateMonitor( 1279): handleTimeUpdate
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=AlarmManager
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+V/DeviceStorageMonitorService( 1279): DEFAULT_THRESHOLD_PERCENTAGE
+V/DeviceStorageMonitorService( 1279): freeMemory=177733632
+V/DeviceStorageMonitorService( 1279): memThreshold=19739440
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=AlarmManager
+D/KeyguardUpdateMonitor( 1279): received broadcast android.intent.action.TIME_TICK
+D/KeyguardUpdateMonitor( 1279): handleTimeUpdate
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=AlarmManager
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+V/DeviceStorageMonitorService( 1279): DEFAULT_THRESHOLD_PERCENTAGE
+V/DeviceStorageMonitorService( 1279): freeMemory=177733632
+V/DeviceStorageMonitorService( 1279): memThreshold=19739440
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=AlarmManager
+D/KeyguardUpdateMonitor( 1279): received broadcast android.intent.action.TIME_TICK
+D/KeyguardUpdateMonitor( 1279): handleTimeUpdate
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=AlarmManager
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+V/DeviceStorageMonitorService( 1279): DEFAULT_THRESHOLD_PERCENTAGE
+V/DeviceStorageMonitorService( 1279): freeMemory=177733632
+V/DeviceStorageMonitorService( 1279): memThreshold=19739440
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=AlarmManager
+D/KeyguardUpdateMonitor( 1279): received broadcast android.intent.action.TIME_TICK
+D/KeyguardUpdateMonitor( 1279): handleTimeUpdate
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=AlarmManager
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+E/copybit ( 1279): copyBits failed (Operation not permitted)
+V/DeviceStorageMonitorService( 1279): DEFAULT_THRESHOLD_PERCENTAGE
+V/DeviceStorageMonitorService( 1279): freeMemory=177733632
+V/DeviceStorageMonitorService( 1279): memThreshold=19739440
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/KeyguardViewMediator( 1279): wakeWhenReadyLocked(6)
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=keyguardWakeAndHandOff
+D/KeyguardViewMediator( 1279): handleWakeWhenReady(6)
+D/LockPatternKeyguardView( 1279): onWakeKey
+D/LockPatternKeyguardView( 1279): poking wake lock immediately
+D/KeyguardViewMediator( 1279): pokeWakelock(5000)
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1000001a tag=keyguard
+D/PowerManagerService( 1279): wakeup here mUserState=0x0 mWakeLockState=0x7 previous wakeLockState=0x0
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x0 newState=0x7 noChangeLights=false
+D/PowerManagerService( 1279): setPowerState: mPowerState=0 newState=7 noChangeLights=false
+D/PowerManagerService( 1279):   oldKeyboardBright=false newKeyboardBright=false
+D/PowerManagerService( 1279):   oldScreenBright=false newScreenBright=true
+D/PowerManagerService( 1279):   oldButtonBright=false newButtonBright=true
+D/PowerManagerService( 1279):   oldScreenOn=false newScreenOn=true
+D/PowerManagerService( 1279):   oldBatteryLow=false newBatteryLow=false
+D/PowerManagerService( 1279): UpdateLightsLocked 1
+I/PowerManagerService( 1279): Setting target 2: cur=0.0 target=102 delta=6.8 nominalCurrentValue=0
+D/PowerManagerService( 1279): UpdateLightsLocked brightness_screen = 102
+V/PhoneWindowManager( 1279): inECBM: false
+V/WindowManager( 1279): End Key Down
+V/WindowManager( 1279): End Key down: inECBM: false hungup falsemECBMEndPressed: false keyguardShowing: true
+D/PowerManagerService( 1279): getPreferredALCMODEONtrue
+D/PowerManagerService( 1279): Success do_PreferredALCMODEON
+D/PowerManagerService( 1279): - turning screen on...  mPreventScreenOn = false
+D/PowerManagerService( 1279): setPowerState turn on
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=sleep_broadcast
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=keyguardWakeAndHandOff
+D/PowerManagerService( 1279): mBroadcastWakeLock=UnsynchronizedWakeLock(mFlags=0x1 mCount=1)
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=sleep_broadcast
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=RILJ
+V/PhoneWindowManager( 1279): inECBM: false
+V/WindowManager( 1279): End Key Up
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+V/PhoneWindowManager( 1279): inECBM: false
+V/WindowManager( 1279): End Key Down
+V/WindowManager( 1279): End Key down: inECBM: false hungup falsemECBMEndPressed: false keyguardShowing: true
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/KeyguardViewMediator( 1279): pokeWakelock(5000)
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1000001a tag=keyguard
+D/PowerManagerService( 1279): wakeup here mUserState=0x0 mWakeLockState=0x7 previous wakeLockState=0x7
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x7 newState=0x7 noChangeLights=false
+W/LockPatternKeyguardView( 1279): simState getUnlockMode: PIN_REQUIRED
+W/LockPatternKeyguardView( 1279): simState getUnlockMode: PIN_REQUIRED
+W/LockPatternKeyguardView( 1279): simState getUnlockMode: PIN_REQUIRED
+I/LockPatternKeyguardView( 1279): simState:__PIN_REQUIRED
+I/LockPatternKeyguardView( 1279): unlockMode:__SimPin
+V/LockPatternKeyguardView( 1279): simState:__PIN_REQUIRED
+V/LockPatternKeyguardView( 1279): unlockMode:__SimPin
+W/LockPatternKeyguardView( 1279): simState:__PIN_REQUIRED
+W/LockPatternKeyguardView( 1279): unlockMode:__SimPin
+I/LockPatternKeyguardView( 1279): mUnlockScreenMode:__Pattern
+V/LockPatternKeyguardView( 1279): mUnlockScreenMode:__Pattern
+W/LockPatternKeyguardView( 1279): mUnlockScreenMode:__Pattern
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+I/LockPatternKeyguardView( 1279): mUnlockScreen:__com.android.internal.policy.impl.SimUnlockScreen@2e4eddd8
+V/LockPatternKeyguardView( 1279): mUnlockScreen:__com.android.internal.policy.impl.SimUnlockScreen@2e4eddd8
+W/LockPatternKeyguardView( 1279): mUnlockScreen:__com.android.internal.policy.impl.SimUnlockScreen@2e4eddd8
+W/LockPatternKeyguardView( 1279): simState getUnlockMode: PIN_REQUIRED
+W/LockPatternKeyguardView( 1279): simState getUnlockMode: PIN_REQUIRED
+W/LockPatternKeyguardView( 1279): simState getUnlockMode: PIN_REQUIRED
+W/LockPatternKeyguardView( 1279): simState getUnlockMode: PIN_REQUIRED
+W/LockPatternKeyguardView( 1279): simState getUnlockMode: PIN_REQUIRED
+W/LockPatternKeyguardView( 1279): simState getUnlockMode: PIN_REQUIRED
+D/KeyguardViewMediator( 1279): pokeWakelock(7000)
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1000001a tag=keyguard
+D/PowerManagerService( 1279): wakeup here mUserState=0x0 mWakeLockState=0x7 previous wakeLockState=0x7
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x7 newState=0x7 noChangeLights=false
+D/skia    ( 1279): ===== SkScalerContext_FreeType::ref_ft_face gFTCount=20 pLayout 2967e0, fontID=2
+I/ActivityManager( 1279): Start proc com.android.inputmethod.xim for service com.android.inputmethod.xim/.XIM: pid=1874 uid=10027 gids={1015}
+D/skia    ( 1279): ===== SkScalerContext_FreeType::ref_ft_face gFTCount=21 pLayout b5e18, fontID=1
+V/PhoneWindowManager( 1279): inECBM: false
+V/WindowManager( 1279): End Key Up
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+I/XIM     ( 1874): ##### onCreate
+I/XIM     ( 1874): FlexInfo: KTF.KR.450.08.HW_KEY_MAP_QWERTY.24
+E/LGDRM   ( 1182): [DRMERR] DRMAgent_GetSLByExtension() : Invalid argument
+E/VorbisPlayer( 1182): setdatasource() normal size: [4442]
+I/XIM     ( 1874): XT9: L9, K9, M609
+I/XIM     ( 1874): ImCompSwitcher.Init.SPP: English_SPP
+I/XIM     ( 1874): XT9: L9, K9, M809
+I/XIM     ( 1874): ImCompSwitcher.Init.HQT: English_HQT
+I/XIM     ( 1874): startInput(0-0) en_GB:no Composer
+I/WindowManager( 1279): onOrientationChanged, rotation changed to 0
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+D/KeyguardViewMediator( 1279): pokeWakelock(7000)
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1000001a tag=keyguard
+D/PowerManagerService( 1279): wakeup here mUserState=0x0 mWakeLockState=0x7 previous wakeLockState=0x7
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x7 newState=0x7 noChangeLights=false
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+D/KeyguardViewMediator( 1279): pokeWakelock(7000)
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1000001a tag=keyguard
+D/PowerManagerService( 1279): wakeup here mUserState=0x0 mWakeLockState=0x7 previous wakeLockState=0x7
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x7 newState=0x7 noChangeLights=false
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+D/KeyguardViewMediator( 1279): pokeWakelock(7000)
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1000001a tag=keyguard
+D/PowerManagerService( 1279): wakeup here mUserState=0x0 mWakeLockState=0x7 previous wakeLockState=0x7
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x7 newState=0x7 noChangeLights=false
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/KeyguardViewMediator( 1279): pokeWakelock(7000)
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1000001a tag=keyguard
+D/PowerManagerService( 1279): wakeup here mUserState=0x0 mWakeLockState=0x7 previous wakeLockState=0x7
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x7 newState=0x7 noChangeLights=false
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+D/KeyguardViewMediator( 1279): pokeWakelock(7000)
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1000001a tag=keyguard
+D/PowerManagerService( 1279): wakeup here mUserState=0x0 mWakeLockState=0x7 previous wakeLockState=0x7
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x7 newState=0x7 noChangeLights=false
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/KeyguardViewMediator( 1279): pokeWakelock(7000)
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1000001a tag=keyguard
+D/PowerManagerService( 1279): wakeup here mUserState=0x0 mWakeLockState=0x7 previous wakeLockState=0x7
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x7 newState=0x7 noChangeLights=false
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+D/KeyguardViewMediator( 1279): pokeWakelock(7000)
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1000001a tag=keyguard
+D/PowerManagerService( 1279): wakeup here mUserState=0x0 mWakeLockState=0x7 previous wakeLockState=0x7
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x7 newState=0x7 noChangeLights=false
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PhoneInterfaceManager( 1333): wait for done
+D/skia    ( 1279): ===== SkScalerContext_FreeType::ref_ft_face gFTCount=22 pLayout b5e18, fontID=1
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PhoneInterfaceManager( 1333): SUPPLY_PIN_COMPLETE
+D/PhoneInterfaceManager( 1333): done
+V/SIM Unlock( 1333): RIL>responseSIMLockInfo861010
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+V/SIM Unlock( 1333): RIL>responseSIMLockInfo861010
+W/LockPatternKeyguardView( 1279): simState getUnlockMode: READY
+W/LockPatternKeyguardView( 1279): simState getUnlockMode: READY
+W/LockPatternKeyguardView( 1279): simState getUnlockMode: READY
+E/DHT     ( 1333): Received Event EVENT_SIM_PIN2_STATUS_CHANGED
+E/DHT     ( 1333): no exception
+E/DHT     ( 1333): Received Event EVENT_SIM_PIN2_STATUS_CHANGED
+E/DHT     ( 1333): no exception
+I/LockPatternKeyguardView( 1279): simState:__READY
+I/LockPatternKeyguardView( 1279): unlockMode:__Pattern
+V/LockPatternKeyguardView( 1279): simState:__READY
+V/LockPatternKeyguardView( 1279): unlockMode:__Pattern
+W/LockPatternKeyguardView( 1279): simState:__READY
+W/LockPatternKeyguardView( 1279): unlockMode:__Pattern
+D/KeyguardViewMediator( 1279): pokeWakelock(5000)
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1000001a tag=keyguard
+D/PowerManagerService( 1279): wakeup here mUserState=0x0 mWakeLockState=0x7 previous wakeLockState=0x7
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x7 newState=0x7 noChangeLights=false
+I/LockPatternKeyguardView( 1279): mUnlockScreenMode:__SimPin
+V/LockPatternKeyguardView( 1279): mUnlockScreenMode:__SimPin
+W/LockPatternKeyguardView( 1279): mUnlockScreenMode:__SimPin
+I/LockPatternKeyguardView( 1279): mUnlockScreen:__com.android.internal.policy.impl.UnlockScreen@2e54b8a8
+V/LockPatternKeyguardView( 1279): mUnlockScreen:__com.android.internal.policy.impl.UnlockScreen@2e54b8a8
+W/LockPatternKeyguardView( 1279): mUnlockScreen:__com.android.internal.policy.impl.UnlockScreen@2e54b8a8
+W/LockPatternKeyguardView( 1279): simState getUnlockMode: READY
+W/LockPatternKeyguardView( 1279): simState getUnlockMode: READY
+W/LockPatternKeyguardView( 1279): simState getUnlockMode: READY
+D/KeyguardViewMediator( 1279): keyguardDone authenticated = truemShowing = true
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x7 newState=0x7 noChangeLights=true
+D/PowerManagerService( 1279): setTimeoutLocked now=1582834 nextState=3 when=1585834
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1000001a tag=keyguard
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x7 newState=0x3 noChangeLights=false
+D/PowerManagerService( 1279): setPowerState: mPowerState=7 newState=3 noChangeLights=false
+D/PowerManagerService( 1279):   oldKeyboardBright=false newKeyboardBright=false
+D/PowerManagerService( 1279):   oldScreenBright=true newScreenBright=true
+D/PowerManagerService( 1279):   oldButtonBright=true newButtonBright=false
+D/PowerManagerService( 1279):   oldScreenOn=true newScreenOn=true
+D/PowerManagerService( 1279):   oldBatteryLow=false newBatteryLow=false
+I/XIM     ( 1874): startInput(0-0) en_GB:no Composer
+W/InputManagerService( 1279): Window already focused, ignoring focus gain of: android.view.inputmethod.InputMethodManager$1@2e2cbc90
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/[SIMRecords]( 1333): [Rian] SIMRecords : EVENT_SIM_READY
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/KeyguardUpdateMonitor( 1279): received broadcast android.intent.action.SIM_STATE_CHANGED
+D/KeyguardUpdateMonitor( 1279): handleSimStateChange: intentValue = READY state resolved to READY
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+V/[RIAN]  ( 1333): SIMRecords:fetchSimRecords: EF_CBMI 
+V/[RIAN]  ( 1333): SIMRecords:fetchSimRecords 3
+V/[RIAN]  ( 1333): iccid   null
+V/[RIAN]  ( 1333): SIMRecords:fetchSimRecords (1) 
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+V/[RIAN]  ( 1333): SIMRecords:fetchSimRecords (2) 4
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+V/[RIAN]  ( 1333): SIMRecords:fetchSimRecords (3)  4
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+W/EONS    ( 1333): Properties persist.cust.tel.adapt is false, persist.cust.tel.eons is true, persist.cust.tel.efcsp.plmn is false
+I/EONS    ( 1333): Updating OPL Cache
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+I/EONS    ( 1333): Updating PNN Cache
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+E/[SIMRecords]( 1333): EF IMSI: 26207
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=SCREEN_FROZEN
+V/SIM Unlock( 1333): RIL>responseSIMLockInfo861010
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+I/XIM     ( 1874): startInput(0-0) en_GB:no Composer(restart)
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+V/SIM Unlock( 1333): RIL>responseSIMLockInfo861010
+E/DHT     ( 1333): Received Event EVENT_SIM_PIN2_STATUS_CHANGED
+E/DHT     ( 1333): no exception
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+E/DHT     ( 1333): Received Event EVENT_SIM_PIN2_STATUS_CHANGED
+E/DHT     ( 1333): no exception
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+W/[RIAN]  ( 1333):  (goodjs - SIMRecords) EVENT_GET_PBR_RECORD_SIZE_DONE:
+W/[RIAN]  ( 1333):  (goodjs (2)  - SIMRecords) EVENT_GET_PBR_RECORD_SIZE_DONE:
+W/[RIAN]  ( 1333):  PBRrecordSize[2] == 1
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+W/[RIAN]  ( 1333):  (goodjs (3)  - SIMRecords) EVENT_GET_PBR_RECORD_SIZE_DONE:
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/KeyguardUpdateMonitor( 1279): received broadcast android.intent.action.CONFIGURATION_CHANGED
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/KeyguardUpdateMonitor( 1279): handleConfigurationChange
+D/StatusBar( 1279): updateResources
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x3 newState=0x3 noChangeLights=false
+D/PowerManagerService( 1279): setTimeoutLocked now=1585431 nextState=3 when=1588431
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x3 newState=0x3 noChangeLights=false
+D/PowerManagerService( 1279): setTimeoutLocked now=1585433 nextState=3 when=1588433
+W/WindowManager( 1279): No window to dispatch pointer action 0
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030001
+E/[SIMRecords]( 1333): [Rian] SIMRecords : EVENT_GET_CBMI_DONE
+D/[RIAN]  ( 1333): [SIMRecords] EF_CBMI: ffffffffffffffffffffffffffffffffffffffff
+D/[RIAN]  ( 1333): [SIMRecords] EF_CBMI: ffffffffffffffffffffffffffffffffffffffff
+D/[SIMRecord]( 1333): [Rian] Oerator Code : KTF
+D/[SIMRecord]( 1333): [Rian] Handle Normal USIM CBMI
+E/[SIMRecord]( 1333): handleCBMI() cbmi_length : 20
+E/[SIMRecord]( 1333): handleCBMI() cbmi_totalnumber : 10
+E/[SIMRecord]( 1333): handleCBMI() first from left : 15
+E/[SIMRecord]( 1333): handleCBMI() second from left : 15
+E/[SIMRecord]( 1333): handleCBMI() third from left : 15
+E/[SIMRecord]( 1333): handleCBMI() fourth from left : 15
+E/[SIMRecord]( 1333): handleCBMI() channel : 65535
+E/[SIMRecord]( 1333): handleCBMI() first from left : 15
+E/[SIMRecord]( 1333): handleCBMI() second from left : 15
+E/[SIMRecord]( 1333): handleCBMI() third from left : 15
+E/[SIMRecord]( 1333): handleCBMI() fourth from left : 15
+E/[SIMRecord]( 1333): handleCBMI() channel : 65535
+E/[SIMRecord]( 1333): handleCBMI() first from left : 15
+E/[SIMRecord]( 1333): handleCBMI() second from left : 15
+E/[SIMRecord]( 1333): handleCBMI() third from left : 15
+E/[SIMRecord]( 1333): handleCBMI() fourth from left : 15
+E/[SIMRecord]( 1333): handleCBMI() channel : 65535
+E/[SIMRecord]( 1333): handleCBMI() first from left : 15
+E/[SIMRecord]( 1333): handleCBMI() second from left : 15
+E/[SIMRecord]( 1333): handleCBMI() third from left : 15
+E/[SIMRecord]( 1333): handleCBMI() fourth from left : 15
+E/[SIMRecord]( 1333): handleCBMI() channel : 65535
+E/[SIMRecord]( 1333): handleCBMI() first from left : 15
+E/[SIMRecord]( 1333): handleCBMI() second from left : 15
+E/[SIMRecord]( 1333): handleCBMI() third from left : 15
+E/[SIMRecord]( 1333): handleCBMI() fourth from left : 15
+E/[SIMRecord]( 1333): handleCBMI() channel : 65535
+E/[SIMRecord]( 1333): handleCBMI() first from left : 15
+E/[SIMRecord]( 1333): handleCBMI() second from left : 15
+E/[SIMRecord]( 1333): handleCBMI() third from left : 15
+E/[SIMRecord]( 1333): handleCBMI() fourth from left : 15
+E/[SIMRecord]( 1333): handleCBMI() channel : 65535
+E/[SIMRecord]( 1333): handleCBMI() first from left : 15
+E/[SIMRecord]( 1333): handleCBMI() second from left : 15
+E/[SIMRecord]( 1333): handleCBMI() third from left : 15
+E/[SIMRecord]( 1333): handleCBMI() fourth from left : 15
+E/[SIMRecord]( 1333): handleCBMI() channel : 65535
+E/[SIMRecord]( 1333): handleCBMI() first from left : 15
+E/[SIMRecord]( 1333): handleCBMI() second from left : 15
+E/[SIMRecord]( 1333): handleCBMI() third from left : 15
+E/[SIMRecord]( 1333): handleCBMI() fourth from left : 15
+E/[SIMRecord]( 1333): handleCBMI() channel : 65535
+E/[SIMRecord]( 1333): handleCBMI() first from left : 15
+E/[SIMRecord]( 1333): handleCBMI() second from left : 15
+E/[SIMRecord]( 1333): handleCBMI() third from left : 15
+E/[SIMRecord]( 1333): handleCBMI() fourth from left : 15
+E/[SIMRecord]( 1333): handleCBMI() channel : 65535
+E/[SIMRecord]( 1333): handleCBMI() first from left : 15
+E/[SIMRecord]( 1333): handleCBMI() second from left : 15
+E/[SIMRecord]( 1333): handleCBMI() third from left : 15
+E/[SIMRecord]( 1333): handleCBMI() fourth from left : 15
+E/[SIMRecord]( 1333): handleCBMI() channel : 65535
+V/[GSMPhone]( 1333): updateCurrentCBMIInProvider() - START!!
+V/[GSMPhone]( 1333): updateCurrentCBMIInProvider()-chmiList number: 0
+V/[GSMPhone]( 1333): updateCurrentCBMIInProvider()-cbTotalNoInSim: 10
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x3 newState=0x3 noChangeLights=false
+D/PowerManagerService( 1279): setTimeoutLocked now=1585594 nextState=3 when=1588594
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x3 newState=0x3 noChangeLights=false
+D/PowerManagerService( 1279): setTimeoutLocked now=1585596 nextState=3 when=1588596
+W/WindowManager( 1279): No window to dispatch pointer action 1
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=StartingAlertService
+E/[SIMRecords]( 1333): [handleCBMI] the CBMI DB insertion from SIM is successful
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030023
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030037
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030036
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030023
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030037
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+E/EONS    ( 1333): Invalid sstPlmnOplValue -1
+V/[MMS]   ( 1387): DownloadManager: Service state changed: Bundle[mParcelledData.dataSize=596]
+V/[MMS]   ( 1387): DownloadManager: roaming ------> false
+V/[MMS]   ( 1387): DownloadManager: auto download without roaming -> true
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030036
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030023
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030037
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030036
+E/FlexInfo( 1387): getFlexCode : operator_code =  1
+I/ActivityManager( 1279): Stopping service: com.android.mms/.transaction.SmsReceiverService
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030008
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030008
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030008
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030008
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030008
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030008
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030008
+V/[MMS]   ( 1387): [FLEX]: Get retvRoming_flexValues :0
+V/[MMS]   ( 1387): DownloadManager: auto download during roaming -> false
+V/[MMS]   ( 1387): DownloadManager: mAutoDownload ------> true
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=StartingAlertService
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030008
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030008
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030008
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030008
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030008
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=StartingAlertService
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030008
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030008
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030008
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030008
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030000
+V/[MMS]   ( 1387): MmsSystemEventReceiver: Intent received: Intent { act=android.intent.action.ANY_DATA_STATE cmp=com.android.mms/.transaction.MmsSystemEventReceiver (has extras) }
+V/[MMS]   ( 1387): MmsSystemEventReceiver: ANY_DATA_STATE event received: DISCONNECTED
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030003
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030038
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030000
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030005
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030002
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030000
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f03002e
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030002
+W/ResourceType( 1279): No package identifier when getting value for resource number 0x7f030007
+D/KeyguardUpdateMonitor( 1279): received broadcast android.intent.action.SIM_STATE_CHANGED
+D/KeyguardUpdateMonitor( 1279): handleSimStateChange: intentValue = UNKNOWN state resolved to UNKNOWN
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=AlarmManager
+V/[MMS]   ( 1387): SmsReceiverService: handleAlarmSent()
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/NetworkLocationProvider( 1279): onDataConnectionStateChanged 9
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=ServiceStateTracker
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=NetworkLocation Cell Update
+D/NetworkLocationProvider( 1279): onCellLocationChanged [11704,6977355]
+D/GpsLocationProvider( 1279): state: DISCONNECTED apnName: null reason: null
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=AlarmManager
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x3 newState=0x3 noChangeLights=false
+D/PowerManagerService( 1279): setTimeoutLocked now=1587179 nextState=3 when=1590179
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x3 newState=0x3 noChangeLights=false
+D/PowerManagerService( 1279): setTimeoutLocked now=1587182 nextState=3 when=1590182
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=SCREEN_FROZEN
+W/WindowManager( 1279): Pointer down received while already down in: Window{2e43c290 android/com.android.internal.app.ResolverActivity paused=false}
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x3 newState=0x3 noChangeLights=false
+D/PowerManagerService( 1279): setTimeoutLocked now=1587189 nextState=3 when=1590189
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+I/ActivityManager( 1279): Stopping service: com.android.mms/.transaction.SmsReceiverService
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=StartingAlertService
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x3 newState=0x3 noChangeLights=false
+D/PowerManagerService( 1279): setTimeoutLocked now=1587344 nextState=3 when=1590344
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x3 newState=0x3 noChangeLights=false
+D/PowerManagerService( 1279): setTimeoutLocked now=1587346 nextState=3 when=1590346
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+I/ActivityManager( 1279): Starting activity: Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x13800000 cmp=com.android.launcher/.Launcher }
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=ActivityManager-Launch
+E/ApplicationContext( 1279): Couldn't create directory for SharedPreferences file shared_prefs/wallpaper-hints.xml
+E/LGDRM   ( 1376): [DRMERR] drmLibFsOpen() : Has no proper permission
+E/LGDRM   ( 1376): [DRMERR] drmUtilGetFilename() : Fail to OPEN file
+E/LGDRM   ( 1376): [DRMERR] drmLibFsOpen() : Has no proper permission
+E/LGDRM   ( 1376): [DRMERR] drmUtilGetFilename() : Fail to OPEN file
+D/HomeLoaders( 1376): load applications
+D/HomeLoaders( 1376): loading user items
+D/HomeLoaders( 1376):   --> starting workspace loader
+D/HomeLoaders( 1376):   ----> running workspace loader (1)
+I/XIM     ( 1874): startInput(0-0) en_GB:no Composer
+I/ActivityManager( 1279): Displayed activity com.android.launcher/.Launcher: 1611 ms (total 1611 ms)
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=ActivityManager-Launch
+D/HomeLoaders( 1376):   --> done loading workspace
+D/HomeLoaders( 1376):   ----> worskpace items=13
+D/HomeLoaders( 1376):   ----> worskpace widgets=1
+D/HomeLoaders( 1376):   ----> items cloned, ready to refresh UI
+D/HomeLoaders( 1376):   ----> onDesktopItemsLoaded()
+D/Launcher( 1376): ------> binding 13 items
+D/Launcher( 1376): ------> binding 1 widgets
+D/Launcher( 1376): ------> start binding items
+D/HomeLoaders( 1376):   ----> loading applications from workspace loader
+D/HomeLoaders( 1376):   --> starting applications loader unlocked
+D/HomeLoaders( 1376):   --> starting applications loader
+D/HomeLoaders( 1376):   ----> running applications loader (1)
+D/skia    ( 1376): ===== SkScalerContext_FreeType::ref_ft_face gFTCount=2 pLayout b5e18, fontID=1
+I/TextView.....( 1376): view tag is >Google Mail<
+D/skia    ( 1376): ===== SkScalerContext_FreeType::ref_ft_face gFTCount=3 pLayout b5e18, fontID=1
+I/TextView.....( 1376): view tag is >Market<
+I/TextView.....( 1376): view tag is >YouTube<
+I/TextView.....( 1376): view tag is >Maps<
+I/TextView.....( 1376): view tag is >Dialer<
+D/HomeLoaders( 1376):   ----> cleared application list
+I/TextView.....( 1376): view tag is >Contacts<
+I/TextView.....( 1376): view tag is >Messaging<
+I/TextView.....( 1376): view tag is >Browser<
+I/TextView.....( 1376): view tag is >Gallery<
+I/TextView.....( 1376): view tag is >Camera<
+I/TextView.....( 1376): view tag is >Music<
+D/PowerManagerService( 1279): user activity timeout timed out nextState=3
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x3 newState=0x3 noChangeLights=false
+D/PowerManagerService( 1279): setTimeoutLocked now=1590347 nextState=1 when=1610347
+I/TextView.....( 1376): view tag is >Media Player<
+D/skia    ( 1376): ===== SkScalerContext_FreeType::ref_ft_face gFTCount=4 pLayout b5e18, fontID=1
+D/skia    ( 1376): ===== SkScalerContext_FreeType::ref_ft_face gFTCount=5 pLayout b5e18, fontID=1
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=AlarmManager
+I/Resources( 1333): Loaded time zone names for en_US in 4909ms.
+D/KeyguardUpdateMonitor( 1279): received broadcast android.intent.action.TIME_SET
+D/KeyguardUpdateMonitor( 1279): handleTimeUpdate
+W/SystemClock( 1333): Unable to set /dev/rtc1 to : Invalid argument
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=ServiceStateTracker
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=RILJ
+E/EONS    ( 1333): Number of OPL records = 1
+E/EONS    ( 1333): EF_OPL data[0] = 62f2700000fffe02
+I/EONS    ( 1333): Number of OPL records = 1
+D/EONS    ( 1333): lac1=0 lac2=65534 hLac=11704 pnn rec=2
+W/EONS    ( 1333):  lac1=0 lac2=65534 hLac=11704 pnn rec=2
+W/EONS    ( 1333): pnnCache is null/Invalid PNN Rec, using default method
+D/EONS    ( 1333): updateSpnDisplay: spn=o2 - de plmn=o2 - de
+D/KeyguardUpdateMonitor( 1279): received broadcast android.provider.Telephony.SPN_STRINGS_UPDATED
+D/KeyguardUpdateMonitor( 1279): handleCarrierInfoUpdate: plmn = null, spn = o2 - de
+I/EONS    ( 1333): SST: 9edfb71de7fe07
+I/EONS    ( 1333): SST: 3G Sim,PNN and OPL services enabled 1
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=NetworkLocation Cell Update
+W/[RIAN]  ( 1333):  (goodjs (4)  - SIMRecords) EVENT_GET_PBR_DONE:
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/KeyguardUpdateMonitor( 1279): received broadcast android.intent.action.TIME_TICK
+D/KeyguardUpdateMonitor( 1279): handleTimeUpdate
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=RILJ
+I/EONS    ( 1333): Calling updateSimRecords() if plmn changed, prev plmn null, new plmn 26207
+I/EONS    ( 1333): Number of OPL records = 1
+D/EONS    ( 1333): lac1=0 lac2=65534 hLac=11704 pnn rec=2
+W/EONS    ( 1333):  lac1=0 lac2=65534 hLac=11704 pnn rec=2
+W/EONS    ( 1333): pnnCache is null/Invalid PNN Rec, using default method
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+V/AlarmClock( 1513): [Alarm] setNextAlert() -> snoozeId : -1 alarmId : -1 Label : null time : 9223372036854775807
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=AlarmManager
+I/EONS    ( 1333): LOC updated calling updateSimRecords()
+I/EONS    ( 1333): Number of OPL records = 1
+D/EONS    ( 1333): lac1=0 lac2=65534 hLac=11704 pnn rec=2
+W/EONS    ( 1333):  lac1=0 lac2=65534 hLac=11704 pnn rec=2
+W/EONS    ( 1333): pnnCache is null/Invalid PNN Rec, using default method
+I/EONS    ( 1333): Number of OPL records = 1
+D/EONS    ( 1333): lac1=0 lac2=65534 hLac=11704 pnn rec=2
+W/EONS    ( 1333):  lac1=0 lac2=65534 hLac=11704 pnn rec=2
+I/EONS    ( 1333): Number of PNN records = 2
+D/EONS    ( 1333): PNN record number 2, hex data 4308876f19a805229701ffffffff
+D/EONS    ( 1333): PNN longname length : 8
+I/EONS    ( 1333): PNN longname : o2 - de
+E/EONS    ( 1333): EF_PNN: No short Name
+I/EONS    ( 1333): Property gsm.eons.name set to o2 - de
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=NetworkLocation Cell Update
+D/NetworkLocationProvider( 1279): onCellLocationChanged [11704,6998340]
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/KeyguardUpdateMonitor( 1279): received broadcast android.intent.action.SIM_STATE_CHANGED
+D/KeyguardUpdateMonitor( 1279): handleSimStateChange: intentValue = UNKNOWN state resolved to UNKNOWN
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=StartingAlertService
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=RILJ
+D/NetworkLocationProvider( 1279): onDataConnectionStateChanged 9
+V/[MMS]   ( 1387): MmsSystemEventReceiver: Intent received: Intent { act=android.intent.action.ANY_DATA_STATE cmp=com.android.mms/.transaction.MmsSystemEventReceiver (has extras) }
+V/[MMS]   ( 1387): MmsSystemEventReceiver: ANY_DATA_STATE event received: DISCONNECTED
+D/GpsLocationProvider( 1279): state: DISCONNECTED apnName: null reason: null
+E/TelephonyProvider( 1333): Failed setting numeric '26207' to the current operator
+V/nodebug ( 1333): RIL>getLineSelectInfo
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=RILJ
+I/EONS    ( 1333): Number of OPL records = 1
+D/EONS    ( 1333): lac1=0 lac2=65534 hLac=11704 pnn rec=2
+W/EONS    ( 1333):  lac1=0 lac2=65534 hLac=11704 pnn rec=2
+I/EONS    ( 1333): Number of PNN records = 2
+D/EONS    ( 1333): PNN record number 2, hex data 4308876f19a805229701ffffffff
+D/EONS    ( 1333): PNN longname length : 8
+I/EONS    ( 1333): PNN longname : o2 - de
+E/EONS    ( 1333): EF_PNN: No short Name
+I/EONS    ( 1333): Property gsm.eons.name set to o2 - de
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=NetworkLocation Cell Update
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=RILJ
+I/ActivityManager( 1279): Stopping service: com.android.calendar/.AlertService
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=StartingAlertService
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=AlarmManager
+D/KeyguardUpdateMonitor( 1279): received broadcast android.intent.action.TIME_TICK
+D/KeyguardUpdateMonitor( 1279): handleTimeUpdate
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=AlarmManager
+V/DeviceStorageMonitorService( 1279): DEFAULT_THRESHOLD_PERCENTAGE
+V/DeviceStorageMonitorService( 1279): freeMemory=177733632
+V/DeviceStorageMonitorService( 1279): memThreshold=19739440
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x3 newState=0x3 noChangeLights=false
+D/PowerManagerService( 1279): setTimeoutLocked now=1598858 nextState=3 when=1601858
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x3 newState=0x3 noChangeLights=false
+D/PowerManagerService( 1279): setTimeoutLocked now=1598861 nextState=3 when=1601861
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x3 newState=0x3 noChangeLights=false
+D/PowerManagerService( 1279): setTimeoutLocked now=1598931 nextState=3 when=1601931
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x3 newState=0x3 noChangeLights=false
+D/PowerManagerService( 1279): setTimeoutLocked now=1599101 nextState=3 when=1602101
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x3 newState=0x3 noChangeLights=false
+D/PowerManagerService( 1279): setTimeoutLocked now=1599112 nextState=3 when=1602112
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+I/XIM     ( 1874): startInput(0-0) en_GB:no Composer
+D/PowerManagerService( 1279): user activity timeout timed out nextState=3
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x3 newState=0x3 noChangeLights=false
+D/PowerManagerService( 1279): setTimeoutLocked now=1602113 nextState=1 when=1622113
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x3 newState=0x3 noChangeLights=false
+D/PowerManagerService( 1279): setTimeoutLocked now=1620351 nextState=3 when=1623351
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x3 newState=0x3 noChangeLights=false
+D/PowerManagerService( 1279): setTimeoutLocked now=1620354 nextState=3 when=1623354
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=KeyInputQueue
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x3 newState=0x3 noChangeLights=false
+D/PowerManagerService( 1279): setTimeoutLocked now=1620441 nextState=3 when=1623441
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x3 newState=0x3 noChangeLights=false
+D/PowerManagerService( 1279): setTimeoutLocked now=1620444 nextState=3 when=1623444
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=KeyInputQueue
+I/ActivityManager( 1279): Starting activity: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.arcsoft.camera/.ArcCameraApp }
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=ActivityManager-Launch
+I/ActivityManager( 1279): Start proc com.arcsoft.camera for activity com.arcsoft.camera/.ArcCameraApp: pid=1901 uid=10008 gids={3003, 4005, 1015, 1006, 3002, 3001, 2001}
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=SCREEN_FROZEN
+I/WindowManager( 1279): Setting rotation to 1, animFlags=0
+I/WindowManager( 1279): Config changed: { scale=1.0 imsi=0/0 loc=en_GB touch=3 keys=2/1/2 nav=1 orien=2 layout=18}
+D/PowerManagerService( 1279): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+I/XIM     ( 1874): startInput(0-0) en_GB:no Composer(restart)
+D/KeyguardUpdateMonitor( 1279): received broadcast android.intent.action.CONFIGURATION_CHANGED
+D/KeyguardUpdateMonitor( 1279): handleConfigurationChange
+D/StatusBar( 1279): updateResources
+V/CAMERA_LOG( 1901): AppUi::Init (0,0,432,320)
+V/CAMERA_LOG( 1901): CCamController::PowerOn <---
+V/CAMERA_LOG( 1901): CAndroidCamEngine::PowerOn
+V/ArcCameraApp( 1901): Enter ddddd {eng}
+D/LocationManager( 1901): Constructor: service = android.location.ILocationManager$Stub$Proxy@2e2443b0
+D/SensorManager( 1901): found sensor: AK8973 Magnetic Field, handle=3
+D/SensorManager( 1901): found sensor: AK8973 Compass, handle=0
+D/SensorManager( 1901): found sensor: AK8973 Compass Raw, handle=7
+D/SensorManager( 1901): found sensor: BMA150, handle=1
+D/SensorManager( 1901): found sensor: GP2AP002, handle=5
+D/SensorManager( 1901): found sensor: AK8973 Temperature, handle=2
+I/XIM     ( 1874): startInput(0-0) en_GB:no Composer
+W/IInputConnectionWrapper( 1376): showStatusIcon on inactive InputConnection
+V/ArcCameraApp( 1901): ***********drawWaitingPicture , ORIENTATION:[ 2];bDraw:[+TRUE]
+E/VorbisPlayer( 1182): setdatasource() normal size: [4851]
+E/VorbisPlayer( 1182): setdatasource() normal size: [7106]
+V/CAMERA_LOG( 1901): CAndroidCamEngine::PowerOn connect state=0
+V/CAMERA_LOG( 1901): PowerOn state=4097, (pw=0,ph=0,iw=0,ih=0)
+D/PowerManagerService( 1279): user activity timeout timed out nextState=3
+D/PowerManagerService( 1279): setPowerState: mPowerState=0x3 newState=0x3 noChangeLights=false
+D/PowerManagerService( 1279): setTimeoutLocked now=1623445 nextState=1 when=1643445
+V/CAMERA_LOG( 1901): set picture size= [2560x1920]
+V/CAMERA_LOG( 1901): CCamController::PowerOn --->
+I/ActivityManager( 1279): Displayed activity com.arcsoft.camera/.ArcCameraApp: 2908 ms (total 2908 ms)
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=SCREEN_FROZEN
+V/CAMERA_LOG( 1901): SwitchCamHandler::Init mode=0x200
+V/CAMERA_LOG( 1901): 
+V/CAMERA_LOG( 1901): CCamHandlerBase::Init err=0
+V/CAMERA_LOG( 1901): *** Face NV21, w=432,h=320
+V/CAMERA_LOG( 1901): set brightness = 498, [6]
+V/CAMERA_LOG( 1901): *** set scene-mode=normal
+V/CAMERA_LOG( 1901): StartPreview state=4097 <---
+E/AppUi-JNI( 1901): Enter event callback
+E/AppUi-JNI( 1901): before JNI call cookie = 1806952 
+V/ArcCameraApp( 1901): ***********drawWaitingPicture , ORIENTATION:[ 2];bDraw:[+FALSE]
+D/skia    ( 1901): +++++ SkScalerContext_FreeType::ref_ft_face gFTCount=2 pLayout 417da0, fontID = 2
+D/skia    ( 1901): ===== SkScalerContext_FreeType::ref_ft_face gFTCount=3 pLayout b5e18, fontID=1
+E/AppUi-JNI( 1901): Enter event callback
+E/AppUi-JNI( 1901): before JNI call cookie = 1806952 
+E/AppUi-JNI( 1901): Enter event callback
+E/AppUi-JNI( 1901): before JNI call cookie = 1806952 
+E/AppUi-JNI( 1901): Enter event callback
+E/AppUi-JNI( 1901): before JNI call cookie = 1806952 
+I/MediaProvider( 1345): IMAGE_MEDIA query
+E/AppUi-JNI( 1901): Enter event callback
+E/AppUi-JNI( 1901): before JNI call cookie = 1806952 
+V/ArcCameraApp( 1901): MMS Attach correct
+D/NetworkLocationProvider( 1279): addListener(): com.arcsoft.camera
+D/NetworkLocationProvider( 1279): addListener(): providers.downloads
+D/NetworkLocationProvider( 1279): addListener(): providers.media
+D/NetworkLocationProvider( 1279): addListener(): divxreg.arcsoft.com.cn
+D/NetworkLocationProvider( 1279): addListener(): providers.drm
+D/NetworkLocationProvider( 1279): addListener(): arcsoft.android.arcmmp
+D/NetworkLocationProvider( 1279): addListener(): camera
+D/NetworkLocationProvider( 1279): addListener(): arcsoft.android.arcmediagallery
+D/PowerManagerService( 1279): acquireWakeLock flags=0x1 tag=LocationManagerService
+D/GpsLocationProvider( 1279): setMinTime 600000
+D/GpsLocationProvider( 1279): startNavigating
+D/GpsLocationProvider( 1279): [agps] call - native_set_agps_server
+D/libloc_api( 1279): loc_eng_set_server, type = 1, hostname = 221.148.242.107, port = 7275
+D/libloc_api( 1279): loc_eng_set_server, addr = 221.148.242.107:7275
+D/libloc_api( 1279): loc_eng_ioctl called: client = 0, ioctl_type = RPC_LOC_IOCTL_SET_UMTS_SLP_SERVER_ADDR
+V/loc_api_rpc_glue( 1279): loc_api_sync_ioctl: select_id = 0, loc_ioctl returned 0
+D/libloc_api( 1279): loc_event_cb, client = 0, loc_event = 0x80 (IoReport)
+D/libloc_api( 1279): 
+D/libloc_api( 1279): Event RPC_LOC_EVENT_IOCTL_REPORT (client 0)
+D/libloc_api( 1279): loc_eng_ioctl result: client = 0, ioctl_type = RPC_LOC_IOCTL_SET_UMTS_SLP_SERVER_ADDR, RPC_LOC_API_SUCCESS
+D/libloc_api( 1279): loc_eng_set_position mode, client = 0, interval = 600, mode = 0
+D/libloc_api( 1279): loc_eng_set_position mode, client = 0, interval = 600 sec, mode = 0 (SA=0/MSB=1/MSA=2)
+D/libloc_api( 1279): loc_eng_ioctl called: client = 0, ioctl_type = RPC_LOC_IOCTL_SET_FIX_CRITERIA
+V/loc_api_rpc_glue( 1279): loc_api_sync_ioctl: select_id = 0, loc_ioctl returned 0
+D/libloc_api( 1279): loc_event_cb, client = 0, loc_event = 0x80 (IoReport)
+D/libloc_api( 1279): 
+D/libloc_api( 1279): Event RPC_LOC_EVENT_IOCTL_REPORT (client 0)
+D/libloc_api( 1279): loc_eng_ioctl result: client = 0, ioctl_type = RPC_LOC_IOCTL_SET_FIX_CRITERIA, RPC_LOC_API_SUCCESS
+D/libloc_api( 1279): loc_eng_start called
+D/libloc_api( 1279): date:2010-08-31, time:10:30:31.923, raw_sec=1283243431, raw_sec2=1283243431,raw_msec=1283243431923
+D/libloc_api( 1279): loc_event_cb, client = 0, loc_event = 0x100 (StReport)
+D/libloc_api( 1279): 
+D/libloc_api( 1279): Event RPC_LOC_EVENT_STATUS_REPORT (client 0)
+D/libloc_api( 1279): Engine state: RPC_LOC_ENGINE_STATE_ON
+D/libloc_api( 1279): loc_inform_gps_status, status: GPS_STATUS_ENGINE_ON
+E/AppUi-JNI( 1901): Enter event callback
+E/AppUi-JNI( 1901): before JNI call cookie = 1806952 
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=LocationManagerService
+E/AppUi-JNI( 1901): Enter event callback
+E/AppUi-JNI( 1901): before JNI call cookie = 1806952 
+D/PowerManagerService( 1279): releaseWakeLock flags=0x1 tag=ActivityManager-Launch
+D/libloc_api( 1279): loc_event_cb, client = 0, loc_event = 0x2 (SatReport)
+D/libloc_api( 1279): 
+D/libloc_api( 1279): Event RPC_LOC_EVENT_SATELLITE_REPORT (client 0)
+D/libloc_api( 1279): sv count: 0
+D/libloc_api( 1279): loc_eng_report_sv: valid_mask = 0x30, num of sv = 0
+D/libloc_api( 1279): 
+D/libloc_api( 1279): HDOP in loc_eng_report_sv: 0.0
+D/libloc_api( 1279): loc_event_cb, client = 0, loc_event = 0x2 (SatReport)
+D/libloc_api( 1279): 
+D/libloc_api( 1279): Event RPC_LOC_EVENT_SATELLITE_REPORT (client 0)
+D/libloc_api( 1279): sv count: 0
+D/libloc_api( 1279): loc_eng_report_sv: valid_mask = 0x30, num of sv = 0
+D/libloc_api( 1279): 
+D/libloc_api( 1279): HDOP in loc_eng_report_sv: 0.0
