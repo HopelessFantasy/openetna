@@ -23,14 +23,6 @@ installold sounds #there is no such dir in aosp
 install xbin
 install bin
 
-installold bin/linker
-install lib/libc.so
-install lib/libdl.so
-install lib/libz.so
-install lib/libm.so
-install lib/libstdc++.so
-install lib/libc_debug.so
-
 installold bin/toleinit #this is needed, because the boot process halts without it
 
 installold lib/libandroid_runtime.so lib/libandroid_runtime_donut.so
@@ -47,8 +39,6 @@ installold lib/libmmcamera.so
 installold lib/libmmjpeg.so
 
 #Radio
-installold lib/libril-qc-1.so
-installold lib/libril.so
 installold lib/libgsdi_exp.so #needed by libril-qc-1.so
 installold lib/libgstk_exp.so #needed by libril-qc-1.so
 installold lib/libwms.so #needed by libril-qc-1.so
@@ -73,6 +63,14 @@ installold lib/liboncrpc.so #needed by libril-qc-1.so
   installold lib/libdsm.so #needed by liboncrpc.so
     installold lib/libqueue.so #needed by libdsm
     installold lib/libdiag.so #needed by libdsm
+if true; then
+installold lib/libril-qc-1.so
+installold lib/libril.so
+else
+OLDSYS=cyanogen installold lib/libhtc_acoustic.so
+OLDSYS=cyanogen installold lib/libhtc_ril.so lib/libril-qc-1.so
+OLDSYS=cyanogen installold lib/libril.so
+fi
 
 #Compass
 installold bin/akmd2
@@ -90,6 +88,57 @@ installold lib/libcommondefs.so #needed by libloc_api-rpc.so
 
 installold lib/libhardware_legacy.so #old one is needed for radio, wlan, gps ...
 
+#Hardware codecs
+if false; then
+installold lib/libomx_aacdec_sharedlibrary.so
+installold lib/libomx_amrdec_sharedlibrary.so
+installold lib/libomx_amrenc_sharedlibrary.so
+installold lib/libomx_arcomxcore_sharedlibrary.so
+installold lib/libomx_avcdec_sharedlibrary.so
+installold lib/libomx_m4vdec_sharedlibrary.so
+installold lib/libomx_m4venc_sharedlibrary.so
+installold lib/libomx_mp3dec_sharedlibrary.so
+installold lib/libomx_sharedlibrary_qc.so
+installold lib/libomx_sharedlibrary.so
+installold lib/libomx_wmadec_sharedlibrary.so
+installold lib/libomx_wmvdec_sharedlibrary.so
+installold lib/libOmxCore.so
+installold lib/libopencorehw.so
+installold lib/libopencore_common.so
+installold lib/libopencore_player.so
+installold lib/libopencore_arcparsergetinfo.so
+installold lib/libopencore_arcfflocalparser.so
+installold lib/libarcplatform.so
+installold lib/libmm-omxcore.so 
+elif false; then
+OLDSYS=cyanogen
+installold lib/libomx_aacdec_sharedlibrary.so
+installold lib/libomx_amrdec_sharedlibrary.so
+installold lib/libomx_amrenc_sharedlibrary.so
+installold lib/libomx_avcdec_sharedlibrary.so
+installold lib/libomx_m4vdec_sharedlibrary.so
+installold lib/libomx_mp3dec_sharedlibrary.so
+installold lib/libomx_sharedlibrary.so
+installold lib/libomx_wmadec_sharedlibrary.so
+installold lib/libomx_wmvdec_sharedlibrary.so
+installold lib/libopencore_author.so
+installold lib/libopencore_common.so
+installold lib/libopencore_downloadreg.so
+installold lib/libopencore_download.so
+installold lib/libopencorehw.so
+installold lib/libopencore_mp4localreg.so
+installold lib/libopencore_mp4local.so
+installold lib/libopencore_net_support.so
+installold lib/libopencore_player.so
+installold lib/libopencore_rtspreg.so
+installold lib/libopencore_rtsp.so
+installold lib/libOmxCore.so
+installold lib/libOmxH264Dec.so
+installold lib/libOmxMpeg4Dec.so
+installold lib/libOmxVidEnc.so
+installold lib/libFLAC.so
+OLDSYS=korean-v10t
+fi
 
 #Wifi
 mkdir -p etc/wifi
@@ -112,9 +161,7 @@ install framework
 #-- Install app
 install app
 
-#This script will install the google apps from sdcard
-installcustom bin/checkgapps
-if false; then
+if true; then
   echo Copying google apps
   if [[ ! -d ../gapps2 ]]; then
     echo "Directory gapps2 missing!"
