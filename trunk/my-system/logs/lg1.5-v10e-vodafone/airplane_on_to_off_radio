@@ -1,0 +1,809 @@
+* daemon not running. starting it now *
+* daemon started successfully *
+D/RILC    ( 1233): [qcril_reqlist.c:1070]     RIL_REQUEST_SIM_IO (28), token id 287
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:902] parse_ef_path(fileid=0x6f38, path_ptr=3F007F20)
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:939] 3F007F20: path_ptrl
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:943] 3F007F20: 2) path_ptrl
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:1038] RIL --- mmgsdi_read_transparent_ext() ---> AMSS [offset=0, length=7]
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:1038] RIL=>AMSS [ label = "mmgsdi_read_transparent_ext()" ];
+I/RILJ    ( 1417): RILRequest.obtain() request=28, SIM_IO
+I/RILJ    ( 1417): [0288]> iccIO: SIM_IO 0xb2 0x4f30  path: null,1,4,100
+W/RILC    ( 1233): [ril.cpp:390] processCommandBuffer() request=28,token=288
+W/RILC    ( 1233): [ril.cpp:409] request=28, pRI->pCI->requestNumber=28
+W/RILC    ( 1233): [ril.cpp:754] TOKEN=288 REQ_NUM=0028 SIM_IO (cmd=0xB2,efid=0x4F30,path=(null),1,4,100,(null),pin2=(null))
+D/RILC    ( 1233): [qcril.c:2361] UI --- RIL_REQUEST_SIM_IO (28) ---> RIL [token id 288, data len 32]
+D/RILC    ( 1233): [qcril.c:2380] Android=>RIL [ label = "RIL_REQUEST_SIM_IO - Token 288" ];
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:2938] qcril_mmgsdi_request_sim_io(178, 20272, (null), 1, 4, 100, NULL, NULL)
+D/RILC    ( 1233): [qcril_reqlist.c:168] Not found ReqList entry : token id 288
+D/RILC    ( 1233): [qcril_reqlist.c:399] Event RIL_REQUEST_SIM_IO (28) pending receipt of <none>, token id 288 [0x2c470]
+D/RILC    ( 1233): [qcril_reqlist.c:1064] ReqList entries : 
+D/RILC    ( 1233): [qcril_reqlist.c:1070]     RIL_REQUEST_SIM_IO (28), token id 287
+D/RILC    ( 1233): [qcril_reqlist.c:1070]     RIL_REQUEST_SIM_IO (28), token id 288
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:902] parse_ef_path(fileid=0x4f30, path_ptr=(null))
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:939] (null): path_ptrl
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:943] (null): 2) path_ptrl
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:1197] RIL --- mmgsdi_read_record_ext() ---> AMSS [record=1, length=100]
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:1197] RIL=>AMSS [ label = "mmgsdi_read_record_ext()" ];
+I/RILJ    ( 1417): RILRequest.obtain() request=22, OPERATOR
+I/RILJ    ( 1417): [0289]> OPERATOR
+W/RILC    ( 1233): [ril.cpp:390] processCommandBuffer() request=22,token=289
+W/RILC    ( 1233): [ril.cpp:409] request=22, pRI->pCI->requestNumber=22
+W/RILC    ( 1233): [ril.cpp:437] TOKEN=289 REQ_NUM=0022 OPERATOR 
+D/RILC    ( 1233): [qcril.c:2361] UI --- RIL_REQUEST_OPERATOR (22) ---> RIL [token id 289, data len 0]
+D/RILC    ( 1233): [qcril.c:2380] Android=>RIL [ label = "RIL_REQUEST_OPERATOR - Token 289" ];
+D/RILC    ( 1233): [qcril_cm_ons.c:9325] PLMN[0] = 98, PLMN[1] = 242, PLMN[2] = 112
+D/RILC    ( 1233): [qcril_cm_ons.c:9326] MCC digit1 = 2, MCC digit2 = 6, MCC digit3 = 2
+D/RILC    ( 1233): [qcril_cm_ons.c:9327] MNC digit1 = 0, MNC digit2 = 7, MNC digit3 = 15
+D/RILC    ( 1233): [qcril_cm_ons.c:9876] [Brighthy Debug] Operator from Flex in Qcril : 
+D/RILC    ( 1233): [qcril_cm_ons.c:9877] [Brighthy Debug] MCC from Flex in Qcril : 0
+D/RILC    ( 1233): [qcril_cm_ons.c:10021] [Brighthy Debug] Enter name table for default
+D/RILC    ( 1233): [qcril_cm_ons.c:10119] ONS info from UE Memory List
+D/RILC    ( 1233): [qcril_cm.c:5443] Reply to RIL --> Current operator full name : o2 - de
+D/RILC    ( 1233): [qcril_cm.c:5444] Reply to RIL --> Current operator short name : O2
+D/RILC    ( 1233): [qcril_cm.c:5445] Reply to RIL --> Current operator MCCMNC : 26207
+D/RILC    ( 1233): [qcril.c:3965] RIL=>Android [ label = "RIL_REQUEST_OPERATOR - o2 - de, Token 289, Success" ];
+D/RILC    ( 1233): [qcril.c:3970] UI <--- RIL_REQUEST_OPERATOR (22) Complete --- RIL [Token 289, RIL_E_SUCCESS, Len 12 o2 - de]
+W/RILC    ( 1233): [ril.cpp:1489] [0289]< OPERATOR {o2 - de,O2,26207}
+I/RILJ    ( 1417): [0289]< OPERATOR {o2 - de, O2, 26207}
+I/RILJ    ( 1417): RILRequest.obtain() request=21, GPRS_REGISTRATION_STATE
+I/RILJ    ( 1417): [0290]> GPRS_REGISTRATION_STATE
+W/RILC    ( 1233): [ril.cpp:390] processCommandBuffer() request=21,token=290
+W/RILC    ( 1233): [ril.cpp:409] request=21, pRI->pCI->requestNumber=21
+W/RILC    ( 1233): [ril.cpp:437] TOKEN=290 REQ_NUM=0021 GPRS_REGISTRATION_STATE 
+D/RILC    ( 1233): [qcril.c:2361] UI --- RIL_REQUEST_GPRS_REGISTRATION_STATE (21) ---> RIL [token id 290, data len 0]
+D/RILC    ( 1233): [qcril.c:2380] Android=>RIL [ label = "RIL_REQUEST_GPRS_REGISTRATION_STATE - Token 290" ];
+D/RILC    ( 1233): [qcril_cm_util.c:261] Current System : srv status 2, sys mode 5, roam status 0
+D/RILC    ( 1233): [qcril_cm_util.c:315] Registered on Home network
+D/RILC    ( 1233): [qcril_cm_util.c:426] UMTS System
+D/RILC    ( 1233): [qcril_cm_util.c:436] UMTS System : srv domain 3, srv capability 3, hs_ind 1, hs_call_status 0
+D/RILC    ( 1233): [qcril_cm.c:5169] GPRS Registration State: Registered (Home network), LAC: 2db8, CID: 006a9ece, RadioTech: EVDO
+D/RILC    ( 1233): [qcril.c:3965] RIL=>Android [ label = "RIL_REQUEST_GPRS_REGISTRATION_STATE - Registered (Home network), EVDO, Token 290, Success" ];
+D/RILC    ( 1233): [qcril.c:3970] UI <--- RIL_REQUEST_GPRS_REGISTRATION_STATE (21) Complete --- RIL [Token 290, RIL_E_SUCCESS, Len 16 Registered (Home network), EVDO]
+W/RILC    ( 1233): [ril.cpp:1489] [0290]< GPRS_REGISTRATION_STATE {1,2db8,006a9ece,9}
+I/RILJ    ( 1417): [0290]< GPRS_REGISTRATION_STATE {1, 2db8, 006a9ece, 9}
+D/RILC    ( 1233): [qcril_mmgsdi.c:1040] qcril_mmgsdi_command_callback: cnf = 0x4, status = 0x0
+D/RILC    ( 1233): [qcril_mmgsdi.c:1052] qcril_mmgsdi_command_callback qcril_event_queue2
+D/RILC    ( 1233): [qcril_event.c:402] Queued event MMGSDI_COMMAND_CALLBACK (268 bytes)
+D/RILC    ( 1233): [qcril_event.c:288] qcril_event_main(): 1 items on queue
+D/RILC    ( 1233): [qcril_event.c:309] De-queued event MMGSDI_COMMAND_CALLBACK (196609)
+D/RILC    ( 1233): [qcril.c:2499] AMSS=>RIL [ label = "MMGSDI_COMMAND_CALLBACK" ];
+D/RILC    ( 1233): [qcril.c:2508] RIL <--- MMGSDI_COMMAND_CALLBACK (196609) --- AMSS
+D/RILC    ( 1233): [qcril_mmgsdi.c:4052] qcril_mmgsdi_process_command_callback: QCRIL_EVT_MMGSDI_COMMAND_CALLBACK
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:3514] qcril_mmgsdi_common_simio_read_cnf
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:3531] RIL_SIM_IO_Response: sw1=144 sw2=0 data=9edfb71de7fe07
+D/RILC    ( 1233): [qcril_mmgsdi.c:171] mmgsdi status 0x0 -> RIL_E_SUCCESS
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_SIM_IO (28), token id 287
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_SIM_IO (28), token id 287
+D/RILC    ( 1233): [qcril_reqlist.c:598] Deleted ReqList entry : token id 287 [0x2c458]
+D/RILC    ( 1233): [qcril_reqlist.c:1064] ReqList entries : 
+D/RILC    ( 1233): [qcril_reqlist.c:1070]     RIL_REQUEST_SIM_IO (28), token id 288
+D/RILC    ( 1233): [qcril.c:3965] RIL=>Android [ label = "RIL_REQUEST_SIM_IO - Token 287, Success" ];
+D/RILC    ( 1233): [qcril.c:3970] UI <--- RIL_REQUEST_SIM_IO (28) Complete --- RIL [Token 287, RIL_E_SUCCESS, Len 12 ]
+W/RILC    ( 1233): [ril.cpp:1489] [0287]< SIM_IO {sw1=0x90,sw2=0x0,9edfb71de7fe07}
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : MMGSDI_COMMAND_CALLBACK, err_no 0
+D/RILC    ( 1233): [qcril_event.c:271] qcril_event_main(): Waiting...
+I/RILJ    ( 1417): < iccIO:  0x90 0x0 9edfb71de7fe07
+I/RILJ    ( 1417): [0287]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+I/RILJ    ( 1417): RILRequest.obtain() request=20, REGISTRATION_STATE
+I/RILJ    ( 1417): [0291]> REGISTRATION_STATE
+W/RILC    ( 1233): [ril.cpp:390] processCommandBuffer() request=20,token=291
+W/RILC    ( 1233): [ril.cpp:409] request=20, pRI->pCI->requestNumber=20
+W/RILC    ( 1233): [ril.cpp:437] TOKEN=291 REQ_NUM=0020 REGISTRATION_STATE 
+D/RILC    ( 1233): [qcril.c:2361] UI --- RIL_REQUEST_REGISTRATION_STATE (20) ---> RIL [token id 291, data len 0]
+D/RILC    ( 1233): [qcril.c:2380] Android=>RIL [ label = "RIL_REQUEST_REGISTRATION_STATE - Token 291" ];
+D/RILC    ( 1233): [qcril_cm_util.c:261] Current System : srv status 2, sys mode 5, roam status 0
+D/RILC    ( 1233): [qcril_cm_util.c:315] Registered on Home network
+D/RILC    ( 1233): [qcril_cm_util.c:1374] Reject cause value = 0
+D/RILC    ( 1233): [qcril_cm_util.c:1375] Registration status = Registered (Home network)
+D/RILC    ( 1233): [qcril_cm_util.c:1435] Reject cause value sent to UI = 0
+D/RILC    ( 1233): [qcril_cm_util.c:426] UMTS System
+D/RILC    ( 1233): [qcril_cm_util.c:436] UMTS System : srv domain 3, srv capability 3, hs_ind 1, hs_call_status 0
+D/RILC    ( 1233): [qcril_cm.c:5120] Registration State: Registered (Home network), RadioTech: EVDO, LAC: 2db8, CID: 006a9ece, BSID: (null), BSLat: (null), BSLong: (null)
+D/RILC    ( 1233): [qcril_cm.c:5123]                     CCS: (null), SID: (null), NID: (null), RoamStatus: (null), PRL: (null), DefRoamStatus: (null), RejReason: 0
+D/RILC    ( 1233): [qcril.c:3965] RIL=>Android [ label = "RIL_REQUEST_REGISTRATION_STATE - Registered (Home network), Token 291, Success" ];
+D/RILC    ( 1233): [qcril.c:3970] UI <--- RIL_REQUEST_REGISTRATION_STATE (20) Complete --- RIL [Token 291, RIL_E_SUCCESS, Len 56 Registered (Home network)]
+W/RILC    ( 1233): [ril.cpp:1489] [0291]< REGISTRATION_STATE {1,2db8,006a9ece,9,(null),(null),(null),(null),(null),(null),(null),(null),(null),0}
+I/RILJ    ( 1417): [0291]< REGISTRATION_STATE {1, 2db8, 006a9ece, 9, null, null, null, null, null, null, null, null, null, 0}
+I/RILJ    ( 1417): RILRequest.obtain() request=45, QUERY_NETWORK_SELECTION_MODE
+I/RILJ    ( 1417): [0292]> QUERY_NETWORK_SELECTION_MODE
+W/RILC    ( 1233): [ril.cpp:390] processCommandBuffer() request=45,token=292
+W/RILC    ( 1233): [ril.cpp:409] request=45, pRI->pCI->requestNumber=45
+W/RILC    ( 1233): [ril.cpp:437] TOKEN=292 REQ_NUM=0045 QUERY_NETWORK_SELECTION_MODE 
+D/RILC    ( 1233): [qcril.c:2361] UI --- RIL_REQUEST_QUERY_NETWORK_SELECTION_MODE (45) ---> RIL [token id 292, data len 0]
+D/RILC    ( 1233): [qcril.c:2380] Android=>RIL [ label = "RIL_REQUEST_QUERY_NETWORK_SELECTION_MODE - Token 292" ];
+D/RILC    ( 1233): [qcril_reqlist.c:168] Not found ReqList entry : token id 292
+D/RILC    ( 1233): [qcril_reqlist.c:399] Event RIL_REQUEST_QUERY_NETWORK_SELECTION_MODE (45) pending receipt of CM_PH_EVENT_INFO, token id 292 [0x2c488]
+D/RILC    ( 1233): [qcril_reqlist.c:1064] ReqList entries : 
+D/RILC    ( 1233): [qcril_reqlist.c:1070]     RIL_REQUEST_SIM_IO (28), token id 288
+D/RILC    ( 1233): [qcril_reqlist.c:1070]     RIL_REQUEST_QUERY_NETWORK_SELECTION_MODE (45), token id 292
+D/RILC    ( 1233): [qcril_cm.c:2321] RIL --- cm_ph_cmd_get_ph_info() ---> AMSS [Token ID 292 (0x124)]
+D/RILC    ( 1233): [qcril_cm.c:2321] RIL=>AMSS [ label = "cm_ph_cmd_get_ph_info()" ];
+D/RILC    ( 1233): [qcril_cm.c:3580] CM_PH_COMMAND_CALLBACK : Token ID 292
+D/RILC    ( 1233): [qcril_event.c:402] Queued event CM_COMMAND_CALLBACK (12 bytes)
+D/RILC    ( 1233): [qcril_event.c:288] qcril_event_main(): 1 items on queue
+D/RILC    ( 1233): [qcril_event.c:309] De-queued event CM_COMMAND_CALLBACK (65537)
+D/RILC    ( 1233): [qcril.c:2499] AMSS=>RIL [ label = "CM_COMMAND_CALLBACK" ];
+D/RILC    ( 1233): [qcril.c:2508] RIL <--- CM_COMMAND_CALLBACK (65537) --- AMSS
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_QUERY_NETWORK_SELECTION_MODE (45), token id 292
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_QUERY_NETWORK_SELECTION_MODE (45), token id 292
+D/RILC    ( 1233): [qcril_reqlist.c:659] Update ReqList entry : RIL_REQUEST_QUERY_NETWORK_SELECTION_MODE (45), token id 292, state QCRIL_REQ_AWAITING_MORE_AMSS_EVENTS
+D/RILC    ( 1233): [qcril_cm.c:924] Change the state of ReqList entry to AWAITING_MORE_AMSS_EVENTS state : RIL_REQUEST_QUERY_NETWORK_SELECTION_MODE (45), Token ID 292, pending CM_PH_EVENT_INFO (69644)
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : CM_COMMAND_CALLBACK, err_no 0
+D/RILC    ( 1233): [qcril_event.c:271] qcril_event_main(): Waiting...
+D/RILC    ( 1233): [qcril_cm.c:3621] Received phonesvc event : CM_PH_EVENT_INFO (69644)
+D/RILC    ( 1233): [qcril_event.c:402] Queued event CM_PH_EVENT_INFO (6552 bytes)
+D/RILC    ( 1233): [qcril_event.c:288] qcril_event_main(): 1 items on queue
+D/RILC    ( 1233): [qcril_event.c:309] De-queued event CM_PH_EVENT_INFO (69644)
+D/RILC    ( 1233): [qcril.c:2499] AMSS=>RIL [ label = "CM_PH_EVENT_INFO" ];
+D/RILC    ( 1233): [qcril.c:2508] RIL <--- CM_PH_EVENT_INFO (69644) --- AMSS
+D/RILC    ( 1233): [qcril_cm.c:3855] GW subscription enabled
+D/RILC    ( 1233): [qcril_cm.c:3872] CDMA subscription disabled
+D/RILC    ( 1233): [qcril_cm.c:3895] Oprt mode: 5, Mode pref: 19, GW acq order: 2, Band pref: -1073741825, Roam pref: 255, Network sel mode: 0, plmn[0]=255, plmn[1]=255, plmn[2]=255, rtre control: 2
+D/RILC    ( 1233): [qcril_reqlist.c:205] Found ReqList entry : RIL_REQUEST_QUERY_NETWORK_SELECTION_MODE (45), token id 292, pending CM_PH_EVENT_INFO (69644)
+D/RILC    ( 1233): [qcril_cm.c:4165] Reply to RIL --> Automatic network selection mode
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_QUERY_NETWORK_SELECTION_MODE (45), token id 292
+D/RILC    ( 1233): [qcril_reqlist.c:598] Deleted ReqList entry : token id 292 [0x2c488]
+D/RILC    ( 1233): [qcril_reqlist.c:1064] ReqList entries : 
+D/RILC    ( 1233): [qcril_reqlist.c:1070]     RIL_REQUEST_SIM_IO (28), token id 288
+D/RILC    ( 1233): [qcril.c:3965] RIL=>Android [ label = "RIL_REQUEST_QUERY_NETWORK_SELECTION_MODE - Automatic, Token 292, Success" ];
+D/RILC    ( 1233): [qcril.c:3970] UI <--- RIL_REQUEST_QUERY_NETWORK_SELECTION_MODE (45) Complete --- RIL [Token 292, RIL_E_SUCCESS, Len 4 Automatic]
+W/RILC    ( 1233): [ril.cpp:1489] [0292]< QUERY_NETWORK_SELECTION_MODE {0}
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : CM_PH_EVENT_INFO, err_no 0
+D/RILC    ( 1233): [qcril_event.c:271] qcril_event_main(): Waiting...
+I/RILJ    ( 1417): [0292]< QUERY_NETWORK_SELECTION_MODE {0}
+I/RILJ    ( 1417): RILRequest.obtain() request=28, SIM_IO
+I/RILJ    ( 1417): [0293]> iccIO: SIM_IO 0xb2 0x6fc5  path: 3F007F20,2,4,14
+W/RILC    ( 1233): [ril.cpp:390] processCommandBuffer() request=28,token=293
+W/RILC    ( 1233): [ril.cpp:409] request=28, pRI->pCI->requestNumber=28
+W/RILC    ( 1233): [ril.cpp:754] TOKEN=293 REQ_NUM=0028 SIM_IO (cmd=0xB2,efid=0x6FC5,path=3F007F20,2,4,14,(null),pin2=(null))
+D/RILC    ( 1233): [qcril.c:2361] UI --- RIL_REQUEST_SIM_IO (28) ---> RIL [token id 293, data len 32]
+D/RILC    ( 1233): [qcril.c:2380] Android=>RIL [ label = "RIL_REQUEST_SIM_IO - Token 293" ];
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:2938] qcril_mmgsdi_request_sim_io(178, 28613, 3F007F20, 2, 4, 14, NULL, NULL)
+D/RILC    ( 1233): [qcril_reqlist.c:168] Not found ReqList entry : token id 293
+D/RILC    ( 1233): [qcril_reqlist.c:399] Event RIL_REQUEST_SIM_IO (28) pending receipt of <none>, token id 293 [0x2c458]
+D/RILC    ( 1233): [qcril_reqlist.c:1064] ReqList entries : 
+D/RILC    ( 1233): [qcril_reqlist.c:1070]     RIL_REQUEST_SIM_IO (28), token id 288
+D/RILC    ( 1233): [qcril_reqlist.c:1070]     RIL_REQUEST_SIM_IO (28), token id 293
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:902] parse_ef_path(fileid=0x6fc5, path_ptr=3F007F20)
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:939] 3F007F20: path_ptrl
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:943] 3F007F20: 2) path_ptrl
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:1197] RIL --- mmgsdi_read_record_ext() ---> AMSS [record=2, length=14]
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:1197] RIL=>AMSS [ label = "mmgsdi_read_record_ext()" ];
+E/GSM     ( 1417): EF ICCID: 8949227083243359083
+D/GSM     ( 1417): iccid: 8949227083243359083
+E/GSM     ( 1417): gid1: 
+E/GSM     ( 1417): EF GID1: 
+D/RILC    ( 1233): [qcril_mmgsdi.c:1040] qcril_mmgsdi_command_callback: cnf = 0x4, status = 0x0
+D/RILC    ( 1233): [qcril_mmgsdi.c:1052] qcril_mmgsdi_command_callback qcril_event_queue2
+D/RILC    ( 1233): [qcril_event.c:402] Queued event MMGSDI_COMMAND_CALLBACK (360 bytes)
+D/RILC    ( 1233): [qcril_event.c:288] qcril_event_main(): 1 items on queue
+D/RILC    ( 1233): [qcril_event.c:309] De-queued event MMGSDI_COMMAND_CALLBACK (196609)
+D/RILC    ( 1233): [qcril.c:2499] AMSS=>RIL [ label = "MMGSDI_COMMAND_CALLBACK" ];
+D/RILC    ( 1233): [qcril.c:2508] RIL <--- MMGSDI_COMMAND_CALLBACK (196609) --- AMSS
+D/RILC    ( 1233): [qcril_mmgsdi.c:4052] qcril_mmgsdi_process_command_callback: QCRIL_EVT_MMGSDI_COMMAND_CALLBACK
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:3514] qcril_mmgsdi_common_simio_read_cnf
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:3531] RIL_SIM_IO_Response: sw1=144 sw2=0 data=a814c0034f3a0ac1034f150cc5034f0901c9034f1605a914c4034f1102c4034f1306ca034f5109c3034f1904aa0ac2034f1203cb034f3d08ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+D/RILC    ( 1233): [qcril_mmgsdi.c:171] mmgsdi status 0x0 -> RIL_E_SUCCESS
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_SIM_IO (28), token id 288
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_SIM_IO (28), token id 288
+D/RILC    ( 1233): [qcril_reqlist.c:598] Deleted ReqList entry : token id 288 [0x2c470]
+D/RILC    ( 1233): [qcril_reqlist.c:1064] ReqList entries : 
+D/RILC    ( 1233): [qcril_reqlist.c:1070]     RIL_REQUEST_SIM_IO (28), token id 293
+D/RILC    ( 1233): [qcril.c:3965] RIL=>Android [ label = "RIL_REQUEST_SIM_IO - Token 288, Success" ];
+D/RILC    ( 1233): [qcril.c:3970] UI <--- RIL_REQUEST_SIM_IO (28) Complete --- RIL [Token 288, RIL_E_SUCCESS, Len 12 ]
+W/RILC    ( 1233): [ril.cpp:1489] [0288]< SIM_IO {sw1=0x90,sw2=0x0,a814c0034f3a0ac1034f150cc5034f0901c9034f1605a914c4034f1102c4034f1306ca034f5109c3034f1904aa0ac2034f1203cb034f3d08ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff}
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : MMGSDI_COMMAND_CALLBACK, err_no 0
+D/RILC    ( 1233): [qcril_event.c:271] qcril_event_main(): Waiting...
+D/RILC    ( 1233): [qcril_mmgsdi.c:1040] qcril_mmgsdi_command_callback: cnf = 0x4, status = 0x0
+D/RILC    ( 1233): [qcril_mmgsdi.c:1052] qcril_mmgsdi_command_callback qcril_event_queue2
+D/RILC    ( 1233): [qcril_event.c:402] Queued event MMGSDI_COMMAND_CALLBACK (276 bytes)
+D/RILC    ( 1233): [qcril_event.c:288] qcril_event_main(): 1 items on queue
+D/RILC    ( 1233): [qcril_event.c:309] De-queued event MMGSDI_COMMAND_CALLBACK (196609)
+D/RILC    ( 1233): [qcril.c:2499] AMSS=>RIL [ label = "MMGSDI_COMMAND_CALLBACK" ];
+D/RILC    ( 1233): [qcril.c:2508] RIL <--- MMGSDI_COMMAND_CALLBACK (196609) --- AMSS
+D/RILC    ( 1233): [qcril_mmgsdi.c:4052] qcril_mmgsdi_process_command_callback: QCRIL_EVT_MMGSDI_COMMAND_CALLBACK
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:3514] qcril_mmgsdi_common_simio_read_cnf
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:3531] RIL_SIM_IO_Response: sw1=144 sw2=0 data=4308876f19a805229701ffffffff
+D/RILC    ( 1233): [qcril_mmgsdi.c:171] mmgsdi status 0x0 -> RIL_E_SUCCESS
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_SIM_IO (28), token id 293
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_SIM_IO (28), token id 293
+D/RILC    ( 1233): [qcril_reqlist.c:598] Deleted ReqList entry : token id 293 [0x2c458]
+D/RILC    ( 1233): [qcril_reqlist.c:1060] ReqList entries : Empty
+D/RILC    ( 1233): [qcril.c:3965] RIL=>Android [ label = "RIL_REQUEST_SIM_IO - Token 293, Success" ];
+D/RILC    ( 1233): [qcril.c:3970] UI <--- RIL_REQUEST_SIM_IO (28) Complete --- RIL [Token 293, RIL_E_SUCCESS, Len 12 ]
+W/RILC    ( 1233): [ril.cpp:1489] [0293]< SIM_IO {sw1=0x90,sw2=0x0,4308876f19a805229701ffffffff}
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : MMGSDI_COMMAND_CALLBACK, err_no 0
+D/RILC    ( 1233): [qcril_event.c:271] qcril_event_main(): Waiting...
+I/RILJ    ( 1417): < iccIO:  0x90 0x0 a814c0034f3a0ac1034f150cc5034f0901c9034f1605a914c4034f1102c4034f1306ca034f5109c3034f1904aa0ac2034f1203cb034f3d08ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+I/RILJ    ( 1417): [0288]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+I/RILJ    ( 1417): < iccIO:  0x90 0x0 4308876f19a805229701ffffffff
+I/RILJ    ( 1417): [0293]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+E/GSM     ( 1417): EF ICCID: 8949227083243359083
+D/GSM     ( 1417): iccid: 8949227083243359083
+D/GSM     ( 1417): EF_MBI: 01000000
+D/GSM     ( 1417): Got valid mailbox number for MBDN
+I/RILJ    ( 1417): RILRequest.obtain() request=28, SIM_IO
+I/RILJ    ( 1417): [0294]> iccIO: SIM_IO 0xc0 0x6fc7  path: 3F007F20,0,0,15
+W/RILC    ( 1233): [ril.cpp:390] processCommandBuffer() request=28,token=294
+W/RILC    ( 1233): [ril.cpp:409] request=28, pRI->pCI->requestNumber=28
+W/RILC    ( 1233): [ril.cpp:754] TOKEN=294 REQ_NUM=0028 SIM_IO (cmd=0xC0,efid=0x6FC7,path=3F007F20,0,0,15,(null),pin2=(null))
+D/RILC    ( 1233): [qcril.c:2361] UI --- RIL_REQUEST_SIM_IO (28) ---> RIL [token id 294, data len 32]
+D/RILC    ( 1233): [qcril.c:2380] Android=>RIL [ label = "RIL_REQUEST_SIM_IO - Token 294" ];
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:2938] qcril_mmgsdi_request_sim_io(192, 28615, 3F007F20, 0, 0, 15, NULL, NULL)
+D/RILC    ( 1233): [qcril_reqlist.c:168] Not found ReqList entry : token id 294
+D/RILC    ( 1233): [qcril_reqlist.c:399] Event RIL_REQUEST_SIM_IO (28) pending receipt of <none>, token id 294 [0x2c458]
+D/RILC    ( 1233): [qcril_reqlist.c:1064] ReqList entries : 
+D/RILC    ( 1233): [qcril_reqlist.c:1070]     RIL_REQUEST_SIM_IO (28), token id 294
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:902] parse_ef_path(fileid=0x6fc7, path_ptr=3F007F20)
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:939] 3F007F20: path_ptrl
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:943] 3F007F20: 2) path_ptrl
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:1953] RIL --- UICC card: mmgsdi_get_file_attr() ---> AMSS []
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:1953] RIL=>AMSS [ label = "UICC card: mmgsdi_get_file_attr()" ];
+D/GSM     ( 1417): EF_AD: 00000002
+D/GSM     ( 1417): EF_MWIS: 0000000000
+D/GSM     ( 1417): EF_CFIS: 010000ffffffffffffffffffffffffff
+D/GSM     ( 1417): [SIMRecords] Load EF_SPN: o2 - de spnDisplayCondition: 0
+E/GSM     ( 1417): EF SPN: o2 - de
+D/GSM     ( 1417): Poll ServiceState done:  oldSS=[0 home o2 - de O2 26207  Unknown CSS not supported -1 -1RoamInd: -1DefRoamInd: -1] newSS=[0 home o2 - de O2 26207  Unknown CSS not supported -1 -1RoamInd: -1DefRoamInd: -1] oldGprs=0 newGprs=0 oldType=HSDPA newType=HSDPA
+D/GSM     ( 1417): [BRIGHTHY] Normal Service: o2 - de
+D/GSM     ( 1417): Operator Flex Code : KTF
+D/GSM     ( 1417): Enter Not RGS : opr code:KTF
+D/GSM     ( 1417): Normal Service - showPlmn: false showSpn: true
+D/RILC    ( 1233): [qcril_mmgsdi.c:1040] qcril_mmgsdi_command_callback: cnf = 0x6, status = 0x0
+D/RILC    ( 1233): [qcril_mmgsdi.c:1052] qcril_mmgsdi_command_callback qcril_event_queue2
+D/RILC    ( 1233): [qcril_event.c:402] Queued event MMGSDI_COMMAND_CALLBACK (276 bytes)
+D/RILC    ( 1233): [qcril_event.c:288] qcril_event_main(): 1 items on queue
+D/RILC    ( 1233): [qcril_event.c:309] De-queued event MMGSDI_COMMAND_CALLBACK (196609)
+D/RILC    ( 1233): [qcril.c:2499] AMSS=>RIL [ label = "MMGSDI_COMMAND_CALLBACK" ];
+D/RILC    ( 1233): [qcril.c:2508] RIL <--- MMGSDI_COMMAND_CALLBACK (196609) --- AMSS
+D/RILC    ( 1233): [qcril_mmgsdi.c:4052] qcril_mmgsdi_process_command_callback: QCRIL_EVT_MMGSDI_COMMAND_CALLBACK
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:2439] qcril_mmgsdi_common_process_cnf: cnf = 0x6, status = 0x0
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:2191] qcril_mmgsdi_common_reconstruct_icc_select_rsp_cnf: status = 0x0
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:2150] Converted icc access cond select rsp value 0x1
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:2150] Converted icc access cond select rsp value 0x7
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:2150] Converted icc access cond select rsp value 0x0
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:2150] Converted icc access cond select rsp value 0x7
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:2150] Converted icc access cond select rsp value 0x7
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:2372] RIL_SIM_IO_Response: sw1=144 sw2=0 data=000000786fc704001700770502011e
+D/RILC    ( 1233): [qcril_mmgsdi.c:171] mmgsdi status 0x0 -> RIL_E_SUCCESS
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_SIM_IO (28), token id 294
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_SIM_IO (28), token id 294
+D/RILC    ( 1233): [qcril_reqlist.c:598] Deleted ReqList entry : token id 294 [0x2c458]
+D/RILC    ( 1233): [qcril_reqlist.c:1060] ReqList entries : Empty
+D/RILC    ( 1233): [qcril.c:3965] RIL=>Android [ label = "RIL_REQUEST_SIM_IO - Token 294, Success" ];
+D/RILC    ( 1233): [qcril.c:3970] UI <--- RIL_REQUEST_SIM_IO (28) Complete --- RIL [Token 294, RIL_E_SUCCESS, Len 12 ]
+W/RILC    ( 1233): [ril.cpp:1489] [0294]< SIM_IO {sw1=0x90,sw2=0x0,000000786fc704001700770502011e}
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : MMGSDI_COMMAND_CALLBACK, err_no 0
+D/RILC    ( 1233): [qcril_event.c:271] qcril_event_main(): Waiting...
+I/RILJ    ( 1417): < iccIO:  0x90 0x0 000000786fc704001700770502011e
+I/RILJ    ( 1417): [0294]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+D/GSM     ( 1417): MSISDN: 
+I/RILJ    ( 1417): RILRequest.obtain() request=28, SIM_IO
+I/RILJ    ( 1417): [0295]> iccIO: SIM_IO 0xb2 0x6fc7  path: 3F007F20,1,4,30
+W/RILC    ( 1233): [ril.cpp:390] processCommandBuffer() request=28,token=295
+W/RILC    ( 1233): [ril.cpp:409] request=28, pRI->pCI->requestNumber=28
+W/RILC    ( 1233): [ril.cpp:754] TOKEN=295 REQ_NUM=0028 SIM_IO (cmd=0xB2,efid=0x6FC7,path=3F007F20,1,4,30,(null),pin2=(null))
+D/RILC    ( 1233): [qcril.c:2361] UI --- RIL_REQUEST_SIM_IO (28) ---> RIL [token id 295, data len 32]
+D/RILC    ( 1233): [qcril.c:2380] Android=>RIL [ label = "RIL_REQUEST_SIM_IO - Token 295" ];
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:2938] qcril_mmgsdi_request_sim_io(178, 28615, 3F007F20, 1, 4, 30, NULL, NULL)
+D/RILC    ( 1233): [qcril_reqlist.c:168] Not found ReqList entry : token id 295
+D/RILC    ( 1233): [qcril_reqlist.c:399] Event RIL_REQUEST_SIM_IO (28) pending receipt of <none>, token id 295 [0x2c458]
+D/RILC    ( 1233): [qcril_reqlist.c:1064] ReqList entries : 
+D/RILC    ( 1233): [qcril_reqlist.c:1070]     RIL_REQUEST_SIM_IO (28), token id 295
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:902] parse_ef_path(fileid=0x6fc7, path_ptr=3F007F20)
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:939] 3F007F20: path_ptrl
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:943] 3F007F20: 2) path_ptrl
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:1197] RIL --- mmgsdi_read_record_ext() ---> AMSS [record=1, length=30]
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:1197] RIL=>AMSS [ label = "mmgsdi_read_record_ext()" ];
+E/GSM     ( 1417): [LG 3G PB] validADNNum = 1
+I/RILJ    ( 1417): RILRequest.obtain() request=28, SIM_IO
+I/RILJ    ( 1417): [0296]> iccIO: SIM_IO 0xc0 0x4f3a  path: 3F007F105F3A4f3a,0,0,15
+W/RILC    ( 1233): [ril.cpp:390] processCommandBuffer() request=28,token=296
+W/RILC    ( 1233): [ril.cpp:409] request=28, pRI->pCI->requestNumber=28
+W/RILC    ( 1233): [ril.cpp:754] TOKEN=296 REQ_NUM=0028 SIM_IO (cmd=0xC0,efid=0x4F3A,path=3F007F105F3A4f3a,0,0,15,(null),pin2=(null))
+D/RILC    ( 1233): [qcril.c:2361] UI --- RIL_REQUEST_SIM_IO (28) ---> RIL [token id 296, data len 32]
+D/RILC    ( 1233): [qcril.c:2380] Android=>RIL [ label = "RIL_REQUEST_SIM_IO - Token 296" ];
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:2938] qcril_mmgsdi_request_sim_io(192, 20282, 3F007F105F3A4f3a, 0, 0, 15, NULL, NULL)
+D/RILC    ( 1233): [qcril_reqlist.c:168] Not found ReqList entry : token id 296
+D/RILC    ( 1233): [qcril_reqlist.c:399] Event RIL_REQUEST_SIM_IO (28) pending receipt of <none>, token id 296 [0x2c4c0]
+D/RILC    ( 1233): [qcril_reqlist.c:1064] ReqList entries : 
+D/RILC    ( 1233): [qcril_reqlist.c:1070]     RIL_REQUEST_SIM_IO (28), token id 295
+D/RILC    ( 1233): [qcril_reqlist.c:1070]     RIL_REQUEST_SIM_IO (28), token id 296
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:902] parse_ef_path(fileid=0x4f3a, path_ptr=3F007F105F3A4f3a)
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:939] 3F007F105F3A4f3a: path_ptrl
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:943] 3F007F105F3A4f3a: 2) path_ptrl
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:950] parse_ef_path: ef_ptr is Null
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:839] Path: 
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:747] parse_hex_ascii(path=3F007F105F3A4f3a)
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:847]  3F00 
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:747] parse_hex_ascii(path=7F105F3A4f3a)
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:847]  7F10 
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:747] parse_hex_ascii(path=5F3A4f3a)
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:847]  5F3A 
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:747] parse_hex_ascii(path=4f3a)
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:847]  4F3A 
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:747] parse_hex_ascii(path=)
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:1953] RIL --- UICC card: mmgsdi_get_file_attr() ---> AMSS []
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:1953] RIL=>AMSS [ label = "UICC card: mmgsdi_get_file_attr()" ];
+D/GSM     ( 1417): [BRIGHTHY] Normal Service: o2 - de
+D/RILC    ( 1233): [qcril_sms.c:1563] Received SMS cfg event : WMS_CFG_EVENT_MESSAGE_LIST (135172)
+D/RILC    ( 1233): [qcril_event.c:402] Queued event WMS_CFG_EVENT_MESSAGE_LIST (2060 bytes)
+D/RILC    ( 1233): [qcril_event.c:288] qcril_event_main(): 1 items on queue
+D/RILC    ( 1233): [qcril_event.c:309] De-queued event WMS_CFG_EVENT_MESSAGE_LIST (135172)
+D/RILC    ( 1233): [qcril.c:2499] AMSS=>RIL [ label = "WMS_CFG_EVENT_MESSAGE_LIST" ];
+D/RILC    ( 1233): [qcril.c:2508] RIL <--- WMS_CFG_EVENT_MESSAGE_LIST (135172) --- AMSS
+D/RILC    ( 1233): [qcril_reqlist.c:215] Not found ReqList entry waiting for WMS_CFG_EVENT_MESSAGE_LIST (135172)
+D/RILC    ( 1233): [qcril_sms.c:4179] ReqList entry not found for WMS_CFG_EVENT_MESSAGE_LIST
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : WMS_CFG_EVENT_MESSAGE_LIST, err_no 0
+D/RILC    ( 1233): [qcril_event.c:271] qcril_event_main(): Waiting...
+D/RILC    ( 1233): [qcril_sms.c:1563] Received SMS cfg event : WMS_CFG_EVENT_MESSAGE_LIST (135172)
+D/RILC    ( 1233): [qcril_event.c:402] Queued event WMS_CFG_EVENT_MESSAGE_LIST (2060 bytes)
+D/RILC    ( 1233): [qcril_event.c:288] qcril_event_main(): 1 items on queue
+D/RILC    ( 1233): [qcril_event.c:309] De-queued event WMS_CFG_EVENT_MESSAGE_LIST (135172)
+D/RILC    ( 1233): [qcril.c:2499] AMSS=>RIL [ label = "WMS_CFG_EVENT_MESSAGE_LIST" ];
+D/RILC    ( 1233): [qcril.c:2508] RIL <--- WMS_CFG_EVENT_MESSAGE_LIST (135172) --- AMSS
+D/RILC    ( 1233): [qcril_reqlist.c:215] Not found ReqList entry waiting for WMS_CFG_EVENT_MESSAGE_LIST (135172)
+D/RILC    ( 1233): [qcril_sms.c:4179] ReqList entry not found for WMS_CFG_EVENT_MESSAGE_LIST
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : WMS_CFG_EVENT_MESSAGE_LIST, err_no 0
+D/RILC    ( 1233): [qcril_event.c:271] qcril_event_main(): Waiting...
+D/RILC    ( 1233): [qcril_sms.c:1563] Received SMS cfg event : QCRIL_EVT_SMS_CFG_GW_DOMAIN_PREF (135174)
+D/RILC    ( 1233): [qcril_event.c:402] Queued event QCRIL_EVT_SMS_CFG_GW_DOMAIN_PREF (2060 bytes)
+D/RILC    ( 1233): [qcril_event.c:288] qcril_event_main(): 1 items on queue
+D/RILC    ( 1233): [qcril_event.c:309] De-queued event QCRIL_EVT_SMS_CFG_GW_DOMAIN_PREF (135174)
+D/RILC    ( 1233): [qcril.c:2499] AMSS=>RIL [ label = "QCRIL_EVT_SMS_CFG_GW_DOMAIN_PREF" ];
+D/RILC    ( 1233): [qcril.c:2508] RIL <--- QCRIL_EVT_SMS_CFG_GW_DOMAIN_PREF (135174) --- AMSS
+D/RILC    ( 1233): [qcril_reqlist.c:215] Not found ReqList entry waiting for QCRIL_EVT_SMS_CFG_GW_DOMAIN_PREF (135174)
+D/RILC    ( 1233): [qcril_sms.c:1905] ReqList entry not found for WMS_CMD_CFG_SET_GW_DOMAIN_PREF
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : QCRIL_EVT_SMS_CFG_GW_DOMAIN_PREF, err_no 0
+D/RILC    ( 1233): [qcril_event.c:271] qcril_event_main(): Waiting...
+D/RILC    ( 1233): [qcril_mmgsdi.c:1040] qcril_mmgsdi_command_callback: cnf = 0x4, status = 0x0
+D/RILC    ( 1233): [qcril_mmgsdi.c:1052] qcril_mmgsdi_command_callback qcril_event_queue2
+D/RILC    ( 1233): [qcril_event.c:402] Queued event MMGSDI_COMMAND_CALLBACK (292 bytes)
+D/RILC    ( 1233): [qcril_event.c:288] qcril_event_main(): 1 items on queue
+D/RILC    ( 1233): [qcril_event.c:309] De-queued event MMGSDI_COMMAND_CALLBACK (196609)
+D/RILC    ( 1233): [qcril.c:2499] AMSS=>RIL [ label = "MMGSDI_COMMAND_CALLBACK" ];
+D/RILC    ( 1233): [qcril.c:2508] RIL <--- MMGSDI_COMMAND_CALLBACK (196609) --- AMSS
+D/RILC    ( 1233): [qcril_mmgsdi.c:4052] qcril_mmgsdi_process_command_callback: QCRIL_EVT_MMGSDI_COMMAND_CALLBACK
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:3514] qcril_mmgsdi_common_simio_read_cnf
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:3531] RIL_SIM_IO_Response: sw1=144 sw2=0 data=ffffffffffffffffffffffffffffffff0791947139003033ffffffffffff
+D/RILC    ( 1233): [qcril_mmgsdi.c:171] mmgsdi status 0x0 -> RIL_E_SUCCESS
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_SIM_IO (28), token id 295
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_SIM_IO (28), token id 295
+D/RILC    ( 1233): [qcril_reqlist.c:598] Deleted ReqList entry : token id 295 [0x2c458]
+D/RILC    ( 1233): [qcril_reqlist.c:1064] ReqList entries : 
+D/RILC    ( 1233): [qcril_reqlist.c:1070]     RIL_REQUEST_SIM_IO (28), token id 296
+D/RILC    ( 1233): [qcril.c:3965] RIL=>Android [ label = "RIL_REQUEST_SIM_IO - Token 295, Success" ];
+D/RILC    ( 1233): [qcril.c:3970] UI <--- RIL_REQUEST_SIM_IO (28) Complete --- RIL [Token 295, RIL_E_SUCCESS, Len 12 ]
+W/RILC    ( 1233): [ril.cpp:1489] [0295]< SIM_IO {sw1=0x90,sw2=0x0,ffffffffffffffffffffffffffffffff0791947139003033ffffffffffff}
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : MMGSDI_COMMAND_CALLBACK, err_no 0
+D/RILC    ( 1233): [qcril_event.c:271] qcril_event_main(): Waiting...
+I/RILJ    ( 1417): < iccIO:  0x90 0x0 ffffffffffffffffffffffffffffffff0791947139003033ffffffffffff
+I/RILJ    ( 1417): [0295]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+D/GSM     ( 1417): VM: ADN Record '' '+491793000333' EF[MBDN]
+D/GSM     ( 1417): SIMRecords: record load complete
+D/GSM     ( 1417): [GsmSimCard] Broadcasting intent SIM_STATE_CHANGED_ACTION LOADED reason null
+D/GSM     ( 1417): [GsmDataConnectionTracker] No APN found for carrier: 26207
+D/GSM     ( 1417): [GsmDataConnectionTracker] setState: FAILED
+D/GSM     ( 1417): [GsmDataConnectionTracker] Clean up connection due to null
+D/GSM     ( 1417): [GsmDataConnectionTracker] setState: DISCONNECTING
+D/GSM     ( 1417): [PdpConnection] DataConnection.clearSettings()
+D/GSM     ( 1417): [DataConnection] Stop poll NetStat
+D/GSM     ( 1417): [GsmDataConnectionTracker] setState: IDLE
+D/RILC    ( 1233): [qcril_mmgsdi.c:1040] qcril_mmgsdi_command_callback: cnf = 0x6, status = 0x0
+D/RILC    ( 1233): [qcril_mmgsdi.c:1052] qcril_mmgsdi_command_callback qcril_event_queue2
+D/RILC    ( 1233): [qcril_event.c:402] Queued event MMGSDI_COMMAND_CALLBACK (276 bytes)
+D/RILC    ( 1233): [qcril_event.c:288] qcril_event_main(): 1 items on queue
+D/RILC    ( 1233): [qcril_event.c:309] De-queued event MMGSDI_COMMAND_CALLBACK (196609)
+D/RILC    ( 1233): [qcril.c:2499] AMSS=>RIL [ label = "MMGSDI_COMMAND_CALLBACK" ];
+D/RILC    ( 1233): [qcril.c:2508] RIL <--- MMGSDI_COMMAND_CALLBACK (196609) --- AMSS
+D/RILC    ( 1233): [qcril_mmgsdi.c:4052] qcril_mmgsdi_process_command_callback: QCRIL_EVT_MMGSDI_COMMAND_CALLBACK
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:2439] qcril_mmgsdi_common_process_cnf: cnf = 0x6, status = 0x0
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:2191] qcril_mmgsdi_common_reconstruct_icc_select_rsp_cnf: status = 0x0
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:2150] Converted icc access cond select rsp value 0x1
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:2150] Converted icc access cond select rsp value 0x6
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:2150] Converted icc access cond select rsp value 0x0
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:2150] Converted icc access cond select rsp value 0x6
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:2150] Converted icc access cond select rsp value 0x6
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:2372] RIL_SIM_IO_Response: sw1=144 sw2=0 data=00001d4c4f3a04001600660502011e
+D/RILC    ( 1233): [qcril_mmgsdi.c:171] mmgsdi status 0x0 -> RIL_E_SUCCESS
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_SIM_IO (28), token id 296
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_SIM_IO (28), token id 296
+D/RILC    ( 1233): [qcril_reqlist.c:598] Deleted ReqList entry : token id 296 [0x2c4c0]
+D/RILC    ( 1233): [qcril_reqlist.c:1060] ReqList entries : Empty
+D/RILC    ( 1233): [qcril.c:3965] RIL=>Android [ label = "RIL_REQUEST_SIM_IO - Token 296, Success" ];
+D/RILC    ( 1233): [qcril.c:3970] UI <--- RIL_REQUEST_SIM_IO (28) Complete --- RIL [Token 296, RIL_E_SUCCESS, Len 12 ]
+W/RILC    ( 1233): [ril.cpp:1489] [0296]< SIM_IO {sw1=0x90,sw2=0x0,00001d4c4f3a04001600660502011e}
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : MMGSDI_COMMAND_CALLBACK, err_no 0
+D/RILC    ( 1233): [qcril_event.c:271] qcril_event_main(): Waiting...
+I/RILJ    ( 1417): < iccIO:  0x90 0x0 00001d4c4f3a04001600660502011e
+I/RILJ    ( 1417): [0296]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+I/RILJ    ( 1417): RILRequest.obtain() request=133, GET_LINE_SELECT_INFO
+I/RILJ    ( 1417): [0297]> GET_LINE_SELECT_INFO
+W/RILC    ( 1233): [ril.cpp:390] processCommandBuffer() request=133,token=297
+W/RILC    ( 1233): [ril.cpp:409] request=133, pRI->pCI->requestNumber=133
+W/RILC    ( 1233): [ril.cpp:437] TOKEN=297 REQ_NUM=0133 GET_LINE_SELECT_INFO 
+D/RILC    ( 1233): [qcril.c:2361] UI --- RIL_REQUEST_GET_LINE_SELECT_INFO (133) ---> RIL [token id 297, data len 0]
+D/RILC    ( 1233): [qcril.c:2380] Android=>RIL [ label = "RIL_REQUEST_GET_LINE_SELECT_INFO - Token 297" ];
+D/RILC    ( 1233): [qcril_cm.c:14035] [nodebug] qcril_cm_supsvc_request_query_line_select_info is called
+D/RILC    ( 1233): [qcril_reqlist.c:168] Not found ReqList entry : token id 297
+D/RILC    ( 1233): [qcril_reqlist.c:399] Event RIL_REQUEST_GET_LINE_SELECT_INFO (133) pending receipt of CM_PH_EVENT_INFO, token id 297 [0x2c468]
+D/RILC    ( 1233): [qcril_reqlist.c:1064] ReqList entries : 
+D/RILC    ( 1233): [qcril_reqlist.c:1070]     RIL_REQUEST_GET_LINE_SELECT_INFO (133), token id 297
+D/RILC    ( 1233): [qcril_cm.c:14048] RIL --- cm_ph_cmd_get_ph_info() ---> AMSS [Token ID 297 (0x129)]
+D/RILC    ( 1233): [qcril_cm.c:14048] RIL=>AMSS [ label = "cm_ph_cmd_get_ph_info()" ];
+D/RILC    ( 1233): [qcril_cm.c:3580] CM_PH_COMMAND_CALLBACK : Token ID 297
+D/RILC    ( 1233): [qcril_event.c:402] Queued event CM_COMMAND_CALLBACK (12 bytes)
+D/RILC    ( 1233): [qcril_event.c:288] qcril_event_main(): 1 items on queue
+D/RILC    ( 1233): [qcril_event.c:309] De-queued event CM_COMMAND_CALLBACK (65537)
+D/RILC    ( 1233): [qcril.c:2499] AMSS=>RIL [ label = "CM_COMMAND_CALLBACK" ];
+D/RILC    ( 1233): [qcril.c:2508] RIL <--- CM_COMMAND_CALLBACK (65537) --- AMSS
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_GET_LINE_SELECT_INFO (133), token id 297
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_GET_LINE_SELECT_INFO (133), token id 297
+D/RILC    ( 1233): [qcril_reqlist.c:659] Update ReqList entry : RIL_REQUEST_GET_LINE_SELECT_INFO (133), token id 297, state QCRIL_REQ_AWAITING_MORE_AMSS_EVENTS
+D/RILC    ( 1233): [qcril_cm.c:924] Change the state of ReqList entry to AWAITING_MORE_AMSS_EVENTS state : RIL_REQUEST_GET_LINE_SELECT_INFO (133), Token ID 297, pending CM_PH_EVENT_INFO (69644)
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : CM_COMMAND_CALLBACK, err_no 0
+D/RILC    ( 1233): [qcril_event.c:271] qcril_event_main(): Waiting...
+D/RILC    ( 1233): [qcril_cm.c:3621] Received phonesvc event : CM_PH_EVENT_INFO (69644)
+D/RILC    ( 1233): [qcril_event.c:402] Queued event CM_PH_EVENT_INFO (6552 bytes)
+D/RILC    ( 1233): [qcril_event.c:288] qcril_event_main(): 1 items on queue
+D/RILC    ( 1233): [qcril_event.c:309] De-queued event CM_PH_EVENT_INFO (69644)
+D/RILC    ( 1233): [qcril.c:2499] AMSS=>RIL [ label = "CM_PH_EVENT_INFO" ];
+D/RILC    ( 1233): [qcril.c:2508] RIL <--- CM_PH_EVENT_INFO (69644) --- AMSS
+D/RILC    ( 1233): [qcril_cm.c:3855] GW subscription enabled
+D/RILC    ( 1233): [qcril_cm.c:3872] CDMA subscription disabled
+D/RILC    ( 1233): [qcril_cm.c:3895] Oprt mode: 5, Mode pref: 19, GW acq order: 2, Band pref: -1073741825, Roam pref: 255, Network sel mode: 0, plmn[0]=255, plmn[1]=255, plmn[2]=255, rtre control: 2
+D/RILC    ( 1233): [qcril_reqlist.c:205] Found ReqList entry : RIL_REQUEST_GET_LINE_SELECT_INFO (133), token id 297, pending CM_PH_EVENT_INFO (69644)
+D/RILC    ( 1233): [qcril_cm.c:4209] [nodebug] RIL_REQUEST_GET_LINE_SELECT_INFO: 1,0,-1,-1
+D/RILC    ( 1233): [qcril_cm.c:4223] Reply to RIL --> Line %d
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_GET_LINE_SELECT_INFO (133), token id 297
+D/RILC    ( 1233): [qcril_reqlist.c:598] Deleted ReqList entry : token id 297 [0x2c468]
+D/RILC    ( 1233): [qcril_reqlist.c:1060] ReqList entries : Empty
+D/RILC    ( 1233): [qcril.c:3965] RIL=>Android [ label = "RIL_REQUEST_GET_LINE_SELECT_INFO - Token 297, Success" ];
+D/RILC    ( 1233): [qcril.c:3970] UI <--- RIL_REQUEST_GET_LINE_SELECT_INFO (133) Complete --- RIL [Token 297, RIL_E_SUCCESS, Len 4 ]
+W/RILC    ( 1233): [ril.cpp:1489] [0297]< GET_LINE_SELECT_INFO {2}
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : CM_PH_EVENT_INFO, err_no 0
+D/RILC    ( 1233): [qcril_event.c:271] qcril_event_main(): Waiting...
+I/RILJ    ( 1417): [0297]< GET_LINE_SELECT_INFO {2}
+D/GSM     ( 1417): [BRIGHTHY] Normal Service: o2 - de
+D/GSM     ( 1417): [GsmDataConnectionTracker] ***trySetupData due to simLoaded
+D/GSM     ( 1417): [DSAC DEB] trySetupData with mIsPsRestricted=false
+D/GSM     ( 1417): [GsmDataConnectionTracker] No APN found
+D/GSM     ( 1417): [GsmDataConnectionTracker] setState: FAILED
+E/GSM     ( 1417): [pjman 3G PB] ADN FID :20282
+E/GSM     ( 1417): [pjman 3G PB] record length :30
+E/GSM     ( 1417): [pjman 3G PB] total length :7500
+E/GSM     ( 1417): [pjman 3G PB] record number :250
+E/GSM     ( 1417): SIMRecords: recordsToLoad <0, programmer error suspected
+D/RILC    ( 1233): [qcril_cm.c:5924] Received srvsys event : CM_SS_EVENT_RSSI (73729)
+D/RILC    ( 1233): [qcril_event.c:402] Queued event CM_SS_EVENT_RSSI (3320 bytes)
+D/RILC    ( 1233): [qcril_event.c:288] qcril_event_main(): 1 items on queue
+D/RILC    ( 1233): [qcril_event.c:309] De-queued event CM_SS_EVENT_RSSI (73729)
+D/RILC    ( 1233): [qcril.c:2499] AMSS=>RIL [ label = "CM_SS_EVENT_RSSI" ];
+D/RILC    ( 1233): [qcril.c:2508] RIL <--- CM_SS_EVENT_RSSI (73729) --- AMSS
+D/RILC    ( 1233): [qcril_cm_ons.c:9610] [BRIGHTHY] Enter qcril_cm_srvsys_event_srv_changed
+D/RILC    ( 1233): [qcril_cm.c:980] Serving System : srv status 2, sys mode 5, roam status 0, hdr_hybrid 0, hdr srv status 0, hdr roam status 0
+D/RILC    ( 1233): [qcril.c:1905] Modem: On --> On, GW SIM: Ready --> Ready, CDMA SIM: Ready --> Ready, Mode Config: GW --> GW
+D/RILC    ( 1233): [qcril.c:1911] Subscription: SIM --> SIM, Network: GW --> GW, Mode Preferred: GW --> GW [Event CM_SS_EVENT_RSSI (73729)]
+D/RILC    ( 1233): [qcril_cm.c:5007] GW signal is available.
+D/RILC    ( 1233): [qcril_cm.c:5046] Signal strength: gw_rssi: 9, gw_bit_error: 0, cdma_dbm: -1, cdma_ecio: -1, hdr_dbm: -1, hdr_ecio: -1, hdr_sinr: -1
+D/RILC    ( 1233):  
+D/RILC    ( 1233): [qcril.c:4035] UI <--- RIL_UNSOL_SIGNAL_STRENGTH (1009) --- RIL [Len 28]
+D/RILC    ( 1233): [qcril.c:4038] RIL=>>Android [ label = "RIL_UNSOL_SIGNAL_STRENGTH" ];
+W/RILC    ( 1233): [ril.cpp:1489] [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=9,bitErrorRate=0,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=-1]}
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : CM_SS_EVENT_RSSI, err_no 0
+D/RILC    ( 1233): [qcril_event.c:271] qcril_event_main(): Waiting...
+I/RILJ    ( 1417): [UNSL]< UNSOL_SIGNAL_STRENGTH {9, 0, -1, -1, -1, -1, -1}
+D/RILC    ( 1233): [qcril_cm.c:5924] Received srvsys event : CM_SS_EVENT_RSSI (73729)
+D/RILC    ( 1233): [qcril_event.c:402] Queued event CM_SS_EVENT_RSSI (3320 bytes)
+D/RILC    ( 1233): [qcril_event.c:288] qcril_event_main(): 1 items on queue
+D/RILC    ( 1233): [qcril_event.c:309] De-queued event CM_SS_EVENT_RSSI (73729)
+D/RILC    ( 1233): [qcril.c:2499] AMSS=>RIL [ label = "CM_SS_EVENT_RSSI" ];
+D/RILC    ( 1233): [qcril.c:2508] RIL <--- CM_SS_EVENT_RSSI (73729) --- AMSS
+D/RILC    ( 1233): [qcril_cm_ons.c:9610] [BRIGHTHY] Enter qcril_cm_srvsys_event_srv_changed
+D/RILC    ( 1233): [qcril_cm.c:980] Serving System : srv status 2, sys mode 5, roam status 0, hdr_hybrid 0, hdr srv status 0, hdr roam status 0
+D/RILC    ( 1233): [qcril.c:1905] Modem: On --> On, GW SIM: Ready --> Ready, CDMA SIM: Ready --> Ready, Mode Config: GW --> GW
+D/RILC    ( 1233): [qcril.c:1911] Subscription: SIM --> SIM, Network: GW --> GW, Mode Preferred: GW --> GW [Event CM_SS_EVENT_RSSI (73729)]
+D/RILC    ( 1233): [qcril_cm.c:5007] GW signal is available.
+D/RILC    ( 1233): [qcril_cm.c:5046] Signal strength: gw_rssi: 7, gw_bit_error: 0, cdma_dbm: -1, cdma_ecio: -1, hdr_dbm: -1, hdr_ecio: -1, hdr_sinr: -1
+D/RILC    ( 1233):  
+D/RILC    ( 1233): [qcril.c:4035] UI <--- RIL_UNSOL_SIGNAL_STRENGTH (1009) --- RIL [Len 28]
+D/RILC    ( 1233): [qcril.c:4038] RIL=>>Android [ label = "RIL_UNSOL_SIGNAL_STRENGTH" ];
+W/RILC    ( 1233): [ril.cpp:1489] [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=7,bitErrorRate=0,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=-1]}
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : CM_SS_EVENT_RSSI, err_no 0
+D/RILC    ( 1233): [qcril_event.c:271] qcril_event_main(): Waiting...
+I/RILJ    ( 1417): [UNSL]< UNSOL_SIGNAL_STRENGTH {7, 0, -1, -1, -1, -1, -1}
+D/GSM     ( 1417): Data shutdown complete.
+I/RILJ    ( 1417): RILRequest.obtain() request=23, RADIO_POWER
+I/RILJ    ( 1417): [0298]> RADIO_POWER
+W/RILC    ( 1233): [ril.cpp:390] processCommandBuffer() request=23,token=298
+W/RILC    ( 1233): [ril.cpp:409] request=23, pRI->pCI->requestNumber=23
+W/RILC    ( 1233): [ril.cpp:558] TOKEN=298 REQ_NUM=0023 RADIO_POWER (0)
+D/RILC    ( 1233): [qcril.c:2361] UI --- RIL_REQUEST_RADIO_POWER (23) ---> RIL [token id 298, data len 4]
+D/RILC    ( 1233): [qcril.c:2375] Android=>RIL [ label = "RIL_REQUEST_RADIO_POWER - Off, Token 298" ];
+D/RILC    ( 1233): [qcril_cm.c:2961] Request Radio LPM
+D/RILC    ( 1233): [qcril_reqlist.c:168] Not found ReqList entry : token id 298
+D/RILC    ( 1233): [qcril_reqlist.c:399] Event RIL_REQUEST_RADIO_POWER (23) pending receipt of INTERNAL_CM_CARD_STATUS_UPDATED, token id 298 [0x2c470]
+D/RILC    ( 1233): [qcril_reqlist.c:1064] ReqList entries : 
+D/RILC    ( 1233): [qcril_reqlist.c:1070]     RIL_REQUEST_RADIO_POWER (23), token id 298
+D/RILC    ( 1233): [qcril_cm.c:3067] Request QCRIL MMGSDI to power down the card
+D/RILC    ( 1233): [qcril.c:2493] RIL=>RIL [ label = "INTERNAL_MMGSDI_CARD_POWER_DOWN" ];
+D/RILC    ( 1233): [qcril.c:2494] RIL --- INTERNAL_MMGSDI_CARD_POWER_DOWN (196616) ---> RIL
+D/RILC    ( 1233): [qcril_mmgsdi.c:4771] qcril_mmgsdi_process_internal_command
+D/RILC    ( 1233): [qcril_mmgsdi.c:4784] RIL --- mmgsdi_card_pdown() ---> AMSS [MMGSDI_CARD_POWER_DOWN_NOTIFY_GSDI]
+D/RILC    ( 1233): [qcril_mmgsdi.c:4784] RIL=>AMSS [ label = "mmgsdi_card_pdown()" ];
+D/GSM     ( 1417): [GsmDataConnectionTracker] Clean up connection due to radioTurnedOff
+D/GSM     ( 1417): [GsmDataConnectionTracker] setState: DISCONNECTING
+D/GSM     ( 1417): [PdpConnection] Notify PDP disconnect
+D/GSM     ( 1417): [PdpConnection] DataConnection.clearSettings()
+D/GSM     ( 1417): [DataConnection] Stop poll NetStat
+D/GSM     ( 1417): [GsmDataConnectionTracker] EVENT_DISCONNECT_DONE
+D/GSM     ( 1417): [GsmDataConnectionTracker] setState: IDLE
+D/RILC    ( 1233): [qcril_mmgsdi.c:4797] Disable rs notification
+D/RILC    ( 1233): [qcril.c:1905] Modem: On --> On, GW SIM: Ready --> Ready, CDMA SIM: Ready --> Ready, Mode Config: GW --> GW
+D/RILC    ( 1233): [qcril.c:1911] Subscription: SIM --> SIM, Network: GW --> GW, Mode Preferred: GW --> GW [Event INTERNAL_MMGSDI_CARD_POWER_DOWN (196616)]
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : INTERNAL_MMGSDI_CARD_POWER_DOWN, err_no 0
+D/RILC    ( 1233): [qcril_mmgsdi.c:1153] qcril_mmgsdi_event_callback, event:1
+D/RILC    ( 1233): [qcril_event.c:402] Queued event MMGSDI_EVENT_CALLBACK (1320 bytes)
+D/RILC    ( 1233): [qcril_event.c:288] qcril_event_main(): 1 items on queue
+D/RILC    ( 1233): [qcril_event.c:309] De-queued event MMGSDI_EVENT_CALLBACK (196612)
+D/RILC    ( 1233): [qcril.c:2499] AMSS=>RIL [ label = "MMGSDI_EVENT_CALLBACK" ];
+D/RILC    ( 1233): [qcril.c:2508] RIL <--- MMGSDI_EVENT_CALLBACK (196612) --- AMSS
+D/RILC    ( 1233): [qcril_mmgsdi.c:4266] qcril_mmgsdi_process_event_callback: QCRIL_EVT_MMGSDI_EVENT_CALLBACK
+D/RILC    ( 1233): [qcril_mmgsdi.c:1632] MMGSDI_CARD_ERROR_EVT
+D/RILC    ( 1233): [qcril_mmgsdi.c:4281] curr modem state 0x2,  curr GW sim state 0x2,  curr CDMA sim state 0x2 
+D/RILC    ( 1233): [qcril_mmgsdi.c:3398] qcril_mmgsdi_process_card_not_accessible_evts 
+D/RILC    ( 1233): [qcril.c:2493] RIL=>RIL [ label = "INTERNAL_CM_CARD_STATUS_UPDATED" ];
+D/RILC    ( 1233): [qcril.c:2494] RIL --- INTERNAL_CM_CARD_STATUS_UPDATED (65541) ---> RIL
+D/RILC    ( 1233): [qcril_cm.c:1572] Card status: Up --> Down
+D/RILC    ( 1233): [qcril_reqlist.c:205] Found ReqList entry : RIL_REQUEST_RADIO_POWER (23), token id 298, pending INTERNAL_CM_CARD_STATUS_UPDATED (65541)
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_RADIO_POWER (23), token id 298
+D/RILC    ( 1233): [qcril_reqlist.c:659] Update ReqList entry : RIL_REQUEST_RADIO_POWER (23), token id 298, state QCRIL_REQ_AWAITING_MORE_AMSS_EVENTS
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_RADIO_POWER (23), token id 298
+D/RILC    ( 1233): [qcril_reqlist.c:710] Update event field of ReqList entry : RIL_REQUEST_RADIO_POWER (23), token id 298, pending CM_PH_EVENT_OPRT_MODE (69632)
+D/RILC    ( 1233): [qcril_cm.c:1617] RIL --- cm_ph_cmd_oprt_mode() ---> AMSS [LPM]
+D/RILC    ( 1233): [qcril_cm.c:1617] RIL=>AMSS [ label = "cm_ph_cmd_oprt_mode() - LPM" ];
+D/RILC    ( 1233): [qcril_mmgsdi.c:1040] qcril_mmgsdi_command_callback: cnf = 0x13, status = 0x0
+D/RILC    ( 1233): [qcril_mmgsdi.c:1052] qcril_mmgsdi_command_callback qcril_event_queue2
+D/RILC    ( 1233): [qcril_event.c:402] Queued event MMGSDI_COMMAND_CALLBACK (260 bytes)
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : INTERNAL_CM_CARD_STATUS_UPDATED, err_no 0
+D/RILC    ( 1233): [qcril_mmgsdi.c:1464] qcril_mmgsdi_update_curr_card_state new state 0x6: gw_update 0x1, cdma_update 0x0
+D/RILC    ( 1233): [qcril_mmgsdi.c:1470] New next_gw_sim_state 0x6 
+D/RILC    ( 1233): [qcril_mmgsdi.c:2052] Card Status 
+D/RILC    ( 1233): [qcril_mmgsdi.c:2062]  -Card_State: RIL_CARDSTATE_ERROR
+D/RILC    ( 1233): [qcril_mmgsdi.c:2006]  -Universal Pin State: RIL_PINSTATE_UNKNOWN
+D/RILC    ( 1233): [qcril_mmgsdi.c:2112] GW Subscription App Not Available
+D/RILC    ( 1233): [qcril_mmgsdi.c:2154] CDMA Subscription App Not Available
+D/RILC    ( 1233): [qcril_mmgsdi.c:2157] Number Applications 0x0
+D/RILC    ( 1233): [qcril.c:4035] UI <--- RIL_UNSOL_RESPONSE_SIM_STATUS_CHANGED (1019) --- RIL [Len 0]
+D/RILC    ( 1233): [qcril.c:4038] RIL=>>Android [ label = "RIL_UNSOL_RESPONSE_SIM_STATUS_CHANGED" ];
+W/RILC    ( 1233): [ril.cpp:1489] [UNSL]< UNSOL_RESPONSE_SIM_STATUS_CHANGED 
+D/RILC    ( 1233): [qcril_mmgsdi.c:4345]  new modem state 0x2,  new GW sim state 0x6,  new CDMA sim state 0x2 
+D/RILC    ( 1233): [qcril.c:1905] Modem: On --> On, GW SIM: Ready --> Error, CDMA SIM: Ready --> Ready, Mode Config: GW --> GW
+D/RILC    ( 1233): [qcril.c:1911] Subscription: SIM --> SIM, Network: GW --> GW, Mode Preferred: GW --> GW [Event MMGSDI_EVENT_CALLBACK (196612)]
+D/RILC    ( 1233): [qcril.c:2044] --- [ label = "Radio State Change: SIM Ready -> SIM locked or absent" ];
+D/RILC    ( 1233): [qcril.c:2051] RadioState SIM Ready --> SIM locked or absent [Event MMGSDI_EVENT_CALLBACK (196612)]
+D/RILC    ( 1233): [qcril.c:2060] Delay the reporting of any RIL_UNSOL_RESPONSE_RADIO_STATE_CHANGE
+D/RILC    ( 1233): [qcril.c:2094] Modem state changes to off or GW SIM state changes to Absent/Error/PUK/NotReady, check GW subscription not available reporting
+D/RILC    ( 1233): [qcril.c:2493] RIL=>RIL [ label = "INTERNAL_CM_DISABLE_SUBSCRIPTION" ];
+D/RILC    ( 1233): [qcril.c:2494] RIL --- INTERNAL_CM_DISABLE_SUBSCRIPTION (65539) ---> RIL
+D/RILC    ( 1233): [qcril_cm.c:1421] Disable GW subscription
+D/RILC    ( 1233): [qcril_cm.c:1441] RIL --- cm_ph_cmd_subscription_not_available() ---> AMSS [ GW ]
+D/RILC    ( 1233): [qcril_cm.c:1441] RIL=>AMSS [ label = "cm_ph_cmd_subscription_not_available() -  GW " ];
+I/RILJ    ( 1417): [UNSL]< UNSOL_RESPONSE_SIM_STATUS_CHANGED
+D/RILC    ( 1233): [qcril_cm.c:3580] CM_PH_COMMAND_CALLBACK : Token ID 298
+D/RILC    ( 1233): [qcril_event.c:402] Queued event CM_COMMAND_CALLBACK (12 bytes)
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : INTERNAL_CM_DISABLE_SUBSCRIPTION, err_no 0
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : MMGSDI_EVENT_CALLBACK, err_no 0
+D/RILC    ( 1233): [qcril_event.c:271] qcril_event_main(): Waiting...
+D/RILC    ( 1233): [qcril_event.c:288] qcril_event_main(): 2 items on queue
+D/RILC    ( 1233): [qcril_event.c:309] De-queued event MMGSDI_COMMAND_CALLBACK (196609)
+D/RILC    ( 1233): [qcril.c:2499] AMSS=>RIL [ label = "MMGSDI_COMMAND_CALLBACK" ];
+D/RILC    ( 1233): [qcril.c:2508] RIL <--- MMGSDI_COMMAND_CALLBACK (196609) --- AMSS
+D/RILC    ( 1233): [qcril_mmgsdi.c:4052] qcril_mmgsdi_process_command_callback: QCRIL_EVT_MMGSDI_COMMAND_CALLBACK
+D/RILC    ( 1233): [qcril_mmgsdi.c:4093] Cnf 0x13 status 0x0/n
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : MMGSDI_COMMAND_CALLBACK, err_no 0
+D/RILC    ( 1233): [qcril_event.c:309] De-queued event CM_COMMAND_CALLBACK (65537)
+D/RILC    ( 1233): [qcril.c:2499] AMSS=>RIL [ label = "CM_COMMAND_CALLBACK" ];
+D/RILC    ( 1233): [qcril.c:2508] RIL <--- CM_COMMAND_CALLBACK (65537) --- AMSS
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_RADIO_POWER (23), token id 298
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_RADIO_POWER (23), token id 298
+D/RILC    ( 1233): [qcril_reqlist.c:659] Update ReqList entry : RIL_REQUEST_RADIO_POWER (23), token id 298, state QCRIL_REQ_AWAITING_MORE_AMSS_EVENTS
+D/RILC    ( 1233): [qcril_cm.c:924] Change the state of ReqList entry to AWAITING_MORE_AMSS_EVENTS state : RIL_REQUEST_RADIO_POWER (23), Token ID 298, pending CM_PH_EVENT_OPRT_MODE (69632)
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : CM_COMMAND_CALLBACK, err_no 0
+D/RILC    ( 1233): [qcril_event.c:271] qcril_event_main(): Waiting...
+D/GSM     ( 1417): Received Event EVENT_SIM_STATUS_CHANGED
+I/RILJ    ( 1417): RILRequest.obtain() request=1, GET_SIM_STATUS
+I/RILJ    ( 1417): [0299]> GET_SIM_STATUS
+W/RILC    ( 1233): [ril.cpp:390] processCommandBuffer() request=1,token=299
+W/RILC    ( 1233): [ril.cpp:409] request=1, pRI->pCI->requestNumber=1
+W/RILC    ( 1233): [ril.cpp:437] TOKEN=299 REQ_NUM=0001 GET_SIM_STATUS 
+D/RILC    ( 1233): [qcril.c:2361] UI --- RIL_REQUEST_GET_SIM_STATUS (1) ---> RIL [token id 299, data len 0]
+D/RILC    ( 1233): [qcril.c:2380] Android=>RIL [ label = "RIL_REQUEST_GET_SIM_STATUS - Token 299" ];
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:2590] qcril_mmgsdi_request_get_sim_status 
+D/RILC    ( 1233): [qcril_reqlist.c:168] Not found ReqList entry : token id 299
+D/RILC    ( 1233): [qcril_reqlist.c:399] Event RIL_REQUEST_GET_SIM_STATUS (1) pending receipt of <none>, token id 299 [0x2c488]
+D/RILC    ( 1233): [qcril_reqlist.c:1064] ReqList entries : 
+D/RILC    ( 1233): [qcril_reqlist.c:1070]     RIL_REQUEST_RADIO_POWER (23), token id 298
+D/RILC    ( 1233): [qcril_reqlist.c:1070]     RIL_REQUEST_GET_SIM_STATUS (1), token id 299
+D/RILC    ( 1233): [qcril_mmgsdi.c:171] mmgsdi status 0x0 -> RIL_E_SUCCESS
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_GET_SIM_STATUS (1), token id 299
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_GET_SIM_STATUS (1), token id 299
+D/RILC    ( 1233): [qcril_reqlist.c:598] Deleted ReqList entry : token id 299 [0x2c488]
+D/RILC    ( 1233): [qcril_reqlist.c:1064] ReqList entries : 
+D/RILC    ( 1233): [qcril_reqlist.c:1070]     RIL_REQUEST_RADIO_POWER (23), token id 298
+D/RILC    ( 1233): [qcril.c:3965] RIL=>Android [ label = "RIL_REQUEST_GET_SIM_STATUS - Card Error, Token 299, Success" ];
+D/RILC    ( 1233): [qcril.c:3970] UI <--- RIL_REQUEST_GET_SIM_STATUS (1) Complete --- RIL [Token 299, RIL_E_SUCCESS, Len 276 Card Error]
+E/RILC    ( 1233):  response: responseSimStatus
+W/RILC    ( 1233): [ril.cpp:1489] [0299]< GET_SIM_STATUS {}
+I/RILJ    ( 1417): [0299]< GET_SIM_STATUS ICC_ABSENT
+D/GSM     ( 1417): 2) status : 
+E/GSM     ( 1417): 2) status : ICC_READY
+D/GSM     ( 1417): 2) status : 
+E/GSM     ( 1417): 2) status : ICC_ABSENT
+D/GSM     ( 1417): 2) status : 
+E/GSM     ( 1417): 2) status : ICC_ABSENT
+I/RILJ    ( 1417): RILRequest.obtain() request=136, RIL_REQUEST_GET_UNLOCK_RETRY_COUNT
+I/RILJ    ( 1417): [0300]> RIL_REQUEST_GET_UNLOCK_RETRY_COUNT
+W/RILC    ( 1233): [ril.cpp:390] processCommandBuffer() request=136,token=300
+W/RILC    ( 1233): [ril.cpp:409] request=136, pRI->pCI->requestNumber=136
+W/RILC    ( 1233): [ril.cpp:437] TOKEN=300 REQ_NUM=0136 GET_UNLOCK_RETRY_COUNT 
+D/RILC    ( 1233): [qcril.c:2361] UI --- RIL_REQUEST_GET_UNLOCK_RETRY_COUNT (136) ---> RIL [token id 300, data len 0]
+D/RILC    ( 1233): [qcril.c:2380] Android=>RIL [ label = "RIL_REQUEST_GET_UNLOCK_RETRY_COUNT - Token 300" ];
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:3111] qcril_mmgsdi_request_get_unlock_retrey_count
+D/RILC    ( 1233): [qcril_reqlist.c:168] Not found ReqList entry : token id 300
+D/RILC    ( 1233): [qcril_reqlist.c:399] Event RIL_REQUEST_GET_UNLOCK_RETRY_COUNT (136) pending receipt of <none>, token id 300 [0x2c488]
+D/RILC    ( 1233): [qcril_reqlist.c:1064] ReqList entries : 
+D/RILC    ( 1233): [qcril_reqlist.c:1070]     RIL_REQUEST_RADIO_POWER (23), token id 298
+D/RILC    ( 1233): [qcril_reqlist.c:1070]     RIL_REQUEST_GET_UNLOCK_RETRY_COUNT (136), token id 300
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:3128] mmgsdi_request_get_unlock_retry_count function is called..
+D/GSM     ( 1417): [GsmSimCard] handleSimStatus()...getSIMUnlockRetryCount()
+D/GSM     ( 1417): [GsmSimCard] Notify SIM missing.
+D/GSM     ( 1417): [GsmSimCard] Broadcasting intent SIM_STATE_CHANGED_ACTION ABSENT reason null
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:3131] [mmgsdi_request_get_unlock_retry_count] out_len = 3(3)
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:3146] Reply to RIL --> GET RETRY COUNT
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:3148] mmgsdi_request_get_unlock_retry_count (86, 10,10, 3)
+D/RILC    ( 1233): [qcril_mmgsdi_common.c:3150] mmgsdi_request_get_unlock_retry_count (86, 10,10, 3)
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_GET_UNLOCK_RETRY_COUNT (136), token id 300
+D/RILC    ( 1233): [qcril_reqlist.c:598] Deleted ReqList entry : token id 300 [0x2c488]
+D/RILC    ( 1233): [qcril_reqlist.c:1064] ReqList entries : 
+D/RILC    ( 1233): [qcril_reqlist.c:1070]     RIL_REQUEST_RADIO_POWER (23), token id 298
+D/RILC    ( 1233): [qcril.c:3965] RIL=>Android [ label = "RIL_REQUEST_GET_UNLOCK_RETRY_COUNT - Token 300, Success" ];
+D/RILC    ( 1233): [qcril.c:3970] UI <--- RIL_REQUEST_GET_UNLOCK_RETRY_COUNT (136) Complete --- RIL [Token 300, RIL_E_SUCCESS, Len 3 ]
+W/RILC    ( 1233): [ril.cpp:1489] RIL_SIMLockInfo [flag=0x6e40aad0, attemptsLeft=86,retry_count_max=10],}
+I/RILJ    ( 1417): [0300]< RIL_REQUEST_GET_UNLOCK_RETRY_COUNT com.android.internal.telephony.gsm.SIMLockInfo@2e2a0928 flag: 86 attemptsLeft: 10 retry_count_max: 10
+D/GSM     ( 1417): [GsmSimCard] storeSIMLockInfoOnBoot: 86:10:10
+D/RILC    ( 1233): [qcril_cm.c:3621] Received phonesvc event : CM_PH_EVENT_OPRT_MODE (69632)
+D/RILC    ( 1233): [qcril_event.c:402] Queued event CM_PH_EVENT_OPRT_MODE (6552 bytes)
+D/RILC    ( 1233): [qcril_event.c:288] qcril_event_main(): 1 items on queue
+D/RILC    ( 1233): [qcril_event.c:309] De-queued event CM_PH_EVENT_OPRT_MODE (69632)
+D/RILC    ( 1233): [qcril.c:2499] AMSS=>RIL [ label = "CM_PH_EVENT_OPRT_MODE" ];
+D/RILC    ( 1233): [qcril.c:2508] RIL <--- CM_PH_EVENT_OPRT_MODE (69632) --- AMSS
+D/RILC    ( 1233): [qcril_reqlist.c:205] Found ReqList entry : RIL_REQUEST_RADIO_POWER (23), token id 298, pending CM_PH_EVENT_OPRT_MODE (69632)
+D/RILC    ( 1233): [qcril_cm.c:3686] Enable rs notification
+D/RILC    ( 1233): [qcril_cm.c:3690] Reply to RIL --> Radio Off
+D/RILC    ( 1233): [qcril_reqlist.c:159] Found ReqList entry : RIL_REQUEST_RADIO_POWER (23), token id 298
+D/RILC    ( 1233): [qcril_reqlist.c:598] Deleted ReqList entry : token id 298 [0x2c470]
+D/RILC    ( 1233): [qcril_reqlist.c:1060] ReqList entries : Empty
+D/RILC    ( 1233): [qcril.c:3965] RIL=>Android [ label = "RIL_REQUEST_RADIO_POWER - Token 298, Success" ];
+D/RILC    ( 1233): [qcril.c:3970] UI <--- RIL_REQUEST_RADIO_POWER (23) Complete --- RIL [Token 298, RIL_E_SUCCESS, Len 0 ]
+W/RILC    ( 1233): [ril.cpp:1489] [0298]< RADIO_POWER
+D/RILC    ( 1233): [qcril.c:1905] Modem: On --> Off, GW SIM: Error --> Error, CDMA SIM: Ready --> Ready, Mode Config: GW --> GW
+D/RILC    ( 1233): [qcril.c:1911] Subscription: SIM --> SIM, Network: GW --> GW, Mode Preferred: GW --> GW [Event CM_PH_EVENT_OPRT_MODE (69632)]
+D/RILC    ( 1233): [qcril.c:2044] --- [ label = "Radio State Change: SIM locked or absent -> Radio Off" ];
+D/RILC    ( 1233): [qcril.c:2051] RadioState SIM locked or absent --> Radio Off [Event CM_PH_EVENT_OPRT_MODE (69632)]
+D/RILC    ( 1233): [qcril.c:4035] UI <--- RIL_UNSOL_RESPONSE_RADIO_STATE_CHANGED (1000) --- RIL [Len 0]
+D/RILC    ( 1233): [qcril.c:4038] RIL=>>Android [ label = "RIL_UNSOL_RESPONSE_RADIO_STATE_CHANGED" ];
+D/RILC    ( 1233): [qcril.c:2591] currentState() -> Radio Off(0)
+D/RILC    ( 1233): [qcril.c:2594] Android=>Android [ label = "currentState() - Radio Off" ];
+D/RILC    ( 1233): [qcril.c:2591] currentState() -> Radio Off(0)
+D/RILC    ( 1233): [qcril.c:2594] Android=>Android [ label = "currentState() - Radio Off" ];
+W/RILC    ( 1233): [ril.cpp:1489] [UNSL]< UNSOL_RESPONSE_RADIO_STATE_CHANGED  {RADIO_OFF}
+D/RILC    ( 1233): [qcril.c:2094] Modem state changes to off or GW SIM state changes to Absent/Error/PUK/NotReady, check GW subscription not available reporting
+D/RILC    ( 1233): [qcril.c:2493] RIL=>RIL [ label = "INTERNAL_CM_DISABLE_SUBSCRIPTION" ];
+D/RILC    ( 1233): [qcril.c:2494] RIL --- INTERNAL_CM_DISABLE_SUBSCRIPTION (65539) ---> RIL
+D/RILC    ( 1233): [qcril_cm.c:1421] Disable GW subscription
+D/RILC    ( 1233): [qcril_cm.c:1441] RIL --- cm_ph_cmd_subscription_not_available() ---> AMSS [ GW ]
+D/RILC    ( 1233): [qcril_cm.c:1441] RIL=>AMSS [ label = "cm_ph_cmd_subscription_not_available() -  GW " ];
+I/RILJ    ( 1417): [0298]< RADIO_POWER 
+I/RILJ    ( 1417): [UNSL]< UNSOL_RESPONSE_RADIO_STATE_CHANGED SIM_READY
+D/RILB    ( 1417): Notifying: radio off or not available
+D/GSM     ( 1417): Poll ServiceState done:  oldSS=[0 home o2 - de O2 26207  Unknown CSS not supported -1 -1RoamInd: -1DefRoamInd: -1] newSS=[3 home null null null  Unknown CSS not supported -1 -1RoamInd: -1DefRoamInd: -1] oldGprs=0 newGprs=0 oldType=HSDPA newType=HSDPA
+D/GSM     ( 1417): [BRIGHTHY] ss state: 3OUT_OF_SERVICE - display NO Service
+D/GSM     ( 1417): 2) status : 
+E/GSM     ( 1417): 2) status : ICC_ABSENT
+D/GSM     ( 1417): 2) status : 
+E/GSM     ( 1417): 2) status : ICC_ABSENT
+D/GSM     ( 1417): Operator Flex Code : KTF
+D/GSM     ( 1417): Enter Not RGS : opr code:KTF
+D/GSM     ( 1417): Not Normal Service - showPlmn: true showSpn false
+D/GSM     ( 1417): [BRIGHTHY] ss state: 3OUT_OF_SERVICE - display NO Service
+D/GSM     ( 1417): 2) status : 
+E/GSM     ( 1417): 2) status : ICC_ABSENT
+D/GSM     ( 1417): 2) status : 
+E/GSM     ( 1417): 2) status : ICC_ABSENT
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : INTERNAL_CM_DISABLE_SUBSCRIPTION, err_no 0
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : CM_PH_EVENT_OPRT_MODE, err_no 0
+D/RILC    ( 1233): [qcril_event.c:271] qcril_event_main(): Waiting...
+D/RILC    ( 1233): [qcril_cm.c:3621] Received phonesvc event : CM_PH_EVENT_SUBSCRIPTION_NOT_AVAILABLE (69648)
+D/RILC    ( 1233): [qcril_event.c:402] Queued event CM_PH_EVENT_SUBSCRIPTION_NOT_AVAILABLE (6552 bytes)
+D/RILC    ( 1233): [qcril_event.c:288] qcril_event_main(): 1 items on queue
+D/RILC    ( 1233): [qcril_event.c:309] De-queued event CM_PH_EVENT_SUBSCRIPTION_NOT_AVAILABLE (69648)
+D/RILC    ( 1233): [qcril.c:2499] AMSS=>RIL [ label = "CM_PH_EVENT_SUBSCRIPTION_NOT_AVAILABLE" ];
+D/RILC    ( 1233): [qcril.c:2508] RIL <--- CM_PH_EVENT_SUBSCRIPTION_NOT_AVAILABLE (69648) --- AMSS
+D/RILC    ( 1233): [qcril_cm.c:4723] GW subscription disabled
+D/RILC    ( 1233): [qcril_cm.c:4730] CDMA subscription disabled
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : CM_PH_EVENT_SUBSCRIPTION_NOT_AVAILABLE, err_no 0
+D/RILC    ( 1233): [qcril_event.c:271] qcril_event_main(): Waiting...
+D/RILC    ( 1233): [qcril_cm.c:3548] GW subscription disabled
+V/GSM     ( 1417): [getMCCfromFlex] mccFromFlex: 450
+D/RILC    ( 1233): [qcril_cm.c:5924] Received srvsys event : CM_SS_EVENT_RSSI (73729)
+D/RILC    ( 1233): [qcril_event.c:402] Queued event CM_SS_EVENT_RSSI (3320 bytes)
+D/RILC    ( 1233): [qcril_event.c:288] qcril_event_main(): 1 items on queue
+D/RILC    ( 1233): [qcril_event.c:309] De-queued event CM_SS_EVENT_RSSI (73729)
+D/RILC    ( 1233): [qcril.c:2499] AMSS=>RIL [ label = "CM_SS_EVENT_RSSI" ];
+D/RILC    ( 1233): [qcril.c:2508] RIL <--- CM_SS_EVENT_RSSI (73729) --- AMSS
+D/RILC    ( 1233): [qcril_cm_ons.c:9610] [BRIGHTHY] Enter qcril_cm_srvsys_event_srv_changed
+D/RILC    ( 1233): [qcril_cm.c:980] Serving System : srv status 0, sys mode 0, roam status 0, hdr_hybrid 0, hdr srv status 0, hdr roam status 0
+D/RILC    ( 1233): [qcril_cm.c:1002] System mode 0
+D/RILC    ( 1233): [qcril.c:1905] Modem: Off --> Off, GW SIM: Error --> Error, CDMA SIM: Ready --> Ready, Mode Config: GW --> GW
+D/RILC    ( 1233): [qcril.c:1911] Subscription: SIM --> SIM, Network: GW --> No service, Mode Preferred: GW --> GW [Event CM_SS_EVENT_RSSI (73729)]
+D/RILC    ( 1233): [qcril.c:4027] UI <--- RIL_UNSOL_RESPONSE_NETWORK_STATE_CHANGED (1002) --- RIL [Len 0, No service on No service]
+D/RILC    ( 1233): [qcril.c:4030] RIL=>>Android [ label = "RIL_UNSOL_RESPONSE_NETWORK_STATE_CHANGED, No service on No service" ];
+W/RILC    ( 1233): [ril.cpp:1489] [UNSL]< UNSOL_RESPONSE_NETWORK_STATE_CHANGED 
+I/RILJ    ( 1417): [UNSL]< UNSOL_RESPONSE_NETWORK_STATE_CHANGED
+D/RILC    ( 1233): [qcril_cm.c:5046] Signal strength: gw_rssi: 99, gw_bit_error: 99, cdma_dbm: -1, cdma_ecio: -1, hdr_dbm: -1, hdr_ecio: -1, hdr_sinr: -1
+D/RILC    ( 1233):  
+D/RILC    ( 1233): [qcril.c:4035] UI <--- RIL_UNSOL_SIGNAL_STRENGTH (1009) --- RIL [Len 28]
+D/RILC    ( 1233): [qcril.c:4038] RIL=>>Android [ label = "RIL_UNSOL_SIGNAL_STRENGTH" ];
+W/RILC    ( 1233): [ril.cpp:1489] [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=99,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=-1]}
+I/RILJ    ( 1417): [UNSL]< UNSOL_SIGNAL_STRENGTH {99, 99, -1, -1, -1, -1, -1}
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : CM_SS_EVENT_RSSI, err_no 0
+D/RILC    ( 1233): [qcril_event.c:271] qcril_event_main(): Waiting...
+D/RILC    ( 1233): [qcril_cm.c:5924] Received srvsys event : CM_SS_EVENT_SRV_CHANGED (73728)
+D/RILC    ( 1233): [qcril_event.c:402] Queued event CM_SS_EVENT_SRV_CHANGED (3320 bytes)
+D/RILC    ( 1233): [qcril_event.c:288] qcril_event_main(): 1 items on queue
+D/RILC    ( 1233): [qcril_event.c:309] De-queued event CM_SS_EVENT_SRV_CHANGED (73728)
+D/RILC    ( 1233): [qcril.c:2499] AMSS=>RIL [ label = "CM_SS_EVENT_SRV_CHANGED" ];
+D/RILC    ( 1233): [qcril.c:2508] RIL <--- CM_SS_EVENT_SRV_CHANGED (73728) --- AMSS
+D/RILC    ( 1233): [qcril_cm_ons.c:9610] [BRIGHTHY] Enter qcril_cm_srvsys_event_srv_changed
+D/RILC    ( 1233): [qcril_cm.c:980] Serving System : srv status 0, sys mode 0, roam status 0, hdr_hybrid 0, hdr srv status 0, hdr roam status 0
+D/RILC    ( 1233): [qcril_cm.c:1002] System mode 0
+D/RILC    ( 1233): [qcril_cm.c:6093] [KT OTA] srv_status: 0 OTAMode: 0
+D/RILC    ( 1233): [qcril_reqlist.c:215] Not found ReqList entry waiting for CM_SS_EVENT_SRV_CHANGED (73728)
+D/RILC    ( 1233): [qcril.c:1905] Modem: Off --> Off, GW SIM: Error --> Error, CDMA SIM: Ready --> Ready, Mode Config: GW --> GW
+D/RILC    ( 1233): [qcril.c:1911] Subscription: SIM --> SIM, Network: No service --> No service, Mode Preferred: GW --> GW [Event CM_SS_EVENT_SRV_CHANGED (73728)]
+D/RILC    ( 1233): [qcril.c:4027] UI <--- RIL_UNSOL_RESPONSE_NETWORK_STATE_CHANGED (1002) --- RIL [Len 0, No service on No service]
+D/RILC    ( 1233): [qcril.c:4030] RIL=>>Android [ label = "RIL_UNSOL_RESPONSE_NETWORK_STATE_CHANGED, No service on No service" ];
+W/RILC    ( 1233): [ril.cpp:1489] [UNSL]< UNSOL_RESPONSE_NETWORK_STATE_CHANGED 
+I/RILJ    ( 1417): [UNSL]< UNSOL_RESPONSE_NETWORK_STATE_CHANGED
+D/RILC    ( 1233): [qcril_cm.c:5046] Signal strength: gw_rssi: 99, gw_bit_error: 99, cdma_dbm: -1, cdma_ecio: -1, hdr_dbm: -1, hdr_ecio: -1, hdr_sinr: -1
+D/RILC    ( 1233):  
+D/RILC    ( 1233): [qcril.c:4035] UI <--- RIL_UNSOL_SIGNAL_STRENGTH (1009) --- RIL [Len 28]
+D/RILC    ( 1233): [qcril.c:4038] RIL=>>Android [ label = "RIL_UNSOL_SIGNAL_STRENGTH" ];
+W/RILC    ( 1233): [ril.cpp:1489] [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=99,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=-1]}
+I/RILJ    ( 1417): [UNSL]< UNSOL_SIGNAL_STRENGTH {99, 99, -1, -1, -1, -1, -1}
+D/RILC    ( 1233): [qcril.c:2536] Exit qcril_process_event() : CM_SS_EVENT_SRV_CHANGED, err_no 0
+D/RILC    ( 1233): [qcril_event.c:271] qcril_event_main(): Waiting...
+D/GSM     ( 1417): [GsmDataConnectionTracker] Radio is off and clean up all connection
+D/GSM     ( 1417): [GsmDataConnectionTracker] Clean up connection due to radioTurnedOff
+D/GSM     ( 1417): [GsmDataConnectionTracker] setState: DISCONNECTING
+D/GSM     ( 1417): [PdpConnection] DataConnection.clearSettings()
+D/GSM     ( 1417): [DataConnection] Stop poll NetStat
+D/GSM     ( 1417): [GsmDataConnectionTracker] setState: IDLE
+D/GSM     ( 1417): 1) status : 
+D/GSM     ( 1417): [GsmSimCard] Broadcasting intent SIM_STATE_CHANGED_ACTION NOT_READY reason null
+I/RILJ    ( 1417): RILRequest.obtain() request=75, REQUEST_GET_NEIGHBORING_CELL_IDS
+I/RILJ    ( 1417): [0301]> REQUEST_GET_NEIGHBORING_CELL_IDS
+W/RILC    ( 1233): [ril.cpp:390] processCommandBuffer() request=75,token=301
+W/RILC    ( 1233): [ril.cpp:409] request=75, pRI->pCI->requestNumber=75
+W/RILC    ( 1233): [ril.cpp:437] TOKEN=301 REQ_NUM=0075 GET_NEIGHBORING_CELL_IDS 
+D/RILC    ( 1233): [qcril.c:2361] UI --- RIL_REQUEST_GET_NEIGHBORING_CELL_IDS (75) ---> RIL [token id 301, data len 0]
+D/RILC    ( 1233): [qcril.c:2380] Android=>RIL [ label = "RIL_REQUEST_GET_NEIGHBORING_CELL_IDS - Token 301" ];
+D/RILC    ( 1233): [qcril.c:2209] Ignore RIL_REQUEST_GET_NEIGHBORING_CELL_IDS, unsupported state.
+D/RILC    ( 1233): [qcril.c:2445] UI <--- RIL_REQUEST_GET_NEIGHBORING_CELL_IDS (75) Complete --- RIL [Token Id 301, RIL_E_RADIO_NOT_AVAILABLE]
+D/RILC    ( 1233): [qcril.c:3910] RIL=>Android [ label = "RIL_REQUEST_GET_NEIGHBORING_CELL_IDS, Token 301, Radio Not Available" ];
+D/RILC    ( 1233): [qcril.c:3913] UI <--- RIL_REQUEST_GET_NEIGHBORING_CELL_IDS (75) Complete --- RIL [Token 301, Radio Not Available]
+W/RILC    ( 1233): [ril.cpp:1489] [0301]< GET_NEIGHBORING_CELL_IDS fails by E_RAIDO_NOT_AVAILABLE
+D/RILJ    ( 1417): [0301]< REQUEST_GET_NEIGHBORING_CELL_IDS error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+D/GSM     ( 1417): Poll ServiceState done:  oldSS=[3 home null null null  Unknown CSS not supported -1 -1RoamInd: -1DefRoamInd: -1] newSS=[3 home null null null  Unknown CSS not supported -1 -1RoamInd: -1DefRoamInd: -1] oldGprs=0 newGprs=0 oldType=HSDPA newType=HSDPA
+D/GSM     ( 1417): Poll ServiceState done:  oldSS=[3 home null null null  Unknown CSS not supported -1 -1RoamInd: -1DefRoamInd: -1] newSS=[3 home null null null  Unknown CSS not supported -1 -1RoamInd: -1DefRoamInd: -1] oldGprs=0 newGprs=0 oldType=HSDPA newType=HSDPA
