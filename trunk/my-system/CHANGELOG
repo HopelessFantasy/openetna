@@ -1,5 +1,6 @@
 v4.3:
 Added /etc/dhcpcd.conf to fix wifi (issues 76) (thanks to Irsscl)
+Fixed issue 42: so many app cannot find & see in the market
 
 v4.2:
 Probably no wipe needed.

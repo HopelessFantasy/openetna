@@ -237,7 +237,7 @@ installcustom usr/keylayout/eve_qwerty.kl-french
 #default layout
 cp usr/keylayout/eve_qwerty.kl-english usr/keylayout/eve_qwerty.kl
 
-installcustom build.prop-new build.prop
+installcustom build.prop
 
 #APN's
 installcustom etc/apns-conf.xml
