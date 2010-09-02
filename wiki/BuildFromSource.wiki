@@ -85,5 +85,53 @@ cd ../my-system
 less README
 }}}
 
+= Contribute =
+ * Get yourself a task. You will probably want to announce it on the mailing list, to see if anyone else is working at that issue or if anyone has good advice.
+ * Tell the mailing list after you have finished something and ask for review
+ * Get an account at github.com and tell us your username, we will give you permission to push your changes
+
+== Start working ==
+
+You should really start with checking out a local branch by
+{{{
+git checkout -b eclair github/eclair
+}}}
+This will create a local branch "eclair" which is based on the remote branch "github/eclair".
+
+Make your changes.
+
+== Pushing ==
+In the repository, where you have your changes, make sure you have them on a named branch.
+(I told you!)
+{{{
+git branch
+}}}
+will show "eclair" (hopefully) or `*`(no branch).
+If you are on `*`(no branch), issue
+{{{
+git checkout -b eclair
+git branch eclair --set-upstream github/eclair
+}}}
+to create the local branch "eclair" from the current working copy and tell git that this branch is based on the remote branch "github/eclair".
+
+One then has to change the url where we push to, because the default is an read-only url.
+Issue
+{{{
+git remote -v
+}}}
+and it will show you something like
+{{{
+github	git://github.com/OpenEtna/android_vendor_openetna.git (fetch)
+github	git://github.com/OpenEtna/android_vendor_openetna.git (push)
+}}}
+Then issue (modify accordingly)
+{{{
+git remote set-url --push github git@github.com:OpenEtna/android_vendor_openetna.git
+}}}
+(note the git@github.com: instead of git://github.com/ -> this is the difference between read-write and read-only)
+Then push your changes by
+{{{
+git push eclair
+}}}
 
 *This document is a work in progress*
