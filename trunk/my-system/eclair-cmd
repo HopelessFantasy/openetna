@@ -25,10 +25,6 @@ install bin
 
 installold bin/toleinit #this is needed, because the boot process halts without it
 
-installold lib/libandroid_runtime.so lib/libandroid_runtime_donut.so
-installcustom lib/libempty.so lib/libsgl.so #needed by libandroid_runtime_donut, not on new image
-installcustom lib/libempty.so lib/libcorecg.so # -"-
-
 #/sdcard
 installold etc/vold.conf
 
