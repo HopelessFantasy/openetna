@@ -223,7 +223,7 @@ installcustom bin/rundropbear
 
 
 mkdir -p lib/modules
-cp ../../android-2.1/out/target/product/openetna/obj/KERNEL_OBJ/drivers/net/wireless/bcm4325/wireless.ko lib/modules/
+cp ../../android-2.1/out/target/product/openetna/obj/KERNEL_OBJ/drivers/net/wireless/bcm4329/wireless.ko lib/modules/
 
 #Keyboard layout for the QWERTY-keyboard
 installold usr/keychars/eve_qwerty.kcm.bin
