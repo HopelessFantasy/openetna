@@ -1,6 +1,8 @@
 v4.3:
 Added /etc/dhcpcd.conf to fix wifi (issues 76) (thanks to Irsscl)
 Fixed issue 42: so many app cannot find & see in the market
+Fixed issue 86: Volume buttons don't adjust audio volume when phone is locked (thanks to grant.bowering)
+Removed depedancy on libandroid_runtime_donut
 
 v4.2:
 Probably no wipe needed.
