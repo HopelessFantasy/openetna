@@ -13,14 +13,15 @@ find system -type f | xargs md5sum | sort > /tmp/android-here
 
 comm -1  -3 /tmp/android-phone /tmp/android-here | cut -d' ' -f3 | sort > /tmp/android-only-here
 comm -2  -3 /tmp/android-phone /tmp/android-here | cut -d' ' -f3 | sed '/system\/bin\/busybox/d' |sort > /tmp/android-only-phone
-comm -1 -2 /tmp/android-only-here /tmp/android-only-phone > /tmp/android-modified
+comm -2 -3 /tmp/android-only-phone /tmp/android-only-here > /tmp/android-to-delete
+
 
 #adb shell busybox md5sum 'system' | dos2unix | md5sum -c --quiet  - | tee /tmp/android-diff-framework
 #echo Checking /system/app
 #adb shell busybox md5sum 'system/app/*' | dos2unix | md5sum -c --quiet - | tee /tmp/android-diff-app
 
 echo "To delete:"
-cat /tmp/android-only-phone
+cat /tmp/android-to-delete
 echo "To upload:"
 cat /tmp/android-only-here
 
@@ -33,7 +34,7 @@ fi
 echo "If you do not want to sync, press Ctrl-C now, else enter to continue"
 if read; then
   echo "Deleting"
-  cat /tmp/android-only-phone | xargs --no-run-if-empty -n1 adb shell busybox rm
+  cat /tmp/android-to-delete | xargs --no-run-if-empty -n1 adb shell busybox rm
   cat /tmp/android-only-here | while read FILE
   do
     echo "$FILE -> $FILE"
@@ -41,7 +42,7 @@ if read; then
   done
 fi
 
-echo "If you do not want to 'adb shell reboot', press Ctrl-C now, else enter to continue"
+echo "If you do not want to 'adb reboot', press Ctrl-C now, else enter to continue"
 if read; then
-  adb shell reboot
+  adb reboot
 fi
