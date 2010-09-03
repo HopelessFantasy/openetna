@@ -29,7 +29,6 @@ installold bin/toleinit #this is needed, because the boot process halts without 
 installold etc/vold.conf
 
 #Camera
-installold lib/libcamera.so
 installold lib/libmm-qcamera-tgt.so #needed by libcamera.so
 installold lib/libmmcamera.so
 installold lib/libmmjpeg.so
