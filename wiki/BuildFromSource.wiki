@@ -131,7 +131,7 @@ git remote set-url --push github git@github.com:OpenEtna/android_vendor_openetna
 (note the git@github.com: instead of git://github.com/ -> this is the difference between read-write and read-only)
 Then push your changes by
 {{{
-git push eclair
+git push github
 }}}
 
 *This document is a work in progress*
