@@ -1,5 +1,11 @@
-No video: try BOARD_OPENCORE_LIBRARIES := libOmxCore BOARD_OPENCORE_FLAGS := -DHARDWARE_OMX=1 in BoardConfig.mk
+what is compcache: ro.compcache.default=1
 
+To enable internet/sdcard in the emulator, look at development/etc/apns-conf_sdk.xml/vold.conf
+
+Flashlight: see http://github.com/Y6b/android_frameworks_base/commit/648ab3ac7c3555bc2b6253cdfbc5ac026e3bb9e3
+
+No video: try BOARD_OPENCORE_LIBRARIES := libOmxCore BOARD_OPENCORE_FLAGS := -DHARDWARE_OMX=1 in BoardConfig.mk
+Try http://osdir.com/ml/android-porting/2010-03/msg00064.html or the next message
 
 Get openGL acceleration to work (see this http://www.mail-archive.com/android-porting@googlegroups.com/msg00385.html) 
 you will have to use the libhgl.so from korean-v10t. Look what interface it exposes
@@ -13,87 +19,18 @@ the old libaudio used libaudioeq. What does this do and should we use that?
 
 look at http://github.com/mikeandroid. Has some interesting things like libloc for gps and so on
 
-GPS icon does not work becaues we never get GPS_STATUS_SESSION_BEGIN from libloc_api. We only get ENGINE_ON and then
-RPC_LOC_EVENT_SATELLITE_REPORT.
-
-Hi all.
-I am digging into the structure of sensor, especially compass sensor.
-when I was following the flow from compass.java to kernel driver of
-compass, I was stuck at the communication between sensors HAL and
-akmd.
-Following is the flow of compass sensor from application.
-onSensorChanged Listener in compass.java -> thread sensors_data_poll
-run in SensorManager.java -> sensors_data_poll() in
-android_hardware_SensorManager.cpp JNI -> sensors_data_poll() in
-sensors_ak8973.c
-Then I was stuck at the loop of sensors_data_poll(). It seems that the
-socket is the key to communicate between the poll loop and the akmd2
-daemon.
-but I can't find the code how to make the socket, open, write( from
-the akmd2 daemon to the sensors_data_poll()), read.
-any helps would be appreciated.
-thanks in advance.
-
-
 FM radio is in libbluedroid (partly at least)
 
 reimplement bluetooth. They changed the JNI api in commit d5ac1ae36b4e096eb97984334f86d0c68abea2f7 (framework/base).
 The libs use the old api, the framework uses the new one. Maybe we just update the bluetooth lib?
-
-interface to libgps is in hardware/libhardware_legacy/include/hardware_legacy/gps.h
-
-keyboard layout can be changed on the fly (maybe) by
-"For each keyboard device xxx, set the android.keychar.xxx system property to the full path of the desired keychar file. If you don't specify a keychar file, Android will default to /system/usr/keychar/qwerty.kl." (http://pdk.android.com/online-pdk/guide/keymaps_keyboard_input.html)
-
-grep lge-res system/ -R 2>/dev/null: Binary file system/lib/libutils.so matches
 
 check api difference:
     readelf -s -W korean-v10t/lib/libandroid_runtime.so | c++filt | sed '/UND/d' | sed -e 's/.*DEFAULT  ... \(.*\)/\1/' > koreanv10t_sym
 list all exported symbols:
     nm -C -D library.so
 
-fix prelink errors:
-can NOT map (prelinked) library 'libwebcore.so' at 0xaa000000 as requested, will try general pool: 12 (Out of memory)
-
-find a symbol in libandroid_runtime.so: search in
-../android-2.1/prebuilt/linux-x86/toolchain/arm-eabi-4.4.0/bin/arm-eabi-objdump -d korean-v10t/lib/libandroid_runtime.so| less
-
-while enabling wifi:
-Set wlan_country, see framework/services/com/android/server/WifiService.smali
-ERROR: Calling native function Landroid/net/NetworkUtils;.enableInterface (Ljava/lang/String;)I without implementation - skipping. (undefined behaviour)
-
-
-E/dalvikvm( 1351): ERROR: Calling native function Landroid/media/ToneGenerator;.startTone (II)Z without implementation - skipping. (undefined behaviour)
-
-E/webcoreglue( 1690): The real object has been deleted
-E/webcoreglue( 1690): The real object has been deleted
-E/webcoreglue( 1690): The real object has been deleted
-
-D/dalvikvm( 1900): NOTE: loadClass 'org.apache.harmony.security.internal.nls.messages_de_DE' 0x2aaca4d8 threw exception Ljava/lang/ClassNotFoundException;
-D/mterp   ( 1900): Exception Ljava/lang/ClassNotFoundException; from PathClassLoader.java:243 not caught locally
-D/dalvikvm( 1900): NOTE: loadClass 'org.apache.harmony.security.internal.nls.messages_de' 0x2aaca4d8 threw exception Ljava/lang/ClassNotFoundException;
-D/mterp   ( 1900): Exception Ljava/lang/ClassNotFoundException; from PathClassLoader.java:243 not caught locally
-D/dalvikvm( 1900): NOTE: loadClass 'org.apache.harmony.security.internal.nls.messages' 0x2aaca4d8 threw exception Ljava/lang/ClassNotFoundException;
-
 Wifi:
 insmod /system/lib/wireless.ko firmware_path=/etc/wl/rtecdc.bin nvram_path=/etc/wl/nvram.txt config_path=/data/misc/wifi/config
-
-D/dalvikvm( 1372): +++ not scanning '/system/lib/libwebcore.so' for 'getSuggestionsNative' (wrong CL)
-D/dalvikvm( 1372): +++ not scanning '/system/lib/libexif.so' for 'getSuggestionsNative' (wrong CL)
-D/dalvikvm( 1372): +++ not scanning '/system/lib/libmedia_jni.so' for 'getSuggestionsNative' (wrong CL)
-D/dalvikvm( 1372): +++ not scanning '/system/lib/libandroid_runtime_eclair.so' for 'getSuggestionsNative' (wrong CL)
-D/dalvikvm( 1372): +++ not scanning '/system/lib/libsrec_jni.so' for 'getSuggestionsNative' (wrong CL)
-E/dalvikvm( 1372): ERROR: Calling native function Lcom/android/inputmethod/latin/BinaryDictionary;.getSuggestionsNative (I[II[C[IIIII)I without implementation - skipping. (undefined behaviour)
-
-
-E/dalvikvm( 1280): ERROR: Calling native function Landroid/media/MediaPlayer;.setDataSource (Ljava/lang/String;)V without implementation - skipping. (undefined behaviour)
-E/MediaPlayer( 1280): prepareAsync called in state 1
-W/NotificationService( 1280): IllegalStateException (content provider died?) content://settings/system/notification_sound
-W/NotificationService( 1280): java.lang.IllegalStateException
-W/NotificationService( 1280):   at android.media.MediaPlayer.prepare(Native Method)
-W/NotificationService( 1280):   at android.media.AsyncPlayer.startSound(AsyncPlayer.java:64)
-W/NotificationService( 1280):   at android.media.AsyncPlayer.access$200(AsyncPlayer.java:33)
-W/NotificationService( 1280):   at android.media.AsyncPlayer$Thread.run(AsyncPlayer.java:99)
 
 E/SurfaceFlinger( 1266): ioctl(24, VT_RELDISP, 1) failed 22 (Invalid argument)
 
