@@ -2,6 +2,7 @@ v4.3:
 Added /etc/dhcpcd.conf to fix wifi (issues 76) (thanks to Irsscl)
 Fixed issue 42: so many app cannot find & see in the market
 Fixed issue 86: Volume buttons don't adjust audio volume when phone is locked (thanks to grant.bowering)
+Fixed issue 35: Camera does not work (many thanks to saxando4u and nopy for the biggest part of the work)
 Removed depedancy on libandroid_runtime_donut
 
 v4.2:
