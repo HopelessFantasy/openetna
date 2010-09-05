@@ -1,0 +1,33 @@
+#/bin/bash
+
+if [[ `id --user` != "0" ]]; then
+  echo "Must be run as root!"
+  exit 1
+fi
+
+echo Creating system.ext2.img from system.img
+
+set -e #exit on error
+set -u #error on unset variable
+
+umount -d temp_ext2 || true
+
+#Create a 150MB image
+dd if=/dev/zero of=system.ext2.img bs=1M count=150
+/sbin/mkfs -t ext2 -m 0 -F system.ext2.img
+
+rm -Rf temp_ext2
+mkdir temp_ext2
+
+mount -o loop system.ext2.img temp_ext2
+
+cd temp_ext2
+umask 0
+../../unyaffs/unyaffs ../system.img
+cd ..
+
+umount temp_ext2
+
+echo "Finished."
+echo "Now do:"
+echo "adb push system.ext2.img /sdcard/
