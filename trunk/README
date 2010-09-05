@@ -12,5 +12,5 @@
   ./doBuild
   your boot.img can then be found under out/target/product/openetna/boot.img
 
-4. build system.img
+4. build system.img / system.ext2.img
   goto my-system and read README
