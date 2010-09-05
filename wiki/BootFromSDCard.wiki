@@ -1,4 +1,5 @@
 #summary Boot an system.img from SDcard
+#labels Featured
 
 = Introduction =
 
