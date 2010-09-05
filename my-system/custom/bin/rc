@@ -3,10 +3,3 @@
 if [ ! -f /data/local/.bashrc ]; then
   cp /system/etc/bashrc /data/local/.bashrc
 fi
-
-chmod 4555 /system/bin/su
-chmod 4555 /system/xbin/su
-
-rm /dev/msm_camera0
-mknod /dev/msm_camera0 c 246 0
-busybox chown system:camera /dev/msm_camera0
