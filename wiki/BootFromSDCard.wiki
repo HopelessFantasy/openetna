@@ -15,3 +15,4 @@ Booting from that image is automatically done on boot if the file /sdcard/system
   * If the sdcard gets eject (mine does it sometime due to the low quality sdcard)
     the system will hang.
   * You cannot mount the sdcard as external volume on the pc
+  * You should be careful when mixing systems using the same /data partition. Especially systems of different android versions will skrew your data!
