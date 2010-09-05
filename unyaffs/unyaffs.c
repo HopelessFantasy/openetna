@@ -73,6 +73,9 @@ int process_chunk()
 				link(obj_list[oh->equivalentObjectId], full_path_name);
 				break;
 		}
+        chown(full_path_name, oh->yst_uid, oh->yst_gid);
+        if( oh->type != YAFFS_OBJECT_TYPE_HARDLINK)
+          chmod(full_path_name, oh->yst_mode);
 	}
 }
 
