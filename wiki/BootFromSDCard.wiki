@@ -1,0 +1,16 @@
+#summary Boot an system.img from SDcard
+
+= Introduction =
+
+With boot.img v1.6 or higher, you can mount the /system from an image on sdcard.
+It has to be called /sdcard/system.ext2.img and must be in an image with an ext2 filesystem. There is a script in the subversion repository imgToExt2Img to convert standard system.img to system.ext2.img.
+
+Booting from that image is automatically done on boot if the file /sdcard/system.ext2.img is found. If you do not want to boot from it temporarily, you have to eject the sdcard prior to boot.
+
+= Issues =
+
+  * The speed is lower due to the sdcard.
+  * You can not eject the sdcard while the system is running.
+  * If the sdcard gets eject (mine does it sometime due to the low quality sdcard)
+    the system will hang.
+  * You cannot mount the sdcard as external volume on the pc
