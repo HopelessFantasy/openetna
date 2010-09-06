@@ -141,8 +141,6 @@ installold etc/wifi/wpa_supplicant.conf #This is copied to /data/misc/wifi/wpa_s
 mkdir -p etc/wl
 installold etc/wl/rtecdc.bin #The firmware for wifi, given at insmod by libhardware_legacy
 installold etc/wl/nvram.txt #the nvram for wifi, given at insmod by libhardware_legacy
-installold bin/wpa_supplicant #there is much legacy in there
-installold bin/wpa_cli #fits wpa_supplicant
 
 #Dhcp
 mkdir -p etc/dhcpcd
