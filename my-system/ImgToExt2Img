@@ -30,4 +30,4 @@ umount temp_ext2
 
 echo "Finished."
 echo "Now do:"
-echo "adb push system.ext2.img /sdcard/
+echo "adb push system.ext2.img /sdcard/"
