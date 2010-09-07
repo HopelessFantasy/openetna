@@ -43,3 +43,6 @@ Modify the android/bionic/libc/kernel/arch-arm/asm/posix_types.h
 -#if defined(__KERNEL__)
 +#if !defined(__GLIBC__) || __GLIBC__ < 2
 }}}
+
+= Audio chip =
+Used by libaudio (hardware/msm7k/libaudio), which interfaces it by ioctl's defined in msm_audio.h and which are processed by kernel/arch/arm/mach-msm/qdsp5/snd.c
