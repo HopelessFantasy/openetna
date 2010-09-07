@@ -46,4 +46,4 @@ Modify the android/bionic/libc/kernel/arch-arm/asm/posix_types.h
 
 = Audio chip =
 Used by libaudio (hardware/msm7k/libaudio), which interfaces it by ioctl's defined in msm_audio.h and which are processed by kernel/arch/arm/mach-msm/qdsp5/snd.c
-The [http://www.maxim-ic.com/datasheet/index.mvp/id/5752 MAX9877 amplifier] is used.
+The [http://datasheets.maxim-ic.com/en/ds/MAX9877.pdf MAX9877 amplifier] is used for speaker and headset amplification.
