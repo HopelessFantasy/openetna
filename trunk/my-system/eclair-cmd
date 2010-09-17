@@ -75,16 +75,16 @@ installold lib/libbluedroid.so
 
 #Gps
 installold etc/gps.conf
-installold lib/libgps.so
+#The libloc_api from source does not work yet...
 installold lib/libloc_api.so #for gps
 installold lib/libloc_api-rpc.so #needed by libloc_api.so
 installold lib/libcommondefs.so #needed by libloc_api-rpc.so
 
-
-installold lib/libhardware_legacy.so #old one is needed for radio, wlan, gps ...
-
 #Hardware codecs
-if false; then
+if true; then
+installold lib/libOmxH264Dec.so
+installold lib/libmm-adspsvc.so #needed by libOmxH264Dec
+elif false; then
 installold lib/libomx_aacdec_sharedlibrary.so
 installold lib/libomx_amrdec_sharedlibrary.so
 installold lib/libomx_amrenc_sharedlibrary.so
@@ -154,7 +154,7 @@ install framework
 #-- Install app
 install app
 
-if true; then
+if [[ "$INSTALL_GAPPS" == "1" ]]; then
   echo Copying google apps
   if [[ ! -d ../gapps2 ]]; then
     echo "Directory gapps2 missing!"
@@ -168,6 +168,8 @@ if true; then
   NEWSYS=gapps2 install etc
   NEWSYS=gapps2 install framework
   NEWSYS=gapps2 install lib
+  rm app/VoiceSearch.apk #This one does not work - use the one from market
+  touch do_not_release
 fi
 
 echo Copying additional apps
