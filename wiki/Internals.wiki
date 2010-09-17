@@ -68,3 +68,9 @@ The framebuffer device and the mddi interfaces is under kernel/drivers/video/msm
 
 = Other devices =
 The Home and Back button are driven by kernel/drivers/input/touchscreen/touch_so240001.c.
+The VolumeUp/Down buttons are driven by kernel/arch/arm/mach-msm/board-eve-keypad.c.
+The proximity sensor is in kernel/drivers/input/misc/prox_sharp.c.
+The qwerty keyboard is in drivers/input/keyboard/kbd_pp2106.c.
+The backlight for the qwerty and the soft buttons is in drivers/input/misc/keyled_pm.c.
+The vibrator is in drivers/misc/vibrator_eve.c. To power on/off the vibrator motor, this uses functions from the backlight.
+The camera chip is in drivers/media/video/msm/mv9319.c.
