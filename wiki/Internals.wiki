@@ -60,3 +60,9 @@ arch/arm/mach-msm/rpc_server_handset.c
 arch/arm/mach-msm/rpc_server_dog_keepalive.c
 }}}
 [more to come]
+
+= The screen =
+The backlight is in kernel/drivers/video/backlight/bl_bd6083.c. It also includes the automatic brightness control.
+The touchscreen is in kernel/drivers/input/touchscreen/msm_touch.c and
+kernel/drivers/input/touchscreen/synaptics_i2c_rmi.c (both are somehow needed).
+The framebuffer device and the mddi interfaces is under kernel/drivers/video/msm/.
