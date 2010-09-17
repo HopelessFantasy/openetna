@@ -11,7 +11,7 @@ adb shell 'busybox find system -type f | busybox xargs busybox md5sum' | dos2uni
 find system -type f | xargs md5sum | sort > /tmp/android-here
 
 
-comm -1  -3 /tmp/android-phone /tmp/android-here | cut -d' ' -f3 | sort > /tmp/android-only-here
+comm -1  -3 /tmp/android-phone /tmp/android-here | cut -d' ' -f3 | sed '/system\/do_not_release/d' | sort > /tmp/android-only-here
 comm -2  -3 /tmp/android-phone /tmp/android-here | cut -d' ' -f3 | sed '/system\/bin\/busybox/d' |sort > /tmp/android-only-phone
 comm -2 -3 /tmp/android-only-phone /tmp/android-only-here > /tmp/android-to-delete
 
@@ -33,8 +33,9 @@ fi
 
 echo "If you do not want to sync, press Ctrl-C now, else enter to continue"
 if read; then
-  echo "Deleting"
+  echo -n "Deleting ... "
   cat /tmp/android-to-delete | xargs --no-run-if-empty -n1 adb shell busybox rm
+  echo "done"
   cat /tmp/android-only-here | while read FILE
   do
     echo "$FILE -> $FILE"
