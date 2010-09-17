@@ -7,6 +7,7 @@ Partly fixed voice search (You will have to install voice search from the market
   You can use voice search, but afterwards logcat will be unusuable until reboot (!?)
 Replaced old libhardware_legacy by the one compiled from source
 Increase the volume range for in-call audio. It can be louder now.
+Added klogtail
 
 
 v4.3:
