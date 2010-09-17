@@ -8,8 +8,8 @@ if [[ ! -f system.img || ! -d system ]]; then
   exit 1
 fi
 
-if [[ -f system/useEmulator ]]; then
-  echo "ERROR: system/useEmulator exists, so this image was build for emulator!"
+if [[ -f system/do_no_release ]]; then
+  echo "ERROR: system/do_no_release exists!"
   exit 1
 fi
 
