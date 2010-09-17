@@ -1,3 +1,13 @@
+boot v1.7:
+Added iptables multiport filter so one can use DroidWall as firewall
+
+system v4.4:
+Fixed wifi
+Partly fixed voice search (You will have to install voice search from the market. The one installed from optedgapps-... won't work)
+  You can use voice search, but afterwards logcat will be unusuable until reboot (!?)
+Replaced old libhardware_legacy by the one compiled from source
+
+
 v4.3:
 Added /etc/dhcpcd.conf to fix wifi (issues 76) (thanks to Irsscl)
 Fixed issue 42: so many app cannot find & see in the market
