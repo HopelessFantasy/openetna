@@ -63,6 +63,8 @@ arch/arm/mach-msm/rpc_server_dog_keepalive.c
 
 = The screen =
 The backlight is in kernel/drivers/video/backlight/bl_bd6083.c. It also includes the automatic brightness control.
-The touchscreen is in kernel/drivers/input/touchscreen/msm_touch.c and
-kernel/drivers/input/touchscreen/synaptics_i2c_rmi.c (both are somehow needed).
+The touchscreen is in kernel/drivers/input/touchscreen/msm_touch.c.
 The framebuffer device and the mddi interfaces is under kernel/drivers/video/msm/.
+
+= Other devices =
+The Home and Back button are driven by kernel/drivers/input/touchscreen/touch_so240001.c.
