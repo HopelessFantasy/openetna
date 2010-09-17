@@ -1,3 +1,6 @@
+See armv6j support: http://github.com/CyanogenMod/android_device_htc_dream_sapphire/commit/9e151a6b5db142ae46db55c5bbc41b3beab2f894
+and more
+
 what is compcache: ro.compcache.default=1
 
 To enable internet/sdcard in the emulator, look at development/etc/apns-conf_sdk.xml/vold.conf
