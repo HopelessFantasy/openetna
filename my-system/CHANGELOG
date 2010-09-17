@@ -6,6 +6,7 @@ Fixed wifi
 Partly fixed voice search (You will have to install voice search from the market. The one installed from optedgapps-... won't work)
   You can use voice search, but afterwards logcat will be unusuable until reboot (!?)
 Replaced old libhardware_legacy by the one compiled from source
+Increase the volume range for in-call audio. It can be louder now.
 
 
 v4.3:
