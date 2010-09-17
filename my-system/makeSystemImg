@@ -4,14 +4,16 @@ set -e #exit on error
 set -u #error on unset variable
 
 USE_EMULATOR=0
+INSTALL_GAPPS=0
 
-while getopts "e" Option
+while getopts "eg" Option
 # Initial declaration.
 # The : after a flag shows it will have an option passed with it.
 do
 case $Option in
 # w ) CMD=$OPTARG; FILENAME="PIMSLogList.txt"; TARGET="logfiles"; ;;
 e ) echo "Flag '-e' is ignored, because it is not needed anymore" ;;
+g ) echo "Installing google apps. Do not release!"; INSTALL_GAPPS=1 ;;
 * ) echo "Not recognized argument"; exit -1 ;;
 esac
 done
