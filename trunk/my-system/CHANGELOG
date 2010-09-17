@@ -2,12 +2,12 @@ boot v1.7:
 Added iptables multiport filter so one can use DroidWall as firewall
 
 system v4.4:
-Fixed wifi
+Fixed wifi. (If wifi still won't work for you, please do adb shell rm -R /data/misc/wifi and reboot. You will have to reenter your wifi passwords.)
 Partly fixed voice search (You will have to install voice search from the market. The one installed from optedgapps-... won't work)
   You can use voice search, but afterwards logcat will be unusuable until reboot (!?)
 Replaced old libhardware_legacy by the one compiled from source
 Increase the volume range for in-call audio. It can be louder now.
-Added klogtail
+Added klogtail.
 
 
 v4.3:
