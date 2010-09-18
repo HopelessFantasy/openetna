@@ -1,10 +1,34 @@
 #summary ChangeLog
+= boot v1.7 =
+{{{
+Added iptables multiport filter so one can use DroidWall as firewall
+}}}
 
-= v4.2 =
+= system v4.4 =
+{{{
+Fixed wifi. (If wifi still won't work for you, please do adb shell rm -R /data/misc/wifi and reboot. You will have to reenter your wifi passwords.)
+Partly fixed voice search (You will have to install voice search from the market. The one installed from optedgapps-... won't work)
+  You can use voice search, but afterwards logcat will be unusuable until reboot (!?)
+Replaced old libhardware_legacy by the one compiled from source
+Increase the volume range for in-call audio. It can be louder now.
+Added klogtail.
+Applied patches from codeaurora to our telephony framework.
+Added more hardware information under Settings->About phone.
+}}}
+
+= system v4.3 =
+{{{
+Added /etc/dhcpcd.conf to fix wifi (issues 76) (thanks to Irsscl)
+Fixed issue 42: so many app cannot find & see in the market
+Fixed issue 86: Volume buttons don't adjust audio volume when phone is locked (thanks to grant.bowering)
+Fixed issue 35: Camera does not work (many thanks to saxando4u and nopy for the biggest part of the work)
+Removed depedancy on libandroid_runtime_donut
+}}}
+
+= system v4.2 =
 {{{
 Probably no wipe needed.
-Needs boot.img V1.4
-
+Use boot.img V1.4 or higher
 Added more apns - submitted by poisins92
 Added one apn for China Unicom 3GWAP - thanks to walteronly1 and poisins92
 Added eve_qwerty.kl-french (thanks cioeri)
@@ -28,4 +52,40 @@ Switched to the Music app from CyanogenMod, this should fix the crash
 Google apps have been removed due to legal restrictions
   you can reinstall them if you find optedgapps-ds-ere36b.zip, copy it to
   /sdcard/optedgapps-ds-ere36b.zip, and reboot.
+}}}
+
+= system v4.1 =
+{{{
+ATTENTION: Wipe needed!
+Use boot.img V1.2
+
+Replaced GoogleContactsProvider by ContactsProvider (sync is handled by GoogleContactsSyncAdapter)
+Added Anycut and Rootexplorer
+Updated apn list to cyanogen mod's
+Upgraded libsqlite to android 2.1
+Upgraded libnetutils to android 2.1
+Upgraded native database functions, 
+         android_os_MemoryFile, 
+         android_net_NetUtils,
+         android_graphics_Typeface to android 2.1 by libandroid_runtime_eclair
+         This library contains the functionality of android 2.1's libandroid_runtime
+         and is used to overwrite some functions of the libandroid_runtime from
+         korean-v10t (which we have to use)
+
+Fixed suid for xbin/su and bin/su. This is set in /system/bin/rc.
+    Now applications can again use root
+
+Fixed Issue 27: directional arrows messed up (thanks saxando4u for reporting)
+Fixed Issue 21: Notifications Bar issues
+Fixed Issue 18: Wifi issues, will connect to wep but not wpa 
+    But we have to see if my fix works for networks with only WPA or only WPA2 but not both
+    If you have already configured a network in a earlier version, you have to remove it and then add it again
+
+Security issue: Dropbear is not automatically started on boot
+                You can change /system/bin/rundropbear if you want it
+
+Fixed signatures for Arc* apps, now market works and and downloading inside the browser works, too
+Fixed Issue 17: Cannot import/sync contacts
+    and additionally details are now shown
+    (even birthday!)
 }}}
