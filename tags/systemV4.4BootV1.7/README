@@ -1,0 +1,16 @@
+1. download smali-1.2.3.jar and baksmali-1.2.3.jar into this directory
+  from http://code.google.com/p/smali/downloads/list
+
+2. download android-2.1 source
+  mkdir android-2.1
+  cd android-2.1
+  repo init -u git://github.com/OpenEtna/android_manifest.git -b eclair
+  repo sync
+
+3. build the source:
+  cd android-2.1
+  ./doBuild
+  your boot.img can then be found under out/target/product/openetna/boot.img
+
+4. build system.img / system.ext2.img
+  goto my-system and read README

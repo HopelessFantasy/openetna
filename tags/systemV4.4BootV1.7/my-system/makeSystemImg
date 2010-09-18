@@ -1,0 +1,143 @@
+#!/bin/bash
+
+set -e #exit on error
+set -u #error on unset variable
+
+USE_EMULATOR=0
+INSTALL_GAPPS=0
+
+while getopts "eg" Option
+# Initial declaration.
+# The : after a flag shows it will have an option passed with it.
+do
+case $Option in
+# w ) CMD=$OPTARG; FILENAME="PIMSLogList.txt"; TARGET="logfiles"; ;;
+e ) echo "Flag '-e' is ignored, because it is not needed anymore" ;;
+g ) echo "Installing google apps. Do not release!"; INSTALL_GAPPS=1 ;;
+* ) echo "Not recognized argument"; exit -1 ;;
+esac
+done
+shift $(($OPTIND - 1)) 
+
+if [[ $# -ne 1 ]]; then
+    echo "$#"
+    echo "Usage: $0 [-e] cmdfile"
+    echo "-e: Build image for use in emulator"
+    exit 1
+fi
+
+source $1
+
+echo "Building from $NEWSYS..."
+
+OUTIMG=system.img
+SMALI=../smali-1.2.3.jar
+BAKSMALI=../baksmali-1.2.3.jar
+MKYAFFS2IMAGE=../$NEWSYS/out/host/linux-x86/bin/mkyaffs2image
+SIGNAPK=../$NEWSYS/out/host/linux-x86/framework/signapk.jar
+ZIPALIGN=../$NEWSYS/out/host/linux-x86/bin/zipalign
+KEYDIR=../$NEWSYS/build/target/product/security
+
+function resign() {
+  if [[ $# -ne 2 ]]; then
+    echo "Usage: resign apk key"
+    echo "Where key is on of media, shared, platform, testkey"
+    exit 1
+  fi
+
+  #To fix E/PackageManager(  681): Package foobar has no signatures that match those in shared user android.uid.system; ignoring!
+  java -jar ../$SIGNAPK ../$KEYDIR/$2.x509.pem ../$KEYDIR/$2.pk8 $1 $1-signed
+  rm "$1"
+  ../$ZIPALIGN 4 $1-signed $1
+  rm "$1-signed"
+}
+ 
+
+function install() {
+
+  IN=$1
+  if [[ $# -eq 2 ]]; then
+    OUT=$2
+  elif [[ $# -eq 1 ]]; then
+    OUT=$1
+  else
+    echo "Usage: install src dst"
+    exit 1
+  fi
+
+  if [[ -d ../$NEWSYS/$IN && -d $OUT ]];then
+    cp -af ../$NEWSYS/$IN/* $OUT/
+  else
+    cp -af ../$NEWSYS/$IN $OUT
+  fi
+}
+
+function installold() {
+  NEWSYS="$OLDSYS" install $*
+}
+
+function installcustom() {
+  NEWSYS=custom install $*
+}
+
+function deodex() {
+
+  if [[ ! -d ../deodex/$OLDSYS/$1 ]]; then
+    echo "Deodexing $1"
+    mkdir -p ../deodex/$OLDSYS/$1
+    java -jar ../$BAKSMALI -d ../$OLDSYS/framework -x ../$OLDSYS/$1.odex -o ../deodex/$OLDSYS/$1/
+  fi
+
+  if [[ ! -f ../deodex/$OLDSYS/$1/classes.dex ]]; then
+    echo "Compiling $1"
+    rm -Rf ../temp
+    mkdir ../temp
+    java -Xmx512M -jar ../$SMALI ../deodex/$OLDSYS/$1 -o ../deodex/$OLDSYS/$1/classes.dex
+  fi
+
+  if [[ -f ../$OLDSYS/$1.jar ]]; then
+    ARCHIVE="$1.jar"
+  elif [[ -f ../$OLDSYS/$1.apk ]]; then
+    ARCHIVE="$1.apk"
+  else
+    echo "ERROR: no archive apk/jar for $1 found!"
+    exit 1
+  fi
+
+  if [[ ! -f ../deodex/$OLDSYS/$ARCHIVE ]];then
+    echo "Packing $1 into $ARCHIVE"
+    cp -fa ../$OLDSYS/$ARCHIVE ../deodex/$OLDSYS/$ARCHIVE
+    #zip --junk-paths -u $ARCHIVE ../deodex/$OLDSYS/$1/classes.dex
+    7z a -tzip ../deodex/$OLDSYS/$ARCHIVE ../deodex/$OLDSYS/$1/classes.dex -mx5 > /dev/null
+  fi
+  cp ../deodex/$OLDSYS/$ARCHIVE $ARCHIVE
+}
+
+if [[ ! -d $OLDSYS ]]; then
+  echo "ERROR: directory $OLDSYS does not exist!"
+  echo "Extract korean-v10t (get from http://www.zacpod.com/) system.img to that directory or run"
+  echo "To extract the system.img, you can use unyaffs, which can be found in the directory above"
+  echo "adb pull /system $OLDSYS with korean-v10t (by zacpod) installed"
+  exit 1
+fi
+
+if [[ ! -d $NEWSYS ]]; then
+  echo "Directory $NEWSYS does not exist"
+  echo "This should be a link to ../$NEWSYS/out/target/product/openetna/system"
+  echo "Execute: ln -s ../$NEWSYS/out/target/product/openetna/system $NEWSYS"
+  exit 1
+fi
+
+rm -fR temp && mkdir temp
+
+rm -fR system && \
+mkdir system && \
+cd system
+
+do_stuff
+
+cd .. 
+#Permissions of the files are adjusted by -f switch
+#see system/core/include/private/android_filesystem_config.h for their definition
+$MKYAFFS2IMAGE -f ./system $OUTIMG
+rm -Rf temp

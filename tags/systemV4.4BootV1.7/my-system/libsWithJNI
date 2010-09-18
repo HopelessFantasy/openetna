@@ -1,0 +1,18 @@
+Those libs are called by java(framework) functions:
+
+grep JNI_OnLoad android-2.1/lib/*
+Binary file android-2.1/lib/libandroid_servers.so matches
+Binary file android-2.1/lib/libdrm1_jni.so matches #frameworks/base/media/libdrm/mobile1/src/jni
+Binary file android-2.1/lib/libdvm.so matches #dalivk/vm
+Binary file android-2.1/lib/libexif.so matches #external/jhead
+Binary file android-2.1/lib/libFFTEm.so matches #external/neven
+Binary file android-2.1/lib/libjni_latinime.so matches #packages/inputmethods/LatinIME/dictionary/jni
+Binary file android-2.1/lib/libjni_pinyinime.so matches #packages/inputmethods/PinyinIME/jni
+Binary file android-2.1/lib/libmedia_jni.so matches #frameworks/base/media/jni
+Binary file android-2.1/lib/libnativehelper.so matches #dalvik/libnativehelper
+Binary file android-2.1/lib/libsoundpool.so matches #frameworks/base/media/jni/soundpool
+Binary file android-2.1/lib/libsrec_jni.so matches #external/srec
+Binary file android-2.1/lib/libterm.so matches #development/apps/Term/jni
+Binary file android-2.1/lib/libttssynthproxy.so matches #frameworks/base/packages/TtsService/jni
+Binary file android-2.1/lib/libwbxml_jni.so matches #packages/apps/IM/libwbxml
+Binary file android-2.1/lib/libwebcore.so matches #external/webkit

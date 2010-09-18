@@ -1,0 +1,39 @@
+See armv6j support: http://github.com/CyanogenMod/android_device_htc_dream_sapphire/commit/9e151a6b5db142ae46db55c5bbc41b3beab2f894
+and more
+
+what is compcache: ro.compcache.default=1
+
+To enable internet/sdcard in the emulator, look at development/etc/apns-conf_sdk.xml/vold.conf
+
+Flashlight: see http://github.com/Y6b/android_frameworks_base/commit/648ab3ac7c3555bc2b6253cdfbc5ac026e3bb9e3
+
+No video: try BOARD_OPENCORE_LIBRARIES := libOmxCore BOARD_OPENCORE_FLAGS := -DHARDWARE_OMX=1 in BoardConfig.mk
+Try http://osdir.com/ml/android-porting/2010-03/msg00064.html or the next message
+
+Get openGL acceleration to work (see this http://www.mail-archive.com/android-porting@googlegroups.com/msg00385.html) 
+you will have to use the libhgl.so from korean-v10t. Look what interface it exposes
+
+Fix the permissions of the ril devices and reactive switchUser() in rild
+
+For a backport of copybit to 2.6.27 see:
+http://github.com/rmcc/android_hardware_msm7k/commit/be77d83c70a26126d2ce0c89a3f323c4fd17abf1
+
+the old libaudio used libaudioeq. What does this do and should we use that?
+
+look at http://github.com/mikeandroid. Has some interesting things like libloc for gps and so on
+
+FM radio is in libbluedroid (partly at least)
+
+reimplement bluetooth. They changed the JNI api in commit d5ac1ae36b4e096eb97984334f86d0c68abea2f7 (framework/base).
+The libs use the old api, the framework uses the new one. Maybe we just update the bluetooth lib?
+
+check api difference:
+    readelf -s -W korean-v10t/lib/libandroid_runtime.so | c++filt | sed '/UND/d' | sed -e 's/.*DEFAULT  ... \(.*\)/\1/' > koreanv10t_sym
+list all exported symbols:
+    nm -C -D library.so
+
+Wifi:
+insmod /system/lib/wireless.ko firmware_path=/etc/wl/rtecdc.bin nvram_path=/etc/wl/nvram.txt config_path=/data/misc/wifi/config
+
+E/SurfaceFlinger( 1266): ioctl(24, VT_RELDISP, 1) failed 22 (Invalid argument)
+

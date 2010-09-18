@@ -1,0 +1,241 @@
+#!/bin/bash
+
+OLDSYS=korean-v10t
+NEWSYS=android-2.1
+
+function do_stuff() {
+#installold etc 
+#installold usr
+install etc
+install usr
+install usr/share/zoneinfo
+
+#installold 3rd_party  #its just arcsoft and subway in there
+#both old and new fonts are needed for now (why?)
+installold fonts 
+install fonts
+
+install lib
+#installold lib 
+
+installold media #there is no such dir in aosp
+installold sounds #there is no such dir in aosp
+install xbin
+install bin
+
+installold bin/toleinit #this is needed, because the boot process halts without it
+
+#/sdcard
+installold etc/vold.conf
+
+#Camera
+installold lib/libmm-qcamera-tgt.so #needed by libcamera.so
+installold lib/libmmcamera.so
+installold lib/libmmjpeg.so
+
+#Radio
+installold lib/libgsdi_exp.so #needed by libril-qc-1.so
+installold lib/libgstk_exp.so #needed by libril-qc-1.so
+installold lib/libwms.so #needed by libril-qc-1.so
+installold lib/libnv.so #needed by libril-qc-1.so
+installold lib/libwmsts.so #needed by libril-qc-1.so
+installold lib/liblgeat.so #needed by libril-qc-1.so
+installold lib/libril_log.so #needed by libril-qc-1.so
+installold lib/liblgerft.so #needed by libril-qc-1.so
+  installold lib/libbcmwl.so #needed by liblgerft
+installold lib/liblgdrm.so #needed by libril-qc-1.so
+  installold lib/liblgdrmwbxml.so #needed by liblgdrm
+  installold lib/liblgdrmxyssl.so #needed by liblgdrm
+  installold lib/libwmdrmpd.so #needed by liblgdrm
+installold lib/liboem_rapi.so #needed by libril-qc-1.so
+installold lib/libdss.so #needed by libril-qc-1.so
+  installold lib/libqmi.so #needed by libdss
+    installold lib/libdll.so #needed by libqmi
+installold lib/libril-qcril-hook-oem.so #needed by libril-qc-1.so
+installold lib/libmmgsdilib.so #needed by libril-qc-1.so
+installold lib/libcm.so #needed by libril-qc-1.so
+installold lib/liboncrpc.so #needed by libril-qc-1.so
+  installold lib/libdsm.so #needed by liboncrpc.so
+    installold lib/libqueue.so #needed by libdsm
+    installold lib/libdiag.so #needed by libdsm
+if true; then
+installold lib/libril-qc-1.so
+installold lib/libril.so
+else
+OLDSYS=cyanogen installold lib/libhtc_acoustic.so
+OLDSYS=cyanogen installold lib/libhtc_ril.so lib/libril-qc-1.so
+OLDSYS=cyanogen installold lib/libril.so
+fi
+
+#Compass
+installold bin/akmd2
+
+#Bluetooth (and FM radio?)
+installold lib/libbluedroid.so
+
+#Gps
+installold etc/gps.conf
+#The libloc_api from source does not work yet...
+installold lib/libloc_api.so #for gps
+installold lib/libloc_api-rpc.so #needed by libloc_api.so
+installold lib/libcommondefs.so #needed by libloc_api-rpc.so
+
+#Hardware codecs
+if true; then
+installold lib/libOmxH264Dec.so
+installold lib/libmm-adspsvc.so #needed by libOmxH264Dec
+elif false; then
+installold lib/libomx_aacdec_sharedlibrary.so
+installold lib/libomx_amrdec_sharedlibrary.so
+installold lib/libomx_amrenc_sharedlibrary.so
+installold lib/libomx_arcomxcore_sharedlibrary.so
+installold lib/libomx_avcdec_sharedlibrary.so
+installold lib/libomx_m4vdec_sharedlibrary.so
+installold lib/libomx_m4venc_sharedlibrary.so
+installold lib/libomx_mp3dec_sharedlibrary.so
+installold lib/libomx_sharedlibrary_qc.so
+installold lib/libomx_sharedlibrary.so
+installold lib/libomx_wmadec_sharedlibrary.so
+installold lib/libomx_wmvdec_sharedlibrary.so
+installold lib/libOmxCore.so
+installold lib/libopencorehw.so
+installold lib/libopencore_common.so
+installold lib/libopencore_player.so
+installold lib/libopencore_arcparsergetinfo.so
+installold lib/libopencore_arcfflocalparser.so
+installold lib/libarcplatform.so
+installold lib/libmm-omxcore.so 
+elif false; then
+OLDSYS=cyanogen
+installold lib/libomx_aacdec_sharedlibrary.so
+installold lib/libomx_amrdec_sharedlibrary.so
+installold lib/libomx_amrenc_sharedlibrary.so
+installold lib/libomx_avcdec_sharedlibrary.so
+installold lib/libomx_m4vdec_sharedlibrary.so
+installold lib/libomx_mp3dec_sharedlibrary.so
+installold lib/libomx_sharedlibrary.so
+installold lib/libomx_wmadec_sharedlibrary.so
+installold lib/libomx_wmvdec_sharedlibrary.so
+installold lib/libopencore_author.so
+installold lib/libopencore_common.so
+installold lib/libopencore_downloadreg.so
+installold lib/libopencore_download.so
+installold lib/libopencorehw.so
+installold lib/libopencore_mp4localreg.so
+installold lib/libopencore_mp4local.so
+installold lib/libopencore_net_support.so
+installold lib/libopencore_player.so
+installold lib/libopencore_rtspreg.so
+installold lib/libopencore_rtsp.so
+installold lib/libOmxCore.so
+installold lib/libOmxH264Dec.so
+installold lib/libOmxMpeg4Dec.so
+installold lib/libOmxVidEnc.so
+installold lib/libFLAC.so
+OLDSYS=korean-v10t
+fi
+
+#Wifi
+mkdir -p etc/wifi
+installcustom etc/wifi/wpa_supplicant.conf #This is copied to /data/misc/wifi/wpa_supplicant.conf on first use
+mkdir -p etc/wl
+installold etc/wl/rtecdc.bin #The firmware for wifi, given at insmod by libhardware_legacy
+installold etc/wl/nvram.txt #the nvram for wifi, given at insmod by libhardware_legacy
+
+#Dhcp
+mkdir -p etc/dhcpcd
+installcustom etc/dhcpcd/dhcpcd.conf
+
+#-- Install framework
+install framework
+#deodex framework/qcnvitems #this is proprietary
+#deodex framework/qcrilhook #this is proprietary
+
+#-- Install app
+install app
+
+if [[ "$INSTALL_GAPPS" == "1" ]]; then
+  echo Copying google apps
+  if [[ ! -d ../gapps2 ]]; then
+    echo "Directory gapps2 missing!"
+    echo "google for optedgapps-ds-ere36b.zip,"
+    echo "download, extract it"
+    echo "There is a system directory in there,"
+    echo "Rename this to gapps2"
+    exit 1
+  fi
+  NEWSYS=gapps2 install app
+  NEWSYS=gapps2 install etc
+  NEWSYS=gapps2 install framework
+  NEWSYS=gapps2 install lib
+  rm app/VoiceSearch.apk #This one does not work - use the one from market
+  touch do_not_release
+fi
+
+echo Copying additional apps
+#those are not in odex form
+#installold app/com.android.stopwatch.apk
+#installold app/toleSetup.apk
+#installold app/WeatherApp.apk
+#installold app/bz.ktk.bubble.apk
+installold app/com.speedsoftware.rootexplorer.apk
+installold app/com.appdroid.anycut.apk
+#installold app/cz.romario.opensudoku.apk
+#installold app/Quickoffice.apk
+#installold app/EnhancedGoogleSearchProvider.apk
+#installold app/com.stain46.taghome16.apk
+#installold app/com.betterandroid.betterkeyboard.apk
+#installold app/com.mathpad.mobile.android.wt.unit.apk
+#installold app/com.motalen.batterytimelite.apk
+#installold app/com.twidroid.apk
+#installold app/com.farproc.wifi.analyzer.apk
+installold app/com.arron.taskManagerFree.apk
+installold app/com.eclipsim.gpsstatus2.apk
+
+
+if false; then
+  #Superuser.apk is copied above by "install app"
+  install bin/su
+  install xbin/su
+else
+  #Install old Superuser.apk
+  rm -f app/Superuser.apk #this does not work
+  installold bin/su
+  installold xbin/su
+  installold app/koushikdutta.superuser.apk
+fi
+
+#installold app/com.androidapps.widget.weather2.apk
+#installold app/com.pocketools.currency.apk
+#installold app/whiteCompass.apk
+#installold app/com.jiuzhangtech.rushhour.apk
+#installold app/kr.mobilesoft.yxflash.apk
+#installold app/org.adw.launcher_donut.apk
+#installold app/My_e-mail_Android.apk
+#installold app/aDosBox.apk
+#installold app/com.google.zxing.client.android.apk
+#installcustom app/com.keramidas.TitaniumBackup.apk
+
+#Startup file
+installcustom bin/rc
+installcustom bin/rundropbear
+
+
+mkdir -p lib/modules
+cp ../../android-2.1/out/target/product/openetna/obj/KERNEL_OBJ/drivers/net/wireless/bcm4329/wireless.ko lib/modules/
+
+#Keyboard layout for the QWERTY-keyboard
+installold usr/keychars/eve_qwerty.kcm.bin
+installcustom usr/keylayout/eve_qwerty.kl-english
+installcustom usr/keylayout/eve_qwerty.kl-german
+installcustom usr/keylayout/eve_qwerty.kl-french
+#default layout
+cp usr/keylayout/eve_qwerty.kl-english usr/keylayout/eve_qwerty.kl
+
+installcustom build.prop
+
+#APN's
+installcustom etc/apns-conf.xml
+}
+
+

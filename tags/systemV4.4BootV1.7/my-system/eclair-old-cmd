@@ -1,0 +1,272 @@
+#!/bin/bash
+
+OLDSYS=korean-v10t
+NEWSYS=android-2.1
+
+function do_stuff() {
+installold etc 
+installold usr
+install usr/share/zoneinfo
+#installold 3rd_party  #its just arcsoft and subway in there
+
+installold bin 
+installold busybox 
+
+#both old and new fonts are needed for now (why?)
+installold fonts 
+install fonts
+
+install lib
+installold lib 
+
+installold media #there is no such dir in aosp
+installold sounds #there is no such dir in aosp
+installold xbin 
+
+
+installold bin/linker
+install lib/libc.so
+install lib/libdl.so
+install lib/libz.so
+install lib/libm.so
+install lib/libstdc++.so
+install lib/libc_debug.so
+
+
+installold lib/libandroid_runtime.so lib/libandroid_runtime_donut.so
+rm lib/libandroid_runtime_eclair.so
+install lib/libandroid_runtime_eclair.so lib/libandroid_runtime.so
+
+install bin/app_process #this does nothing special
+install lib/libbinder.so #needed by libmedia_jni, libandroid_runtime (introduced in about 2.0)
+
+#Camera
+installold lib/libcamera.so
+installold lib/libmm-qcamera-tgt.so #needed by libcamera.so
+installold lib/libmmcamera.so
+
+
+installold lib/libaudio.so #the interface to the kernel, hardware/msm7k/libaudio
+
+if false; then
+  installold lib/libskiagl.so #needed by libskia.so (else will cause OutOfMemory)
+  installold lib/libsgl.so #needed by libskiagl
+  installold lib/libcorecg.so #needed by libsgl
+  installold lib/libutils.so #old libui needs a function from here
+elif false; then
+  #installold lib/libutils.so lib/libutils_donut.so
+  install lib/libutils.so
+  install lib/libui.so #provides _ZN7android14SurfaceControl24setTransparentRegionHintERKNS_6RegionE
+  install lib/libEGL.so #needed by libui
+  install lib/libsurfaceflinger.so #old one needs EGLDisplaySurface, which is not in libui anymore
+  install lib/libcameraservice.so #needs _ZN7android8ISurface10BufferHeapC1EjjiiijjRKNS_2spINS_11IMemoryHeapEEES6_S6_S6_
+  install lib/libGLESv1_CM.so #provides glGetString -> crashes with old one
+  #install lib/hw/gralloc.msm7k.so lib/hw/gralloc.msm7201a_surf.so
+elif true; then
+  true
+  #install lib/libutils.so
+  #install lib/libsurfaceflinger.so #MemoryHeapBase has moved from libutils to libbinder and some virtual thunk pointer have a different name
+elif false; then
+  #2.1 graphics subsystem
+  install lib/libui.so #provides _ZN7android14SurfaceControl24setTransparentRegionHintERKNS_6RegionE
+  install lib/libskia.so
+  install lib/libskiagl.so
+  install lib/libEGL.so #needed by libui
+  install lib/libGLESv1_CM.so
+  install lib/libGLESv2.so
+  install lib/libsurfaceflinger.so
+  #install lib/libpixelflinger.so
+
+  install lib/libcameraservice.so #old one needs old libui
+  install lib/libmedia.so #provides audio functions for libcameraservice
+  install lib/libmedia_jni.so
+  install lib/libsrec_jni.so
+  install lib/libmediaplayerservice.so
+  install bin/mediaserver #calls instantiate on the audiopolicy service
+  install bin/servicemanager
+
+  install lib/libaudioflinger.so
+ 
+  
+  #opencore media libraries
+  install lib/libopencore_author.so
+  install lib/libstagefright.so
+  install lib/libstagefright_omx.so
+  install lib/libomx_sharedlibrary.so
+  install lib/libomx_aacdec_sharedlibrary.so
+  install lib/libomx_amrdec_sharedlibrary.so
+  install lib/libomx_amrenc_sharedlibrary.so
+  install lib/libomx_avcdec_sharedlibrary.so
+  install lib/libomx_m4vdec_sharedlibrary.so
+  install lib/libomx_mp3dec_sharedlibrary.so
+  install lib/libopencore_author.so
+  install lib/libopencore_downloadreg.so
+  install lib/libopencore_mp4localreg.so
+  install lib/libopencore_net_support.so
+  install lib/libopencore_rtspreg.so
+  install lib/libopencore_common.so
+  install lib/libopencore_download.so
+  install lib/libopencore_mp4local.so
+  install lib/libopencore_player.so
+  install lib/libopencore_rtsp.so
+  
+  install lib/libutils.so #needed by libopencore_player
+  installcustom lib/libempty.so lib/libsgl.so #old one needs old libutils
+  rm -R lib/hw
+  installold lib/hw
+fi
+
+installold lib/liblog.so #Use old or we get segmentation faults right on boot
+
+install lib/libemoji.so #what does this do?
+
+install lib/libcutils.so #provides set_sched_policy, which is needed by libbinder.so for example, provides mspace_merge_objects for libdvm.so
+
+install lib/libwebcore.so #external/webkit New JNI interface, needs Surface::isValid() (which we made inline)
+install lib/libnativehelper.so #dalvikvm helper, changed some JNI
+install lib/libdvm.so #more lax checks on JNI
+install bin/dalvikvm
+install bin/dexopt
+
+
+#Those libs are JNIed by libandroid_runtime
+install lib/libsqlite.so
+install lib/libnetutils.so
+
+#This should fix 'market apps not found'
+rm -R etc/permissions
+install etc/permissions
+
+installold lib/libloc_api.so #for gps
+installold lib/libloc_api-rpc.so #needed by libloc_api.so
+installold lib/libcommondefs.so #needed by libloc_api-rpc.so
+
+installold lib/libhardware_legacy.so #old one is needed for radio, wlan, gps ...
+
+installold etc/wifi/wpa_supplicant.conf #This is copied to /data/misc/wifi/wpa_supplicant.conf on first use
+installold etc/wl/rtecdc.bin #The firmware for wifi, given at insmod by libhardware_legacy
+installold etc/wl/nvram.txt #the nvram for wifi, given at insmod by libhardware_legacy
+installold bin/wpa_supplicant #there is much legacy in there
+installold bin/wpa_cli #fits wpa_supplicant
+
+
+#rm lib/hw/copybit.eve.so #This is old
+#install lib/hw/copybit.msm7k.so #This works
+
+
+#-- Install framework
+install framework
+deodex framework/qcnvitems #this is proprietary
+deodex framework/qcrilhook #this is proprietary
+
+#We only need this one because it would fill up the log with "file not found errors"
+#installold framework/lge-res.apk #proprietary
+#resign framework/lge-res.apk platform #propriertary
+
+
+#-- Install app
+install app
+
+#installold app/XIM.apk #LGE eXtended Input Method
+
+#installold app/lgecamera.apk #in uid.media
+#installold app/DivxRegistration.apk #in uid.media
+
+#This needs some DRM stuff (and there is a Gallery.apk in stock android anyhow)
+#installold app/ArcMediaGallery.apk #in uid.media
+#resign app/ArcMediaGallery.apk media
+
+#This crashes and there is a mediaplayer ins aosp
+#installold app/ArcMMP.apk #in uid.media
+#resign app/ArcMMP.apk media
+
+#What's that app? - if you want them, copy old '3rdparty' directory
+#installold app/ArcWorkshop.apk #in uid.media
+#resign app/ArcWorkshop.apk media
+#installold app/ArcVideoEditor.apk #in uid.media
+#resign app/ArcVideoEditor.apk media
+
+echo Copying google apps
+if [[ ! -d ../gapps2 ]]; then
+  echo "Directory gapps2 missing!"
+  echo "google for optedgapps-ds-ere36b.zip,"
+  echo "download, extract it"
+  echo "There is a system directory in there,"
+  echo "Rename this to gapps2"
+  exit 1
+fi
+
+NEWSYS=gapps2 install app
+NEWSYS=gapps2 install etc
+NEWSYS=gapps2 install framework
+NEWSYS=gapps2 install lib
+
+echo Copying additional apps
+#those are not in odex form
+#installold app/com.android.stopwatch.apk
+#installold app/toleSetup.apk
+#installold app/WeatherApp.apk
+#installold app/bz.ktk.bubble.apk
+installold app/com.speedsoftware.rootexplorer.apk
+installold app/com.appdroid.anycut.apk
+#installold app/cz.romario.opensudoku.apk
+#installold app/Quickoffice.apk
+#installold app/EnhancedGoogleSearchProvider.apk
+#installold app/com.stain46.taghome16.apk
+#installold app/com.betterandroid.betterkeyboard.apk
+#installold app/com.mathpad.mobile.android.wt.unit.apk
+#installold app/com.motalen.batterytimelite.apk
+#installold app/com.twidroid.apk
+#installold app/com.farproc.wifi.analyzer.apk
+installold app/com.arron.taskManagerFree.apk
+installold app/com.eclipsim.gpsstatus2.apk
+
+
+if true; then
+  #Superuser.apk is copied above by "install app"
+  install bin/su
+  install xbin/su
+else
+  #Install old Superuser.apk
+  rm app/Superuser.apk #this does not work
+  installold bin/su
+  installold xbin/su
+  installold app/koushikdutta.superuser.apk
+fi
+
+#installold app/com.androidapps.widget.weather2.apk
+#installold app/com.pocketools.currency.apk
+#installold app/whiteCompass.apk
+#installold app/com.jiuzhangtech.rushhour.apk
+#installold app/kr.mobilesoft.yxflash.apk
+#installold app/org.adw.launcher_donut.apk
+#installold app/My_e-mail_Android.apk
+#installold app/aDosBox.apk
+#installold app/com.google.zxing.client.android.apk
+#installcustom app/com.keramidas.TitaniumBackup.apk
+
+install etc/security/cacerts.bks 
+install etc/security/otacerts.zip
+
+
+#Startup file
+installcustom bin/rc
+installcustom bin/rundropbear
+
+
+mkdir -p lib/modules
+cp ../../my-boot/my-kernel/drivers/net/wireless/bcm4325/wireless.ko lib/modules/
+
+installcustom usr/keylayout/eve_qwerty.kl-english
+installcustom usr/keylayout/eve_qwerty.kl-german
+installcustom usr/keylayout/eve_qwerty.kl-french
+
+cp usr/keylayout/eve_qwerty.kl-english usr/keylayout/eve_qwerty.kl
+
+installcustom build.prop
+
+#rm app/Maps.apk
+installcustom etc/apns-conf.xml
+}
+
+

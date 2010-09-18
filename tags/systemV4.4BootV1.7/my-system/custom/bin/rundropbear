@@ -1,0 +1,5 @@
+#!/system/bin/sh
+
+#Uncomment the next line to run dropbear on boot
+#dropbear -A gw620 -C gw620 -R /system/etc/dropbear/dropbear_rsa_host_key -U0 -G0
+

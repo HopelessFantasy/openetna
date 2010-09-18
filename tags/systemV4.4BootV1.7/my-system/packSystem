@@ -1,0 +1,20 @@
+#!/bin/bash
+if [[ $# -ne 1 ]]; then
+  echo "Call $0 versionNumber"
+  exit 1
+fi
+if [[ ! -f system.img || ! -d system ]]; then
+  echo "ERROR: system.img or system/ does not exist!"
+  exit 1
+fi
+
+if [[ -f system/do_no_release ]]; then
+  echo "ERROR: system/do_no_release exists!"
+  exit 1
+fi
+
+cp -a system.img systemV$1.img
+rm -Rf systemV$1
+cp -a system systemV$1
+rm -f systemV$1.7z
+7z a -t7z -mx9 systemV$1.7z systemV$1.img

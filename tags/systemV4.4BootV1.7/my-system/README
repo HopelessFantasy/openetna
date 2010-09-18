@@ -1,0 +1,28 @@
+== Create the system.img ==
+./makeSystemImg eclair-cmd
+the system will then be in 'system' directory and in system.img
+
+== Infos ==
+the script makeSystemImg defines all function and then sources eclair-cmd
+inside eclair-cmd the image is assembled
+
+install: copies the file from ca-donut
+installold: copies the file from korean-v10t
+deodex: comiles the file from deodex/korean-v10t/
+resign: signs the apk with the key from eclair
+
+== Emulator =
+You may want to test functionality in the android emulator
+to build an system.img which works in the emulator, use
+./makeSystemImg -e eclair-cmd
+
+You can emulate this image with
+./emulate system.img -wipe-data
+You may omit -wipe-data on later runs
+
+== Build system.ext2.img ==
+First build the system.img. Then issue
+sudo ImgToExt2Img
+which will create system.ext2.img from the system.img.
+Copy this system.ext2.img to /sdcard.
+It will automatically be used on the next boot.

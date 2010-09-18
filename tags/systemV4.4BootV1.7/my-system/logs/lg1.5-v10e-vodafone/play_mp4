@@ -1,0 +1,37 @@
+I/ActivityManager( 1286): Start proc com.android.camera for activity com.android.camera/.MovieView: pid=2255 uid=10008 gids={3003, 4005, 1015, 1006, 3002, 3001, 2001}
+D/PowerManagerService( 1286): acquireWakeLock flags=0x1 tag=SCREEN_FROZEN
+I/WindowManager( 1286): Setting rotation to 1, animFlags=0
+I/WindowManager( 1286): Config changed: { scale=1.0 imsi=0/0 loc=en_GB touch=3 keys=2/1/2 nav=1 orien=2 layout=18}
+W/WindowManager( 1286): performLayoutAndPlaceSurfacesLocked called while in layout
+D/PowerManagerService( 1286): setScreenOffTimeouts mKeylightDelay=3000 mDimDelay=20000 mScreenOffDelay=7000 mDimScreen=true
+I/XIM     ( 1449): startInput(0-0) en_GB:no Composer(restart)
+D/KeyguardUpdateMonitor( 1286): received broadcast android.intent.action.CONFIGURATION_CHANGED
+D/KeyguardUpdateMonitor( 1286): handleConfigurationChange
+D/StatusBar( 1286): updateResources
+V/MovieView( 2255): onCreate
+E/VideoView( 2255): setVideoURI file:///sdcard/documentariesandyou.mp4
+V/MovieView( 2255): mStreaming value false-1
+V/MovieView( 2255): onResume
+I/XIM     ( 1449): startInput(0-0) en_GB:no Composer
+W/IInputConnectionWrapper( 2143): showStatusIcon on inactive InputConnection
+V/VideoView( 2255): reset duration to -1 in openVideo
+I/MediaPlayer( 2255): SetDataSource!! (NOT DRM) path = /sdcard/documentariesandyou.mp4
+I/ActivityManager( 1286): Displayed activity com.android.camera/.MovieView: 1911 ms (total 1911 ms)
+D/PowerManagerService( 1286): releaseWakeLock flags=0x1 tag=SCREEN_FROZEN
+D/PowerManagerService( 1286): releaseWakeLock flags=0x1 tag=ActivityManager-Launch
+E/QCvdec  ( 1236): get_parameter: unknown param 0ff7a347
+E/QCvdec  ( 1236): Omx Flush issued when vdec is not initialized yet.
+E/VideoView( 2255): video size: 0/0
+E/MediaController( 2255): setStreamingInfo false, 120025
+D/VideoView( 2255): mPreparedListener:audio true,duration 120025,streaming false
+E/VideoView( 2255): Check aod streaming false    true
+D/PowerManagerService( 1286): acquireWakeLock flags=0xa tag=KEEP_SCREEN_ON_FLAG
+D/PowerManagerService( 1286): here mUserState=0x3 mLocks.gatherState()=0x3 mWakeLockState=0x0
+D/PowerManagerService( 1286): setPowerState: mPowerState=0x3 newState=0x3 noChangeLights=false
+E/QCvdec  ( 1236): Omx Flush issued when vdec is not initialized yet.
+E/QCvdec  ( 1236): OMXCORE-SM:Recieved command DISABLE (2)
+E/QCvdec  ( 1236): Omx Flush issued when vdec is not initialized yet.
+E/QCvdec  ( 1236): OMXCORE-SM:Recieved command ENABLE (3)
+D/skia    ( 2255): +++++ SkScalerContext_FreeType::ref_ft_face gFTCount=2 pLayout 1d8c88, fontID = 2
+D/skia    ( 2255): ===== SkScalerContext_FreeType::ref_ft_face gFTCount=3 pLayout 1d8c88, fontID=2
+W/AudioFlinger( 1236): write blocked for 213 msecs
