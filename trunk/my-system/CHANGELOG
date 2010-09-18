@@ -8,6 +8,8 @@ Partly fixed voice search (You will have to install voice search from the market
 Replaced old libhardware_legacy by the one compiled from source
 Increase the volume range for in-call audio. It can be louder now.
 Added klogtail.
+Applied patches from codeaurora to our telephony framework.
+Added more hardware information under Settings->About phone.
 
 
 v4.3:
