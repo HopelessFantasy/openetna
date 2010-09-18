@@ -2,6 +2,8 @@
 
 = Features =
   * Boot system from sdcard
+  * Includes iptables for firewalls. Recommended app: [http://code.google.com/p/droidwall DroidWall]
+  * Includes nat for wifi tethering. Recommended app: [http://code.google.com/p/android-wifi-tether AndroidWifiTether]
   * Keyboard layouts for multiple languages (QWERTY, QWERTZ, ...)
   * Easy installation of google apps
   * Full source code available
