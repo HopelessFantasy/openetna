@@ -1,0 +1,15 @@
+#summary Features and known bugs
+
+= Features =
+  * Boot system from sdcard
+  * Keyboard layouts for multiple languages (QWERTY, QWERTZ, ...)
+  * Easy installation of google apps
+  * Full source code available
+
+= Known bugs =
+  * (See the 'issues' pages for more details)
+  * No OpenGL hardware acceleration
+  * No video/audio acceleration
+  * No Bluetooth
+  * If wifi sleep policy is set to 'never' or 'never when plugged in', wifi will hang on resume
+  * The led on the shift button does not light up while in caps mode
