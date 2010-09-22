@@ -1,4 +1,15 @@
 #summary ChangeLog
+= boot v1.8 =
+{{{
+Include NAT to make android-wifi-tether work better
+}}}
+
+= system v4.5 =
+{{{
+Rebase our changes for the framework, phone and settings on top of
+cyanogenMod's
+}}}
+
 = boot v1.7 =
 {{{
 Added iptables multiport filter so one can use DroidWall as firewall
