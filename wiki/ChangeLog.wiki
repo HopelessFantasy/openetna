@@ -4,10 +4,11 @@
 Include NAT to make android-wifi-tether work better
 }}}
 
-= system v4.5 =
+= system v4.5-rc1 =
 {{{
-Rebase our changes for the framework, phone and settings on top of
-cyanogenMod's
+Rebase our changes for the framework, phone and settings on top of cyanogenMod's
+  This gives FLAC support and much more
+Made our Stk send the STK_APP_INIT_COMPLETED to trigger communcation with the RIL
 }}}
 
 = boot v1.7 =
