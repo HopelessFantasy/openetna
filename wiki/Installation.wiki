@@ -43,25 +43,15 @@ If you are upgrading from a v1.5 ROM you should:
   # Press SPACE (or SPACE+MENU for newer firmwares) till the fastboot text appears on the screen
 
  # As Root or Admin, execute the following commands on your linux terminal or windows command line interface ( WIN + R => cmd => ok )
+ * If you are flashing an 'OpenEtna' image for the first time, or if the ChangeLog says that you will have to do an wipe, issue the next commands (else skip this step). This will do something similar to a factory reset and remove all userdata.
 {{{
 fastboot -w
+}}}
+ * Flash the images
+{{{
 fastboot flash boot bootv1.4.img
 fastboot flash system systemV4.2.img
 }}}
-
- # Reboot the phone and it should boot to the new system
- # Enter adb shell (as root / admin):
-{{{
-/opt/android-sdk-<xx>/tools/adb start-server
-/opt/android-sdk-<xx>/tools/adb shell
-}}}
- # Change the permissions of /system/bin/su and /system/xbin/su
-{{{
-chmod 4777 /system/bin/su
-chmod 4777 /system/xbin/su
-}}}
- # Change the language and input language
-
 
 = Update the keyboard layout =
 See HowToChangeKeyboardLayout
