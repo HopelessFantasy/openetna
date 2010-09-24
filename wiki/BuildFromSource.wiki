@@ -74,12 +74,12 @@ repo sync
 {{{
 ./doBuild
 }}}
- * Then make a boot.img:
+ * The boot.img will be under out/target/product/openetna/boot.img:
 {{{
 cd my-boot
 ./makeBootImg
 }}}
- * Then build a system.img:
+ * Don't use the system.img there! We still need to add the proprietary pieces. Build it by:
 {{{
 cd ../my-system
 less README
