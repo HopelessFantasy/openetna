@@ -1,6 +1,6 @@
 #!/bin/bash
-if [[ $# -ne 1 ]]; then
-  echo "Call $0 versionNumber"
+if [[ $# -le 1 ]]; then
+  echo "Call $0 SystemVersionNumber [BootVersionNumber]"
   exit 1
 fi
 if [[ ! -f system.img || ! -d system ]]; then
@@ -13,8 +13,16 @@ if [[ -f system/do_no_release ]]; then
   exit 1
 fi
 
-cp -a system.img systemV$1.img
-rm -Rf systemV$1
-cp -a system systemV$1
-rm -f systemV$1.7z
-7z a -t7z -mx9 systemV$1.7z systemV$1.img
+mkdir -p Images
+
+echo "Packing system"
+cp -a system.img Images/systemV$1.img
+rm -Rf Images/systemV$1
+cp -a system Images/systemV$1
+rm -f Images/systemV$1.7z
+7z a -t7z -mx9 Images/systemV$1.7z Images/systemV$1.img
+
+if [[ $# -eq 2 ]]; then
+  echo "Packing boot"
+  cp ../android-2.1/out/target/product/openetna/boot.img Images/bootV$2.img
+fi
