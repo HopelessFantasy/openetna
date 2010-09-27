@@ -13,21 +13,11 @@ system. fastboot is a debugging tool included in older LG firmwares.
 == Requirements ==
 You will need:
  * LG GW620
- * Older firmware (not V10I, V10N, or anything recent that lacks fastboot)
-  * http://csmg.lgmobile.com:9002/swdata/WEBSW/GW620/ANEUBB/V10g_00/V10G_00.kdz
  * ADB (included in Android SDK: http://developer.android.com/sdk/index.html)
  * fastboot 
   * Linux: http://android-dls.com/files/linux/fastboot
   * Windows: http://forum.xda-developers.com/showthread.php?t=463627 (unverified)
- * Android 2.1 ROM: 
-  * System.img: http://code.google.com/p/openetna/downloads/detail?name=systemV4.2.7z
-  * boot.img: http://code.google.com/p/openetna/downloads/detail?name=bootv1.4.img
-
-== Recover fastboot ==
-
-If you have installed LG official v10I, v10N or some other version that
-does not have fastboot, you should downgrade using LG Utils and
-LG Mobile Update. (google for it)
+ * Recent system.img and boot.img from the 'Downloads' section
 
 == When Upgrading from 1.5 ==
 
@@ -36,18 +26,18 @@ If you are upgrading from a v1.5 ROM you should:
 
 = Install =
 
- # Get your phone in fastboot mode:
+  * Get your phone in fastboot mode:
   # Remove battery
   # Slide out the keyboard
   # Plug in USB connector (still with the battery removed)
   # Press SPACE (or SPACE+MENU for newer firmwares) till the fastboot text appears on the screen
+  # If you are unable to enter fastboot, your firmware may not support it. See section "Recover fastboot"
 
- # As Root or Admin, execute the following commands on your linux terminal or windows command line interface ( WIN + R => cmd => ok )
- * If you are flashing an 'OpenEtna' image for the first time, or if the ChangeLog says that you will have to do an wipe, issue the next commands (else skip this step). This will do something similar to a factory reset and remove all userdata.
+ * If you are flashing an 'OpenEtna' image for the first time, or if the ChangeLog says that you will have to do an wipe, issue the next commands (else skip this step). This will do something similar to a factory reset and remove all userdata. As root/admin, do:
 {{{
 fastboot -w
 }}}
- * Flash the images
+ * Flash the images. As root/admin, do:
 {{{
 fastboot flash boot bootv1.4.img
 fastboot flash system systemV4.2.img
@@ -63,3 +53,15 @@ See HowToChangeKeyboardLayout
 
 = Install google apps =
 Download optedgapps-ds-ere36b.zip (google for it), copy it to /sdcard/optedgapps-ds-ere36b.zip, and reboot.
+
+== Recover fastboot ==
+
+If you have installed LG official v10I, v10N or some other version that
+does not have fastboot, you should downgrade using LG Utils and
+LG Mobile Update. (google for it)
+
+Image with fastboot for 900 Mhz 3G:
+http://csmg.lgmobile.com:9002/swdata/WEBSW/GW620/ANEUBB/V10g_00/V10G_00.kdz
+
+Image with fastboot for 850 Mhz 3G:
+http://csmg.lgmobile.com:9002/swdata/WEBSW/GW620/AORFBB/V10h_00/V10H_00.kdz
