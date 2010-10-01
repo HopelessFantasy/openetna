@@ -1,4 +1,15 @@
 #summary ChangeLog
+= boot v2.1 =
+{{{
+Added TUN support
+}}}
+
+= system v6.0-rc3 =
+{{{
+Fixed the "cannot dial out" regression
+Correct the keymap
+}}}
+
 = boot v2.0 =
 {{{
 Include NAT to make android-wifi-tether work better
