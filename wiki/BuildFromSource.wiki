@@ -31,60 +31,33 @@ Get the packages needed to build Android.
 sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl sun-java5-jdk zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev ia32-libs x11proto-core-dev libx11-dev lib32readline5-dev lib32z-dev
 }}}
 
-Verify you're using the right java version issuing a "java -version": it has to be 1.5.
+Verify you're using the right java version issuing a "java -version": it has to be 1.6.
 
 = Get the source =
 
- * Follow the indications in the Source tab above. If you're not a member of the project just enter this line in a terminal:
+ * Get the [http://android.git.kernel.org/repo repo] script from google, make it executable and place it in your PATH
 
+ * Checkout the source
 {{{
-svn checkout http://openetna.googlecode.com/svn/trunk/ openetna-read-only
-}}}
-
-(if you don't have it installed, you have to install the svn package).
-You'll get a folder called openetna-read-only, it contains useful scripts and some READMEs. If you're autonomous enough, just follow them; if not, go on with this guide.
-
-= Preparing for building =
-
-{{{
-cd openetna-read-only
-}}}
- * Then, according the README: get smali and baksmali:
-{{{
-wget http://smali.googlecode.com/files/smali-1.2.4.jar
-wget http://smali.googlecode.com/files/baksmali-1.2.4.jar
-}}}
- * Now get the repo tool, if you haven't got it already. Also make sure you have the 'git' package installed.
-{{{
-wget http://android.git.kernel.org/repo
-chmod +x repo
-mv repo /opt/android-sdk/tools/
-}}}
-(note: /opt/android-sdk/tools should be in your path, otherwise add /opt/android-sdk/tools/ in front of the 'repo' commands)
- * Download the Polytheus android-2.1 source:
-{{{
-mkdir android-2.1
-cd android-2.1
-repo init -u git://github.com/OpenEtna/android_manifest.git -b eclair
+mkdir android-2.2
+cd android-2.2
+repo init -u git://github.com/OpenEtna/android_manifest.git -b froyo
 repo sync
+cd ..
 }}}
 
-= Building the source = 
- * Now you can build the source:
+  * Get the proprietary files. Download [http://www.zacpod.com/files/V10T.zip Zacpod's korean-v10t firmware], and extract the system.img with unyaffs to 'korean-v10t'. Then
 {{{
-./doBuild
-}}}
- * The boot.img will be under out/target/product/openetna/boot.img:
-{{{
-cd my-boot
-./makeBootImg
-}}}
- * Don't use the system.img there! We still need to add the proprietary pieces. Build it by:
-{{{
-cd ../my-system
-less README
+cd android-2.2/device/lg/eve
+./extract-files.sh
+cd ../../..
 }}}
 
+  * Build the source
+{{{
+make -j3
+}}}
+  * The system.img and boot.img can then be found under out/target/product/eve/
 = Contribute =
  * Get yourself a task. You will probably want to announce it on the mailing list, to see if anyone else is working at that issue or if anyone has good advice.
  * Tell the mailing list after you have finished something and ask for review
@@ -132,6 +105,59 @@ git remote set-url --push github git@github.com:OpenEtna/android_vendor_openetna
 Then push your changes by
 {{{
 git push
+}}}
+
+= OLD Instructions for eclair =
+== Get the source ==
+
+ * Follow the indications in the Source tab above. If you're not a member of the project just enter this line in a terminal:
+
+{{{
+svn checkout http://openetna.googlecode.com/svn/trunk/ openetna-read-only
+}}}
+
+(if you don't have it installed, you have to install the svn package).
+You'll get a folder called openetna-read-only, it contains useful scripts and some READMEs. If you're autonomous enough, just follow them; if not, go on with this guide.
+
+== Preparing for building ==
+
+{{{
+cd openetna-read-only
+}}}
+ * Then, according the README: get smali and baksmali:
+{{{
+wget http://smali.googlecode.com/files/smali-1.2.4.jar
+wget http://smali.googlecode.com/files/baksmali-1.2.4.jar
+}}}
+ * Now get the repo tool, if you haven't got it already. Also make sure you have the 'git' package installed.
+{{{
+wget http://android.git.kernel.org/repo
+chmod +x repo
+mv repo /opt/android-sdk/tools/
+}}}
+(note: /opt/android-sdk/tools should be in your path, otherwise add /opt/android-sdk/tools/ in front of the 'repo' commands)
+ * Download the Polytheus android-2.1 source:
+{{{
+mkdir android-2.1
+cd android-2.1
+repo init -u git://github.com/OpenEtna/android_manifest.git -b eclair
+repo sync
+}}}
+
+== Building the source ==
+ * Now you can build the source:
+{{{
+./doBuild
+}}}
+ * Then make a boot.img:
+{{{
+cd my-boot
+./makeBootImg
+}}}
+ * Then build a system.img:
+{{{
+cd ../my-system
+less README
 }}}
 
 *This document is a work in progress*

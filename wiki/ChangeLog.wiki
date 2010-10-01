@@ -1,7 +1,29 @@
 #summary ChangeLog
-= boot v1.8 =
+= boot v2.0 =
 {{{
 Include NAT to make android-wifi-tether work better
+Rebased ramdisk on cyanogenMod's
+  This should fix "Unable to shutdown/reboot"
+ATTENTION: This boot.img only works with system v6.0-rc2 (or higher)
+}}}
+
+= system v6.0-rc2 =
+{{{
+
+Starts with 'F', ends with 'royo'
+
+Rebase the rest of our changes cyanogenMod's 6.0.0
+  This brings alot of goodies
+  This fixed the airplane mode not working
+  This should fix the facebook app issue
+  And many more
+Fixed "adb install" issue
+RIL: Fixed(?) responseCallList(). At least added more debbuging output to help the CallerID issue
+Video playback works (sometimes a bit slow -> still no hardware acceleration)
+
+ATTENTION: This needs a wipe, a new google apps package
+           gapps-mdpi-20100930-signed.zip on your /sdcard,
+		   and boot.img v2.0
 }}}
 
 = system v4.5-rc1 =
