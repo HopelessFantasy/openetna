@@ -67,9 +67,9 @@ make -j3
 
 You should really start with checking out a local branch by
 {{{
-git checkout -b eclair github/eclair
+git checkout -b froyo github/froyo
 }}}
-This will create a local branch "eclair" which is based on the remote branch "github/eclair".
+This will create a local branch "froyo" which is based on the remote branch "github/froyo".
 
 Make your changes.
 
@@ -79,13 +79,13 @@ In the repository, where you have your changes, make sure you have them on a nam
 {{{
 git branch
 }}}
-will show "eclair" (hopefully) or `*`(no branch).
+will show "froyo" (hopefully) or `*`(no branch).
 If you are on `*`(no branch), issue
 {{{
-git checkout -b eclair
-git branch eclair --set-upstream github/eclair
+git checkout -b froyo
+git branch froyo --set-upstream github/froyo
 }}}
-to create the local branch "eclair" from the current working copy and tell git that this branch is based on the remote branch "github/eclair".
+to create the local branch "froyo" from the current working copy and tell git that this branch is based on the remote branch "github/froyo".
 
 One then has to change the url where we push to, because the default is an read-only url.
 Issue
