@@ -1,4 +1,17 @@
 #summary ChangeLog
+= system v6.0-rc5 =
+{{{
+Enable JIT by default
+Under Setting->Language & Keyboard->Device keyboard
+  you can switch between QWERTY,QWERTZ,AZERTY
+}}}
+
+= boot v2.2 =
+{{{
+Fixed Volume buttons
+}}}
+
+
 = boot v2.1 =
 {{{
 Added TUN support
