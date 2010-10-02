@@ -2,6 +2,7 @@
 = boot v2.1 =
 {{{
 Added TUN support
+Fixed Volume buttons
 }}}
 
 = system v6.0-rc3 =
