@@ -13,8 +13,8 @@ system. fastboot is a debugging tool included in older LG firmwares.
 == Requirements ==
 You will need:
  * LG GW620
- * ADB (included in Android SDK: http://developer.android.com/sdk/index.html)
-  * note: For windows, you need to add this to your android_winusb.inf in the android sdk usb driver in the `[`Google.NTx86`]` section for x86 or in `[`Google.NTamd64`]` section for 64bit windows:
+ * Android SDK: http://developer.android.com/sdk/index.html
+  * Note: For windows, you need to add this to your android_winusb.inf in the android sdk usb driver in the `[`Google.NTx86`]` section for x86 or in `[`Google.NTamd64`]` section for 64bit windows:
 {{{
 ;LG eve
 %SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_D00D
@@ -24,20 +24,17 @@ You will need:
  * fastboot 
   * Linux: http://android-dls.com/files/linux/fastboot
   * Windows: Included in android-sdk
- * Recent system.img and boot.img from the 'Downloads' section
+ * Recent system.img and boot.img from the 'Downloads' section: http://code.google.com/p/openetna/downloads/list
 
-== When Upgrading from 1.5 ==
-
-If you are upgrading from a v1.5 ROM you should:
- * backup all the information you want to a different medium.
 
 = Install =
 
+  * Backup your data! (use software available from the market, or just sync with your google account, ...)
   * Get your phone in fastboot mode:
   # Remove battery
   # Slide out the keyboard
   # Plug in USB connector (still with the battery removed)
-  # Press SPACE (or SPACE+MENU for newer firmwares) till the fastboot text appears on the screen
+  # Press SPACE (or SPACE+MENU for newer firmwares) just when you see the screen slightly light up, untill the fastboot text appears on the screen.
   # If you are unable to enter fastboot, your firmware may not support it. See section "Recover fastboot"
 
  * If you are flashing an 'OpenEtna' image for the first time, or if the ChangeLog says that you will have to do an wipe, issue the next commands (else skip this step). This will do something similar to a factory reset and remove all userdata. As root/admin, do:
@@ -46,8 +43,8 @@ fastboot -w
 }}}
  * Flash the images. As root/admin, do:
 {{{
-fastboot flash boot bootv1.4.img
-fastboot flash system systemV4.2.img
+fastboot flash boot boot-versionXX-.img
+fastboot flash system system-versionYY-.img
 }}}
   # Wait until the commands finished
   # Unplug the usb
