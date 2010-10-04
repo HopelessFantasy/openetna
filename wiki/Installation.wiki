@@ -14,9 +14,16 @@ system. fastboot is a debugging tool included in older LG firmwares.
 You will need:
  * LG GW620
  * ADB (included in Android SDK: http://developer.android.com/sdk/index.html)
+  * note: For windows, you need to add this to your android_winusb.inf in the android sdk usb driver in the [Google.NTx86] for x86 or in [Google.NTamd64] for 64bit windows:
+{{{
+;LG eve
+%SingleAdbInterface%        = USB_Install, USB\VID_18D1&PID_D00D
+%CompositeAdbInterface%     = USB_Install, USB\VID_18D1&PID_D00D&MI_01
+}}}
+
  * fastboot 
   * Linux: http://android-dls.com/files/linux/fastboot
-  * Windows: http://forum.xda-developers.com/showthread.php?t=463627 (unverified)
+  * Windows: Included in android-sdk
  * Recent system.img and boot.img from the 'Downloads' section
 
 == When Upgrading from 1.5 ==
