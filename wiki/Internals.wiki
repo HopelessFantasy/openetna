@@ -4,46 +4,6 @@
 The value of this sensor can't read directly. It can only be activated/deactived to control the brightness of the backlight.
 The kernel references this device under drivers/video/backlight/bl_bd6083.c
 
-= Updating the bionic to the kernel headers =
-After changing kernel headers in the kernel source, do
-{{{
-cp -a kernel/include/{asm-generic,linux,mtd} bionic/libc/kernel/original/
-cp -a kernel/arch/arm/include/asm bionic/libc/kernel/arch-arm 
-cp -a kernel/arch/arm/mach-msm/include/mach/memory.h bionic/libc/kernel/arch-arm/asm/mach
-cp out/target/product/openetna/obj/KERNEL_OBJ/include/asm-arm/mach-types.h bionic/libc/kernel/arch-arm/asm/
-cd bionic/libc/kernel
-./tools/update_all.py
-#Revert some missing files
-git checkout common/linux/binder.h
-#Revert netfilter stuff - this needs alot adjustment
-git clean -f -d common/linux/netfilter_ipv4/
-git checkout HEAD -- common/linux/netfilter_ipv4
-cp -a out/target/product/openetna/obj/KERNEL_OBJ/include/linux/version.h bionic/libc/kernel/common/linux/
-}}}
-
-Modify bionic/libc/kernel/arch-arm/asm/mach/memory.h
-{{{
-#ifndef __ASM_ARCH_MEMORY_H
-#define __ASM_ARCH_MEMORY_H
-
-+#define CONFIG_ARCH_MSM_ARM11
-}}}
-
-Modifiy bionic/libc/kernel/arch-arm/asm/memory.h
-{{{
--#include <mach/memory.h>
-+#include "mach/memory.h"
-#include <asm/sizes.h>
-
-+#define __deprecated
-}}}
-
-Modify the android/bionic/libc/kernel/arch-arm/asm/posix_types.h
-{{{
--#if defined(__KERNEL__)
-+#if !defined(__GLIBC__) || __GLIBC__ < 2
-}}}
-
 = Audio chip =
 Used by libaudio (hardware/msm7k/libaudio), which interfaces it by ioctl's defined in msm_audio.h and which are processed by kernel/arch/arm/mach-msm/qdsp5/snd.c
 The [http://datasheets.maxim-ic.com/en/ds/MAX9877.pdf MAX9877 amplifier] is used for speaker and headset amplification.
@@ -67,10 +27,12 @@ The touchscreen is in kernel/drivers/input/touchscreen/msm_touch.c.
 The framebuffer device and the mddi interfaces is under kernel/drivers/video/msm/.
 
 = Other devices =
+{{{
 The Home and Back button are driven by kernel/drivers/input/touchscreen/touch_so240001.c.
-The VolumeUp/Down buttons are driven by kernel/arch/arm/mach-msm/board-eve-keypad.c.
+The VolumeUp/Down buttons and the slide mechanism are driven by kernel/arch/arm/mach-msm/board-eve-keypad.c.
 The proximity sensor is in kernel/drivers/input/misc/prox_sharp.c.
 The qwerty keyboard is in drivers/input/keyboard/kbd_pp2106.c.
 The backlight for the qwerty and the soft buttons is in drivers/input/misc/keyled_pm.c.
-The vibrator is in drivers/misc/vibrator_eve.c. To power on/off the vibrator motor, this uses functions from the backlight.
+The vibrator is in drivers/misc/vibrator_eve.c. To power on/off the vibrator motor, this uses functions from the backlight driver(?).
 The camera chip is in drivers/media/video/msm/mv9319.c.
+}}}
