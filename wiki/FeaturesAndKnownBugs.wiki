@@ -11,7 +11,7 @@
 = Known bugs =
   * (See the 'issues' pages for more details)
   * No OpenGL hardware acceleration.
-  * No video/audio acceleration (YouTube/MP4 videos will play slow, sound will flicker).
+  * No video/audio acceleration (YouTube/MP4 videos will play at times slowly, sound will flicker).
   * No Bluetooth
   * If wifi sleep policy is set to 'never' or 'never when plugged in', wifi will hang on resume
   * The led on the shift button does not light up while in caps mode.
