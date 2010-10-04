@@ -37,7 +37,7 @@ You will need:
   # Press SPACE (or SPACE+MENU for newer firmwares) just when you see the screen slightly light up, untill the fastboot text appears on the screen.
   # If you are unable to enter fastboot, your firmware may not support it. See section "Recover fastboot"
 
- * If you are flashing an 'OpenEtna' image for the first time, or if the ChangeLog says that you will have to do an wipe, issue the next commands (else skip this step). This will do something similar to a factory reset and remove all userdata. As root/admin, do:
+ * If you are flashing an 'OpenEtna' image for the first time, or if the ChangeLog says that you will have to do an wipe, issue the next commands (else skip this step). This will do something similar to a factory reset and remove all userdata. You can backup your apps and their data by the very fine app "Titanium Backup" (market). As root/admin, do:
 {{{
 fastboot -w
 }}}
