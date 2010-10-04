@@ -1,21 +1,41 @@
 #summary ChangeLog
-= system v6.0-rc5 =
+= system v6.0-rc5/boot v2.1.1=
 {{{
 Enable JIT by default
 Under Setting->Language & Keyboard->Device keyboard
   you can switch between QWERTY,QWERTZ,AZERTY
-}}}
-
-= boot v2.2 =
-{{{
 Fixed Volume buttons
-}}}
 
+Full git log:
+device/lg/eve:
+858a1a8 Install the proprietary libril.so to obj/, too
+6496b89 eve_qwerty.kcm: Fixed Alt+Y and Alt+A for AZERTY
+50b4b88 Use right dhcpcd.conf
+cc6399b Rename the keylayout from the language to their generic name
+bc21bab full_eve.mk: enable JIT by default
+106b233 packSystem: remove script
+frameworks/base:
+d551adc libui: rename keylayout property to persist.sys.kl.%s
+hardware/ril:
+15b99b7 Keep libril.so from building
+48338ce Revert "Keep libril.so from building"
+kernel:
+ec7e843 board-eve-keypad.c: Make volume buttons work
+packages/apps/Settings:
+0d9a4e7 Implement setting for keyboard layout (QWERTY,QWERTZ,AZERTY)
+external/rsync:
+743f916 Merge remote branch 'rsync/b3.0.x'
+c463617 Some quoting fixes/improvements.
+6abb59a If we create an off_t type, define SIZEOF_OFF_T.
+d79bc5c Fix rsync_xal_set reference in an error.
+10cd07c Avoid infinite loop if the file's length is negative. Fixes bug 4664.
+62e9eb7 Mention need of wildcard support in make. See bug 7625.
+de20d72 Remove duplication for -x option.
+}}}
 
 = boot v2.1 =
 {{{
 Added TUN support
-Fixed Volume buttons
 }}}
 
 = system v6.0-rc3 =
