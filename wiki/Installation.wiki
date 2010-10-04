@@ -52,6 +52,10 @@ fastboot flash system system-versionYY-.img
   # Poweron the phone
   # Wait (On the first boot, the applications are optimized. This can take up to 10 minutes)
 
+<wiki:video url="http://www.youtube.com/watch?v=UJMOv1OEKws" />
+
+OpenEtna installation video
+
 = Update the keyboard layout =
 See HowToChangeKeyboardLayout
 
