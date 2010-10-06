@@ -46,7 +46,7 @@ repo sync
 cd ..
 }}}
 
-  * Get the proprietary files. Download [http://www.zacpod.com/files/V10T.zip Zacpod's korean-v10t firmware], and extract the system.img with unyaffs to 'korean-v10t'. Then
+  * Get the proprietary files. Download [http://www.zacpod.com/files/V10T.zip Zacpod's korean-v10t firmware], and extract the system.img with [http://code.google.com/p/openetna/source/browse/#svn/trunk/unyaffs unyaffs] to 'korean-v10t'. (So that korean-v10t and android-2.2 are in the same directory). Then
 {{{
 cd android-2.2/device/lg/eve
 ./extract-files.sh
