@@ -13,20 +13,15 @@ device/htc/dream_sapphire:
 d024f28 Remove not needed line - dateformat is 'globally' defined in
 vendor/cyanogen/products/common.mk
 device/htc/espresso:
-cbc2012 Merge "espresso: fix button/keyboard backlight values" into froyo
 2184a10 espresso: fix button/keyboard backlight values
 device/htc/legend:
 d7b14e3 Clean up lights.c.
-38874e0 Merge "Ignore LIGHT_ID_ATTENTION." into froyo
-8308121 Merge "Updated overlays." into froyo
 326ff89 Ignore LIGHT_ID_ATTENTION.
 5a741c2 Updated overlays.
 3b98eb2 Use data for dalvik cache only.
 device/htc/liberty:
 a5bb974 Updated Kernel & modules, added cifs mod
 device/htc/supersonic:
-81e7a95 Merge "supersonic: Use new amber-green notification lights code" into
-froyo
 afa9215 supersonic: Use new amber-green notification lights code
 c2848fb supersonic: Update prebuilt kernel and bcm4329 module.
 7a4e357 supersonic: Enable BOARD_USE_OPENSSL_ENGINE
@@ -42,7 +37,6 @@ external/skia:
 4202e72 Revert "skia: use S32A_Blend_BlitRow32_PROC on arm7/neon only"
 269f322 Fix a bug in S32A_Blend_BlitRow32
 packages/apps/DeskClock:
-b1fdb6c Merge "Added the ability for alarm to go off indefinitely." into froyo
 4eea9fb Added the ability for alarm to go off indefinitely.
 4fcbce1 Enable haptic feedback on long-press of snooze button.
 packages/apps/Mms:
@@ -50,15 +44,12 @@ d186c42 Allow Messaging's ComposeActivity to be started by Search Long Press.
 packages/apps/Music:
 31e53c6 Music: Add onDestroy function to release Jni Object references
 bionic:
-ff175bb Merge remote branch 'cy/froyo' into froyo
 864d271 Revert e4fa46e75cd0d433b5c6c064720ed7e195cba7c8. It breaks MonoDroid.
 device/lg/eve:
 aecec85 Extract some libs from cyanogen, install libGLES_qcom.so
 4dddd0e Uploaded capitalized spalsh screen.
 frameworks/base:
-f377e09 Merge remote branch 'cy/froyo' into froyo
 e1237a9 lights: Enable amber-green related options by default
-777e282 Merge remote branch 'cy/froyo' into froyo
 103944d Support for KSC5601 on SIM.
 5eeb8e5 Support devices with amber/green LEDs.
 kernel:
@@ -68,31 +59,20 @@ acceleration."
 acb5ec2 Ported qdsp5 from gaosp, in order to use new libs for video
 acceleration.
 packages/apps/Camera:
-dc46f68 Merge remote branch 'cy/froyo' into froyo
 20ce356 camera: Disable focus while controls in use.
 1f48eb9 camera: Fix is720p() stupidity.
 packages/apps/Phone:
-70180c0 Merge remote branch 'cy/froyo' into froyo
 a10e83c Revert "Go to the Call log after *all* calls, even incoming calls."
 packages/apps/Settings:
-9e0938a Merge remote branch 'cy/froyo' into froyo
 432e387 lights: Enable amber-green related options by default.
-3cf8ef8 Merge "Add settings for binary amber/green LEDs." into froyo
-6b7f316 Merge remote branch 'cy/froyo' into froyo
 fbbaaf3 Fixed memory leak in Settings open source license activity.
 c24cff7 Add settings for binary amber/green LEDs.
 system/core:
-f4d234f Merge remote branch 'cy/froyo' into froyo
 e3e5fed init: Add a few things for WiMAX.
 vendor/cyanogen:
-9db67e1 Merge remote branch 'cy/froyo' into froyo
 457ea15 Remove crap from the CYANOGEN_WITH_GOOGLE build.
 6b3c708 Update CHANGELOG
 a969231 backuptool: Remove stuff we no longer care about.
-4306233 Merge remote branch 'cy/froyo' into froyo
-5afa37e Merge "Use newer 20100930 GApps package + new URL for new mirror
-system" into froyo
-573afdd Merge "apn list refresh from paulweiss" into froyo
 994d5b0 Use newer 20100930 GApps package + new URL for new mirror system
 2943022 apn list refresh from paulweiss
 d44041f remove duplicate entry
