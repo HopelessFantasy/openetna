@@ -14,21 +14,9 @@ unpack it somewhere safe and then add the location to your PATH.
 _NOTE: this is probably the most distribution-specific passage of the guide._
 
 
-Edit your sources.list:
-{{{
-sudo gedit /etc/apt/sources.list
-}}}
-
-Add these entries at the end of the file:
-
-{{{
-deb http://us.archive.ubuntu.com/ubuntu/ jaunty multiverse
-deb http://us.archive.ubuntu.com/ubuntu/ jaunty-updates multiverse
-}}}
-
 Get the packages needed to build Android.
 {{{
-sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl sun-java5-jdk zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev ia32-libs x11proto-core-dev libx11-dev lib32readline5-dev lib32z-dev
+sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl sun-java6-jdk zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev ia32-libs x11proto-core-dev libx11-dev lib32readline5-dev lib32z-dev
 }}}
 
 Verify you're using the right java version issuing a "java -version": it has to be 1.6.
