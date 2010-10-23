@@ -1,4 +1,6 @@
 #summary ChangeLog
+= system v6.1-rc1/boot v2.3 =
+See [ChangeLogSystem6p1rc1Boot2p3 here]
 = system v6.0-rc6/boot v2.2 =
 {{{
 Support for korean encoding KSC5601 on SIM/SMS
