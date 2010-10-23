@@ -1,10 +1,11 @@
 #summary Changelog for system 6.1-rc1 and boot 2.3
 
 = Overview =
-Updated to cyanogen 6.1
-Fixed Bluetooth
+  * Updated to cyanogen 6.1
+  * Fixed Bluetooth
 
 = Full git log =
+{{{
 bootable/recovery:
 1805cfe missing file
 815ca5d [recovery]: Add support for OTA upgrade on mmc devices.
@@ -518,3 +519,4 @@ c76ca55 passion: Build FM radio app
 1c6e6c5 CHANGELOG
 prebuilt:
 b8c48c5 Make a prebuilt for layoutlib_api.
+}}}
