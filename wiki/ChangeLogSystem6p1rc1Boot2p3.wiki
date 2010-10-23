@@ -1,0 +1,520 @@
+#summary Changelog for system 6.1-rc1 and boot 2.3
+
+= Overview =
+Updated to cyanogen 6.1
+Fixed Bluetooth
+
+= Full git log =
+bootable/recovery:
+1805cfe missing file
+815ca5d [recovery]: Add support for OTA upgrade on mmc devices.
+adf906d custom keymapping support
+7f4ff5c favor primary device always for fstab
+build:
+b60af64 Remove duplicate and older value from build.prop
+1476339 Implement verify cache partition size during install
+bc283a8 version is not needed
+edbced7 fakeflash script
+340072a remove lunch generator
+c43541f more comments
+b8702d2 fix up the board config generator
+device/htc/bravo:
+8e32ddd bravo: update prebuilt kernel modules
+acf63b8 bravo: update prebuilt kernel
+0311d67 bravo: update prebuilt wifi mod
+0d61e1a bravo: update prebuilt kernel
+041f27a bravo: update prebuilt kernel
+bbab670 bravo: update prebuilt kernel
+de6b855 bravo: remove some 2.2 htc prop, causes some network issue with 1.6 ril
+87ef73e bravo: disable force /system dalvik-cache on /data
+ea1abdd bravo: Enable FM Radio
+device/htc/bravoc:
+b4ff7e4 bravoc: update prebuilt kernel modules
+52329c5 bravoc: update prebuilt kernel
+c84af88 bravoc: update prebuilt wifi mod
+1a9c321 bravoc: update prebuilt kernel
+bb7af5d bravoc: update prebuilt kernel
+016a11b bravoc: update prebuil kernel to 2.6.35.7
+b12f97c bravoc: removed dalvik.vm.dexopt-data-only=1 (this is now automatically handled by installer), updated eri.xml and apns-conf.xml
+05f3dad bravoc: update prebuilt kernel
+9fb0ad9 bravoc: updated props
+3afbc0f bravoc: add eri.xml to overlay
+a660db6 bravoc: add apns conf
+4ac904a bravoc: update PRODUCT_COPY_FILES to .35.6 kernel
+64958e9 bravoc: update prebuilt kernel
+1e562f5 bravoc: add librpc to BOARD_GPS_LIBRARIES
+device/htc/dream_sapphire:
+cd09ee6 DS: Disable slowBlur, works fine on new drivers.
+5b6ce70 DS: Remove config_gps_xtra_download_on_boot setting
+c854348 DS: Device configuration update
+device/htc/espresso:
+1c383d3 espresso: Add caps and func lights
+76fa636 espresso: Update prebuilt kernel
+8291ec9 espresso: add Gallery3D overlay
+9130eb7 espresso: Add OpenGL version
+bda6416 Update RIL settings
+33a8418 espresso: update prebuilt kernel, enable EXT4
+a42bab4 espresso: Update prebuilt kernel, More reasonable perflock settings
+device/htc/hero:
+a984d89 hero: Add RIl settings
+device/htc/inc:
+5151d89 use opengl es 2.x
+device/htc/legend:
+3b9535b legend: add Gallery3D overlay
+2334120 Remove cifs.ko from files to be copied.
+ad7c1e8 legend: Add OpenGL version
+c6fe0a8 Updated kernel and modules.
+76be327 legend: Update prebuilt kernel, More reasonable perflock settings
+63b340c Updated Phone overlay.
+device/htc/liberty:
+64b5acb liberty: add Gallery3D overlay
+cecc5da liberty: Add OpenGL version
+d683eb8 Adjust param for more robust BT connections with current kernel
+device/htc/passion:
+12f9df7 passion: Update RIL settings
+device/htc/passion-common:
+d0fa6ba passion: Enable BOARD_HAVE_FM_RADIO
+device/htc/supersonic:
+a808cf9 supersonic: Update prebuilt kernel
+1d04113 supersonic: Update prebuilt kernel
+2aa49e1 supersonic: Add OpenGL version
+1dca88a supersonic: Update bcm4329 driver
+73b54db supersonic: Update prebuilt kernel
+322b377 supersonic: Update prebuilt kernel
+07785e4 supersonic: Update prebuilt kernel
+227ad14 supersonic: Update prebuilt kernel
+c71476c supersonic: Update kernel and fix BT sleep issue
+66d89aa supersonic: Update prebuilt kernel
+55f4c7e supersonic: Update prebuilt kernel and modules.
+c425d77 supersonic: Update prebuit kernel with FM radio support
+2dfda6e supersonic: Add BOARD_HAVE_FM_RADIO
+device/htc/vision:
+28fd5e9 vision: Add script for starting CM from shell
+e680564 vision: Remove libaudio and libaudiopolicy from props.
+c590b03 vision: Fix build-breaking whitespace
+d01b2a6 vision: Use prebuilt gralloc module.
+0cd72d4 vision: Configure overlay correctly for Vision.
+9103444 vision: Add audio libs
+256514c vision: Add libaudioalsa to proprietaries
+c0f6d6c vision: Add rmt_storage to list of proprietary blobs
+ee50629 vision: Enable keyboard backlight
+external/bluetooth/bluez:
+81b2a50 BlueZ: Add hcitool to user builds.
+external/opencore:
+08d3a05 opencore: Add support for PVMF_MIME_YUV420_PACKEDSEMIPLANAR_TILE
+external/skia:
+7dfabae skia: optimize S32A_D565 pixel loop for ARM CPUs w/o NEON
+external/webkit:
+fb0aa51 Don't use deleted Node object in setSizeScreenWidthAndScale
+577191f webkit: Enabling runtime configuration of repaint throttling parameters.
+7b20c22 webkit: Fix bugs in SyncProxyCanvas related to managing canvas contexts
+frameworks/policies/base:
+d109195 Revert "Set app kill longpress back threshold to 5 seconds"
+05d355a Enable lockscreen music controls by default
+34926b9 Set app kill longpress back threshold to 5 seconds
+54cc23a Added Quick unlock key Listener
+hardware/libhardware:
+8fb22bd libhardware: Define overlay format
+hardware/libhardware_legacy:
+04a4b71 audio: Fix ABI breakage due to FM addition.
+61886be wifi: Support rfkill-controlled drivers
+bbd015d support FM Radio
+packages/apps/ADWLauncher:
+91d0d1f updated Simplified Chinese translation
+5e14ea9 updated Traditional Chinese translation
+ca876f6 Set default screen cache to auto
+4527594 updated german translation
+ecc498c updated german changelog
+3d1b7c9 New icon and wallpaper thanks to eliot Stocker
+f19c5c4 Version info v1.2.0
+9f1ef52 speedup drawer drawing
+5f2a811 Spanish translation
+1dab9e4 updated german translation
+0826159 New icons for drawer catalogs navigation from Boombuler
+31b55ef Fix a few stuff cause of packagenames from cherrypicked commits
+74fab5d Added new options -System settings/Notifications-> Enable/disable the global notification counter receiver -Drawer preferences/Catalog navigation->Enable/Disable app drawer catalog navigation buttons
+4bcc969 Only show alternative action buttons when other catalogs exists
+3234ef4 added some new icons to toggle the category
+77556ef fixed categorie rotating for other filter instances
+5434753 Reverted again the catalog logic
+6e7da08 Try to fix a lot of stuff reported on market developer console
+e444805 Fix the custom launcher actions to not close the app drawer
+0eef72e Minor ui changes
+c2d9716 Make the counters stuff a bit more stateful storing the desktop items counter in the model (volatile) This grants the counters to not dissappear on rotate and allows to drag & drop apps from the drawer to the desktop without loosing the counter.
+7c08149 Little counter placement fix
+39de3ce Few fixes: -Fix a NPE when starting some activities without a proper componentname -Counters now are density-friendly and a little better placed -Custom shortcuts now display the counters too
+ddbd9d6 Added the global counters to the app drawer too. Hopefully this is not too much overkill, cause currently i fire a notifyDataSetChanged to the adapter when a counter change is detected.
+821d9c8 added new interface for drawer handling
+2138b98 implemented category switching for the actionbuttons
+c785359 First implementation of a global counter receiver We can configure the counter_filter.xml to listen to specific application broadcasts and update their icons with a counter. Also we listen a custom ADW broadcast so app developers can send the required information to ADW.
+1988b20 Changed actionbuttons to accept a special action. Now, when you open the app drawer, the action buttons display a different icon and they can perform a different action.
+8cee8d5 Fixed: issue 2348 from CM - CustomShirtCutActivity looses state on rotate
+8c92707 added some LauncherActions to the blacklist, cause no need for them
+4e2d41e Fix to complete the previous commit
+f7caddf When filtering we may need to dispatch the "notifyDataSetChanged()" so the gridview, etc knows it needs to relayout stuff. Mainly cause of our AllAppsSlidingView hack, if it doesn't detect the adapter change, it doesn't relayout the pages.
+2faa276 Add the ADW icon as default to Launcher Actions instead of leaving it to the ugly android generic one
+e5a601a Fix more stupidity
+5fede9a added 'open category' to the Launcher Actions
+dc343b8 Added Launcher Actions for Shirtcuts
+38d375b rewrote the category thing to be less static and for code cleanup
+8565f5b removed warnings
+8ca87b5 Fix widgets being able to overlap other widgets
+3215453 Fix FC when trying to get appwidget info on missing or uninstalled widget (the typical 'cannot display widget').
+8d7fcbc Refined the widgets resize stuff: * Now we block the user to overlap a widget whith any other desktop item * Fix for the cells vacant cache
+d9992ea Clean unused translated strings
+4924e01 'resizing rect' resizes after widget resizing ;)
+11ff054 always show 'grap handles'
+a2ef236 Fixed double query on rotate
+90480c9 * removed some logging * fixed unnecessary query in scrollable widgets
+0088ba8 fixed unnecessary query in scrollable widgets
+a3853b4 Fix package changes
+a93378e Implementation of a dynamic resize for widgets.
+910f642 removed warnings
+0fffa1d * first test on blur-widget resizing * automatic code cleanup
+074451c Try to query the scrollable api cursors in async to avoid blocking the UI thread This SHOULD BE further tested before going into production....
+e886c9c new 'debugging' settings can be compiled to the launcher
+ddcdab3 * added manual cache clearing to scrollable widgets * some minor improvements
+994700b Debug memory info
+e691849 Fix possible NPE when adding widgets cause of the new metadata API check
+1666ec0 traditional-chinese strings of scrollable widgets
+738e46a simple-chinese strings of scrollable widgets
+packages/apps/Browser:
+0536b67 browser: Disable zoom controls by default.
+ad219e8 Use picturelistener instead of delay when creating thumbnails
+9e0b3db Made find on page layout work on all screen sizes
+3a1308a Cursor leak in share_link_context_menu.
+712e85a Protection against bookmarks with url=null in the database
+dd6bc3b Difficult to bookmark History items on ldpi-screens
+packages/apps/CMParts:
+379b1ce Move CMStats launcher to CMParts
+801095c Use common Android translations for OK/Cancel instead of hardcoding them
+f39f4f5 French translations: LED Torch button in power widget
+8ae9ffb Update Russian translation: Backlight, Quick Unlock and etc.
+84e92b7 Updated Italian translations
+d92cf89 Update Japanese translations
+b5f76d8 Add flashlight button for devices with a LED and Sleep Button
+7ff07a1 CMParts: Adjust Compcache values to 10%, 18%(default), 26%
+b979607 Update CompCache CMParts...
+eda0964 Fixes issue 2203 and initializes RenderFX widget
+d02daa8 French translations : Fix some typos + 2 new strings
+2240f88 Keep translations in sync with original
+b3d587b Fix error with Arrays caused by new users to the setup. Use to clear all colors.
+7ff1a18 Fix Notifications so you can't try and test a color if it's set to none (Which is the default setting).
+58a7e0f Enable lockscreen music controls by default
+e5512c8 Enable expanded widget by default.
+48bfec2 Update Japanese translation.
+fbb826e Fix bug when adding a new category. Was appending it for some reaosn.
+8f2c642 Localized widget buttons settings activity title string (Expanded View Widget)
+1c8f1ac Updated French translations
+afd77ec LED Notifications: fixed string mismatch
+45ba479 Updated Italian translations
+eab6d8f Update Russia translation: Compcache Array and Expanded View Power Widget
+d2431cf Update Japanese translations.
+d39e76b Disable signal strength icon if dBm is enabled.
+e85da23 Russian translation
+86432e4 CMParts: Allow CompCache size to be set by user - via % of total RAM
+3ae1c29 Disable surface dithering by default
+ab4566a Expanded View Power Widget settings (Galaxy S style)
+6b0f96d Adding Category support for Notifications
+1a093cb German: CMParts typo
+4d0342f Added Settings for Quick unlock option
+packages/apps/CMStats:
+e8fb60f Remove LAUNCHER category, it's in CMParts now.
+f79a6da CMStats: Call stopSelf() when user has not opted in.
+d2ee415 Updated Italian translations: Show stats button
+e8b5ccd French translations : Stats button + shortened Preview button
+84fee7a German: stats page button
+4bcf43b Update Japanese translation: main_show_stats
+packages/apps/Contacts:
+5d8bf4a Make sure unmatched autenticator/account-types doesn't crash Contacts.
+3a39987 Fix crash when separating multiple empty raw contacts
+b7770a4 Update Russia translation
+packages/apps/DeskClock:
+3d28295 Updating the Russian translation
+f2997f2 Update Japanese translation: alarm_limit_entries, alarm_alert_snooze_text_dual_mode
+4e6079b Fix previous commit - return statement was moved mysteriously
+220d80a Set default behaviour of volume up/down and camera buttons to 'None'
+0851909 Updated Italian translations: updated alarm_limit_entries array
+packages/apps/Email:
+78affcf General Email fixes:
+daeb133 Updated Italian translations
+19b40c8 Revert password encryption temporarily. Fix some FC issues.
+482b248 Used accounts upgrade mechanism to force erasure of app settings. This solves FC issues with moving messages, and is only a minor inconvenience to users (this does not affect accounts).  This is a one-time process.
+fc26c88 Updated French translations
+04d0990 Update Japanese translation.
+b01af4e Workaround for Issue 4193: Email read/unread marker work wrong
+4ab43a8 Email update.
+packages/apps/FM:
+2dc9480 Fixed Headset remove preference summary to use the correct resource. Thanks to dustbin for bringing it to my attention.
+1f509b8 Added lockscreen music control integration
+3495f50 Updated Italian translations
+4f91359 Update Japanese translation.
+832f7f8 Added preference to invoke bluetooth exit behaviour when headset is plugged out.
+1cfaca3 Update Japanese translation.
+6f9acb6 Updated French translations : BT shutdown
+7036d0d Updated Italian translations
+b2d88f3 Reorganized the Bluetooth behaviour on exit options. Much neater now. Added option to restore initial BT state as suggested by dust bin (g4rb4g3)
+351fd0b Added options to prompt to disable BT, or to always disable BT when radio is switched off.
+0bb9b1b Revised Japanese translation.
+a094187 FM: Graphics update from Haxamatic and fitsnugly.
+a3d3e92 Fix build and make "and" more uniform across languages
+c47e455 FM: German Translations
+a7ed6a2 Updated Italian transaltions:
+f84bfec FM: Updated Drawables
+02ac0a1 Revised Japanese translation.
+882e205 FM: Updated drawables from fitsnugly
+5e6b2dc Update Japanese translation: translate new string resources and revise a little.
+e27cab8 Added Italian translations:
+6579075 French translations: first commit  Some translations are from crowdin project (Thank You !)
+d450946 FM: Fix case on strings to match Android convention
+c59f844 FM: Add "about" that links to MIUI
+849e95d FM: Enable Settings menu
+9b39d84 FM: Fix notification string
+b9155ed FM: New art from HaXzAmaTiC
+0543187 correct chinese strings to values-zh-rCN but keep traditional chinese folder for future use
+f1255c9 Add Japanese translation resources.
+bdcea66 FM: Add missing translation
+7347b67 FM: Add English translations
+97ededf FM app by MIUI based on Aurora
+packages/apps/FileManager:
+04e25f6 FileManager: More new art from Fitsnugly
+384b6e9 Japanese: complete translation.
+b832a9e FileManager: HDPI art by Fitsnugly
+d846c61 Updated Italian translations: removed OI from app name
+d584e3c Fixing some layout pet peeves on the top bar: - Uniform button spacing - Single line text entry - Some padding
+packages/apps/Gallery3D:
+b9db83b Gallery3D: Make the MDPI tweaks conditional.
+9edd9a9 Gallery3D: Layout tweaks for MDPI devices
+96691d6 Made the quality factor adaptive to the VMMaxHeapSize The quality factor is calculated from the formula (int) VMMaxHeapSize(mB)/12. That way, standard, non modified devices get images at four times the resolution (2x bigger in width and 2x bigger in height). Devices that have lower memory than 24mB won't be affected by the respatch.
+900f5ed Made sure that respatch never returns a value lesser than 1.
+08ec834 Applied respatch and set the quality factor to 2.
+ec45590 Furher lowered the thumbnailer's waiting time.
+01bb7ac Lowered te thumbnailer's waiting time from 2000ms to 500ms to decrease latency on startup
+5ace7ce Remove unnecessary code.
+3a6c6cf Don't build Gallery3D on GPU-less devices
+592063e Updated French translations : Open URL feature
+128eb39 Updated Italian translations
+a8c5d7b Update Japanese translations.
+ee5e3b3 Gallery3D: Add filesize, picture dimensions and camera to detail screen
+73fe976 Fix application forced close when http connection is redirected to https
+340f2a3 add menu for connecting to rtsp or http stream
+8d0a9a0 Gallery3D: Fix the picture caching system. Generate 2 files for cache: screennail and hires. Max. resolutions  must be set according to memory and GPU capabilities with config.xml
+4d6d778 Fix CM issue 1797 by unloading textures from GPU
+55a903d Add the awful orientation hack back (control with config.xml)
+4eafb22 Tilt code now handles displays with a default landscape orientation.
+aef3479 Fix for issue 8543
+b9add6a When saving http uri locally download directory may not exist
+7326a64 Replaced deprecated API with new WallpaperManager
+2c166fd Gallery3D: Change bitmap formats to 32 bit
+22bf945 Gallery3D: Fix for not displaying Camera images consistently
+8c06c1a CacheService: Avoid calls to create thumbnails for non-existent images or videos
+0582733 Gallery3D: Synchronize access to mItems in MediaFeed
+9dd6325 Gallery3D: reduce folder display latencies in Gallery3D launch
+9139d72 CacheService: Create thumbnails for video files ahead of Gallery 3D launch
+da8c4e5 Gallery3D: Use date_modified timestamp in thumbnail cache records
+358ee52 Gallery3D: Start CacheService after MediaScannerService run
+4686373 Gallery3D: Recreate cache folder in external storage if unexpectedly deleted while caching
+cc64950 Gallery3D: modify visible range if number of drawable items exceeds maximum
+e749c74 Fix 2793762 by disabling debuggable flag.
+packages/apps/Mms:
+24e1415 Updated Italian translations
+48ae456 Apps/MMS: Move cursor close code from onDestroy to onStop
+69d55c4 packages/apps/Mms: Fix to solve cannot resume audio playback issue
+2844412 Mms: Handle empty sender address
+0635c04 MMS: Fix IndexOutOfBounds exception when viewing a slide show
+e0cae63 Update Japanese translation: pref_title_save_location
+b2ba5f6 MMS: User defined location on SDcard to save MMS attachments to
+packages/apps/Music:
+d56379c /platform/packages/apps/Music: Eliminate wakeup events for screen refresh
+cd7ace7 Music app: Fix for the issue of playback cursor stopping one sec before final duration.
+packages/apps/Superuser:
+95a1bba Update Japanese translation.
+15eacf7 Updated French translations
+packages/apps/Torch:
+6485f01 Update Russia translation
+81a8333 Fixes Issue 2043 and initializes widget correctly.
+packages/providers/MediaProvider:
+e540581 MediaProvider: Disable thumbnail creation during MediaScanner run
+1f1ebcc MediaProvider: Support audio and video playback from NAND storage.
+system/extras:
+47e7c4c Fixed buffer overflow in procrank.
+c0a91a5 tests: Add simple direct i/o test
+bionic:
+e72114a msm_mdp.h: ifdef the reference to sharpening_strength
+c49e745 Fixes for the ARM-specific bswap_16, bswap_32, and bswap_64.
+cf1668d Revert "Revert "Add declaration for sys_signame[] forgotten in change 12489""
+a0877c6 Revert "Add declaration for sys_signame[] forgotten in change 12489"
+07efe6b Revert "Add the BSD sys_signame array."
+72c1c79 bionic: Add msm_audio_7X30 header file
+296fa28 7x30: Update msm_mdp.h header from CodeAurora/HTC
+c713a20 bionic: Add msm_rotator.h
+device/lg/eve:
+d218701 Added option for speed, file transfer is much faster now.
+1c9dd12 Enable building of the FM app
+ff7ea64 Yay, bluetooth works this way!! :)
+6ac4f5c Changes needed for bluetooth; it still doesn't work for me though
+c446c96 Added russian layout.
+8800902 Added functionality to music button; not set on wake, it's too risky to start music at work or in classroom :)
+33159ec extract-files.sh: Use /bin/bash instead of /bin/sh
+external/busybox:
+e7f82b2 Build busybox as static binary and incude it in our boot.img
+3f67300 Add /sbin/sh to boot.img
+frameworks/base:
+b160ab0 Revert "For performance reasons, setMode() needs to be called before setDataSource()"
+3496111 More verbose debugging in AudioFlinger
+1acb2fb Fix HID support on orientation change.
+570eebd jni: Remove duplicated jniThrowException()
+2940745 Revert "Fix for truncated texts in power dialog"
+d6f8baf Fix FastScroller overlay position bug after setFastScrollEnabled(false)-->setFastScrollEnabled(true) the overlay shows up at the top-left instead of center
+820a20b Added Flashlight button for devices with an LED. And a Sleep button
+fb2163a libstagefright: Simplify platform filter, add new platform
+cf4c003 Charging icon: fix offset of flash.
+99b9b49 Update icons immediately on setting changes
+f2afe45 Fix OOBE
+cc57f69 Fix dBm signal icon. Was showing bars when enabled, and not showing them when disabled.
+14c5e43 Only modify the view of the bar, if we want to.
+b221e55 Fixing getOffsetBefore and getOffsetAfter to working properly on non-spacing mark character. This will make moving cursor to the left and right to work properly on non-spacing mark character.
+2d2cdd0 Make it so the widget shows as on by default.
+c9d24a1 Fix dBm signal icon. Was showing bars when enabled, and not showing them when disabled.
+7af51ab Increase number of max SMS per hour (Issue 2294)
+7bb79fb Revert "Change PhoneNumberUtils MIN_MATCH to match 6 digits."
+e227417 Add selection of silent mode with volume control.
+ac06111 Add RingerSwitch support
+4cecacb Increase javax.obex performance
+7f30210 Fix time zone info in kernel is nothing after reboot
+875d9af Corrected visibility reporting error in WindowManager
+d89eb26 Revert "Fix reporting of window visibility in WindowManagerService."
+2f8c352 Revert "Shutdown when capacity is 0% and no charging or when battery is dead"
+279db35 Wait for IDLE state before mounting on insert
+a378f35 Revert "Fixes the size of texts in the power dialog"
+7e3fc8a Change PhoneNumberUtils MIN_MATCH to match 6 digits.
+e3c7d82 BatteryService: Set bool to true if sysfs entry is not 0
+df3cd01 Fix NPE in TextView
+7674526 Fix RTL support, specifically fixes the combination of RTL text with numbers and LTR text. Additionally changes the behavior to align any block with RTL text to the right. Tested heavily with hebrew.
+0a17f45 Error in compound cache-control header.
+88fa082 Wrong Airplane mode translation for ES_es. The same string was twice, so user could not identify correctly the current state
+54a072f Support AP which only has a "space" character in its SSID
+9fc6bd7 Fixes the size of texts in the power dialog
+70c2a4c Check if we are in daylight time when calculating timezone
+34f7973 Handle stopping of services with still bound applications.
+a34cb44 For performance reasons, setMode() needs to be called before setDataSource()
+e3e4004 Fix for truncated texts in power dialog
+a340d74 Make disabled TextViews uneditable
+9c11de6 frameworks/base: Handle null from topRunningNonDelayedActivityLocked
+f83bc5d Support for adding words with Asian characters to dictionary
+ccc9aa9 Array size of mp3 spectrum reordering routine is incorrect
+4a38014 InputMethodService: Fix ignore case in showInputMethodPickerFromClient
+7da3564 Crash when powering off.
+5207106 Shutdown when capacity is 0% and no charging or when battery is dead
+e511327 Dismissing AlertDialog before destroying WebView.
+912b6d6 Fix reporting of window visibility in WindowManagerService.
+f41dea2 Set alpha value for newly created dim surface.
+0d06e79 Hold partial wakelock during shutdown to avoid entering sleep
+b449de8 Include debugger connection status in error entry
+50bc02d Prevent unhandled exception in NinePatchDrawable
+c282e07 Fix if ACTION_DOWN and lost focus time too close, it will become long press.
+4699f22 Disable signal strength icon if dBm is enabled.
+9fef408 The original font is missing a few Persian characters. This font includes those characters
+0136bd0 Fix Build Breakage.
+2cc656a Disable surface dithering by default
+eb0e397 Galaxy S Style Power Widget
+c5efffd StatusBarPolicy: Fix system_server crashes when radio isn't initialized
+c3a024d Added Settings String for Quick unlock option and fixed white space
+e39ed77 Fix build break / Update API
+cd176cd frameworks/base: Use textures in LayerDim for smooth menu scrolling.
+41d6b0b Additional keycodes for Vision.
+82739d8 immediately update the battery icon when BATTERY_PERCENTAGE_STATUS_ICON changes
+67cbcd0 Headset icon: Fix incorrectly sized drawables for MDPI/HDPI
+f29c2a3 framework: Update API
+350dcf8 support FM Radio audio routing in audio flinger
+035102c frameworks/base: Add rendering statistics to Stagefright
+hardware/msm7k:
+40a0808 new flag needed, fixes building process.
+dd0bcac Added more debugging output to libaudio
+a8183e6 msm7k: Fix device selection priority
+18c48aa msm7k: Add new device filter for Geeksphone ONE
+5d738ce 7x30: Enable libaudio for 7X30.
+6676f5d libstagefrighthw: Fix build when using Eclair compatibility
+448e74d 7x30: Don't build libaudio and gralloc for 7x30.
+63663bb overlay: Add CONFIG_MSM_MDP40
+ccd8d62 support FM Radio
+a229328 7x30: Use the right board name in toplevel makefile.
+efcca61 hardware/msm7k/libaudio-msm7x30: Merge in changes from eclair to froyo
+3b41398 libopencorehw: Add 7x30 support from CodeAurora
+96f77d4 libstagefrighthw: Release the pmem reference and destroy overlay when destructor is called
+662f377 libstagefrighthw: Add FPS stats for 7x30
+2af1a2e libstagefrighthw: Add overlay renderer for stagefright
+f9e9326 Add the overlay HAL module on the Froyo baseline.
+kernel:
+fb53e1f config: enable device mapper
+packages/apps/Camera:
+709f21a Replaced /sdcard/ with Environment.getExternalStorageDirectory()
+69593d6 Add some defense allowing driver update without wiping settings
+24720cb packages/apps/Camera- check to verify if sdcard is writeable
+eb88b98 VideoCamera: Update Storage status while starting the Camcorder.
+9a17a34 camera: Fix touch-focus location issues
+9dd5e37 camera: Fix backup agent name.
+895770c fix the code style issues
+7fbe160 Save Camera Settings to backup
+packages/apps/Phone:
+bb42e91 Update Russia translation
+packages/apps/Settings:
+aed05f6 Fix 2g/3g toggle on UMTS networks
+5aa0fda Added option for Russian keyboard layout.
+0d14ad4 Update Japanese translation.
+cb17d31 Updated French translations
+f3e2c57 Updated Italian translations
+6877ca7 Updated settings to conform with volume button behaviour.
+9d92436 Updated Italian translations
+0a3d73c Limit bluetooth device name to safe length to avoid crashes
+87b9b7d Changed the text input type of APN name to plain text
+845526b Fix: Text is cut in Edit word edit box when adding word to dictionary
+197441e Revert "Update Portuguese Translation: Power Control Widget"
+10b13b7 Bluetooth PIN is not password style
+7ad16e0 Update Russia translation
+926bce7 Update Portuguese Translation: Power Control Widget
+system/core:
+e5cfb0d system: init: Fail early when missing firmware
+2b7d02f Don't alias 'stop' to 'kill -STOP'
+002d8ae Fix USB endianness bugs on Linux.
+9d02d44 adb: Improved detection of big endian architecture
+a0e42aa ADB Logcat colored output.
+3c6262c sh: Fix SIGSEGV in trap
+f1165cb Revert "Revert "sys_signame[] was added to libc, remove conflicting definition""
+eab3ac9 Revert "sys_signame[] was added to libc, remove conflicting definition"
+4c2ea34 init: Support for Geeksphone ONE devices
+34e325a FM: Set hcitool permissons for FM radio support
+4db0c98 adbd: revert order of ALTERNATE_SHELL_COMMAND and SHELL_COMMAND
+vendor/cyanogen:
+2e4222c CHANGELOG
+37df7d1 cm: Update ADW default workspace (add Clock and Music)
+1458298 ds: Disable desktop indicator on DS
+5b1afa0 ADW: Nicer selection background by default.
+603ae2b Remove redundant Dalvic move
+0898da1 bravo: bravoc: update common overlay description
+c5296b1 supersonic: Update build strings
+572c876 DS: Compcache default to 18% to match CMParts values (Change #2354)
+863c2ed Made it so Flashlight is in the overlay.
+2d99a47 heroc: Update overlay for Gallery3D cache
+9b097f3 ds: Update build strings.
+25325d7 Remove widgets from the default workspace.
+f79b8cf Set swappiness to 30 for compcache
+b05629c DS: Remove prelink map and update overlay.
+9240bdf Add note for Email settings wipe
+c06b4d2 CHANGELOG
+832c786 bravoc: use less confusing build naming
+1618611 Verify cache size: added exit code
+42ba46e CMParts: Allow CompCache size to be set by user - via % of total RAM
+3c44bd5 CHANGELOG
+2da16ea Verify cache size, output can't be redirected to /dev/null
+dc02018 parallelize the launching of $OPTICHARGER form squiasher script
+9503416 product: add bootanim for LDPI devices
+db0d75b script for check cache partition size
+d75bdf1 vision: Add CM-specific Vision overlay.
+f176b7a supersonic: Build the FM radio app
+fdd7a43 updated get-google-files
+94561eb bravo: Build FM radio app
+c76ca55 passion: Build FM radio app
+1c6e6c5 CHANGELOG
+prebuilt:
+b8c48c5 Make a prebuilt for layoutlib_api.
