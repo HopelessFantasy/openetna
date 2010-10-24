@@ -3,6 +3,44 @@
 = Overview =
   * Updated to cyanogen 6.1
   * Fixed Bluetooth
+* Update to Android 2.2.1
+* Various bugfixes from AOSP and CodeAurora
+* ADWLauncher 1.2.0 - Ander Webbs
+* Configurable audio focus for music app - Jonas Larsson
+* APN cleanup (fixes many issues with GPS and MMS) - Cyanogen
+* Use ARMv6 optimizations for DS/Hero targets - Ninpo
+* AudioDSP updates - Antti S. Lankila
+* Status bar themes - Michael Webster
+* Email app updates** - Michael Webster
+* EMMC support - Koush
+* Camcorder touch-to-focus - Cyanogen
+* Notification "quiet hours" - Evan Charlton
+Common; Superuser 2.3.6 - Adam Shanks (ChainsDD)
+* Camera/camcorder continuous autofocus - Cyanogen
+* Camera option sliders - Cyanogen
+* Control locking of MMS app in memory - Julian J. M
+* Kill foreground app by long-pressing back - Evan Charlton
+* New AppWidgetPicker dialog - boombuler@XDA
+* FileManager app - OpenIntents (graphics update from Fitsnugly)
+* Anonymous install statistics gathering - Chris Soyars
+* Stable shot camera mode - Cyanogen
+* Dual-mode snooze (long press dismiss) - Evan Charlton
+* Compose SMS/MMS via search button long press - Wes Garner
+* Notification category support - Pedlar
+* Galaxy S style power widget in notification bar - Pedlar
+* Autodetect if we should use /cache for system dex files - Kali-
+* Quick PIN unlock - gsarrica
+* Increase performance of Gallery3D caching system - Androbot
+* Gallery3D bugfixes and improvements - CodeAurora
+* Gallery3D highres patches - Petar Šegina
+* Skia performance enhancements - CodeAurora
+* APN list update - Paul Weiss
+* Fix AGPS issues on all platforms
+* Ability to customize location to save attachments in MMS - Wes Garner
+* Dismiss notifications by swiping - Evan Charlton
+* Enabled Sound Recorder app
+* Bluetooth OBEX performance boost - Sony
+* Updated Terminal Emulator app - Jack Palevich
 
 = Full git log =
 {{{
