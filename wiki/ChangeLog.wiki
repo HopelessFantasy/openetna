@@ -1,4 +1,11 @@
 #summary ChangeLog
+= system v6.1-rc2/boot v2.4 =
+
+Fixed issue 118 'No OpenGL support'
+Fixed issue 196 'Apps cannot be installed to SD card'
+Fixed issue 190 'Google goggles won't work'
+Fixed issue 86 'Volume buttons don't adjust audio volume when phone is locked'
+
 = system v6.1-rc1/boot v2.3 =
 See [ChangeLogSystem6p1rc1Boot2p3 here]
 = system v6.0-rc6/boot v2.2 =
