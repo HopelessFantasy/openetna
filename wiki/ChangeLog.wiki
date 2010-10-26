@@ -1,11 +1,104 @@
 #summary ChangeLog
 = system v6.1-rc2/boot v2.4 =
 
-Fixed issue 118 'No OpenGL support'
-Fixed issue 196 'Apps cannot be installed to SD card'
-Fixed issue 190 'Google goggles won't work'
-Fixed issue 86 'Volume buttons don't adjust audio volume when phone is locked'
+  * Fixed issue 118 'No OpenGL support' by saxando4u
+  * Fixed issue 196 'Apps cannot be installed to SD card'
+  * Fixed issue 190 'Google goggles won't work' by skunk73
+  * Fixed issue 86 'Volume buttons don't adjust audio volume when phone is locked' by grant.bowering
+  * Fixed issue 13 'Caller Id text garbled' by Kevin Flynn
 
+{{{
+packages/apps/Browser:
+5c5de9c Update Russian translation
+2df6eed Updated zh-CN translation for Browser
+packages/apps/CMParts:
+434a476 Added a Toast message to let you know when you reached the max buttons
+54fa7a9 Updated Italian translations
+47ffbf1 Update Japanese translation.
+792d8f0 French translation : CMStats integration
+b918b9d Update Russian translation: CMStats, Backlight and HapticTweaks
+packages/apps/CMStats:
+bc24a0c Add Russian translation
+5d053ff Added carrier ID to the list of submitted fields.
+packages/apps/Email:
+bed7a6e Small hack to ensure color chip changes are applied correctly when
+editing account.
+2f679b8 Changed unread widget to conform better with stock. (credit to Prash!)
+packages/apps/FM:
+f410e7f Fixed bug where volume controls quit working after resuming playback
+following a telephone call
+3932fee FM: fix US mFrequencyBand Stepsize
+a8d55c0 French translations: Bluetooth behaviour when removing headset
+b8f7d78 add mdpi stuff
+packages/apps/Gallery3D:
+003208b Revert "Gallery3D: Change bitmap formats to 32 bit"
+packages/apps/Music:
+481f476 Fully updated Chinese Simplified (zh-CN) translation.
+24fffd2 Update Russian translation
+packages/apps/Protips:
+135910b The Definition of Open- suggested by iShawn
+device/lg/eve:
+df5a198 proprietaries: Update CM proprietaries to
+cm_dream_sapphire_full-220.zip
+14da387 Added overlay for Gallery3D from dream_sapphire
+b283327 Add qwerty.kl to prebuilt
+e35045a stack: fixed directory name
+7d7de6e egl.cfg: enabled hardware 3d acceleration
+frameworks/base:
+73a9d45 Address issue #13 - Caller Id text garbled - Work around incorrect
+decoding of name and number causing 'Payphone' to be displayed on certain
+networks.
+7a1c9db Changed mdpi H (HSPA) icons to better match Android style
+eddaed6 Removed Catch error, as it is uneccesary, and causes log spam on
+devices with no flash
+95d67cf Add framework support for keyboard LEDs (Caps/FN)
+hardware/msm7k:
+ec64115 libgralloc: Fix gralloc to call cacheflush with correct parameters
+99b5ad6 msm7k: Fix device selection priority
+78db1d7 msm7k: Add new device filter for Geeksphone ONE
+e5a696c 7x30: Enable libaudio for 7X30.
+9b98dbd libstagefrighthw: Fix build when using Eclair compatibility
+3e6afa7 7x30: Don't build libaudio and gralloc for 7x30.
+f1c251c overlay: Add CONFIG_MSM_MDP40
+9f77472 support FM Radio
+60856ae 7x30: Use the right board name in toplevel makefile.
+7633f30 hardware/msm7k/libaudio-msm7x30: Merge in changes from eclair to froyo
+16d65f6 libopencorehw: Add 7x30 support from CodeAurora
+628cff4 libstagefrighthw: Release the pmem reference and destroy overlay when
+destructor is called
+6cc1de4 libstagefrighthw: Add FPS stats for 7x30
+48fa407 libstagefrighthw: Add overlay renderer for stagefright
+2e3d93a Add the overlay HAL module on the Froyo baseline.
+kernel:
+0e7ccac config: enable twofish
+8a259da config: removed unneeded definitions
+a62b83f config: enable IPV6
+15e1ca2 Made hw3d working :-)
+4f6850d Fixed config change for devicemapper
+packages/apps/Camera:
+a31c4e0 Update Japanese translation.
+0f1ea91 Camera: support devices without accelerated GL
+packages/apps/Settings:
+946027c Updated zh-CN translation for Settings
+8efba9e Update Russian translation: Silent state
+vendor/cyanogen:
+8dcb29b Update version string
+d603469 Add a new paragraph for translators in Changelog
+7c1c6ee CHANGELOG
+be65abf CHANGELOG
+1f0408e cm: Update version to 6.1.0-RC1
+1c4e66b heroc/Gallery3D: Remove DIRTY UGLY HACK from Gallery3D Overlay
+c25bcc1 CHANGELOG
+packages/apps/Bluetooth:
+2e64587 Reduce GC in Bluetooth application
+1f666c5 Sanitise Bluetooth file name hint when receiving a contact
+bb12c72 BT - Not possible to accept incoming obex transfers using key-presses.
+7121d8c Improved bluetooth notification bar
+e39772a Send vCard with Unicode encoded Strings over BT
+c23b7ac PullvCardList implemented according to specification
+packages/apps/SoundRecorder:
+935b5e2 AndroidManifest.xml: make SoundRecorder show in launcher
+}}}
 = system v6.1-rc1/boot v2.3 =
 See [ChangeLogSystem6p1rc1Boot2p3 here]
 = system v6.0-rc6/boot v2.2 =
