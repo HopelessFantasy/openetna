@@ -15,7 +15,7 @@ On the kernelspace side, the endpoints are defined in arch/arm/mach-msm/board-ev
 Those id's are used by userspace and the SND_SET_DEVICE ioctl, and the kernel just passes them by rpc to the AMSS. There does not seem to be any means to enumerate the endpoints that the AMSS provides.
 
 = The interface to the modem/radio =
-Its all in arch/arm/mach-msm/smd_rpcrouter*
+Its all in arch/arm/mach-msm/smd_rpcrouter`*`
 We do rpc calls to the modem or register servers which will answer rpc calls from the modem.
 We provide servers in
 {{{
