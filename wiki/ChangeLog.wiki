@@ -4,7 +4,7 @@
   * Fixed issue 93 'No HSDPA+ connectivity' by Kevin Flynn
   * Fixed issue 191 'Gapps does not install on reboot'
   * Fixed issue 100 'Korean SMS receive' by trustin
-  * Added support for the flash LED. Attention: Some people say that using this too mush will burn your LED. I don't think so but I do not know.
+  * Added support for the flash LED. Attention: Some people say that using this too much will burn your LED. I don't think so but I do not know.
 
 = system v6.1-rc2/boot v2.4 =
 
