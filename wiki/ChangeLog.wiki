@@ -4,8 +4,106 @@
   * Fixed issue 93 'No HSDPA+ connectivity' by Kevin Flynn
   * Fixed issue 191 'Gapps does not install on reboot'
   * Fixed issue 100 'Korean SMS receive' by trustin
-  * Added support for the flash LED. Attention: Some people say that using this too much will burn your LED. I don't think so but I do not know.
+  * Fixed issue 210 'In-Call Volume low'
+  * Fixed issue 83 'Sound glitches'
+  * Fixed issue 85 'Audio is monophonic only'
+  * Fixed issue 227 'Code PIN for SIM unlock network'
+  * Added support for the flash LED. Attention: Some people say that using
+  this too mush will burn your LED. I don't think so but I do not know. You
+  can find the flashlight in the status bar dropdown, after you enabled it
+  under Settings->CyanogenMod Settings->User interface->Widget buttons
 
+{{{
+external/jpeg:
+339e4fa jpeg: Replacing VeNum YCC to RGB color conversion routines.
+external/webkit:
+07f4f18 Browser crash fix caused by incorrect reference counting leading
+Garbage collector cleanup
+packages/apps/ADWLauncher:
+357a164 Properly change window properties when changing between static
+wallpaper/wallpaper hack and lwp/non hack.
+1ef244d Fix notification counters not displaying on dockbar shirtcuts
+9879772 Fix the old old old bug where hiding the statusbar made the whole
+launcher to shift down when scrolling with the trackbal. Also fixes the
+"invisible statusbar" hole when expanding the notification bar while the
+statusbar being hidden.
+23fae6d Avoid refreshing apps adapter if counter is the same
+c5aba29 Fix LiveFolders autoclose option not working
+676d056 Updated Russian translation.
+f480c63 Updated Italian translations: ver.1.2.0
+a88d41d Update Japanese translation.
+packages/apps/CMParts:
+17b33fd Updated Simplified Chinese translation
+23bf609 Update korean localization
+08c9e25 cmparts: Fix invalid XML in translations
+31230c1 Add korean localization.
+5fbe88e Minor fixes to previous committed translation. Change-Id: Change-Id:
+I75c80d4637bafafdbcd637a71760e0dcac194655
+c76b76a Update Russian translation: Flashlight and Max Buttons
+75c80d4 Updated Chinese zh-CN translations and some minor corections to the
+original res xml.
+packages/apps/CMPartsHelper:
+08f9f35 Added Simplified Chinese translation
+packages/apps/CMStats:
+0197a23 Added Chinese translation for CMStats
+packages/apps/Contacts:
+406343d Contacts: Close cursor object after use
+packages/apps/DSPManager:
+c81cb18 Add Russian translation
+packages/apps/FM:
+150f168 Fixed bug where on FM power on, audio output device was null. Now
+properly enabling output device based on UI state. Speaker icon now properly
+reflects state of audio output device. It is lit if output is loudspeaker,
+dark if output device is headset.
+packages/apps/FileManager:
+83c7824 Update Russian translation: Include/Exclude media scan
+packages/apps/Mms:
+758100c Updated and restructured Chinese zh-CN translations. Especially to fix
+the incorrect translation of "Me".
+af3f8fa Update Russian traslation
+system/vold:
+4ef9c31 vold: Share just the partition to UMS (cm-issue 2236)
+device/lg/eve:
+002e157 Enable the use of the flashlight LED by the statusbar dropdown widget
+281e2e9 init.eve.rc: set right permissions on flashlight device
+882e1e6 checkgapps: Use the first vfat partition on sdcard
+8ddbcef Fix for issue #93 - No HSDPA+ connectivity The problem appears to be
+cosmetic. This change enables the 'H' icon when in HSDPA mode.
+bcd10b9 overlay/Phone/config.xml: ignore_sim_network_locked_events
+e4dc90d Add fm support, still the app can't work.
+aa44b75 BoardConfig.mk: Remove unneeded define
+4015c95 Added proprietary libpvasf*
+c05e43a Remove custom prelink map
+1393b5e full_eve.mk: remove definition of dateformat
+frameworks/base:
+7943d45 PduPersister: Fix a NPE
+bc097e9 Changing string for apn from empty to  when no string is provided by
+SIM Card. This fixes the roaming problem with some virtual network providers,
+since some of them have an empty string (check with getprop
+gsm.sim.operator.alpha). For sure no provider will write empty in their SIM
+cards. Data roaming can be disabled after that. Roaming in foreign countrys
+will still work since it checks the MCC (Mobile Country Code). Thanks to my
+friend Sewi for helping me finding this. :)
+6a3b632 Fix stat_sys_headset for MDPI and HDPI
+9e6193a Fix encoding when receiving EUC-KR SMS and MMS
+22d99c5 Revert "frameworks/base: Add rendering statistics to Stagefright"
+hardware/msm7k:
+df8d117 Fix openetna issue 134 ' Speaker stays ON after a call and drains
+battery life'
+580f149 correct libaudio: Make audio routing work without htc lib
+28ebd2c Revert my patch to scale max volume to 7
+kernel:
+0561449 board-eve: Rename the sound endpoints to standard values
+ffb4239 eve_flash_led: implement the leds/flashlight interface
+vendor/cyanogen:
+199bde7 less confusing desire cdma name (desirec is droid eris)
+372e89a make get-google-files create /proprietary in it's own directory
+without needing to be in that directory when it is called
+44ad6d3 Removed myself from CHANGELOG as I don't deserve to be there... yet...
+hopefully
+973c34f eve: disable custom prelink map
+
+}}}
 = system v6.1-rc2/boot v2.4 =
 
   * Fixed issue 118 'No OpenGL support' by saxando4u
