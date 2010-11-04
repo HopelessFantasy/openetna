@@ -3,6 +3,11 @@
 
 ===_This Document is work in progress._===
 
+= Warning =
+
+It is *strongly advised* to make a backup of your phone's original firmware before attempting to flash to Open Etna.
+Please look at the following tutorial and consider doing so.
+http://www.zacpod.com/p/71
 
 = Introduction =
 
