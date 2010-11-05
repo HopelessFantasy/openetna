@@ -90,7 +90,12 @@ Then issue (modify accordingly)
 git remote set-url --push github git@github.com:OpenEtna/android_vendor_openetna.git
 }}}
 (note the git@github.com: instead of git://github.com/ -> this is the difference between read-write and read-only)
-Then push your changes by
+First update your local tree, as there may be new changes upstream. Issue
+{{{
+git pull --rebase
+}}}
+to fetch all new changes from github and apply your local commits on top of them.
+Then push this new tree by
 {{{
 git push
 }}}
