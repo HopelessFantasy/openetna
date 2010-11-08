@@ -1,4 +1,158 @@
 #summary ChangeLog
+= system v6.1-rc4/boot v2.4.2 =
+
+  * Fixed issue 49 'AGPS is not working' by Richard A. Burton
+  * Added support for using the Home- and Backbutton LEDs as notification by Richard A. Burton
+  * Fixed issue 191 'Gapps does not install on reboot'
+
+{{{
+build:
+ec33a58 add makerecoveries.sh script
+31f2caf Fix build on OS X Snow Leopard.
+development:
+56bad54 Development: Fix monkey
+external/libpng:
+89186e1 png: Bug fix for artifact seen in Gallery3D path bar
+external/openvpn:
+fa86dc0 add HOST header while using http proxy tunel
+0a99d82 openvpn update to 2.1.3
+523f53f Revert: add HOST header while using http proxy tunel
+packages/apps/Browser:
+8bad038 Add support for Content-Disposition when save link
+074f584 update Simplified Chinese translation.
+629e41d Changed zh-rCN/string.xml to follow CM style, updated Simplified
+Chinese translation
+packages/apps/CMParts:
+f65f695 Updated Italian translations: Notification power widget arrays Revised
+some strings
+825441a German: many updated translations at once
+84875a9 German: translate entry arrays
+674a811 Update Russian translation
+870c60d Update korean translation
+packages/apps/CMPartsHelper:
+bf9e8dc Add korean localization
+packages/apps/CMStats:
+9a374a3 Add korean localization
+packages/apps/Camera:
+82ee615 Update Russian translation
+3a9a7dc update Simplified Chinese translation.
+61bba4a update Simplified Chinese translation.
+046c1bd update Simplified Chinese translation.
+packages/apps/Contacts:
+186b073 update Simplified Chinese translation.
+168580e Updated Simplified Chinese translation
+packages/apps/DSPManager:
+c231e11 update Simplified Chinese translation.
+0622fef German: initial translation
+packages/apps/DeskClock:
+97669e9 update Simplified Chinese translation.
+19db6c7 Make volume button behavior always default to 'none.'
+b2c979e German: alarm to go off indefinitely
+packages/apps/Email:
+367ffd5 German: Email widget
+051962f Changed method to get the hostname parameter for the HELO/EHLO SMTP
+command. This change is necessary for me to have my outgoing emails not
+rejected by my Postfix server.
+packages/apps/FM:
+061588a German: complete overhaul of translations, added new, removed values_*
+in arrays.xml, fix encoding
+packages/apps/FileManager:
+2c9c906 Updates Simplified Chinese translation
+packages/apps/Mms:
+c1d3408 Portuguese: MMS Change name, add missing
+65c189b German: Attachment save folder
+packages/apps/Music:
+e750dd0 Handle onPaue/onResume race in StreamStarter
+089a65d German: initial translation English: formating and typo fixes
+364a42f Make PlaylistBrowserActivity handle missing playlist extras.
+6bf872b Fixes issue 1787 by removing progress bar from Music widgets
+packages/apps/Torch:
+f34cf16 Torch: calibrated Hz, added BPM, lowered minimum frequency, a few
+small fixes
+bc23381 German: updated translations English: remove white spaces
+packages/providers/MediaProvider:
+ea685a5 MediaProvider: catch OutOfMemoryError when creating thumbnails.
+ef2f5b8 Adding null check on Cursor c in MediaProvider.getAlbumArtOutputUri
+system/bluetooth:
+e59a328 Revert "System/bluetooth/bludroid:Remove the 3 second delay after
+starting bluetoothd"
+0eb3c31 System/bluetooth/bludroid:Remove the 3 second delay after starting
+bluetoothd
+system/vold:
+cf91995 vold: Only use EXTERNAL_STORAGE for SEC_ASECDIR (cm-issue 2470)
+device/lg/eve:
+bfcf00e build out own gps stuff
+5523245 add notification light (back & home button)
+4fd1d9b 15checkgapps: fix FAT partition detection
+b795678 Include LiveWallpapersPicker
+frameworks/base:
+7b58f10 MountService: Remount all volumes after USB disconnect
+b4869cf Revert "Revert "audio: Omit FM code when HAVE_FM_RADIO is not set""
+d5b54a8 Revert "audio: Omit FM code when HAVE_FM_RADIO is not set"
+b619086 Prevent system crash when OOM in Binder thread.
+bc45d41 Use MDPI notification count bubble for HDPI devices.
+7313cc3 Don't instantiate unused power buttons in StatusBarService.
+c5358c4 audio: Omit FM code when HAVE_FM_RADIO is not set
+6c455c8 Monkey Crash: NullPointerException in WebTextView
+ff7b4a2 Update korean translation
+6bcf8b9 add Simplified Chinese tranlation strings
+a9c0f0d Inotify support for TSLib
+9b6318d TSLib: Changes made for using TSLib
+3cfa1c5 Update korean localization
+hardware/msm7k:
+2e5ab84 add notification light (back & home button)
+b516466 libaudio-qsd8k: Omit FM code without BOARD_HAVE_FM_RADIO
+ab74134 copybit: accept any FB devices starting with "msmfb"
+kernel:
+c835f52 Added support for overclocking. Also slightly changed available
+frequencies, there are more available now below 528 MHz. I'm still not sure if
+at boot it's set at 528 or higher.
+9fdf9b3 Revert "Revert "patch to support better SetCPU frequency detection.
+First step towards overclocking...""
+1e5459b Revert "patch to support better SetCPU frequency detection. First step
+towards overclocking..."
+ec3a23b patch to support better SetCPU frequency detection. First step towards
+overclocking...
+ecd4c09 Minimal change to get accelerated video working. This keeps in Fm
+related stuff that was discarded before.
+55cdda1 Revert "Ported only part of qdsp5 from gaosp: previous version broke
+camera." I hope this is the last time I do this.
+241fba8 config: added swap support
+packages/apps/Phone:
+20f15b6 Update zh-CN translate for Phone setting UI
+packages/apps/Settings:
+35e37f0 Update korean translation
+4644065 add notification light (back & home button)
+80318bc Russian: Widget Picker
+0517d07 Update Russian translation: PowerWidget and etc...
+661f397 German: Silent state, notifications light
+f35c085 Updated zh-CN translation for Settings
+system/core:
+d12a830 init: Add permissions for qcom/CAF audio devices
+c89702f init.rc: add net_admin and net_raw permissions to rild
+vendor/cyanogen:
+1a164b4 Added Buzz to Changelog
+aa7a8db Buzz to RC2
+a0585e7 Assume ONE/Z71 device maintainership
+4a20d92 Z71: Add Commtiva Z71 product
+cd1b07d buzz: Add lunch combo for cyanogen_buzz
+88c71c0 added working gapps mirrors. changed gapps versions to latest.
+e27d5d0 Added HTC Wildfire files
+348b52d added Ricco as translator for German
+7f8e909 Fix China Mobile apn name.
+06e781b Sholes to RC3
+60367b4 Add a script to extract gapps files from downloaded zip file.
+7781eab bravo: bravoc: build kernel from source
+6ef158f squisher: fix OS X darwin compatibility
+cdaa0e8 APN: change order of 44010.
+dfd6e96 Enabling the FM Radio and Torch applications for the Droid Incredible
+Build.
+ad536e2 ONE: Move OTA_ASSERT_DEVICE to BoardConfig
+96ef03c one: Add Geeksphone ONE product
+external/flac:
+ffb5049 libFLAC: fix leak in metadata_iterators.c
+}}}
+
 = system v6.1-rc3/boot v2.4.1 =
 
   * Fixed issue 93 'No HSDPA+ connectivity' by Kevin Flynn
