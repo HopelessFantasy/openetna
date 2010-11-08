@@ -4,6 +4,7 @@
   * Fixed issue 49 'AGPS is not working' by Richard A. Burton
   * Added support for using the Home- and Backbutton LEDs as notification by Richard A. Burton
   * Fixed issue 191 'Gapps does not install on reboot'
+  * Added support for overclocking by saxando4u
 
 {{{
 build:
