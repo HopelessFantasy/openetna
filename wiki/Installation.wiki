@@ -59,7 +59,8 @@ fastboot flash system system-versionYY-.img
 
 <wiki:video url="http://www.youtube.com/watch?v=UJMOv1OEKws" />
 
-OpenEtna installation video
+<wiki:video url="http://www.youtube.com/watch?v=cTbmp2yHn4w" />
+OpenEtna installation videos
 
 = Update the keyboard layout =
 See HowToChangeKeyboardLayout
