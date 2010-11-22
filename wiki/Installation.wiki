@@ -1,5 +1,5 @@
 #summary Installation of the current ROM
-#labels Phase-Implementation
+#labels Phase-Implementation,Featured
 
 ===_This Document is work in progress._===
 
