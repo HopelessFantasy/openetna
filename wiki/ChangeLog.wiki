@@ -1,4 +1,5 @@
 #summary ChangeLog
+#labels Featured
 = system v6.1-rc4/boot v2.4.2 =
 
   * Fixed issue 49 'AGPS is not working' by Richard A. Burton
