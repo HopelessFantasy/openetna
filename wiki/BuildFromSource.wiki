@@ -1,4 +1,5 @@
 #summary How to build your image from source, and start to contribute to the project.
+#labels Featured
 
 = Introduction =
 
