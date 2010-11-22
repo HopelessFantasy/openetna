@@ -1,4 +1,5 @@
 #summary Features and known bugs
+#labels Featured
 
 = Features =
   * Boot system from sdcard.
