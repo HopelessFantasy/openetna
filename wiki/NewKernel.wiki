@@ -4,9 +4,8 @@
   * Sensor does not report temperature right (stays at 36 degree)
   * Backlight of the buttons does not light up automatically (but the can be enabled by writing to /sys/devices/platform/eve-keyled/{shift,setting,enable}
   * Flash light does not work
-  * Resuming from sleep currently breaks
+  * Resuming from sleep sometines makes the screen very colorful. Just unlock by dragging this thing with a finger and it restores.
   * Camera does not work
-  * Wifi does not work
   * Bluetooth does not work (needs wifi)
   * Kernel uses the old graphics framework
   * Change sensors.eve to support the new proximity device /dev/proximity. Proximity values are no longer served by the akm device.
