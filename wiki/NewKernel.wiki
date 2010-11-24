@@ -4,6 +4,7 @@
   * Sensor does not report temperature right (stays at 36 degree)
   * Backlight of the buttons does not light up automatically (but the can be enabled by writing to /sys/devices/platform/eve-keyled/{shift,setting,enable}
   * Flash light does not work
+  * Resuming from sleep currently breaks
   * Camera does not work
   * MMC does not work
   * Wifi does not work (needs mmc)
