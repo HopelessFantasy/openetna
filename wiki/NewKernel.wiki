@@ -8,7 +8,6 @@
   * MMC does not work
   * Wifi does not work (needs mmc)
   * Bluetooth does not work (needs wifi)
-  * Vibrator does not work (rewrite that!)
   * Kernel uses the old graphics framework
   * Change sensors.eve to support the new proximity device /dev/proximity. Proximity values are no longer served by the akm device.
   * What should arch/arm/mach-msm/rpc_server_time_remote.c do?
