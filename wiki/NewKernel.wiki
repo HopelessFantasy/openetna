@@ -3,8 +3,6 @@
 = Bugs =
   * Sensor does not report temperature right (stays at 36 degree)
   * Backlight of the buttons does not light up automatically (but the can be enabled by writing to /sys/devices/platform/eve-keyled/{shift,setting,enable}
-  * Power button does not work, needs rpc. See arch/arm/mach-msm/rpc_server_handset.c
-  * LCD backlight can not be controlled
   * Flash light does not work
   * Camera does not work
   * MMC does not work
