@@ -6,8 +6,7 @@
   * Flash light does not work
   * Resuming from sleep currently breaks
   * Camera does not work
-  * MMC does not work
-  * Wifi does not work (needs mmc)
+  * Wifi does not work
   * Bluetooth does not work (needs wifi)
   * Kernel uses the old graphics framework
   * Change sensors.eve to support the new proximity device /dev/proximity. Proximity values are no longer served by the akm device.
