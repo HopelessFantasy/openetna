@@ -16,6 +16,6 @@
 They were already there - but not working?
   * The msm_touch touchscreen driver should disable interrupts when the screen is of
   * Look at the latency of the home&back key (in touch_so240001.c), they seem unresponsive from time to time
-
+  * Look at the correct suspend behavior of the mmc. We need something like suspend_late here, so that the wifi driver does not loose its parent.
 = Infos =
 The motion sensor is bma150, see http://www.bosch-sensortec.com/content/language4/downloads/BST-BMA150-DS000-06.pdf for a full datasheet.
