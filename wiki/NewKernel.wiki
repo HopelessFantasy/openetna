@@ -12,6 +12,6 @@
  but there is already one in drivers/misc/akm8973.c. See if we can use that.
   * Change sensors.eve to support the new proximity device /dev/proximity. Proximity values are no longer served by the akm device.
   * What should arch/arm/mach-msm/rpc_server_time_remote.c do?
-
+  * Revert the commits that added rpc_server_dog_keepalive and rpc_server_time_remote. They were already there - but not working?
 = Infos =
 The motion sensor is bma150, see http://www.bosch-sensortec.com/content/language4/downloads/BST-BMA150-DS000-06.pdf for a full datasheet.
