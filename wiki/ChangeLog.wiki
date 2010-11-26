@@ -3,7 +3,11 @@
 
 = system v6.1-rc5/boot v2.4.3 =
 
-Fill in
+  * A lot of work into gps, fixed issue 295, mainly by Richard A. Burton
+  * Fixed issue 262 "Speaker Mode doesn't turn on (or doesn't work properly)" by JoseMariaAraujo
+  * Turn down the touch button led brightness a bit by Richard A. Burton
+  * Fix low volume bug, issue 210
+  * Added caps led by Gorgonzoland
 
 [ChangeLogSystem6p1rc5Boot2p4p3 Detailed changelog]
 
