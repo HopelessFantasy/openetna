@@ -15,6 +15,7 @@ They were already there - but not working?
   * Look at the latency of the home&back key (in touch_so240001.c), they seem unresponsive from time to time
   * Look at the correct suspend behavior of the mmc. We need something like suspend_late here, so that the wifi driver does not loose its parent.
   * Turn off the power of the mmc during suspend
+  * Implement automatic backlight controls (echo 1 > /sys/class/backlight/adam-bl/alc_mode). Can we somehow just read the sensor and decide on our own?
 
 = Infos =
 The motion sensor is bma150, see http://www.bosch-sensortec.com/content/language4/downloads/BST-BMA150-DS000-06.pdf for a full datasheet.
