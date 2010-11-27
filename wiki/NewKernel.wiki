@@ -3,8 +3,9 @@
 = Bugs =
   * Flash light does not work
   * Resuming from sleep sometines makes the screen very colorful. Just unlock by dragging this thing with a finger and it restores.
+  * Use early_suspend in the proximity sensor
   * Camera does not work
-  * Bluetooth does not work (needs wifi)
+  * Bluetooth does not work
   * Kernel uses the old graphics framework
   * we have brought our own compass driver in drivers/i2c/chips/akm8973.c
  but there is already one in drivers/misc/akm8973.c. See if we can use that.
