@@ -16,6 +16,7 @@ They were already there - but not working?
   * Look at the correct suspend behavior of the mmc. We need something like suspend_late here, so that the wifi driver does not loose its parent.
   * Turn off the power of the mmc during suspend
   * Implement automatic backlight controls (echo 1 > /sys/class/backlight/adam-bl/alc_mode). Can we somehow just read the sensor and decide on our own?
+  * When attached to usb and then entering suspend, the usb is unusable after resume. You have to unplug and plugin again. Says msm72k_udc: usb_ept_queue_xfer() tried to queue busy request
 
 = Infos =
 The motion sensor is bma150, see http://www.bosch-sensortec.com/content/language4/downloads/BST-BMA150-DS000-06.pdf for a full datasheet.
