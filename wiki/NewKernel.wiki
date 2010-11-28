@@ -18,6 +18,6 @@ They were already there - but not working?
   * Turn off the power of the mmc during suspend
   * Implement automatic backlight controls (echo 1 > /sys/class/backlight/adam-bl/alc_mode). Can we somehow just read the sensor and decide on our own?
   * When attached to usb and then entering suspend, the usb is unusable after resume. You have to unplug and plugin again. Says msm72k_udc: usb_ept_queue_xfer() tried to queue busy request
-
+  * Battery life: is VREG_LCD_2.8V and VREG_LCD_1.8V shutdown during black screen? Would that increase battery life?
 = Infos =
 The motion sensor is bma150, see http://www.bosch-sensortec.com/content/language4/downloads/BST-BMA150-DS000-06.pdf for a full datasheet.
