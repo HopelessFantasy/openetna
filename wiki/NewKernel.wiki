@@ -18,6 +18,8 @@
   * When attached to usb and then entering suspend, the usb is unusable after resume. You have to unplug and plugin again. Says msm72k_udc: usb_ept_queue_xfer() tried to queue busy request
   * Battery life: is VREG_LCD_2.8V and VREG_LCD_1.8V shutdown during black screen? Would that increase battery life?
   * Make the lightsensor value available to userspace. See BD6083GUL specs.
+  * The powerbutton is connected to gpio 76?
+  * GPIO 58 has something todo with gps?
 = Infos =
 The motion sensor is bma150, see http://www.bosch-sensortec.com/content/language4/downloads/BST-BMA150-DS000-06.pdf for a full datasheet.
 The backlight driver is a [BD6083GUL http://www.rohm.com/products/databook/driver/pdf/bd6083gul_1-e.pdf].
