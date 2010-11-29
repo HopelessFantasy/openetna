@@ -5,12 +5,11 @@
   * Resuming from sleep sometines makes the screen very colorful. Just unlock by dragging this thing with a finger and it restores.
   * Use early_suspend in the proximity sensor
   * Camera does not work
-  * Bluetooth does not work
+  * Bluetooth does not work (use http://nohands.sourceforge.net to test)
   * Kernel uses the old graphics framework
-  * we have brought our own compass driver in drivers/i2c/chips/akm8973.c
- but there is already one in drivers/misc/akm8973.c. See if we can use that.
+  * we have brought our own compass driver in drivers/i2c/chips/akm8973.c but there is already one in drivers/misc/akm8973.c. See if we can use that.
   * Change sensors.eve to support the new proximity input device. Proximity values are no longer served by the akm device.
-   * The msm_touch touchscreen driver should disable interrupts when the screen is of
+  * The msm_touch touchscreen driver should disable interrupts when the screen is of
   * Look at the latency of the home&back key (in touch_so240001.c), they seem unresponsive from time to time
   * Look at the correct suspend behavior of the mmc. We need something like suspend_late here, so that the wifi driver does not loose its parent.
   * Turn off the power of the mmc during suspend
