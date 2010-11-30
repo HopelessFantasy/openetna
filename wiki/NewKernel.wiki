@@ -22,6 +22,7 @@
   * mahimahi has pmem_venc, we do not
   * msm_irq_exit_sleep <SM NO INT_INFO> ?
   * msm72k_udc: usb_ept_queue_xfer() tried to queue busy request
+  * Device alarm failed to suspend: error -16
 = Infos =
 The motion sensor is bma150, see http://www.bosch-sensortec.com/content/language4/downloads/BST-BMA150-DS000-06.pdf for a full datasheet.
 The backlight driver is a [BD6083GUL http://www.rohm.com/products/databook/driver/pdf/bd6083gul_1-e.pdf].
