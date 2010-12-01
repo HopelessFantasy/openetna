@@ -1,4 +1,7 @@
 #summary Infos about the 2.6.35 kernel
+= Feature =
+  * Wifi is very stable (at least for me)
+  * Usb tethering works out of the box without additional apps
 
 = Bugs =
   * Flash light does not work
