@@ -26,4 +26,4 @@
   * Device alarm failed to suspend: error -16
 = Infos =
 The motion sensor is bma150, see http://www.bosch-sensortec.com/content/language4/downloads/BST-BMA150-DS000-06.pdf for a full datasheet.
-The backlight driver is a [BD6083GUL http://www.rohm.com/products/databook/driver/pdf/bd6083gul_1-e.pdf].
+The backlight driver is a [http://www.rohm.com/products/databook/driver/pdf/bd6083gul_1-e.pdf BD6083GUL].
