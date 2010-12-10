@@ -8,6 +8,7 @@
   * Bluetooth does not work (use http://nohands.sourceforge.net to test)
   * Camera does not work
   * Flash light does not work
+  * Disable vreg wlan for usb phy?
 
 = Bugs =
   * Look at that "LG's hidden reset logic" in the old kernel's pm.c
