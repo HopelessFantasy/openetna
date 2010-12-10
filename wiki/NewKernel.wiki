@@ -7,21 +7,21 @@
   * Change sensors.eve to support the new proximity input device. Proximity values are no longer served by the akm device. Make the other sensors usable.
   * Bluetooth does not work (use http://nohands.sourceforge.net to test)
   * Camera does not work
-  * Flash light does not work
-  * Disable vreg wlan for usb phy?
 
 = Bugs =
+  * Flash light does not work
+  * Battery duration is low
+
+= Minor =
   * Look at that "LG's hidden reset logic" in the old kernel's pm.c
   * we have brought our own compass driver in drivers/i2c/chips/akm8973.c but there is already one in drivers/misc/akm8973.c. See if we can use that.
   * The msm_touch touchscreen driver should disable interrupts when the screen is off
-  * Look at the latency of the home&back key (in touch_so240001.c), they seem unresponsive from time to time
-  * Look at the correct suspend behavior of the mmc. We need something like suspend_late here, so that the wifi driver does not loose its parent.
-  * When attached to usb and then entering suspend, the usb is unusable after resume. You have to unplug and plugin again. Says msm72k_udc: usb_ept_queue_xfer() tried to queue busy request
+  * Device alarm failed to suspend: error -16
+  * usb wakelock is hold even if on wall charger
   * The powerbutton is connected to gpio 76?
   * GPIO 58 has something todo with gps?
-  * mahimahi has pmem_venc, we do not
-  * msm72k_udc: usb_ept_queue_xfer() tried to queue busy request
-  * Device alarm failed to suspend: error -16
+  * Look at the latency of the home&back key (in touch_so240001.c), they seem unresponsive from time to time
+
 
 = Infos =
 The motion sensor is bma150, see http://www.bosch-sensortec.com/content/language4/downloads/BST-BMA150-DS000-06.pdf for a full datasheet.
