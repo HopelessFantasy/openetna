@@ -13,6 +13,7 @@
   * Battery duration is low
 
 = Minor =
+  * The proximity sensor can be driven in interrupt mode. Find the datasheet for that and the gpio which is connected to the chips interrupt line.
   * Look at that "LG's hidden reset logic" in the old kernel's pm.c
   * we have brought our own compass driver in drivers/i2c/chips/akm8973.c but there is already one in drivers/misc/akm8973.c. See if we can use that.
   * The msm_touch touchscreen driver should disable interrupts when the screen is off
