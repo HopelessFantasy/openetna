@@ -16,4 +16,3 @@
   * (See the 'issues' pages for more details, and PLEASE use the search form at the top before creating new issues).
   * Audio not yet working properly via bluetooth handsets.
   * Camera limited to 3 Megapixels and NO video recording yet.
-  * The led on the shift button does not light up while in caps mode.
