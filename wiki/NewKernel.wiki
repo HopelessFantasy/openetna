@@ -7,22 +7,28 @@
   * Change sensors.eve to support the new proximity input device. Proximity values are no longer served by the akm device. Make the other sensors usable.
   * Bluetooth does not work (use http://nohands.sourceforge.net to test)
   * Camera does not work
+  * Battery duration is very low
 
 = Bugs =
   * Flash light does not work
-  * Battery duration is low
 
 = Minor =
-  * The proximity sensor can be driven in interrupt mode. Find the datasheet for that and the gpio which is connected to the chips interrupt line.
   * Look at that "LG's hidden reset logic" in the old kernel's pm.c
   * we have brought our own compass driver in drivers/i2c/chips/akm8973.c but there is already one in drivers/misc/akm8973.c. See if we can use that.
   * The msm_touch touchscreen driver should disable interrupts when the screen is off
-  * Device alarm failed to suspend: error -16
   * usb wakelock is hold even if on wall charger
   * The powerbutton is connected to gpio 76?
   * GPIO 58 has something todo with gps?
   * Look at the latency of the home&back key (in touch_so240001.c), they seem unresponsive from time to time
 
+= Battery duration =
+Battery drains as hell. Maybe related:
+  * Device alarm failed to suspend: error -16 or -11
+  * load is about 100 when resuming
+  * usb keeps various clocks enabled
+  * usb keep vreg enabled
+  * battery even drains without entering pin or when in airplane mode
+  * battery drains even when in suspend-to-ram
 
 = Infos =
 The motion sensor is bma150, see http://www.bosch-sensortec.com/content/language4/downloads/BST-BMA150-DS000-06.pdf for a full datasheet.
