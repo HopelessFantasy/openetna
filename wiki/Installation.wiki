@@ -10,6 +10,13 @@ Please look at the following tutorial and consider doing so.
 http://www.zacpod.com/p/71
 
 *This ROM may make your phone burst into flames, eat your dog and take away all your happiness. Use it on your own risk!*
+----
+
+*Recently LG released their official 2.2 (froyo) firmware for the LG GW620.
+Be careful !
+As far as i know, there is no way to go back to an older firmware from that new official 2.2 !
+That means you may never be able to go back to Open Etna after flashing that official firmware !*
+----
 
 = Introduction =
 
