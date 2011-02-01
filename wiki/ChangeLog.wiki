@@ -1,6 +1,8 @@
 #summary ChangeLog
 #labels Featured
 
+*Attention: The first boot of a new version always takes a lot time (up to 10 minutes)*
+
 = system v6.2-rc1/boot v3.0 =
   * Needs new google apps file "gapps-mdpi-20101020-signed.zip" to be put on your sdcard
   * Using lg's proprietary libs from their froyo release
