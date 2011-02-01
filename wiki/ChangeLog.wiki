@@ -1,7 +1,18 @@
 #summary ChangeLog
 #labels Featured
+
+= system v6.2-rc1/boot v3.0 =
+  * Needs new google apps file "gapps-mdpi-20101020-signed.zip" to be put on your sdcard
+  * Using lg's proprietary libs from their froyo release
+  * New Brightness sensor
+  * Camera is working again
+  * Using modified 2.6.32 kernel from lg's froyo release
+
+[ChangeLogSystem6p2rc1Boot3p0 Detailed changelog]
+
 = boot v2.4.4 =
   * Fixed a touchscreen calibration bug in the bot v2.4.3
+
 = system v6.1-rc5/boot v2.4.3 =
 
   * A lot of work into gps, fixed issue 295, mainly by Richard A. Burton
