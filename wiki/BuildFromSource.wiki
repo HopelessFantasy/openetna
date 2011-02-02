@@ -35,7 +35,7 @@ repo sync -j 10
 cd ..
 }}}
 
-  * Get the proprietary files. Download [http://www.zacpod.com/files/V10T.zip Zacpod's korean-v10t firmware], and extract the system.img with [http://code.google.com/p/openetna/source/browse/#svn/trunk/unyaffs unyaffs] to 'korean-v10t'. (So that korean-v10t and android-2.2 are in the same directory). Then
+  * Get the proprietary files. Download [http://forum.openetna.com/index.php?topic=501.0 Froyo_GW620_officially_LG.rar], and extract the system.img with [http://code.google.com/p/openetna/source/browse/#svn/trunk/unyaffs unyaffs] to 'lg2.2'. (So that lg2.2 and android-2.2 are in the same directory). Then
 {{{
 cd android-2.2/device/lg/eve
 ./extract-files.sh
