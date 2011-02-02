@@ -10,6 +10,8 @@
 
 = Bugs =
   * Flash light does not work
+  * Keypad backlight is not triggered correctly (maybe not kernel bug)
+  * OpenEtna boot screen is not shown (VT must be enabled)
 
 = Minor =
   * Look at that "LG's hidden reset logic" in the old kernel's pm.c
