@@ -6,7 +6,6 @@
 = High priority =
   * Change sensors.eve to support the new proximity input device. Proximity values are no longer served by the akm device. Make the other sensors usable.
   * Bluetooth does not work (use http://nohands.sourceforge.net to test)
-  * Camera does not work
 
 = Bugs =
   * Flash light does not work
