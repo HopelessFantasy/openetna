@@ -17,6 +17,7 @@
   * The powerbutton is connected to gpio 76?
   * GPIO 58 has something todo with gps?
   * Look at the latency of the home&back key (in touch_so240001.c), they seem unresponsive from time to time
+  * Test softap
 
 = Infos =
 The motion sensor is bma150, see http://www.bosch-sensortec.com/content/language4/downloads/BST-BMA150-DS000-06.pdf for a full datasheet.
