@@ -1,7 +1,53 @@
 #summary ChangeLog
 #labels Featured
 
-*Attention: The first boot of a new version always takes a lot time (up to 10 minutes)*
+*Attention: The first boot of a new version always takes a lot of time (up to 10 minutes)*
+
+= system v6.3-rc1 =
+  * System.img and boot.img are released together from now on
+  * Finally our shiny new cyanogen based and heavily modfied 2.6.35 kernel
+  * Fixed issue 123 'video recording doesn't work'
+  * Can take 5 MP pictures (thanks to saxando4u)
+  * 3D is more than twice as fast as in 6.2-rc1
+  * You should not be promoted to choose between two provision apps on first boot
+  * Framework for software controled automatic backlight (does not work yet)
+  * Bluetooth should work again
+
+{{{
+packages/apps/Camera:
+29ad4ba Added 5MP option
+packages/inputmethods/LatinIME:
+device/lg/eve:
+97b9378 BoardConfig: use bcm4329 driver
+d2d21e0 Add source of libcamera, but disable for now
+4ef9526 BoardConfig: disable BOARD_OVERLAY_FORMAT_YCbCr_420_SP
+6bcbba6 overlay: enable automatic brightness
+66b34b6 init.eve.rc: use new bluetooth firmware
+d7ed5e2 init.eve.rc: cgroups setup from lg's
+frameworks/base:
+3c10915 Revert "More verbose debugging in AudioFlinger"
+kernel:
+(switched to branch android-msm-2.6.35-unified)
+android:
+23892ad Move Camera to OpenEtna
+5f0c5c7 Revert "kernel: change branch to android-lg-2.6.32"
+3520324 Remove Provision, LatinIME, and Quicksearchbox
+82f1d12 Release system6.2-rc1-boot3.0
+ndk:
+f443f17 rebuild-all-prebult: replace --try-x86 option with --arch
+e28115c add the x86-4.4.x toolchain
+bc4b67a rebuild-all-prebult: add options for binutils-version, mpfr-version,
+sysroot
+6e57947 prebuilt-common: Allow versioning of GCC to be 4.4.x
+f178bf5 prebuilt-common: Update the PLATFORM and API target for x86
+8ac0204 package-release: add the --abi flag
+fe1ae51 build-gcc: TMPLOG wasn't being set
+a688b1e build-gcc: add the mpfr-version option
+1b57d2e build-gcc: add the initfini-array configure flag
+57aafae dev-system-import: add sys/procfs.h, fix location of fenv.h
+9d5ac07 dev-system-import: Bump the toolchain revision to 4.4.x for x86
+b224b2b dev-system-import: Add the option to specify the toolchain-prefix
+}}}
 
 = system v6.2-rc1/boot v3.0 =
   * Needs new google apps file "gapps-mdpi-20101020-signed.zip" to be put on your sdcard
