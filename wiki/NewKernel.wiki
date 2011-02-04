@@ -3,14 +3,12 @@
   * Wifi is very stable (at least for me)
   * Usb tethering works out of the box without additional apps
 
-= High priority =
-  * Change sensors.eve to support the new proximity input device. Proximity values are no longer served by the akm device. Make the other sensors usable.
-  * Bluetooth does not work (use http://nohands.sourceforge.net to test)
-
 = Bugs =
   * Flash light does not work
   * Keypad backlight is not triggered correctly (maybe not kernel bug)
   * OpenEtna boot screen is not shown (VT must be enabled)
+  * Does Bluetooth sound forwarding work (use http://nohands.sourceforge.net to test)
+  * FM does not work
 
 = Minor =
   * Look at that "LG's hidden reset logic" in the old kernel's pm.c
