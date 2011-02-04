@@ -5,7 +5,7 @@
 
 = Bugs =
   * Flash light does not work
-  * Keypad backlight is not triggered correctly (maybe not kernel bug)
+  * Brightness is not reported correctly, brightness cannot be set
   * OpenEtna boot screen is not shown (VT must be enabled)
   * Does Bluetooth sound forwarding work (use http://nohands.sourceforge.net to test)
   * FM does not work
