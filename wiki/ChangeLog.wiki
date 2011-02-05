@@ -4,8 +4,7 @@
 *Attention: The first boot of a new version always takes a lot of time (up to 10 minutes)*
 
 = system v6.3-rc1 =
-  * Needs google apps file "gapps-mdpi-tiny-20101020-signed.zip" to be put on
-  your sdcard
+  * Needs google apps file "gapps-mdpi-tiny-20101020-signed.zip" to be put on your sdcard
   * Touch buttons (Home&Back) should react better, vibration feedback added
   * Wifi should recover from hangs automatically
   * Readded LatinIME
