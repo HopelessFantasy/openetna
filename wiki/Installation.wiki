@@ -69,13 +69,13 @@ OpenEtna installation videos
 See HowToChangeKeyboardLayout
 
 = Install Google Apps =
-Download gapps-mdpi-*20100930*-signed.zip (google for it), copy it to your sdcard by
+Download gapps-mdpi-tiny-*20101020*-signed.zip (google for it), copy it to your sdcard by
 {{{
-adb push gapps-mdpi-20100930-signed.zip /sdcard/gapps-mdpi-20100930-signed.zip
+adb push gapps-mdpi-tiny-20101020-signed.zip /sdcard/
 }}}
 and reboot.
 
-Warning: Please try to use that *exact file* and no other versions. Or use an earlier version of the gapps file and *rename it* to gapps-mdpi-*20100930*-signed.zip.
+Warning: Please try to use that *exact file* and no other versions. (Or use an earlier version of the gapps file and *rename it* to gapps-mdpi-tiny-*20101020*-signed.zip - this is not suggested)
 
 == Recover fastboot ==
 
