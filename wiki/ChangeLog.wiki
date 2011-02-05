@@ -4,6 +4,43 @@
 *Attention: The first boot of a new version always takes a lot of time (up to 10 minutes)*
 
 = system v6.3-rc1 =
+  * Needs google apps file "gapps-mdpi-tiny-20101020-signed.zip" to be put on
+  your sdcard
+  * Touch buttons (Home&Back) should react better, vibration feedback added
+  * Wifi should recover from hangs automatically
+  * Readded LatinIME
+  * Made flashlight work, added Torch app
+  * Fix detection of headphones
+  * Better handling of the proximity sensor
+  * Kernel now uses 20MB less ram
+  * Finally the light sensor (and thereby automatic backlight) is fixed
+
+{{{
+device/lg/eve:
+81fbe5f sensors_ak8973: fix reading of proximity/light sensor state
+44b7cd8 AndroidBoard.mk: install more features
+8ebbf47 full_eve: add Torch and lights.eve
+kernel:
+2001252 akm8973: enable/disable proximity sensor dynamically
+1ce1cbb prox_sharp: use set_irq_wake and export an interface to the kernel
+470b0b3 board-eve-touchkeys: cleanup alot, make more responsive, add vibration
+f0a0914 board-eve-wifi: cleanup
+15a11d9 board-eve-vibrator: export interface to kernel
+5e061f9 msm_ts: remove block_touch()-logic
+d5962ad bcm4329: return error if stuck so userspace will restart us
+315dd2a eve_flash_light: move the sysfs files to the right place
+cbf966c mv9319: remove unused calls into the backlight driver
+4ab6194 board-eve-backlight: fix brightness setting and sensor reading
+1fa0ad9 board-eve: add detection of headphones
+ba1f7c8 eve_flash_led: implement the leds/flashlight interface
+22fee91 board-eve: reserve pmem sizes as in lg-2.6.32. Saves 20 MB ram
+android:
+4afd248 Readd LatinIME
+6752177 Release 6.3-rc1
+}}}
+
+
+= system v6.3-rc1 =
   * Needs google apps file "gapps-mdpi-tiny-20101020-signed.zip" to be put on your sdcard
   * System.img and boot.img are released together from now on
   * Finally our shiny new cyanogen based and heavily modfied 2.6.35 kernel
