@@ -4,6 +4,7 @@
 *Attention: The first boot of a new version always takes a lot of time (up to 10 minutes)*
 
 = system v6.3-rc1 =
+  * Needs google apps file "gapps-mdpi-tiny-20101020-signed.zip" to be put on your sdcard
   * System.img and boot.img are released together from now on
   * Finally our shiny new cyanogen based and heavily modfied 2.6.35 kernel
   * Fixed issue 123 'video recording doesn't work'
@@ -50,7 +51,7 @@ b224b2b dev-system-import: Add the option to specify the toolchain-prefix
 }}}
 
 = system v6.2-rc1/boot v3.0 =
-  * Needs new google apps file "gapps-mdpi-20101020-signed.zip" to be put on your sdcard
+  * Needs new google apps file "gapps-mdpi-tiny-20101020-signed.zip" to be put on your sdcard
   * Using lg's proprietary libs from their froyo release
   * New Brightness sensor
   * Camera is working again
