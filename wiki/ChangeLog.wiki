@@ -3,6 +3,31 @@
 
 *Attention: The first boot of a new version always takes a lot of time (up to 10 minutes)*
 
+= system v6.3-rc4 =
+
+  * Fix some bugs with the backlight, especially the issue where there is a
+  dark region in the lower left corner
+  * lower up_threshold for lower cpu latency
+  * Added an OpenEtna app, which (for now) will assist in installing google
+  apps. It will be automatically launched on boot, if gapps are not installed.
+
+{{{
+device/lg/eve:
+f46021c full_eve: include OpenEtna app
+10be184 init.eve.rc: change cpufreq governour to ondemand and lower
+up_threshold to 80
+kernel:
+185edc8 board-eve-backlight: fix various race conditions
+a954b2e config: enable frequencies up to 710 Mhz
+b28f98d board-eve-backlight: Also enabled led 5 and 6
+android:
+877cf0b Release 6.3-rc3
+d538844 added app OpenEtna
+71c7983 Release 6.3-rc2
+system/core:
+5b03b9e set world-readable permission on /system/etc/init.d/15checkgapps
+}}}
+
 = system v6.3-rc2 =
   * Needs google apps file "gapps-mdpi-tiny-20101020-signed.zip" to be put on your sdcard
   * Touch buttons (Home&Back) should react better, vibration feedback added
