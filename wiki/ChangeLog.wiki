@@ -5,12 +5,20 @@
 
 = system v6.3-rc4 =
 
+== Changes ==
   * Fix some bugs with the backlight, especially the issue where there is a
   dark region in the lower left corner
   * lower up_threshold for lower cpu latency
   * Added an OpenEtna app, which (for now) will assist in installing google
   apps. It will be automatically launched on boot, if gapps are not installed.
 
+== Known Issues ==
+  * The wifi chip will hang, when the device goes to sleep, but should be
+  restarted automatically afterwards
+  * Backlight on the keyboard and touchbuttons is influenced by brightness.
+  This may need some more tuning.
+
+== Git log ==
 {{{
 device/lg/eve:
 f46021c full_eve: include OpenEtna app
