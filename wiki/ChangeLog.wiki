@@ -3,6 +3,33 @@
 
 *Attention: The first boot of a new version always takes a lot of time (up to 10 minutes)*
 
+= system v6.3-rc5 =
+
+== Changes ==
+  * Fixed wifi hangs. Battery will drain faster, if you set "Wifi Sleep policy" to "Never" as that keeps the phone from suspending. Not even Lg could get this to work.
+  * Maybe fixed proximity sensor weirdness during call
+  * Add a RTL fix to webkit
+
+== Known Issues ==
+  * Backlight on the keyboard and touchbuttons is influenced by brightness. This may need some more tuning.
+
+== Git log ==
+{{{
+external/webkit:
+c757f76 Added Ayman Al Sanad's webkit Arabic shaping integration
+frameworks/base:
+6f8817e Wifi: lower timeout for sleep as this blocks suspend on the eve
+kernel:
+57bf4df prox_sharp: aquire wake_lock in isr
+f6bfce1 bcm4329: set config values (from lg's /data/misc/wifi/config)
+d7836ac bcm4329: keep system from suspending while wifi is active
+e5cd3c2 board-eve: increase ramconsole size
+e8078ee board-eve: add ramconsole for last_kmsg device
+android:
+4119942 Move webkit to openetna
+0a93518 Release 6.3-rc4
+}}}
+
 = system v6.3-rc4 =
 
 == Changes ==
