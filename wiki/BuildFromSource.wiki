@@ -31,7 +31,7 @@ Verify you're using the right java version issuing a "java -version": it has to 
 mkdir android-2.2
 cd android-2.2
 repo init -u git://github.com/OpenEtna/android_manifest.git -b froyo
-repo sync -j 10
+repo sync -j10
 cd ..
 }}}
 
