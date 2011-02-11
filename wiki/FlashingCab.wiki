@@ -1,0 +1,17 @@
+#summary Flashing a .cab file
+#labels Featured
+
+= Flashing a .cab file =
+
+  * Download and install 4.9.4_Mobile_Package_(Multi-Lang).zip
+  * Download and install B2CAppSetup.exe
+  * Download and extract kp500.rar
+  * Start kp500-utils-en.exe
+  * Start your phone
+  * Enter pin into your phone
+  * Disable ADB on your phone
+  * Connect phone to pc
+  * Enter "J" for "Flash with assistant"
+  * Enter "GW620" for "Phone Model"
+  * Enter the full path to the .cab file
+  * Enter the corresponding version
