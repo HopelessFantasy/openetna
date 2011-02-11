@@ -7,6 +7,7 @@
   * Download and install B2CAppSetup.exe
   * Download and extract kp500.rar
   * Start kp500-utils-en.exe
+  * Flash boot.img and system.img of an official build (zacpod's 1.6 works, too)
   * Start your phone
   * Enter pin into your phone
   * Disable ADB on your phone
