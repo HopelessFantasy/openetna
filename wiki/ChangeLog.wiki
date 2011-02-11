@@ -6,8 +6,7 @@
 = v6.3-rc6 =
 
 == Changes ==
-  * Should fix the (A)GPS issue 354 by downloading xtra data right after a data connection is available
-
+  * Should fix the (A)GPS issue 354 by downloading xtra data the right way
 == Known Issues ==
   * Backlight on the keyboard and touchbuttons is influenced by brightness. This may need some more tuning.
 
