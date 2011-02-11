@@ -3,7 +3,7 @@
 
 *Attention: The first boot of a new version always takes a lot of time (up to 10 minutes)*
 
-= system v6.3-rc6 =
+= v6.3-rc6 =
 
 == Changes ==
   * Should fix the (A)GPS issue 354 by downloading xtra data right after a data connection is available
@@ -22,7 +22,7 @@ ndk:
 ed000ed Fixed LOCAL_WHOLE_STATIC_LIBRARIES handling.
 }}}
 
-= system v6.3-rc5 =
+= v6.3-rc5 =
 
 == Changes ==
   * Fixed wifi hangs. Battery will drain faster, if you set "Wifi Sleep policy" to "Never" as that keeps the phone from suspending. Not even Lg could get this to work.
@@ -49,7 +49,7 @@ android:
 0a93518 Release 6.3-rc4
 }}}
 
-= system v6.3-rc4 =
+= v6.3-rc4 =
 
 == Changes ==
   * Fix some bugs with the backlight, especially the issue where there is a
@@ -82,7 +82,7 @@ system/core:
 5b03b9e set world-readable permission on /system/etc/init.d/15checkgapps
 }}}
 
-= system v6.3-rc2 =
+= v6.3-rc2 =
   * Needs google apps file "gapps-mdpi-tiny-20101020-signed.zip" to be put on your sdcard
   * Touch buttons (Home&Back) should react better, vibration feedback added
   * Wifi should recover from hangs automatically
@@ -118,7 +118,7 @@ android:
 }}}
 
 
-= system v6.3-rc1 =
+= v6.3-rc1 =
   * Needs google apps file "gapps-mdpi-tiny-20101020-signed.zip" to be put on your sdcard
   * System.img and boot.img are released together from now on
   * Finally our shiny new cyanogen based and heavily modfied 2.6.35 kernel
