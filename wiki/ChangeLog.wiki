@@ -3,6 +3,25 @@
 
 *Attention: The first boot of a new version always takes a lot of time (up to 10 minutes)*
 
+= system v6.3-rc6 =
+
+== Changes ==
+  * Should fix the (A)GPS issue 354 by downloading xtra data right after a data connection is available
+
+== Known Issues ==
+  * Backlight on the keyboard and touchbuttons is influenced by brightness. This may need some more tuning.
+
+== Git log ==
+{{{
+frameworks/base:
+32ebf07 Revert "Revert "Revert part of "GPS: Don't set XTRA download pending
+flag at boot time."""
+android:
+5ba06ce Release 6.3-rc5
+ndk:
+ed000ed Fixed LOCAL_WHOLE_STATIC_LIBRARIES handling.
+}}}
+
 = system v6.3-rc5 =
 
 == Changes ==
