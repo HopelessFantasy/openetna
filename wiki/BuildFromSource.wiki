@@ -48,6 +48,7 @@ make -j3
 }}}
   * The system.img and boot.img can then be found under out/target/product/eve/
 = Contribute =
+ * Read how to use repo/git at http://source.android.com/source/git-repo.html
  * Get yourself a task. You will probably want to announce it on the mailing list, to see if anyone else is working at that issue or if anyone has good advice.
  * Tell the mailing list after you have finished something and ask for review
  * Get an account at github.com and tell us your username, we will give you permission to push your changes
