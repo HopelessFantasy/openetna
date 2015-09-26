@@ -1,0 +1,4 @@
+**Since 6.0rc-4, this can be done through Settings->Language & Input->Device Keyboard->Keyboard Layout.**
+
+# If your layout is not available #
+> Please copy the /system/usr/keylayout/eve\_qwerty.kl from an official rom in your language. Then please fill an issue and attach this file, so we can make it available to everyone

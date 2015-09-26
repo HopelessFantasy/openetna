@@ -1,0 +1,155 @@
+# Introduction #
+
+This procedure has been tested on Ubuntu 10.04 x64. The following steps are not too specific however, and you should be able to adapt them for your environment.
+
+# Install the sdk #
+
+Download the sdk from this page:
+http://developer.android.com/sdk/index.html
+unpack it somewhere safe and then add the location to your PATH.
+
+# Get the required packages #
+_NOTE: this is probably the most distribution-specific passage of the guide._
+
+
+Get the packages needed to build Android.
+```
+sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl sun-java6-jdk zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev ia32-libs x11proto-core-dev libx11-dev lib32readline5-dev lib32z-dev
+```
+
+Verify you're using the right java version issuing a "java -version": it has to be 1.6.
+
+# Get the source #
+
+  * Get the [repo](http://android.git.kernel.org/repo) script from google, make it executable and place it in your PATH
+
+  * Checkout the source
+```
+mkdir android-2.2
+cd android-2.2
+repo init -u git://github.com/OpenEtna/android_manifest.git -b froyo
+repo sync -j10
+cd ..
+```
+
+  * Get the proprietary files. Download [Froyo\_GW620\_officially\_LG.rar](http://forum.openetna.com/index.php?topic=501.0), and extract the system.img with [unyaffs](http://code.google.com/p/openetna/source/browse/#svn/trunk/unyaffs) to 'lg2.2/system'. (So that lg2.2 and android-2.2 are in the same directory) with 'unyaffs system.img'. Then
+```
+cd android-2.2/device/lg/eve
+./extract-files.sh
+cd ../../..
+```
+
+  * Build the source
+```
+make -j3
+```
+  * The system.img and boot.img can then be found under out/target/product/eve/
+# Contribute #
+  * Read how to use repo/git at http://source.android.com/source/git-repo.html
+  * Get yourself a task. You will probably want to announce it on the mailing list, to see if anyone else is working at that issue or if anyone has good advice.
+  * Tell the mailing list after you have finished something and ask for review
+  * Get an account at github.com and tell us your username, we will give you permission to push your changes
+
+## Start working ##
+
+You should really start with checking out a local branch by
+```
+git checkout -b froyo github/froyo
+```
+This will create a local branch "froyo" which is based on the remote branch "github/froyo".
+
+Make your changes.
+
+## Pushing ##
+In the repository, where you have your changes, make sure you have them on a named branch.
+(I told you!)
+```
+git branch
+```
+will show "froyo" (hopefully) or `*`(no branch).
+If you are on `*`(no branch), issue
+```
+git checkout -b froyo
+git branch froyo --set-upstream github/froyo
+```
+to create the local branch "froyo" from the current working copy and tell git that this branch is based on the remote branch "github/froyo".
+
+One then has to change the url where we push to, because the default is an read-only url.
+Issue
+```
+git remote -v
+```
+and it will show you something like
+```
+github	git://github.com/OpenEtna/android_vendor_openetna.git (fetch)
+github	git://github.com/OpenEtna/android_vendor_openetna.git (push)
+```
+Then issue (modify accordingly)
+```
+git remote set-url --push github git@github.com:OpenEtna/android_vendor_openetna.git
+```
+(note the git@github.com: instead of git://github.com/ -> this is the difference between read-write and read-only)
+First update your local tree, as there may be new changes upstream. Issue
+```
+git pull --rebase
+```
+to fetch all new changes from github and apply your local commits on top of them.
+Then push this new tree by
+```
+git push
+```
+
+# OLD Instructions for eclair #
+## Get the source ##
+
+  * Follow the indications in the Source tab above. If you're not a member of the project just enter this line in a terminal:
+
+```
+svn checkout http://openetna.googlecode.com/svn/trunk/ openetna-read-only
+```
+
+(if you don't have it installed, you have to install the svn package).
+You'll get a folder called openetna-read-only, it contains useful scripts and some READMEs. If you're autonomous enough, just follow them; if not, go on with this guide.
+
+## Preparing for building ##
+
+```
+cd openetna-read-only
+```
+  * Then, according the README: get smali and baksmali:
+```
+wget http://smali.googlecode.com/files/smali-1.2.4.jar
+wget http://smali.googlecode.com/files/baksmali-1.2.4.jar
+```
+  * Now get the repo tool, if you haven't got it already. Also make sure you have the 'git' package installed.
+```
+wget http://android.git.kernel.org/repo
+chmod +x repo
+mv repo /opt/android-sdk/tools/
+```
+(note: /opt/android-sdk/tools should be in your path, otherwise add /opt/android-sdk/tools/ in front of the 'repo' commands)
+  * Download the Polytheus android-2.1 source:
+```
+mkdir android-2.1
+cd android-2.1
+repo init -u git://github.com/OpenEtna/android_manifest.git -b eclair
+repo sync
+```
+
+## Building the source ##
+  * Now you can build the source:
+```
+./doBuild
+```
+  * Then make a boot.img:
+```
+cd my-boot
+./makeBootImg
+```
+  * Then build a system.img:
+```
+cd ../my-system
+less README
+```
+
+**This document is a work in progress**

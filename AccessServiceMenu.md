@@ -1,0 +1,6 @@
+# How to access Service Menu #
+
+Open dial pad and type
+`*`#`*`#4636#`*`#`*`
+
+The service menu should appear.

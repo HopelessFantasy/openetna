@@ -1,0 +1,715 @@
+# Introduction #
+
+Please fill in
+
+# Gitlog #
+```
+bootable/recovery:
+0b7bbf2 recovery: Remove condition around get_root_mtd_partition
+d352233 Added options for an internal SD card to be handled by recovery.
+16c0ace Fix write_raw_image on mtd devices.
+134ead7 fix up bmlutils some more
+03a4f5b supprot backup and restore of samsung kernels
+cd8af06 whoops
+02c3605 Fix graphics corruption on some devices. BML restore needs to unlock first.
+8df69c0 minui: useless code is useless
+229a543 minui: clean up some stuff, and avoid multiple key events on N1
+ddc2e39 fix fstab generation
+d90ad5d fix no select button
+3847a2d add missing file
+44bd494 minui: Add haptic feedback to virtual keys
+ac731c8 minui: add support for virtual keys
+9acb022 recovery: Support board-specified font sizes and font-files
+37d96f7 2.5.1.3
+build:
+1fd3140 Restore default value for no_prereq switch to "true" as it currently breaks updater-script as long as BUILD_UTC_DATE is always 0.
+a8eca7a Fix ndk path
+9f0100d -n & --no_prereq are the same option and --no_prereq seems to be preferred
+94f69a3 Remove pdb set_trace()
+26ff5ad Allow disabling update.zip version check
+92e82b5 tab fakeflash
+9157e1d fix path for mkrecoveryzip.sh
+5b42f9d Add "reposync" command to envsetup.sh
+df19bda Allow building update.zip with no kernel
+902f11f add unpackbootimg to the otatools
+640d0c1 create a target for utilities
+4d3e547 dexpreopt: Increase partition size and make busybox "ls" work
+6d6e39f Add generic tablet target.
+device/commtiva/z71:
+3aed210 libcamera: Remove uses of playShutterSoundOnly
+204db9f Updated prebuilt kernel
+289cd7d libcamera: Finish EXIF support
+139767f CMParts: Use correct color name for red LED
+8224ca6 Adjusted ALS array
+d91bc05 libcamera: Add EXIF timestamping
+9236625 libcamera: Add EXIF support
+9684a32 libril: Don't attempt to modify empty responses
+9a3b94e Updated prebuilt kernel
+efcf9e5 Fix charging lights
+2fa26be Updated prebuilt kernel
+a26b765 Move RIL hacks from rild to libril
+f593740 init: Fix permissions on red LED blink control
+1951158 liblights: Fixes for compatibility with dual-LED notifications
+45aef2a Enable dual LED notifications and LED flashlight
+9b2fba7 liblights: Use newly added userspace control of red/green lights
+387ce8b Updated prebuilt kernel
+8345fc8 Updated prebuilt kernel
+ebf7656 Updated kernel prebuilt
+1091a12 Update prebuilt kernel
+ba44777 Updated prebuilt kernel
+2afcf18 Updated prebuilt kernel
+device/geeksphone/one:
+9f7cc30 Enable dual LED notifications
+7b13ae2 Add Russian locale
+5aa193f Fix recovery
+device/nvidia/harmony:
+d4cbfff [harmony] Updated keylayout handling.
+8620ef7 [board] Updated options for Internal SD card support in recovery.
+fa61eb9 [overlay] Begin using product specific overlays
+device/htc/buzz:
+da224aa Torch layout fix & bootloop fix (got rid of lockscreen overlay as it did nothing but cause problems)
+device/htc/dream_sapphire:
+5593d28 DS: Remove radio/bootloader checks by request. GOOD LUCK!
+device/htc/espresso:
+573f568 espresso: Better notification LED support
+bb6ea34 espresso: Use prebuilt gralloc module
+device/htc/glacier:
+78bc7cb glacier: update prebuilt kernel
+fedd1d2 glacier: switch back to PURE_ANDROID
+2332ddb glacier: update prebuilt kernel
+08824ef glacier: add front camera to encoder profiles
+5e53e45 glacier: don't use the amber/green led stuff
+6712641 glacier: fix bluetooth
+bc22d29 glacier: Add mobiledata.interfaces and tune HSDPA
+4f61116 glacier: update prebuilt kernel
+bdbfaaa glacier: update prebuilt kernel
+6ee8e10 glacier: remove obsolete modules/kineto_gan.ko
+db50361 glacier: fix a auto-brightness value and set the amber/green LED flag
+d4aaa13 glacier: kang libsensors from vision
+db9f409 glacier: Big update o' death
+30ab12f glacier: Add missing files
+device/htc/inc:
+1f33e3a Incredible: fix Google Maps 5.0 two finger rotation - multitouch.distinct
+fd34563 new kernel and bcm built by Koush
+8563896 DINC: Clean up some code from liblights.
+af2b269 Build device specific liblights for HTC Incredible
+a360105 Update to latest HTC MR3 Kernel Release 2.6.32-17-g9a2fc16
+device/htc/legend:
+83d4a17 Update kernel
+2e18a35 Clean up and update extract-files.sh
+8026e3f Revert "Define BOARD_USE_NEW_LIBRIL_HTC"
+device/htc/liberty:
+18e1738 Update prebuilt kernel with nls-utf8 mod and ext4 support
+9fba9e4 Use prebuilt gralloc.msm7k.so to stop mem errors in kgsl
+2ce4165 Update pre-built kernel and modules
+4c1b605 liberty: Fix BT sysfs node and enable LPM
+device/htc/passion-common:
+2285c45 passion: Enable "distinct" multitouch, even though it's buggy as hell.
+device/htc/supersonic:
+3b4b960 supersonic: Don't flash the led if color is zero.
+1243c25 supersonic: Clean up the overlay
+17c70fb supersonic: Use the WiMAX LED for notifications
+557757d Revert "supersonic: Add Google's SUPL servers for GPS"
+2661b56 supersonic: Add Google's SUPL servers for GPS
+device/htc/vision:
+2093957 vision: Update prebuilt kernel
+e1f5e64 vision: Update prebuilt kernel and modules
+7c462d3 vision: Update prebuilt kernel
+1860b5f vision: Add gannet0 to mobiledata.interfaces
+75a637b added console=null to the kernel command line to fix the "G2 reboot bug"
+7fb6c6a vision: Update prebuilt kernel
+097bc97 vision: Update prebuilt kernel and modules
+7693309 vision: Make button backlights dimmable (part 2)
+80d682a vision: Update prebuilt kernel and modules
+3add169 vision: Use BOARD_USE_BROKEN_INJECT_XTRA_HACK
+7333823 vision: Update prebuilt kernel
+b937355 vision: Fix speaker LED notification light
+e65b2df vision: Enable FM radio
+cea6ce2 vision: Update prebuilt kernel
+1106e8b vision: Update prebuilt kernel and modules
+device/motorola/sholes:
+0b17468 Droid: fix Google maps 5.0 two finger rotation - multitouch.distinct
+4544f04 Droid: ignore the light sensor when flashlight is on
+1722347 add led flash tag to overlay
+ac7a138 fix spotlight permissions
+c39d703 Fix droid multitouch bug
+external/opencore:
+e7d711d VIDEO_INTERLEAVE_BUFFER_SIZE is too short for some buffers when encoding 720p resolutions
+external/openvpn:
+03c499b openvpn update to 2.1.4
+external/skia:
+b756e78 Fix compilation errors:
+external/webkit:
+816a574 Fix compilation error:
+external/wpa_supplicant:
+5061be8 Fix copypasta error in previous patch.
+1cb7820 Added AWEXT driver
+frameworks/policies/base:
+4207bf4 Rotary lockscreen
+c34d18c Add Torch app handler to lockscreen gestures
+ffbd9b0 Lockscreen.java Fixed gestures crash if not creation succed
+0684b43 Lockscreen gestures color
+5ae091b Gesture updates:
+5e25b3f Allow the user to specify which application to launch using the lockscreen messaging slider.
+1abf4ca Lockscreen gestures-
+hardware/libhardware_legacy:
+1f4c196 wifi: Add a delay before loading the second module
+packages/apps/ADWLauncher:
+fd24cc9 Typo (Colro->Color), and shorter but more descriptive translation
+73adc63 adw: Remove deprecated translations
+5942570 Catalan translation added
+a3c1bcf Fixed Russian translation
+5b7d9d6 Fix the main dock auto appearing after preferences change
+7f492e3 Chinese translation
+fb8db7e Chinese translation
+ab6479f Update Japanese translation.
+c8ac803 Dynamic app drawer paddings depending on main dock size
+4f845ac Another typo fix
+7f69605 Small fixes for default/config values
+152ed30 Added a config param for the wallpaper scrolling
+9b6bc0a Bring back the old icon tinting for the main dock, with an added option to choose color.
+0726a2e Version info v1.3.3
+f1e5ed6 Fixed korean translation encoding
+b4b75f3 Korean Translation Version of ADW.Launcher Version 1 Translated by MinSik CHO, currently attending CheongShim International Academy. Please report translation errors to my email (mscho527@gmail.com)
+bbc07a7 Version info v1.3.2 and removed a wrong translation russian translation for Launcher Actions misleading users
+cecfc91 Few FC fixes from market dev console logs
+b30cdff Properly Closes #45
+28795ac Fixed missing string
+721aaba Fixed missing string
+a9c6818 Updated Italian translations:v1.3
+6054b23 Fixed untranslatable string
+b41bc3a Chinese arrays
+41bd632 Chinese arrays
+56dc50d little fix
+76e2c29 Fix some FCs
+0d913b9 Version info 1.3.1 and missing system string
+da87bf9 Update Japanese translation.
+a456aa4 update Traditional Chinese
+e3a7f61 update Simplified Chinese
+4dc4ed6 Nasty fix for the horizontal drawer acting weird while loading the apps list. This bitch needs a rewrite from scratch
+d89289b Fix desktop indicattor disappearing
+01c3357 Fix workspace to not overscroll of desktop overshoot is set to zero
+90ea398 small typo (yes, again)
+0757ff7 German changelog and fixed typos
+559aee2 Changelog 1.3.0
+8d5d9e4 Version Info v1.3.0
+4e2d440 Fix packages and my git stupidity
+3fba0e4 This is a combination of 20 fixes
+0af5ea7 Modified the main dock, WARNING, themes will NEED to update.
+4307358 updated german translation
+eb09348 Support for different notification bubble colours
+31ac591 Fix LiveFolders autoclose option not working
+26e7e28 added fling gesture to dockbar
+ea7673f new feature: edit existing shirtcuts
+packages/apps/AndroidTerm:
+c6c01ef AndroidTerm: Build the JNI lib as a dependency rather than packaged
+77fcaf5 Set module tags to optional
+5a80ec6 Modify text selection algorithm to work better:
+bee9c07 Fix style of text selection patch.
+41165d2 Update docs for current build environment.
+c4c4406 Added an option for selecting part of the text on the screen with two screen touches.
+f50bec3 Bump version number.
+e342801 fix German translation of toggle_soft_keyboard
+cb1a8ac Add Japanese translations.
+2271290 French translations: initial commit
+b81b86e Russian: Initial Translation
+a91351e German: initial translation
+6c2ce48 Italian translations: initial commit
+f3831e8 update Simplified Chinese translation.
+7d0de89 term: Change package name to jackpal.androidterm2
+12ef720 Update makefiles to replace stock Term app.
+068253d Bump version number.
+ad10138 Add support for full PC keyboards.
+6dd9967 Adobe Photoshop file for high-resolution icon for Android Market.
+7988d5c Avoid potential memory leak in String8::set
+324112b Bump version number.
+packages/apps/Bluetooth:
+9f42c8c Catalan translation added
+4767a5c Bluetooth : FTP Profile Server implementation
+packages/apps/Browser:
+dff9323 Catalan translation added
+ff64145 windows button wrong translation in es-rUS
+packages/apps/CMParts:
+6ede9e7 Updated russian translations: Update notification and fix some mistakes
+07931ca French: Rotary lockscreen
+396f557 Updated italian translations: rotary lockscreen
+2d0d941 Updated Italian translations: update notification strings
+abbbb19 German: Rotary lockscreen
+867d47a Update Japanese translation.
+36ae585 Rotary lockscreen
+ef08d99 German: Update notifications.
+a8da7e0 French: Push notifications on updates (CMParts)
+1ed8347 Update Japanese translation
+c7b054d Add intent to launch update notification settings.
+3b460a1 Update Japanese translation
+696a061 Update French translations + change tabs to 4 spaces
+5ae2435 Catalan translation added
+71ad46a Italian translations: updated and improved
+728334b Updated Spanish translations
+b0cf9f0 Updated russian translations: fix some mistakes
+582446d Add setting to hide notification pulldown after clicking a power widget button
+f4dd897 Trackball/LED settings fixes:
+8343abd cmparts: Fix capitalization of LED settings strings
+987b81b cmparts: Remove trackball references in LED settings strings
+b354ed0 cmparts: Enable always-pulse option for dual LED mode
+a9b583e cmparts: Fix NPE if custom LED color option is disabled
+4afa6a8 cmparts: Custom LED notifications for dual-led devices
+978b503 Update Japanese translation.
+af3c272 French: Translate flashlight gesture option
+ae3c022 Updated Italian translations: Gestures color & flashlight gesture
+5e41117 Updated russian translations: Flashlight button
+a104fae Add flashlight button to gesture creation screen
+77e3b01 French: Translate gestures related strings
+1ec737f Updated russian translations: Lockscreen gesture colors
+2dd0f20 CMParts: portuguese translation - added gestures and some text fixes
+a7436ba Lockscreen gesture colors
+94df554 CMParts: add portuguese translation
+9bd5124 Updated german translation: gesture colors, flashlight, notification power widget, fixed whitespaces
+3ce448d updated german translations: lockscreen gestures and Messaging-App. adapted notification power widget labels to match power control widget labels.
+a6af0b2 updated german translations: lockscreen gestures. adapted notification power widget labels to match power control widget labels.
+708a4ed Updated Italian translations: removed vertical gestures prevention note
+248b9a7 Updated russian translations: Messaging tab application
+9b0f7cf Russian: gesture update
+8abde8a Update Japanese translation
+e229a9f Remove vertical gestures prevention code, fixed in frameworks now
+62497cd Updated Italian tanslations: gesture update & messaging tab application option
+a6da1e6 update Simplified Chinese translation.
+ac10010 Updated russian translations: Lockscreen gestures
+365227e Gesture updates:
+97e5c3d Translation CMParts to Spanish updated translation
+855284c Allow the user to specify which application to launch using the lockscreen messaging slider.
+23cfc85 German translation: Lockscreen gestures
+459f6bb Updated italian translations: Lockscreen gestures
+49d62fe Russian. Fix small mistake in LED notification
+0f592b0 Update Japanese translation
+4a19160 Update russian translation. LED notification
+e01b253 Translation CMParts to Spanish 100% translated now
+1eacff6 Lockscreen gestures -
+packages/apps/CMPartsHelper:
+41ac285 Catalan translation added
+packages/apps/CMStats:
+6d505de Catalan translation added
+packages/apps/CMWallpapers:
+32ac59b Catalan translation added
+e1f84cc New wallpapers from Prash
+packages/apps/Camera:
+a7ecdbe update Simplified Chinese translation
+4a790c8 Update Japanese translation.
+4c9c833 camera: Use "classic" autofocus mode by default.
+46f7b9e Fix camcorder not resuming properly after sleep.
+1fcd0ae camera: Set touch-focus mode correctly
+packages/apps/Contacts:
+15f4cd6 Catalan translation added
+2fc2dc3 fix a small grammatical error
+packages/apps/DSPManager:
+3f0e865 Catalan translation added
+8f509bc DSPManager: add portuguese translation
+packages/apps/DeskClock:
+da1fa2c Catalan translation added
+2b2e3eb Update Japanese translation
+0fedf5a Updated russian translations: fix mistakes. DeskClock
+3fcad18 Updated Italian translations: launch custom application & improved some translations
+6a3ef39 Desk Clock can launch a user-specified application.
+packages/apps/Email:
+975ba1b Catalan translation added
+packages/apps/FM:
+4c9d4ab FM: Disable radio on AUDIOFOCUS_LOSS
+f61c4d0 FM: Handle audio focus gain correctly
+12eec6f FM: Handle AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK
+babd46b fm: Fix translation errors
+ab8a978 Russian. Translate FM Radio application
+packages/apps/FileManager:
+490e1f7 Catalan translation added
+36bbe16 Hungarian translation for FileManager from Hungarian Spica Community
+packages/apps/Gallery3D:
+a63279d Restore \u2022 notation from commit 1451a83c.
+4fbbc38 Catalan translation added
+d4ca938 Fix for crash in PathBarLayer::recomputeComponents
+1fd2c6f Gallery3D: Remove unnecessary variables
+dcfebf7 Gallery3D: Add depth component to icon animation
+packages/apps/Mms:
+5918e04 Updated italian translations: vibration patterns array
+ba6c9e4 French: translate "Attachment save folder"
+7550324 Catalan translation added
+324a84b Revert "FIX: CM issue 1733 / AOSP issue 2989"
+ae8b968 MMS: Removed untranslatable strings on zh_CN
+1f3f610 FIX: CM issue 1733 / AOSP issue 2989
+packages/apps/Music:
+e2aae3b Catalan translation added
+1d73914 Music: Remove Untranslatable strings in locale zh_ZN
+packages/apps/Protips:
+03c5288 Catalan translation added
+packages/apps/SoundRecorder:
+724f488 Catalan translation added
+packages/apps/Superuser:
+c93c351 Catalan translation added
+packages/apps/Torch:
+e21aa4d More torch changes:
+e77a4c2 Catalan translation added
+48da9ed set TORCH_STATE also from the MainActivity button
+de5751b Add handling for standalone torch widget, and proper updating on all 3 system torch widget/toggles.
+ea3a366 Add state storage for Torch
+63ea60b loosen the sholes condition
+e3cdb4b Add broadcast listener for toggling flashlight on/off from lockscreen
+packages/apps/VoiceDialer:
+7f22650 Catalan translation added
+packages/inputmethods/LatinIME:
+067235a Use a heart instead of an emoticon that no one uses
+packages/providers/MediaProvider:
+13d1110 Optimize MediaThumbRequest RAM usage.
+bionic:
+73ffced HACK: export __aeabi_ulcmp for lg's froyo rild libs
+e368b69 Revert "linker: After lookup of symbol failed in all DT_NEEDED libs,"
+device/lg/eve:
+6ffffea BoardConfig: options for new libcamera
+a0bc56c proprietaries: use a/v codecs from lg's froyo
+c6bef26 BoardConfig.mk: use right kernel commandline
+197dd33 libsensors: remove legacy method of enabling proxmity sensor
+7fbbb51 libsensors: enable brightness sensor
+fd9d802 Use more from lg's froyo binaries
+ab789fe extract-files: rm old proprietaries prior new extraction
+6bdde88 use lg's froyo rild and libs
+0737532 overlay: do not disable agps by default
+9e69da6 Update google apps to gapps-mdpi-20101213-signed.zip
+355b8dd provide prebuilt gps.conf
+9ab2b26 Revert "Partly updated libsensors to new kernel (2.6.35)"
+cf44d16 Revert "libsensors: fix proximity, acceleration and brightness sensor"
+aeb56e3 libsensors: fix proximity, acceleration and brightness sensor
+01b02fb Partly updated libsensors to new kernel (2.6.35)
+fc0938f Remove akmd2 service
+73ac2bc Updated to latest proprietary libs.
+1d507f5 Ensure the board does not overclock without active action by the user, should solve issue #327.
+7dd6cad init.eve.rc: allow lower frequency
+bfbd8f6 init.eve.rc: change scaling governor to interactive
+b906f4d BoardConfig: switched to new wifi driver from new kernel
+frameworks/base:
+d02285e CameraParameters: modify for lg's froyo libcamera
+a6040dc RIL: fix caller identification for lg's froyo rild
+ac1c22d RIL: fix dial for lg's froyo rild
+9316c64 Revert "Reverted a change that changed the memory layout of Thread class"
+1218f1f libstagefright: glacier: use OMX width/height/stride update
+0688d9b New translation: hungarian added
+42d63ad libcameraservice: Remove references to playShutterSoundOnly
+dc1bd26 platform/frameworks/base: Call stopRecording first then start beepSignal
+493119e Camera: Call startRecording from CameraService layer.
+cde0065 Camera: Disable Video_Frame message before stop recording call
+1b419fd Deleted untranslatable strings from catalan translation
+62be861 Make Bluetooth discoverability timeout configurable (also supporting infinite timeout).
+276430c Rotary lockscreen
+ed4bfaa Enhance AutoText to support user-defined correction pairs
+42b7da8 Fix NPE when checking TORCH_STATE on first boot.
+54a2f45 Catalan translation added
+ab3fc3d allow the light sensor to be ignored when flashlight is on
+fde2d1b Restore notification bar flashlight toggle using correct brightness setting.
+34f354c Make sure overscroll isn't applied in views it shouldn't be
+4acab88 Cleanup notification bar flashlight widget to use Torch app, and add state storage for flashlight.
+22d7dd3 Revert "Revert part of "GPS: Don't set XTRA download pending flag at boot time.""
+25eee5c Add setting to hide notification pulldown after clicking a power widget button
+c43894e Trackball/LED fixes:
+04d8fc7 Revert "Increase javax.obex performance"
+32a8f30 GPS: Fix return value of native_inject_xtra_data
+d43c149 Fix broken logic in SettingsProvider.parseProviderList.
+28c7b7d GPS: Retry inject XTRA on failure; immediately for some devices.
+366927f Fix crash by "adb shell pm list permissions -f|-s"
+a04bce3 Bluetooth : Reserve the RFCOMM channel 20 for FTP profile
+735a057 Bluetooth : Add support for starting FTP service in BT ON sequence
+92a7e26 Lockscreen gestures color setting
+1d1a8c7 Fix gesture api properly.
+f93d3f2 NullPointerException at handleMessage(GSMPhone.java)
+289a1bd SearchDialog: Fix for NullpointerException while using Suggestions in Browser
+8e333bc audioflinger: Nasty hack for adjusting BCM FM volume
+b9cba2c For national roaming only consider MCC, previous version didn't work on Motorola Milestone
+3a992e4 Fix HTTP redirect for 303 and 307
+a814ad7 Gestures fix
+e3b1fb6 CAF Continuous Autofocus
+d98418d Gesture updates:
+a29b070 Allow the user to specify which application to launch using the lockscreen messaging slider.
+1421e1d Updated russian translations: Messaging/Phone sliders on lockscreen
+855cf46 Portuguese translation of Phone and Messaging Lockscreen resources
+ae4360f frameworks/base: Destroy the overlay even if there is an error
+d5a22e5 Lockscreen Gestures -
+13a2423 Fix MVNO roaming setting, move to Secure.
+327cc8f fix lockscreen landscape layout
+470879c Add option for MVNO roaming fix. Making commit bc097e94dfd15ecaac4d057d30c68d9c77a54744 switchable.
+dccd67a Revert "Changing string for apn from empty to  when no string is provided by SIM Card. This fixes the roaming problem with some virtual network providers, since some of them have an empty string (check with getprop gsm.sim.operator.alpha). For sure no provider will write empty in their SIM cards. Data roaming can be disabled after that. Roaming in foreign countrys will still work since it checks the MCC (Mobile Country Code). Thanks to my friend Sewi for helping me finding this. :)"
+0e4bf60 Fix 2g/3g toggle on UMTS networks 2nd try: already merged (I255359ba) but subsequently erased by Ib6a7e284
+hardware/msm7k:
+b507118 Revert "libcamera2: Our implementation"
+c6f1055 Revert "libcamera2: Fix for changed headers"
+65dfa9d Revert "new flag needed, fixes building process."
+726408f Revert "copybit: Error on unsupported RGBX"
+fcf0272 Revert "libcopybit: Remove unsupported MDP_BLEND_FG_PREMULT"
+e62e28f Revert "copybit: Use our header, do not error on wrong dimensions"
+9117b4b hardware/msm7k: Fix audio routing on 7X30 devices
+0d5a5af msm7k: Build gralloc for 7x30
+hardware/qcom/gps:
+fc17b53 tidy trace + fix typo
+dbf3e7e tracepoints for queued xtra request change
+0c380e7 queue request for xtra download until there is a callback available
+1dfa494 add injection of location to gps driver (does not yet work!)
+hardware/ril:
+4dcfeea Revert "Link rild against libbinder, because korean-v10t's libril needs symbols from there"
+kernel:
+fd80a80 bl_bd6083: use alc mode for measuring brightness and changing of backlight
+d5264a7 eve: remove old vibrator device
+2e8978f eve: change machine name to 'eve' so the right init files are executed
+73fb5d4 akm8973/bl_bd6083: send brightness to sensors api
+b140a54 prox_sharp: new proximity driver
+3db8550 Add board-eve.h
+201d5e3 Move vibrator to board-eve-vibrator
+5ebea23 make mrproper and move .config to arch/arm/configs/openetna
+f041e8c Initial commit
+packages/apps/Phone:
+8c00771 French: translate MVNO roaming related strings
+8749f69 updated italian translations
+4ce77ac Catalan translation added
+2e1c3df Hu translation for Phone.apk
+1143208 Update Japanese translation.
+2391221 Russian. Fix small mistake
+26ba43d phone: Fix MVNO_ROAMING patch, move to secure.
+1757c0c phone: Add option for MVNO roaming fix.
+f42fed7 Change input type to phone number for 'My phone number' dialog in GSM additional options.
+packages/apps/Settings:
+5d88faa Spanish: Bluetooth on/off != Bluetooth Settings
+d905f23 Translated Settings into Slovak
+007fc7d Make Bluetooth discoverability timeout configurable (also supporting infinite timeout).
+bd38baf Catalan translation added
+345ef9e Settings: Build internal memory info dynamically
+a0f8d7c Clean up torch code, make it consistent with other torch widget, have it use the Torch app if available, else make a blank white screen.
+9ecb241 Possible NumberFormatException of parseInt is outside try-catch
+9a20101 Issue: 2569 - Fix phase2 authentication type being cleared.
+d2e785c Settings: translate to portuguese cyanogenmod settings item
+fe87238 Always set right auth_type value in apn.
+f7f2cd8 Settings: typo fix
+618e054 Translation Settings to Spanish for CMSettings text
+6f04312 Update Portuguese Translation
+system/core:
+eea0759 Revert "Added tzstrftime.c back. TODO: is this still needed?"
+3519f03 Propogate exit status from child process
+b908626 Bluetooth : Add a Android service to register FTP as a profile in SDP database
+1517be3 init: update device permissions
+vendor/cyanogen:
+b355b87 Remove CMStats
+445b819 glacier: set has_trackball to true
+ae55afe CHANGELOG
+dc50a74 glacier: add overlays
+ecbc2e1 passion: Disable filterTouchEvents
+2cdd378 CHANGELOG
+72fb610 CHANGELOG
+6da9606 glacier: update fingerprint, build FM app, use correct .mk
+1996f0b Fix the market fingerprint
+bca6339 cm: backuptool: Add FOTAKill
+4982cd7 cm: Bump versions to 6.2.0-RC0 for next iteration.
+165269a get-google-files: fix path to proprietary
+5f65a8e Build CMUpdateNotify
+00cf4ef passion: Update fingerprint to FRG83D
+08199b2 Revert "Build CMGapps."
+68a72b0 Build CMGapps.
+71f1572 Update sholes fingerprint to FRG83D
+c7bc270 CHANGELOG
+54b1cfd CHANGELOG
+2dc0701 legend: Update for release
+1aa6dbe Liberty: Update version for 6.1 Release
+ab23337 Z71 and ONE version bumps to 6.1
+fd5c1ec CHANGELOG
+4e18bc6 espresso: Enable dual-led mode for notifications
+9b1b996 droid v6.1
+1489198 CHANGELOG
+b08f597 cm: Version bumps for 6.1
+ecb9ace CHANGELOG
+aa6f025 inc: Enable dual-led mode for CMParts
+1d7068f ace: 6.1.0-RC2
+da85041 supersonic: Enable dual-led mode for CMParts
+428908e Fix get-google-files script to reflect latest gapps HDPI package, and update mirrors to remove dead ones and add new mirrors from the wiki.
+a07dfc1 CHANGELOG
+3383016 vision: 6.1.0-RC4
+a87e7fd Add Torch app to sholes
+e95d725 prebuilt: update backuptool.sh
+4e39f04 Updated and cleaned up portugal APNs, removed Optimus duplicated entries
+35b5133 legend: RC3
+a6b5b42 ace: build FM app and add overlay for cmparts and various framework settings
+16201f5 vision: Build the FM Radio app
+0d7c529 Update Russian Translators
+dc4719a changelog, droid rc5
+28a0f05 Added ace lunch combo
+edc3a5e harmony: disable phone intent, override default ADW columns/rows.
+8328492 CHANGELOG
+5482f55 Updating ADW to version 1.3.1
+3ab0c56 cm: bravo/bravoc to 6.1.0-RC2
+e878c9b cm: Vision/Espresso to 6.1-RC3
+b5d637a cm: supersonic/dream/sapphire/passion to 6.1.0-RC2
+8266f20 supersonic: Build kernel from source
+7986ca4 Updated harmony build values to OTA values
+b37a64c Updated fingerprint to OTA values.
+external/rsync:
+ede8cae Tweak some apostrophes to make editor highlighting less problematic.
+58ab320 Optimize --inplace chunck search to avoid a non-aligned search.
+00cde65 Mention seek effect of an unmoved --inplace chunk.
+e6ba6e1 Improve description of --chmod example.
+efad2e8 Fix crash when --backup-dir is excessively long.
+external/sonivox:
+85c3dba Remove unused file. DO NOT MERGE.
+external/stlport:
+4de1c6f Don't use stale NDK libraries for IA
+23d26c0 Merged prebuilt NDKs for different Build OS.
+45c4b17 Build static libstlport.
+f581c1e Unbundle libstlport with NDK r4.
+f4c9fc3 Enable stlport thread support.
+ndk:
+8c46702 docs: Add missing item from NDK r5b changelog.
+4710328 Fix NDK root directory probing logic.
+ec6f8db Fix syntax error in init.mk
+e26ba79 build-gcc.sh: Add --try-64 option
+a576ae3 download-toolchain-sources.sh: Fix git date handling.
+7a619be arm-linux-androideabi: Use -fpic by default instead of -fPIC
+ca0d46d Update native audio API levels and trademarks
+e9db711 Generate 8.04-compatible Linux toolchain binaries whenever possible.
+1022d8d Speedup cygwin to host path translation.
+ac567c3 Fix cygwin-specific awk script to deal with very short paths.
+7515837 Fix a typo, make the example correctly use LOCAL_SHARED_LIBRARIES
+4b0a54c Minor doc fix: mention cpufeatures fix
+ee9a8ad Fix mingw build.
+ddcc279 Add missing declarations to <netinet/in.h>
+b1b7c64 Fix compiler bug (invalud thumb instructions for signed chars)
+61e547d Fix gnustl float/double iostream crashes.
+28246be Fix Windows rebuild bug after compilation error.
+6f01017 Fix toolchain rebuild script for 32-bit toolchains.
+a468e52 Fix NDK_MODULE_PATH handling when there are several directories
+73aed82 cpufeatures: fix ARM-specific bug
+818c32e prebuilt-common.sh: Better 64-bit compiler detection.
+c94a263 docs/CPLUSPLUS-SUPPORT.html: Add missing gnustl_static documentation.
+99dcb2c ndk-build: Fix cygwin GNU Make check.
+255a308 Fix spelling errors
+3631b24 Fix comment found by Henrik Rydgård
+b00a82d make-standalone-toolchain.sh: fix symlink copy bug.
+99fe4b8 Support remote Darwin builds on Linux.
+81dd1b4 Add new GNU libstdc++ device test.
+e144b4a Minor documentation udpate.
+2ca50e0 Move stlport under sources/cxx-stl/
+775b79a make-standalone-toolchain.sh: Copy GNU libstdc++ binaries
+c8356fc dev-system-import.sh: fix destination directories.
+1df3000 Disable gold linker build.
+a9225dc Add unit-test for GNU libstdc++
+117849c NDK tests: Add support for broken builds and runtime tests.
+7282597 Package and use libsupc++ prebuilt tarballs.
+da25f0b Generate GNU libstdc++ static library binaries and tarballs.
+b7265a1 rebuild-all-prebuilt.sh: simplify script
+a2caf39 Use --sysroot option properly with arm-linux-androideabi-4.4.3
+7151949 Simplify scripts
+f259f16 build-stlport.sh: simplify script.
+4f87a43 package-release.sh: simplify script
+efbd103 build-platforms.sh: speed-up and simplify
+a5df038 download-toolchain-sources.sh: Add --git-base option
+7543c2b ndk-common.sh: Add utility functions
+1f36dea Use git repo date for toolchain source archive.
+8b1664f Fix handling of mingw toolchain builds.
+e1ffa3f Proper thread support for gdbserver.
+b08f5a9 download-toolchain-sources.sh: Add --git-date
+e4e58cf Always link binaries to libsupc++.a by default.
+72497ce Add C++ exceptions and RTTI support.
+1519b95 Fix run-tests.sh running tests on the device.
+26f2392 Add APP_STL to select the C++ STL automatically.
+8fd345a Allow run-tests.sh to run device tests.
+6f2c722 Add --incremental option to make-release.sh
+12e9522 Disable parallel mingw toolchain builds.
+f3500e4 Add script to generate <android/api-level.h> headers
+9ad2c16 Better cleanup when packaging NDK releases
+5a3522b Add --package option to run-tests.sh
+d212053 Add automated test runner for the NDK.
+25fc114 Add support for prebuilt STLport binaries.
+fc53a9d Do not use -Wl,--whole-archive is not needed.
+b1a60f3 Add support for LOCAL_WHOLE_STATIC_LIBRARIES.
+499fa5d Prevent errors when a module is imported several times.
+b71520c Native audio documentation update
+5be1355 NDK: System import helper script.
+d6fdb19 Reduce release package sizes.
+a6b241f Native audio documentation
+c8b90b3 Doc change: native activity documentation
+adc1d27 docs: move NDK docs to HTML and add documentation.html, which opens a frameset to navigate all the documentation TODO: cleanup the sidenav in the frameset for better organization It'd also be nice to make all the "see foo.html" messages into links
+508afa1 Fix typo in make-standalone-toolchain.sh
+6b6e755 Fix the build
+77dc872 Add stlport source module to the NDK.
+d49e5db Fix automatic dependency computation of imported modules.
+ac5a15c Describe standalone toolchain support.
+2ffd1df Update cpufeatures and move it to sources/android/
+07c5eb7 Document ndk-build NDK_DEBUG=1 properly.
+675fe49 Fix spelling errors
+9a19979 Generate smaller release binaries.
+b99a422 Ensure that the __ANDROID__ macro is always defined.
+dc534a5 Add API level 9 to default release packages.
+caf0619 ndk-gdb: Fix windows invokation
+040a6a4 Update documentation for API level 9
+0c169eb Don't expose ::on_exit
+c2cb1cc Fix duplicate LOCAL_LDFLAGS at link time.
+b5f45d6 Place release and debug objects in different directories.
+5b65625 Fix ndk-gdb and add --delay=<seconds> option.
+1579cd9 Fix cygwin build on Windows.
+a0f307d Rework toolchain build scripts.
+e11a9b5 Reorder location of toolchains files.
+7a6b17a Add prebuilt static library support.
+6938fb5 Fix gdb-6.6 build with gcc-4.4.3
+5171bb2 Fix bad automatic dependency tracking when using multiple source subdirectories.
+ea573da Update toolchain to arm-linux-androideabi-4.4.3
+fd20437 Add easy native debugging support through NDK_DEBUG=1
+7daefc3 Add support for asm-level filtering through LOCAL_FILTER_ASM
+6b5bc46 Fix build/tools/rebuild-all-prebuilt.sh to work with $NDK/platforms/...
+553a632 Add CleanSpec.mk
+77d9a08 Move platform files from build/platforms to platforms.
+1ae5116 build-gcc.sh: prevent generated binaries from containing hard-coded host build paths.
+d9851e7 Simplify module database definitions.
+d0ac7ca Get rid of (nearly obsolete) build/core/build-module.mk
+2ec1cd2 Fix import order for C include paths.
+4780f59 Put system headers at the end of the inclusion path.
+3470a61 improve development documentation.
+8c3d67c ndk-gdb: allow launching activities which name doesn't begin with a dot.
+fdb4746 Add --git-http option to download-toolchain-sources.sh
+b74278f ndk-build: fix escaping of options/parameters
+6157bc1 make-release.sh: add an --out-dir=<path> parameter.
+4270093 Add LOCAL_C_INCLUDES to the source directory search path for ndk-gdb.
+6a8948d Add support for module imports.
+bb9dc1a Add support for LOCAL_MODULE_FILENAME, that allows renaming generated files.
+4013467 Add support for prebuilt shared libraries.
+f85f0b1 Doc update: document that 'my-dir' does not always return the current Android.mk's directory.
+5b690c1 C++ system headers refresh.
+c0e91f2 Enable static C++ destructors to be called with dlclose().
+e794328 Fix BUILD_EXECUTABLE. For some reason, module-is-executable didn't work properly.
+a5501b0 Implement module exports + update docs + add a sample.
+8700ca9 Implement two-pass script parsing.
+867dbf1 Remove platform files and samples from ndk/
+a775f55 Allow platforms and samples to be located under development/ndk/{platforms,samples}
+4a37f2b Update native-activity sample to get the direct surface.
+ffb5bcc Add new sample code for NativeActivity.
+fa23925 Introduce a new android-9 platform.
+packages/apps/HTMLViewer:
+09599d4 Do not merge.
+packages/apps/QuickSearchBox:
+e74ce82 UI tweaks for QVGA (LDPI) devices.
+37d8e15 Tweak QSB UI for small screens
+b91d121 Import revised translations.
+prebuilt:
+96ae3da Add linux toolchain to target 32-bit Ubuntu Hardy.
+3167177 Add EXT4 for IA virtualbox builds
+81cce60 Patched toolchain to fix a few gcc and binutils bugs.
+126702f Fix build - mark module as optional
+6bc5a48 Update ddmlib and tradefed prebuilts.
+3211d92 Drop new aapt
+219d8ef Create both classes.jar and javalib.jar for the prebuilt sdks.
+af1234c Merge prebuilt NDKs for linux and darwin.
+a24df81 Patched arm-eabi-gcc-4.4.3 toolchain.
+c12ea31 Update tradefed-prebuilt.
+1148190 Update ddmlib-prebuilt.
+cec8429 Make the prebuilt host modules optional.
+0d0091e Add tradefed-prebuilt.
+47616af To use optional tag, we have to use BUILD_PREBUILT. [DO NOT MERGE]
+76af73c Prebuilt version of DDMLIB. DO NOT MERGE
+3c2d638 update Linux qemu audio library.
+c452412 Add the missing required gcc patch to fix browser crash and camera crash.
+4e3344d Patched newtoolchain. Patched gcc-4.4.3 fixed browser crash and camera crash in master tree. Patched gold supported unwinding stack. gdb-7.x.1.
+4b451e8 Update prebuilt SDK tool aapt
+72eddb8 Check in released NDK version r4.
+2ac3817 Move from Ant 1.6.5 to Ant 1.7
+ac93c2c Patch gold in gcc-4.4.3 toolchain, fix a kernel build breakage. The breakage is due to merging EABI flags from empty objects.
+2c5b363 Commit new prebuilt gcc-4.4.3 toolchain with gold.
+1391cbf DO NOT MERGE  Initial checkin of sdk 8
+d1568f2 New toolchain that adds GNU-stack annotation to protect executable stack.
+```
